@@ -1,5 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "a7da08fe-30d4-42ce-a659-5296089127b8",
+    "cache": {
+      "enabled": true,
+      "environment": "all",
+      "path": ".angular-cache"
+    }
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -70,6 +78,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.mjs"
+          },
           "configurations": {
             "production": {
               "browserTarget": "Angular13Project:build:production"

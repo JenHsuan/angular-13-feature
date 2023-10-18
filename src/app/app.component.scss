@@ -1,0 +1,40 @@
+.title {
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.portal-container {
+  min-height: calc(100vh - 100px);
+}
+
+.footer {
+  text-align: right;
+  padding-right: 1em;
+  font-size: 1.2em;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+    margin-left: 1em;
+  }
+  
+  .tab-item {
+    width: 15em;
+    font-size: 1.2em;
+    margin: 1em .1em 1em .1em;
+    height: 1.5em;
+    border-radius: .1em;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .tab-item.current {
+    color: #fff;
+    background-color: #2b2828;
+  }
+
+  .tab-content {
+    padding: 1em;
+  }

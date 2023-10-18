@@ -1,1 +1,57 @@
-<router-outlet></router-outlet>
+<div class="header">
+  <div class="title">
+    Notes of Angular v13
+  </div>
+  <div class="tabs">
+    <button [ngClass]="getPortalStyle('DYNAMIC_COMPONENT')"
+      mat-button (click)="changePortal('DYNAMIC_COMPONENT')">
+      Component API updates
+    </button>
+    <button [ngClass]="getPortalStyle('CACHE')"
+      mat-button (click)="changePortal('CACHE')">
+      Cache management
+    </button>
+    <button [ngClass]="getPortalStyle('TESTING')"
+      mat-button (click)="changePortal('TESTING')">
+      Angular testing improvements
+    </button>
+    <button [ngClass]="getPortalStyle('ESM')"
+      mat-button (click)="changePortal('ESM')">
+      ESM supported on the ng serve
+    </button>
+    <button [ngClass]="getPortalStyle('NOTES')"
+      mat-button (click)="changePortal('NOTES')">
+      Notes
+    </button>
+  </div>
+</div>
+
+<div class="portal-container">
+  <div class="tab-content">
+    <div [cdkPortalOutlet]="currentPortal"></div>
+  </div>
+</div>
+
+<div class="footer">
+  Copy right@Jen-hsuan Hsieh 2023
+</div>
+
+<ng-template cdkPortal>
+  <app-standard></app-standard>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-cache></app-cache>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-testing></app-testing>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-esm></app-esm>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-notes></app-notes>
+</ng-template>

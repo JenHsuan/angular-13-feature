@@ -1,0 +1,28 @@
+.export {
+  font-size: 1.6em;
+  display: flex;
+  justify-self: center;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+}
+  
+.demo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: .5em;
+}
+
+.title {
+  font-size: 1.8em;
+  text-align: center;
+  margin: 1em;
+}

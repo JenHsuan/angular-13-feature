@@ -5,9 +5,10 @@
 }
 
 .demo-container {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
 }
-
+  
 .title {
   font-size: 1.8em;
   text-align: center;
