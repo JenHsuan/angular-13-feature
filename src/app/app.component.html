@@ -19,6 +19,10 @@
       mat-button (click)="changePortal('ESM')">
       ESM supported on the ng serve
     </button>
+    <button [ngClass]="getPortalStyle('FONT')"
+      mat-button (click)="changePortal('FONT')">
+      inline-resouce (Adobe font)
+    </button>
     <button [ngClass]="getPortalStyle('NOTES')"
       mat-button (click)="changePortal('NOTES')">
       Notes
@@ -34,6 +38,7 @@
 
 <div class="footer">
   Copy right@Jen-hsuan Hsieh 2023
+  <a href="https://daily-learning.herokuapp.com/">daily-learning</a>
 </div>
 
 <ng-template cdkPortal>
@@ -50,6 +55,10 @@
 
 <ng-template cdkPortal>
   <app-esm></app-esm>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-inline-font></app-inline-font>
 </ng-template>
 
 <ng-template cdkPortal>

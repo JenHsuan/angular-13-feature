@@ -2,6 +2,9 @@
   font-size: 2.2em;
   text-align: center;
   margin-top: 1em;
+  font-family: audrielle-no1, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .portal-container {
@@ -21,13 +24,16 @@
   }
   
   .tab-item {
-    width: 15em;
+    min-width: 10em;
     font-size: 1.2em;
     margin: 1em .1em 1em .1em;
-    height: 1.5em;
+    padding: .3em;
     border-radius: .1em;
     background-color: #fff;
     cursor: pointer;
+    font-family: audrielle-no1, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   }
   
   .tab-item.current {

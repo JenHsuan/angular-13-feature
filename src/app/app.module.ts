@@ -10,6 +10,7 @@ import { TestingComponent } from './testing/testing.component';
 import { EsmComponent } from './esm/esm.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotesComponent } from './notes/notes.component';
+import { InlineFontComponent } from './inline-font/inline-font.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotesComponent } from './notes/notes.component';
     CacheComponent,
     TestingComponent,
     EsmComponent,
-    NotesComponent
+    NotesComponent,
+    InlineFontComponent
   ],
   imports: [
     BrowserModule,

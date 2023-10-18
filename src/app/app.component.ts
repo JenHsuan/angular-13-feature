@@ -6,7 +6,8 @@ enum PORTAL_TYPE {
   CACHE = 'CACHE',
   TESTING = 'TESTING',
   ESM = 'ESM',
-  NOTES = 'NOTES'
+  NOTES = 'NOTES',
+  FONT = 'FONT'
 }
 
 const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
@@ -14,7 +15,8 @@ const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
   [PORTAL_TYPE.CACHE, 1],
   [PORTAL_TYPE.TESTING, 2],
   [PORTAL_TYPE.ESM, 3],
-  [PORTAL_TYPE.NOTES, 4],
+  [PORTAL_TYPE.FONT, 4],
+  [PORTAL_TYPE.NOTES, 5],
 ])
 
 @Component({

@@ -7,6 +7,10 @@ import { DynamicComponent } from './dynamic/dynamic.component';
   styleUrls: ['./standard.component.scss']
 })
 export class StandardComponent implements AfterViewInit {
+  instruction = `
+  npx @angular/cli@13 new Angular13Project
+  `;
+  
   code = `
   //legacy syntax:
 

@@ -30,8 +30,9 @@ export class EsmComponent implements OnInit {
         "proxyConfig": "proxy.conf.mjs"
       }
 
-  //3. Setup the proxy
+  //3. Setup the backend locally (http://localhost:3000)
   `;
+  
   constructor(private service: EsmService) { }
 
   ngOnInit(): void {
