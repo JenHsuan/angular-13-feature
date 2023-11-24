@@ -1,45 +1,56 @@
-<div class="header">
-  <div class="title">
-    Notes of Angular v13
+<div class="app-container">
+  <div class="sider-bar">
+    <div class="tabs">
+      <div class="title-container">
+        <img src="../assets/image/angular-logo.png" alt="">
+        <div class="title">
+          {{title}}
+        </div>
+      </div>
+      <button [ngClass]="getPortalStyle('DYNAMIC_COMPONENT')"
+        mat-button (click)="changePortal('DYNAMIC_COMPONENT')">
+        Component API updates
+      </button>
+      <button [ngClass]="getPortalStyle('CACHE')"
+        mat-button (click)="changePortal('CACHE')">
+        Cache management
+      </button>
+      <button [ngClass]="getPortalStyle('TESTING')"
+        mat-button (click)="changePortal('TESTING')">
+        Angular testing improvements
+      </button>
+      <button [ngClass]="getPortalStyle('ESM')"
+        mat-button (click)="changePortal('ESM')">
+        ESM supported on the ng serve
+      </button>
+      <button [ngClass]="getPortalStyle('FONT')"
+        mat-button (click)="changePortal('FONT')">
+        inline-resouce (Adobe font)
+      </button>
+      <button [ngClass]="getPortalStyle('NOTES')"
+        mat-button (click)="changePortal('NOTES')">
+        Notes
+      </button>
+      <div class="footer">
+        <div>
+          Copy right @
+          <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">Jen-hsuan Hsieh</a>
+        </div>
+        <div>
+          Laste updated at {{updateTime}}
+        </div>
+        <div><a href="of_alpha@hotmail.com">Contact me</a></div>
+      </div>
+    </div>
+    </div>
   </div>
-  <div class="tabs">
-    <button [ngClass]="getPortalStyle('DYNAMIC_COMPONENT')"
-      mat-button (click)="changePortal('DYNAMIC_COMPONENT')">
-      Component API updates
-    </button>
-    <button [ngClass]="getPortalStyle('CACHE')"
-      mat-button (click)="changePortal('CACHE')">
-      Cache management
-    </button>
-    <button [ngClass]="getPortalStyle('TESTING')"
-      mat-button (click)="changePortal('TESTING')">
-      Angular testing improvements
-    </button>
-    <button [ngClass]="getPortalStyle('ESM')"
-      mat-button (click)="changePortal('ESM')">
-      ESM supported on the ng serve
-    </button>
-    <button [ngClass]="getPortalStyle('FONT')"
-      mat-button (click)="changePortal('FONT')">
-      inline-resouce (Adobe font)
-    </button>
-    <button [ngClass]="getPortalStyle('NOTES')"
-      mat-button (click)="changePortal('NOTES')">
-      Notes
-    </button>
+  <div class="app-content">
+    <div class="portal-container">
+      <div class="tab-content">
+        <div [cdkPortalOutlet]="currentPortal"></div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="portal-container">
-  <div class="tab-content">
-    <div [cdkPortalOutlet]="currentPortal"></div>
-  </div>
-</div>
-
-<div class="footer">
-  Copy right@Jen-hsuan Hsieh 2023
-  <a href="https://daily-learning.herokuapp.com/">daily-learning</a>
-</div>
 
 <ng-template cdkPortal>
   <app-standard></app-standard>

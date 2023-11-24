@@ -25,7 +25,8 @@ const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular 13'
+  title = 'Notes of Angular v13';
+  updateTime = '2023/10/18';
   @ViewChildren(CdkPortal)
   templatPortals: QueryList<CdkPortal>;
 

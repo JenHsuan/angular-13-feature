@@ -1,46 +1,84 @@
-.title {
-  font-size: 2.2em;
-  text-align: center;
-  margin-top: 1em;
-  font-family: audrielle-no1, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.portal-container {
-  min-height: calc(100vh - 100px);
-}
-
-.footer {
-  text-align: right;
-  padding-right: 1em;
-  font-size: 1.2em;
-}
-
-.tabs {
+.app-container {
+  height: 100%;
   display: flex;
-  justify-content: center;
-    margin-left: 1em;
-  }
-  
-  .tab-item {
-    min-width: 10em;
-    font-size: 1.2em;
-    margin: 1em .1em 1em .1em;
-    padding: .3em;
-    border-radius: .1em;
+  .sider-bar {
+    width: 15em;
     background-color: #fff;
-    cursor: pointer;
-    font-family: audrielle-no1, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  }
-  
-  .tab-item.current {
-    color: #fff;
-    background-color: #2b2828;
-  }
+    .title {
+      font-size: 1.1em;
+      text-align: center;
+      padding: 1em 0;
+      font-style: normal;
+      font-weight: 400;
+      background-color: #fff;
+    }
 
-  .tab-content {
-    padding: 1em;
+    .footer {
+      font-size: .9em;
+      top: calc(95% - 4em);
+      position: absolute;
+      margin: 0 .2em;
+      text-align: center;
+      span {
+        margin-right: 1em;
+      }
+      div {
+        margin-bottom: .3em;
+      };
+    }
+
+    .tabs {
+      margin: 0 1em 0 0;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border: 1px solid #cecece;
+      height: 100%;
+      .title-container {
+        display: flex;
+        img {
+          width: 1.5em;
+          height: 1.5em;
+          padding: 1em .5em;
+        }
+      }
+    }
+        
+    .tab-item {
+      width: 15em;
+      font-size: .9em;
+      margin: 0 0.1em 0.7em 0.1em;
+      padding: .3em;
+      border-radius: .1em;
+      background-color: #fff;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 400;
+      border: none;
+      color: #7c7676;
+      &.current {
+        color: #fff;
+        background-color: #2b2828;
+        &:hover {
+          color: #fff;
+        }
+      }
+      &:hover {
+        color: #000;
+        font-weight: 500;
+      }
+    }
+      
+    .tab-content {
+      padding: 1em;
+    }
   }
+  .app-content {
+    min-width: calc(100% - 20em);
+    .portal-container {
+      min-height: calc(100vh - 100px);
+      margin-top: .3em;
+    }
+  }
+}
