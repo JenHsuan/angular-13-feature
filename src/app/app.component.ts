@@ -7,7 +7,8 @@ enum PORTAL_TYPE {
   TESTING = 'TESTING',
   ESM = 'ESM',
   NOTES = 'NOTES',
-  FONT = 'FONT'
+  FONT = 'FONT',
+  HOME = 'HOME'
 }
 
 const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
@@ -17,6 +18,7 @@ const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
   [PORTAL_TYPE.ESM, 3],
   [PORTAL_TYPE.FONT, 4],
   [PORTAL_TYPE.NOTES, 5],
+  [PORTAL_TYPE.HOME, 6],
 ])
 
 @Component({
@@ -32,12 +34,12 @@ export class AppComponent {
 
   currentPortal: Portal<any>;
 
-  selectedPortal = PORTAL_TYPE.DYNAMIC_COMPONENT;
+  selectedPortal = PORTAL_TYPE.HOME;
 
   constructor(private changeDetector: ChangeDetectorRef,) {}
 
   ngAfterViewInit(): void {
-    this.currentPortal = this.templatPortals.first;
+    this.currentPortal = this.templatPortals.last;
     this.changeDetector.detectChanges();
   }
 

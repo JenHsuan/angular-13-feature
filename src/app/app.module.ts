@@ -11,6 +11,7 @@ import { EsmComponent } from './esm/esm.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotesComponent } from './notes/notes.component';
 import { InlineFontComponent } from './inline-font/inline-font.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InlineFontComponent } from './inline-font/inline-font.component';
     TestingComponent,
     EsmComponent,
     NotesComponent,
-    InlineFontComponent
+    InlineFontComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

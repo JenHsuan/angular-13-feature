@@ -2,7 +2,7 @@
   height: 100%;
   display: flex;
   .sider-bar {
-    width: 15em;
+    width: 20em;
     background-color: #fff;
     .title {
       font-size: 1.1em;
@@ -37,6 +37,9 @@
       height: 100%;
       .title-container {
         display: flex;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.1em;
         img {
           width: 1.5em;
           height: 1.5em;
@@ -69,16 +72,16 @@
         font-weight: 500;
       }
     }
-      
-    .tab-content {
-      padding: 1em;
-    }
   }
   .app-content {
     min-width: calc(100% - 20em);
     .portal-container {
-      min-height: calc(100vh - 100px);
+      height: calc(100vh - 100px);
       margin-top: .3em;
+      .tab-content {
+        padding: 1em;
+        height: 100%;
+      }
     }
   }
 }
