@@ -1,12 +1,12 @@
 <div class="app-container">
   <div class="sider-bar">
     <div class="tabs">
-      <div class="title-container">
+      <a class="title-container" href="/">
         <img src="../assets/image/angular-logo.png" alt="">
         <div class="title">
           {{title}}
         </div>
-      </div>
+      </a>
       <button [ngClass]="getPortalStyle('DYNAMIC_COMPONENT')"
         mat-button (click)="changePortal('DYNAMIC_COMPONENT')">
         Component API updates
