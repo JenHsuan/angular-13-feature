@@ -7,6 +7,13 @@
   width: 100%;
   .item-container {
     position: relative;
+    .timeline-container {
+      font-size: 1.2em;
+      font-family: Arial, Helvetica, sans-serif;
+      a {
+        color: black;
+      }
+    }
     .title-container {
       position: relative;
       display: flex;
