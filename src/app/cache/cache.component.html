@@ -12,7 +12,11 @@
     <div class="title">There are two ways to manipulate cache object</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(angularjson)"></code>
+        <code
+          [highlight]="angularjson"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
   </app-section-container>

@@ -12,7 +12,11 @@
     <div class="title">Code</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(testComponent)"></code>
+        <code
+          [highlight]="testComponent"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
   </app-section-container>

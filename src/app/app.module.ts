@@ -16,6 +16,7 @@ import { SectionContainerComponent } from './pulbic/section-container/section-co
 import { DocumentsComponent } from './documents/documents.component';
 import { DeprecationsComponent } from './deprecations/deprecations.component';
 import { BreakingChangesComponent } from './breaking-changes/breaking-changes.component';
+import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,23 @@ import { BreakingChangesComponent } from './breaking-changes/breaking-changes.co
     BrowserModule,
     HttpClientModule,
     PortalModule,
+    HighlightModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: <HighlightOptions>{
+        lineNumbers: true,
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        //lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          css: () => import('highlight.js/lib/languages/css'),
+          xml: () => import('highlight.js/lib/languages/xml'),
+        },
+      },
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

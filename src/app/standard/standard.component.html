@@ -5,7 +5,11 @@
     <div class="title">How to Create a specific version of Angular Project using CLI?</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(instruction)"></code>
+        <code
+          [highlight]="instruction"
+          [languages]="['html']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
   </app-section-container>
@@ -22,7 +26,11 @@
     <div class="title">Code</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(code)"></code>
+        <code
+          [highlight]="code"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
   </app-section-container>
