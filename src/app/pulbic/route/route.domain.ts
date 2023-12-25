@@ -27,10 +27,10 @@ export const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
 export const TYPE_TITLE_MAP = new Map<PORTAL_TYPE, string>([
   [PORTAL_TYPE.HOME, 'Notes of Angular v13'],
   [PORTAL_TYPE.DYNAMIC_COMPONENT, 'Component API updates'],
-  [PORTAL_TYPE.CACHE, 'Cache management'],
-  [PORTAL_TYPE.TESTING, 'Angular testing improvements'],
+  [PORTAL_TYPE.CACHE, 'Cache Management'],
+  [PORTAL_TYPE.TESTING, 'Angular Testing Improvements'],
   [PORTAL_TYPE.ESM, 'ESM supported on the ng serve'],
-  [PORTAL_TYPE.FONT, 'inline-resouce (Adobe font)'],
+  [PORTAL_TYPE.FONT, 'Inline Resource (Adobe font)'],
   [PORTAL_TYPE.NOTES, 'Other Features'],
   [PORTAL_TYPE.BREAKING_CHANGE, 'Breaking Changes'],
   [PORTAL_TYPE.DEPRECATIONS, 'Deprecations'],
