@@ -1,16 +1,26 @@
-<div class="title">Description</div>
-<div class="content-container">
-  The test modules can be teared down after each test.
-</div>
+<div class="base-container">
+  <div class="page-title">{{ title }}</div>
 
-<div class="title">Code</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="testComponent"></code>
-  </pre>
-</div>
+  <app-section-container>
+    <div class="title">Description</div>
+    <div class="content-container">
+      The test modules can be teared down after each test.
+    </div>
+  </app-section-container>
 
-<div class="title">Demo</div>
-<div class="demo-container">
-  <img src="../../assets/image/testing.png" alt="">    
+  <app-section-container>
+    <div class="title">Code</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(testComponent)"></code>
+      </pre>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title">Demo</div>
+    <div class="demo-container">
+      <img src="../../assets/image/testing.png" alt="">    
+    </div>
+  </app-section-container>
 </div>

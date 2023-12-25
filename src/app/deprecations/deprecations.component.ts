@@ -3,11 +3,12 @@ import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
 import { escapeHtml } from '../pulbic/utils/utils';
 
 @Component({
-  selector: 'app-notes',
-  templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.scss']
+  selector: 'app-deprecations',
+  templateUrl: './deprecations.component.html',
+  styleUrls: ['./deprecations.component.scss']
 })
-export class NotesComponent {
-  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.NOTES);
+export class DeprecationsComponent {
+  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.DEPRECATIONS);
   escapeHtml = escapeHtml;
+
 }

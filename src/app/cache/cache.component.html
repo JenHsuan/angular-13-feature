@@ -1,16 +1,26 @@
-<div class="title">Description</div>
-<div class="content-container">
-  The path, environment, enable of Angular cache can be configured.
-</div>
+<div class="base-container">
+  <div class="page-title">{{ title }}</div>
 
-<div class="title">There are two ways to manipulate cache object</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="angularjson"></code>
-  </pre>
-</div>
+  <app-section-container>
+    <div class="title">Description</div>
+    <div class="content-container">
+      The path, environment, enable of Angular cache can be configured.
+    </div>
+  </app-section-container>
 
-<div class="title">Demo</div>
-<div class="demo-container">
-    <img src="../../assets/image/cache.png" alt="">    
+  <app-section-container>
+    <div class="title">There are two ways to manipulate cache object</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(angularjson)"></code>
+      </pre>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title">Demo</div>
+    <div class="demo-container">
+      <img src="../../assets/image/cache.png" alt="">    
+    </div>
+  </app-section-container>
 </div>

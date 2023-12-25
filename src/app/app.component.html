@@ -7,29 +7,11 @@
           {{title}}
         </div>
       </a>
-      <button [ngClass]="getPortalStyle('DYNAMIC_COMPONENT')"
-        mat-button (click)="changePortal('DYNAMIC_COMPONENT')">
-        Component API updates
-      </button>
-      <button [ngClass]="getPortalStyle('CACHE')"
-        mat-button (click)="changePortal('CACHE')">
-        Cache management
-      </button>
-      <button [ngClass]="getPortalStyle('TESTING')"
-        mat-button (click)="changePortal('TESTING')">
-        Angular testing improvements
-      </button>
-      <button [ngClass]="getPortalStyle('ESM')"
-        mat-button (click)="changePortal('ESM')">
-        ESM supported on the ng serve
-      </button>
-      <button [ngClass]="getPortalStyle('FONT')"
-        mat-button (click)="changePortal('FONT')">
-        inline-resouce (Adobe font)
-      </button>
-      <button [ngClass]="getPortalStyle('NOTES')"
-        mat-button (click)="changePortal('NOTES')">
-        Notes
+      <button *ngFor="let item of sideBarList"
+        [ngClass]="getPortalStyle(item)"
+        (click)="changePortal(item)"
+        mat-button>
+        {{getRouteTitle(item)}}
       </button>
       <div class="footer">
         <div>
@@ -74,6 +56,18 @@
 
 <ng-template cdkPortal>
   <app-notes></app-notes>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-breaking-changes></app-breaking-changes>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-deprecations></app-deprecations>
+</ng-template>
+
+<ng-template cdkPortal>
+  <app-documents></app-documents>
 </ng-template>
 
 <ng-template cdkPortal>

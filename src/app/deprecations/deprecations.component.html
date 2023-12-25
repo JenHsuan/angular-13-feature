@@ -1,0 +1,61 @@
+<div class="base-container">
+  <div class="page-title">{{ title }}</div>
+
+  <div class="description-container">
+    <ul>
+      <li>
+        Remove View engine and fully use Ivy (don't need ngcc)
+        <div class="item">
+          In Angular 9, Ivy was introduced as an optimized next-generation compiliation and rendering pipe-line. 
+          It as set as the default compilier. ngcc is a transformer between the legacy view enginee and the Ivy.
+        </div>
+        <div class="item">Source: ngConf-2018 keynote</div>
+        <div class="item">
+          <div class="image-container">
+            <img src="../../assets/image/ivy.png" alt="">
+          </div>
+        </div>
+        <div class="item">
+          There are two major advantages of Ivy.
+        </div>
+        <div class="item">
+          <ol>
+            <li>
+              Ivy (rendering engine) itself tree shakable but the view enginee is not.
+            </li>
+            <li>
+              The Incremental DOM from IVY is tree shakable because components won't be interpreted into the templates. Instead, the cmponents refre to instructions, they will not be used if they are not rferred by any instructions.
+            </li>
+          </ol>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- reference -->
+  <div class="title">Reference</div>
+  <div class="description-container">
+    <ul>
+      <li>
+        <a href="https://v13.angular.io/guide/glossary#ngcc">
+          ngcc
+        </a>
+      </li>
+      <li>
+        <a href="https://browserperson.medium.com/from-view-engine-to-ivy-rendering-in-angular-a81d9eb8199b">
+          From View Engine to Ivy: Rendering in Angular
+        </a>
+      </li>
+      <li>
+        <a href="https://godbasin.github.io/2021/12/05/angular-design-ivy-5-incremental-dom/">
+          Angular框架解读--Ivy编译器之增量DOM
+        </a>
+      </li>
+      <li>
+        <a href="https://blog.nrwl.io/understanding-angular-ivy-incremental-dom-and-virtual-dom-243be844bf36">
+          Understanding Angular Ivy: Incremental DOM and Virtual DOM
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,25 +1,39 @@
-<div class="title">How to Create a specific version of Angular Project using CLI?</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="instruction"></code>
-  </pre>
-</div>
+<div class="base-container">
+  <div class="page-title">{{ title }}</div>
 
-<div class="title">Description</div>
-<div class="content-container">
-  Thanks Ivy, the Component API has been updated the process for denerating dynamic components was simplified.
-</div>
+  <app-section-container>
+    <div class="title">How to Create a specific version of Angular Project using CLI?</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(instruction)"></code>
+      </pre>
+    </div>
+  </app-section-container>
 
-<div class="title">Code</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="code"></code>
-  </pre>
-</div>
+  <!-- description -->
+  <app-section-container>
+    <div class="title">Description</div>
+    <div class="content-container">
+      Thanks Ivy, the Component API has been updated the process for denerating dynamic components was simplified.
+    </div>
+  </app-section-container>
+  
+  <app-section-container>
+    <div class="title">Code</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(code)"></code>
+      </pre>
+    </div>
+  </app-section-container>
+  
 
-<div class="title">Demo</div>
-<div class="demo-container">
-  <p>standard works!</p>    
-  <ng-container #container>
-  </ng-container>    
+  <app-section-container>
+    <div class="title">Demo</div>
+    <div class="demo-container">
+      <p>standard works!</p>    
+      <ng-container #container>
+      </ng-container>    
+    </div>
+  </app-section-container>
 </div>

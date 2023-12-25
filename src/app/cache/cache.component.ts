@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
+import { escapeHtml } from '../pulbic/utils/utils';
 
 @Component({
   selector: 'app-cache',
@@ -6,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cache.component.scss']
 })
 export class CacheComponent implements OnInit {
-
+  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.CACHE);
+  escapeHtml = escapeHtml;
+  
   angularjson = `
   //angular.json
 

@@ -1,4 +1,5 @@
 .base-container {
+  margin: .5em;
   .content-container {
     display: flex;
     justify-content: center;
@@ -6,9 +7,6 @@
     margin-bottom: 1em;
     font-style: normal;
     font-weight: 400;
-    code {
-      color: #3e3636;
-    }
   }
 
   .description-container {
@@ -17,6 +15,16 @@
     margin: 0 auto 4em;
     font-style: normal;
     font-weight: 400;
+    .item {
+      margin: .4em 0;
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: calc(100vw - 20em);
+      }
+    }
   }
 
   .debugging-container {
@@ -40,12 +48,38 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 1em;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2em;
+    margin: 0 auto 4em;
+    font-style: normal;
+    font-weight: 400;
+    .item {
+      margin: .4em 0;
+    }
   }
   
+  .page-title {
+    font-size: 2em;
+    font-weight: 500;
+    font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    padding: 1.2em;
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    font-style: normal;
+    width: 100%;
+    border-bottom: 1px solid oklch(97.12% .002 325.59);
+    border-top: 2px solid oklch(97.12% .002 325.59);
+    border-radius: .3em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
   .title {
     font-size: 1.8em;
+    font-weight: 300;
+    font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-align: center;
     margin: 1em;
     font-style: normal;
@@ -84,6 +118,43 @@
     &.close {
       visibility: hidden;
       display: none;
+    }
+  }
+}
+
+.warning {
+  display: inline;
+  color: red;
+}
+
+.time-line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li {
+    list-style-type: none;
+    position: relative;
+    a {
+      font-size: .7em;
+    }
+  }
+  .time-line-item {
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3em;
+    padding-left: .2em;
+    width: 6em;
+    height: 6em;
+    background: oklch(97.12% .002 325.59);
+    &::before {
+      content: '';
+      width: 3em;
+      position: absolute;
+      right: 6.2em;
+      border-bottom: 1px solid #000;
     }
   }
 }

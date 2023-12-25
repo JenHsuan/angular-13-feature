@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EsmService } from './service/esm.service';
 import { combineLatest } from 'rxjs';
+import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
+import { escapeHtml } from '../pulbic/utils/utils';
 
 const PAGES = ['/'];
 
@@ -10,6 +12,8 @@ const PAGES = ['/'];
   styleUrls: ['./esm.component.scss']
 })
 export class EsmComponent implements OnInit {
+  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.ESM);
+  escapeHtml = escapeHtml;
 
   steps = `
   //1. Add proxy.conf.mjs

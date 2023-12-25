@@ -1,25 +1,6 @@
 import { CdkPortal, Portal } from '@angular/cdk/portal';
 import { ChangeDetectorRef, Component, QueryList, ViewChildren } from '@angular/core';
-
-enum PORTAL_TYPE {
-  DYNAMIC_COMPONENT = 'DYNAMIC_COMPONENT',
-  CACHE = 'CACHE',
-  TESTING = 'TESTING',
-  ESM = 'ESM',
-  NOTES = 'NOTES',
-  FONT = 'FONT',
-  HOME = 'HOME'
-}
-
-const PORTAL_MAP = new Map<PORTAL_TYPE, number>([
-  [PORTAL_TYPE.DYNAMIC_COMPONENT, 0],
-  [PORTAL_TYPE.CACHE, 1],
-  [PORTAL_TYPE.TESTING, 2],
-  [PORTAL_TYPE.ESM, 3],
-  [PORTAL_TYPE.FONT, 4],
-  [PORTAL_TYPE.NOTES, 5],
-  [PORTAL_TYPE.HOME, 6],
-])
+import { PORTAL_MAP, PORTAL_TYPE, TYPE_TITLE_MAP } from './pulbic/route/route.domain';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +16,18 @@ export class AppComponent {
   currentPortal: Portal<any>;
 
   selectedPortal = PORTAL_TYPE.HOME;
+
+  sideBarList = [
+    PORTAL_TYPE.DYNAMIC_COMPONENT,
+    PORTAL_TYPE.CACHE,
+    PORTAL_TYPE.ESM,
+    PORTAL_TYPE.TESTING,
+    PORTAL_TYPE.FONT,
+    PORTAL_TYPE.NOTES,
+    PORTAL_TYPE.BREAKING_CHANGE,
+    PORTAL_TYPE.DEPRECATIONS,
+    PORTAL_TYPE.DOCUMENTS,
+  ];
 
   constructor(private changeDetector: ChangeDetectorRef,) {}
 
@@ -53,5 +46,9 @@ export class AppComponent {
 
   getPortalStyle(portal: string) {
     return this.selectedPortal === portal ? 'tab-item current' : 'tab-item';
+  }
+
+  getRouteTitle(type: PORTAL_TYPE) {
+    return TYPE_TITLE_MAP.get(type) ? TYPE_TITLE_MAP.get(type) : '';
   }
 }
