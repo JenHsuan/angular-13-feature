@@ -29,6 +29,36 @@
             </pre>
           </div>
         </li>
+        <li>
+          Disable built-in validators by setting the value to null
+          <a href="https://github.com/angular/angular/pull/42565">(pr)</a>
+          <div>
+            <pre>
+              <code
+                [highlight]="nullValidator"
+                [languages]="['html']"  
+                [lineNumbers]="true"
+              ></code>
+            </pre>
+          </div>
+        </li>
+        <li>Bugfix: even if the navigation is denied by canDeactivate, it still updates the browser history and it gets into a bad state.
+          <div class="item">
+            <a href="https://v13.angular.io/api/router/ExtraOptions#canceledNavigationResolution">
+              canceledNavigationResolution
+            </a>
+             Will attempt to return to the same index in the session history that corresponds to the Angular route when the navigation gets cancelled. 
+          </div>
+          <div class="item">
+            <pre>
+              <code
+                [highlight]="cancelRoute"
+                [languages]="['typescript']"  
+                [lineNumbers]="true"
+              ></code>
+            </pre>
+          </div>
+        </li>
       </ul>
     </div>
   </app-section-container>
@@ -41,6 +71,11 @@
         <li>
           <a href="https://stackoverflow.com/questions/35431188/how-can-i-conditionally-disable-the-routerlink-attribute">
             How can I conditionally disable the routerLink attribute?
+          </a>
+        </li>
+        <li>
+          <a href="https://angular.io/api/forms/MaxLengthValidator">
+            MaxLengthValidator
           </a>
         </li>
       </ul>

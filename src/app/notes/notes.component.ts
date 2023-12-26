@@ -14,4 +14,18 @@ export class NotesComponent {
   routeLinkCancel = `
   <a [routerLink]="linkEnabled ? 'path' : null">Link</a>
   `;
+
+  nullValidator = `
+  <input name="firstName" ngModel [maxlength]="null">
+  `;
+
+  cancelRoute = `
+  @NgModule({
+    imports: [RouterModule.forRoot(
+      routes, 
+      { canceledNavigationResolution: 'computed' },
+    )],
+    exports: [RouterModule]
+  })
+  `;
 }
