@@ -3,21 +3,36 @@
 
   <app-section-container>
     <div class="title">Description</div>
-    <div class="content-container">
-      The inline-resorce extends Adobe font now.
+    <div class="description-container">
+      <div class="item">
+        The inline-resorce extends Adobe font now. Inline font is one of factors for the 
+        <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint?hl=zh-tw">
+          first contentful paint (FCP)
+        </a>.
+      </div>
+      <div class="item">
+        <pre>
+          <code
+            [highlight]="steps"
+            [languages]="['typescript']"  
+            [lineNumbers]="true"
+          ></code>
+        </pre>
+      </div>
     </div>
   </app-section-container>
 
+  <!-- reference -->
   <app-section-container>
-    <div class="title">Steps</div>
-    <div class="content-container">
-      <pre>
-        <code
-          [highlight]="steps"
-          [languages]="['typescript']"  
-          [lineNumbers]="true"
-        ></code>
-      </pre>
-    </div>    
+    <div class="title">Reference</div>
+    <div class="description-container">
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=184s">
+            Optimizing Apps with Resource Inlining 
+          </a>
+        </li>
+      </ul>
+    </div>
   </app-section-container>
 </div>

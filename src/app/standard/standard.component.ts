@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ComponentFactory, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DynamicComponent } from './dynamic/dynamic.component';
-import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
-import { escapeHtml } from '../pulbic/utils/utils';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { escapeHtml } from '../public/utils/utils';
 
 @Component({
   selector: 'app-standard',
@@ -9,31 +9,33 @@ import { escapeHtml } from '../pulbic/utils/utils';
   styleUrls: ['./standard.component.scss']
 })
 export class StandardComponent {
-  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.DYNAMIC_COMPONENT);
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.DYNAMIC_COMPONENT);
   escapeHtml = escapeHtml;
   
-  instruction = `
-  npx @angular/cli@13 new Angular13Project
-  `;
+  legacyCode = `
+  import { DynamicComponent } from './dynamic/dynamic.component';
+
+  export class StandardComponent {
+    @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
   
-  code = `
-  //legacy syntax:
-
-  @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
-
-  constructor(private cfr: ComponentFactoryResolver ) { }
-
-  ngAfterViewInit(): void {
-    const factory: ComponentFactory<DynamicComponent> = this.cfr.resolveComponentFactory(DynamicComponent);
-    const componentRef = this.container.createComponent(factory);
+    constructor(private cfr: ComponentFactoryResolver ) { }
+  
+    ngAfterViewInit(): void {
+      const factory: ComponentFactory<DynamicComponent> = this.cfr.resolveComponentFactory(DynamicComponent);
+      const componentRef = this.container.createComponent(factory);
+    }
   }
+  `;
 
-  //new syntax:
-
-  @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
-
-  ngAfterViewInit(): void {
-     const componentRef = this.container.createComponent(DynamicComponent);
+  newCode = `
+  import { DynamicComponent } from './dynamic/dynamic.component';
+  
+  export class StandardComponent {
+    @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
+  
+    ngAfterViewInit(): void {
+       const componentRef = this.container.createComponent(DynamicComponent);
+    }
   }
   `;
 

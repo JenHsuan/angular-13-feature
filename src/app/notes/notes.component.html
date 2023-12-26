@@ -1,41 +1,49 @@
 <div class="base-container">
   <div class="page-title">{{ title }}</div>
-  <div class="content-container">
-    <ul>
-      <li>
-        <div>
-          Updgrade rx.js to 7.4
-        </div>
-      </li>
-      <li>
-        Angular Package Format changes
-        <div>
-          -> Support Node Package Exports
-        </div>
-        <div>
-          -> Standardized on more modern JS formats such as ES2020
-        </div>
-      </li>
-      <li>
-        <div>
-          Remove differential loading (don't have to support IE11)
-        </div>
-        <div>
-          <img src="../../assets/image/differential_loading.png" alt="">    
-        </div>
-      </li>
-    </ul>
-  </div>
+  <app-section-container>
+    <div class="title">Description</div>
+    <div class="description-container">
+      <ul>
+        <li>
+          Angular Package Format changes
+          <div>
+            <ul>
+              <li>
+                Support Node Package Exports
+              </li>
+              <li>
+                Standardized on more modern JS formats such as ES2020
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Cancel routerLink by passing null or undefined
+          <div>
+            <pre>
+              <code
+                [highlight]="routeLinkCancel"
+                [languages]="['html']"  
+                [lineNumbers]="true"
+              ></code>
+            </pre>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </app-section-container>
   
-  <div class="title">Reference</div>
-  <div class="content-container">
-    <ul>
-      <li>
-        <a href="https://blog.ninja-squad.com/2021/11/03/angular-cli-13.0/">What's new in Angular CLI 13.0?</a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=27s">Optimizing Apps with Resource Inlining | #ngUpdate</a>
-      </li>
-    </ul>
-  </div>
+  <!-- reference -->
+  <app-section-container>
+    <div class="title">Reference</div>
+    <div class="description-container">
+      <ul>
+        <li>
+          <a href="https://stackoverflow.com/questions/35431188/how-can-i-conditionally-disable-the-routerlink-attribute">
+            How can I conditionally disable the routerLink attribute?
+          </a>
+        </li>
+      </ul>
+    </div>
+  </app-section-container>
 </div>

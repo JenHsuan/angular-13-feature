@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EsmService } from './service/esm.service';
 import { combineLatest } from 'rxjs';
-import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
-import { escapeHtml } from '../pulbic/utils/utils';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { escapeHtml } from '../public/utils/utils';
 
 const PAGES = ['/'];
 
@@ -12,7 +12,7 @@ const PAGES = ['/'];
   styleUrls: ['./esm.component.scss']
 })
 export class EsmComponent implements OnInit {
-  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.ESM);
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.ESM);
   escapeHtml = escapeHtml;
 
   steps = `

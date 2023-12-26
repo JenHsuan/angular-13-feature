@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
-import { escapeHtml } from '../pulbic/utils/utils';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { escapeHtml } from '../public/utils/utils';
 
 @Component({
   selector: 'app-inline-font',
@@ -8,7 +8,7 @@ import { escapeHtml } from '../pulbic/utils/utils';
   styleUrls: ['./inline-font.component.scss']
 })
 export class InlineFontComponent implements OnInit {
-  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.FONT);
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.FONT);
   escapeHtml = escapeHtml;
 
   steps = `

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
-import { escapeHtml } from '../pulbic/utils/utils';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { escapeHtml } from '../public/utils/utils';
 
 @Component({
   selector: 'app-notes',
@@ -8,6 +8,10 @@ import { escapeHtml } from '../pulbic/utils/utils';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
-  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.NOTES);
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.NOTES);
   escapeHtml = escapeHtml;
+
+  routeLinkCancel = `
+  <a [routerLink]="linkEnabled ? 'path' : null">Link</a>
+  `;
 }

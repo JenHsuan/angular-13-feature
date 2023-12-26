@@ -1,20 +1,166 @@
 <div class="base-container">
-  <div class="title">{{ title }}</div>
+  <div class="page-title">{{ title }}</div>
 
   <!-- title -->
   <app-section-container>
+    <div class="title">Description</div>
     <div class="description-container">
       <div class="item">
+        <ol>
+          <li>
+            Angular v13 requires node.js version v12.20.0 
+            <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+          </li>
+          <li>
+            Angular v13 requires 
+            <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-4.html">
+              TypeScript version 4.4
+            </a> or later
+            <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+            <div>
+              <ul>
+                <li>Improvement of type guard
+                  <div>
+                    <pre>
+                      <code
+                        [highlight]="typeguard"
+                        [languages]="['typescript']"  
+                        [lineNumbers]="true"
+                      ></code>
+                    </pre>
+                  </div>
+                </li>
+                <li>Defaulting to the unknown Type in Catch Variables if we enable useUnknownInCatchVariables
+                  <div>
+                    <pre>
+                      <code
+                        [highlight]="tsUnknown"
+                        [languages]="['typescript']"  
+                        [lineNumbers]="true"
+                      ></code>
+                    </pre>
+                  </div>
+                </li>
+                <li>Symbol and template string pattern index signatures
+                  <div>
+                    <pre>
+                      <code
+                        [highlight]="tsSymbol"
+                        [languages]="['typescript']"  
+                        [lineNumbers]="true"
+                      ></code>
+                    </pre>
+                  </div>
+                </li>
+                <li>static Blocks in Classes
+                  <div>
+                    <pre>
+                      <code
+                        [highlight]="tsStaticBlock"
+                        [languages]="['typescript']"  
+                        [lineNumbers]="true"
+                      ></code>
+                    </pre>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            Angular v13 uses 
+            <a href="https://rxjs.dev/6-to-7-change-summary">
+              RxJS 7.4
+            </a>
+            <div>
+              <ul>
+                <li>
+                  <div>
+                    <pre>
+                      <code
+                        [highlight]="upgardeRx"
+                        [languages]="['typescript']"  
+                        [lineNumbers]="true"
+                      ></code>
+                    </pre>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            Stop supporting IE11
+            <div>
+              <ul>
+                <li>
+                  The IE-specific polyfills were dropped
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            Remove differential loading: support different browsers with different bundles
+            <div>
+              <ul>
+                <li>When we want to import ES6 modules, we can use type="module" to let the browser knows</li>
+                <li>For the legacy browsers (e.g., IE 11), it can't support ES6 modules so we use nomodule</li>
+              </ul>
+            </div>
+            <div>
+              <pre>
+                <code
+                  [highlight]="distIndex"
+                  [languages]="['html']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- supplements -->
+  <app-section-container>
+    <div class="title">Supplements: Modules and Rendering</div>
+    <div class="description-container">
+      <div class="item">
+        The rendering will be blocked when the scrippt is downloaded or executed. (synchronous)
+      </div>
+      <div class="item image-container">
+        <img src="../../assets/image/critical_path.webp" alt="">    
+      </div>
+      <div class="item">
+        There are a few methods to avoid render blocking
         <ul>
           <li>
-            Angular v16 requires node.js version v12.20.0 
-            <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+            The script will be asynchronously downloaded when specifying the module attribute. The script will be executed after rendering completed.
+            <div>
+              <pre>
+                <code
+                  [highlight]="moduleSyntax"
+                  [languages]="['html']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
           </li>
           <li>
-            Angular v16 requires TypeScript version 4.4 or later
-            <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+            The script will be asynchronously downloaded when adding the async attribute. The script will be executed before rendering completed.
+            <div>
+              <pre>
+                <code
+                  [highlight]="moduleAsyncSyntax"
+                  [languages]="['html']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
           </li>
         </ul>
+      </div>
+      <div class="item image-container">
+        <img src="../../assets/image/script.png" alt="">    
       </div>
     </div>
   </app-section-container>
@@ -22,9 +168,49 @@
   <!-- reference -->
   <app-section-container>
     <div class="title">Reference</div>
-    <div class="description-container">
+    <div class="reference-container">
       <div class="item">
         <ul>
+          <li>
+            <a href="https://auth0.com/blog/angular-8-differential-loading/">
+              A Guide to Angular 8's Differential Loading
+            </a>
+          </li>
+          <li>
+            <a href="https://openhome.cc/zh-tw/javascript/script/module/">
+              SCRIPT 標籤與模組
+            </a>
+          </li>
+          <li>
+            <a href="https://yucj.gitbooks.io/ecmascript-6/content/docs/module-loader.html">
+              Module 的載入實現
+            </a>
+          </li>
+          <li>
+            <a href="https://juejin.cn/s/ie11%E6%94%AF%E6%8C%81es6%E5%90%97">
+              ie11支持es6吗
+            </a>
+          </li>
+          <li>
+            <a href="https://chupai.github.io/posts/2104/es6module/">
+              ES6 Module
+            </a>
+          </li>
+          <li>
+            <a href="https://medium.com/volosoft/whats-new-in-rxjs-7-a11cc564c6c0">
+              Whats New in RxJS 7
+            </a>
+          </li>
+          <li>
+            <a href="https://pjchender.dev/typescript/typescript-tips/">
+              [掘竅] TypeScript
+            </a>
+          </li>
+          <li>
+            <a href="https://zhuanlan.zhihu.com/p/297923315">
+              TypeScript学习笔记04——Symbol类型详细总结
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -3,21 +3,19 @@
 
   <app-section-container>
     <div class="title">Description</div>
-    <div class="content-container">
-      The test modules can be teared down after each test.
-    </div>
-  </app-section-container>
-
-  <app-section-container>
-    <div class="title">Code</div>
-    <div class="content-container">
-      <pre>
-        <code
-          [highlight]="testComponent"
-          [languages]="['typescript']"  
-          [lineNumbers]="true"
-        ></code>
-      </pre>
+    <div class="description-container">
+      <div class="item">
+        The test modules can be teared down after each test.
+      </div>
+      <div class="item">
+        <pre>
+          <code
+            [highlight]="testComponent"
+            [languages]="['typescript']"  
+            [lineNumbers]="true"
+          ></code>
+        </pre>
+      </div>
     </div>
   </app-section-container>
 

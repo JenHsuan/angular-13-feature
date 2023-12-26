@@ -3,21 +3,19 @@
 
   <app-section-container>
     <div class="title">Description</div>
-    <div class="content-container">
-      The proxy configuration support ESM now.
-    </div>
-  </app-section-container>
-
-  <app-section-container>
-    <div class="title">Steps</div>
-    <div class="content-container">
-      <pre>
-        <code
-          [highlight]="steps"
-          [languages]="['typescript']"  
-          [lineNumbers]="true"
-        ></code>
-      </pre>
+    <div class="description-container">
+      <div class="item">
+        The proxy configuration support ESM (ES6 modules) now.
+      </div>
+      <div class="item">
+        <pre>
+          <code
+            [highlight]="steps"
+            [languages]="['typescript']"  
+            [lineNumbers]="true"
+          ></code>
+        </pre>
+      </div>
     </div>
   </app-section-container>
 
@@ -31,5 +29,21 @@
     <div class="demo-container">
       <img src="../../assets/image/pdf.png" alt="">
     </div>  
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title">Reference</div>
+    <div class="description-container">
+      <div class="item">
+        <ul>
+          <li>
+            <a href="https://pjchender.dev/nodejs/node-module-system/">
+              [Node] CommonJS Modules and ES Modules
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </app-section-container>
 </div> 

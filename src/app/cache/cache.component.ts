@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PORTAL_TYPE, TYPE_TITLE_MAP } from '../pulbic/route/route.domain';
-import { escapeHtml } from '../pulbic/utils/utils';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 
 @Component({
   selector: 'app-cache',
   templateUrl: './cache.component.html',
   styleUrls: ['./cache.component.scss']
 })
-export class CacheComponent implements OnInit {
-  title = TYPE_TITLE_MAP.get(PORTAL_TYPE.CACHE);
-  escapeHtml = escapeHtml;
+export class CacheComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.CACHE);
   
   angularjson = `
   //angular.json
@@ -25,17 +23,14 @@ export class CacheComponent implements OnInit {
       }
       ...
   }
+  `;
 
+  angularcli = `
   //angular-cli
   
   ng config cli.cache.enabled false/true
   ng config cli.cache.environment all/ci/local
   ng config cli.cache.path ".angular-cache"
   `;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

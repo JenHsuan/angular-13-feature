@@ -1,5 +1,6 @@
 .base-container {
   margin: .5em;
+  padding: .5em;
   .content-container {
     display: flex;
     justify-content: center;
@@ -10,7 +11,7 @@
   }
 
   .description-container {
-    width: 30em;
+    width: 35em;
     font-size: 1.2em;
     margin: 0 auto 4em;
     font-style: normal;
@@ -25,6 +26,12 @@
         max-width: calc(100vw - 20em);
       }
     }
+  }
+
+  .reference-container {
+    width: 15em;
+    font-size: 1.2em;
+    margin: 0 auto 4em;
   }
 
   .debugging-container {
@@ -64,8 +71,6 @@
     font-weight: 500;
     font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     padding: 1.2em;
-    padding-bottom: 1.5em;
-    margin-bottom: 1.5em;
     font-style: normal;
     width: 100%;
     border-bottom: 1px solid oklch(97.12% .002 325.59);

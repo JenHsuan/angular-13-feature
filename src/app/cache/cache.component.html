@@ -3,28 +3,65 @@
 
   <app-section-container>
     <div class="title">Description</div>
-    <div class="content-container">
-      The path, environment, enable of Angular cache can be configured.
+    <div class="description-container">
+      <div class="item">
+        The path, environment, enable of Angular cache can be configured. There are two ways to manipulate cache object.
+      </div>
+      <div class="item">
+        <ul>
+          <li>Update angular.json
+            <div>
+              <pre>
+                <code
+                  [highlight]="angularjson"
+                  [languages]="['typescript']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
+          </li>
+          <li>Use ng cli
+            <div>
+              <pre>
+                <code
+                  [highlight]="angularcli"
+                  [languages]="['typescript']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </app-section-container>
 
   <app-section-container>
-    <div class="title">There are two ways to manipulate cache object</div>
-    <div class="content-container">
-      <pre>
-        <code
-          [highlight]="angularjson"
-          [languages]="['typescript']"  
-          [lineNumbers]="true"
-        ></code>
-      </pre>
-    </div>
   </app-section-container>
 
   <app-section-container>
     <div class="title">Demo</div>
     <div class="demo-container">
       <img src="../../assets/image/cache.png" alt="">    
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title">Reference</div>
+    <div class="description-container">
+      <div class="item">
+        <ul>
+          <li>
+            <a href="https://angular.io/cli/cache">
+              ng cache
+            </a>
+          </li>
+          <li>
+            <a href="https://blog.ninja-squad.com/2021/11/03/angular-cli-13.0/">What's new in Angular CLI 13.0?</a>
+          </li>  
+        </ul>
+      </div>
     </div>
   </app-section-container>
 </div>

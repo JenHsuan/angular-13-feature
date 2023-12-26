@@ -1,75 +1,10 @@
 <div class="app-container">
-  <div class="sider-bar">
-    <div class="tabs">
-      <a class="title-container" href="/">
-        <img src="../assets/image/angular-logo.png" alt="">
-        <div class="title">
-          {{title}}
-        </div>
-      </a>
-      <button *ngFor="let item of sideBarList"
-        [ngClass]="getPortalStyle(item)"
-        (click)="changePortal(item)"
-        mat-button>
-        {{getRouteTitle(item)}}
-      </button>
-      <div class="footer">
-        <div>
-          Copy right @
-          <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">Jen-hsuan Hsieh</a>
-        </div>
-        <div>
-          Laste updated at {{updateTime}}
-        </div>
-        <div><a href="of_alpha@hotmail.com">Contact me</a></div>
-      </div>
-    </div>
-  </div>
+  <app-side-bar></app-side-bar>
   <div class="app-content">
     <div class="portal-container">
       <div class="tab-content">
-        <div [cdkPortalOutlet]="currentPortal"></div>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
 </div>
-  
-<ng-template cdkPortal>
-  <app-standard></app-standard>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-cache></app-cache>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-testing></app-testing>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-esm></app-esm>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-inline-font></app-inline-font>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-notes></app-notes>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-breaking-changes></app-breaking-changes>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-deprecations></app-deprecations>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-documents></app-documents>
-</ng-template>
-
-<ng-template cdkPortal>
-  <app-home></app-home>
-</ng-template>

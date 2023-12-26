@@ -1,6 +1,6 @@
 import { CdkPortal, Portal } from '@angular/cdk/portal';
 import { ChangeDetectorRef, Component, QueryList, ViewChildren } from '@angular/core';
-import { PORTAL_MAP, PORTAL_TYPE, TYPE_TITLE_MAP } from './pulbic/route/route.domain';
+import { ROUTE_MAP, ROUTE_TYPE, TYPE_TITLE_MAP } from './public/route/route.domain';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +15,19 @@ export class AppComponent {
 
   currentPortal: Portal<any>;
 
-  selectedPortal = PORTAL_TYPE.HOME;
+  selectedPortal = ROUTE_TYPE.HOME;
 
   sideBarList = [
-    PORTAL_TYPE.DYNAMIC_COMPONENT,
-    PORTAL_TYPE.CACHE,
-    PORTAL_TYPE.ESM,
-    PORTAL_TYPE.TESTING,
-    PORTAL_TYPE.FONT,
-    PORTAL_TYPE.NOTES,
-    PORTAL_TYPE.BREAKING_CHANGE,
-    PORTAL_TYPE.DEPRECATIONS,
-    PORTAL_TYPE.DOCUMENTS,
+    ROUTE_TYPE.MIGRATIONS,
+    ROUTE_TYPE.DYNAMIC_COMPONENT,
+    ROUTE_TYPE.CACHE,
+    ROUTE_TYPE.ESM,
+    ROUTE_TYPE.TESTING,
+    ROUTE_TYPE.FONT,
+    ROUTE_TYPE.NOTES,
+    ROUTE_TYPE.BREAKING_CHANGE,
+    ROUTE_TYPE.DEPRECATIONS,
+    ROUTE_TYPE.DOCUMENTS,
   ];
 
   constructor(private changeDetector: ChangeDetectorRef,) {}
@@ -36,19 +37,12 @@ export class AppComponent {
     this.changeDetector.detectChanges();
   }
 
-  changePortal(portalType: string) {
-    let index = PORTAL_MAP.get(portalType as PORTAL_TYPE);
-    this.selectedPortal = portalType as PORTAL_TYPE;
-    if (index !== undefined) {
-      this.currentPortal = this.templatPortals.toArray()[index];
-    }
-  }
 
   getPortalStyle(portal: string) {
     return this.selectedPortal === portal ? 'tab-item current' : 'tab-item';
   }
 
-  getRouteTitle(type: PORTAL_TYPE) {
+  getRouteTitle(type: ROUTE_TYPE) {
     return TYPE_TITLE_MAP.get(type) ? TYPE_TITLE_MAP.get(type) : '';
   }
 }
