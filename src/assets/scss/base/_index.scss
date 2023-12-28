@@ -58,7 +58,7 @@
     align-items: center;
     flex-direction: column;
     font-size: 1.2em;
-    margin: 0 auto 4em;
+    margin: 1em;
     font-style: normal;
     font-weight: 400;
     .item {
@@ -162,4 +162,9 @@
       border-bottom: 1px solid #000;
     }
   }
+}
+
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff; 
 }

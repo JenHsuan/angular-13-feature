@@ -5,20 +5,51 @@
     <div class="title">Description</div>
     <div class="description-container">
       <div class="item">
-        The inline-resorce extends Adobe font now. Inline font is one of factors for the 
-        <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint?hl=zh-tw">
-          first contentful paint (FCP)
-        </a>.
+        There are a few improvement of stylishment in Angular 13.
       </div>
       <div class="item">
-        <pre>
-          <code
-            [highlight]="steps"
-            [languages]="['typescript']"  
-            [lineNumbers]="true"
-          ></code>
-        </pre>
+        <ol>
+          <li>Inline Resource (Adobe font):
+            <div class="item">
+              The inline-resorce extends Adobe font now. Inline font is one of factors for the 
+              <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint?hl=zh-tw">
+                first contentful paint (FCP)
+              </a>.
+            </div>
+            <div class="item">
+              <pre>
+                <code
+                  [highlight]="steps"
+                  [languages]="['typescript']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
+          </li>
+          <li>CSS Variables:
+            <div class="item">
+              We are able to use CSS Variables after removing IE11 supports.
+            </div>
+            <div class="item">
+              <pre>
+                <code
+                  [highlight]="cssVariable"
+                  [languages]="['html']"  
+                  [lineNumbers]="true"
+                ></code>
+              </pre>
+            </div>
+          </li>
+        </ol>
       </div>
+    </div>
+  </app-section-container>
+
+  <!-- demo -->
+  <app-section-container>
+    <div class="title">Demo: CSS Variables</div>
+    <div class="demo-container">
+      <button class="css-variable-demo-btn">Demo</button>
     </div>
   </app-section-container>
 
@@ -30,6 +61,11 @@
         <li>
           <a href="https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=184s">
             Optimizing Apps with Resource Inlining 
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.angular.io/the-new-state-of-css-in-angular-bec011715ee6">
+            The [New] State of CSS in Angular
           </a>
         </li>
       </ul>

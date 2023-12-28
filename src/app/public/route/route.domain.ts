@@ -33,7 +33,7 @@ export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.CACHE, 'New Feature - Cache Management'],
   [ROUTE_TYPE.TESTING, 'New Feature - Angular Testing Improvements'],
   [ROUTE_TYPE.ESM, 'New Feature - ESM supported on the ng serve'],
-  [ROUTE_TYPE.FONT, 'New Feature - Inline Resource (Adobe font)'],
+  [ROUTE_TYPE.FONT, 'New Feature - Stylish Improvements'],
   [ROUTE_TYPE.NOTES, 'Other Features'],
   [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes'],
   [ROUTE_TYPE.DEPRECATIONS, 'Deprecations'],

@@ -1,4 +1,3 @@
-import { CdkPortal, Portal } from '@angular/cdk/portal';
 import { ChangeDetectorRef, Component, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_MAP, ROUTE_TYPE, TYPE_TITLE_MAP } from './public/route/route.domain';
 
@@ -8,13 +7,6 @@ import { ROUTE_MAP, ROUTE_TYPE, TYPE_TITLE_MAP } from './public/route/route.doma
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Notes of Angular v13';
-  updateTime = '2023/10/18';
-  @ViewChildren(CdkPortal)
-  templatPortals: QueryList<CdkPortal>;
-
-  currentPortal: Portal<any>;
-
   selectedPortal = ROUTE_TYPE.HOME;
 
   sideBarList = [
@@ -33,7 +25,6 @@ export class AppComponent {
   constructor(private changeDetector: ChangeDetectorRef,) {}
 
   ngAfterViewInit(): void {
-    this.currentPortal = this.templatPortals.last;
     this.changeDetector.detectChanges();
   }
 

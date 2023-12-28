@@ -7,7 +7,7 @@ import { escapeHtml } from '../public/utils/utils';
   templateUrl: './inline-font.component.html',
   styleUrls: ['./inline-font.component.scss']
 })
-export class InlineFontComponent implements OnInit {
+export class InlineFontComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.FONT);
   escapeHtml = escapeHtml;
 
@@ -27,9 +27,25 @@ export class InlineFontComponent implements OnInit {
   
   `;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  cssVariable = `
+  <!-- styles.scss -->
+  :root {
+    --blue: #1e90ff;
+    --white: #ffffff; 
   }
+  
+  <!-- component level scss -->
+  .css-variable-demo-btn {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 5px;
+  }
+
+  <!-- component level HTML -->
+  <div>
+    <button class="css-variable-demo-btn">Demo</button>
+  </div>
+  `;
 
 }
