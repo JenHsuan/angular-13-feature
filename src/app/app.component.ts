@@ -9,19 +9,6 @@ import { ROUTE_MAP, ROUTE_TYPE, TYPE_TITLE_MAP } from './public/route/route.doma
 export class AppComponent {
   selectedPortal = ROUTE_TYPE.HOME;
 
-  sideBarList = [
-    ROUTE_TYPE.MIGRATIONS,
-    ROUTE_TYPE.DYNAMIC_COMPONENT,
-    ROUTE_TYPE.CACHE,
-    ROUTE_TYPE.ESM,
-    ROUTE_TYPE.TESTING,
-    ROUTE_TYPE.FONT,
-    ROUTE_TYPE.NOTES,
-    ROUTE_TYPE.BREAKING_CHANGE,
-    ROUTE_TYPE.DEPRECATIONS,
-    ROUTE_TYPE.DOCUMENTS,
-  ];
-
   constructor(private changeDetector: ChangeDetectorRef,) {}
 
   ngAfterViewInit(): void {

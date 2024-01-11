@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
-import { escapeHtml } from '../public/utils/utils';
+import { authorUrl } from '../public/config/url';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
 
 @Component({
   selector: 'app-documents',
@@ -9,6 +10,18 @@ import { escapeHtml } from '../public/utils/utils';
 })
 export class DocumentsComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.DOCUMENTS);
-  escapeHtml = escapeHtml;
+  sectionTitles = [
+    "Introduction",
+    "Official Document"
+  ];
+  authorUrl = authorUrl;
 
+  @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
+
+  constructor(private cd: ChangeDetectorRef){}
+
+  //Trigger change detection because we pass the viewChildren to app-page-container as parameters, which will cause the view change after ngAfterViewInit
+  ngAfterViewInit() {
+    this.cd.detectChanges();
+  }
 }

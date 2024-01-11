@@ -19,7 +19,14 @@ import { BreakingChangesComponent } from './breaking-changes/breaking-changes.co
 import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
 import { MigrationsComponent } from './migrations/migrations.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SideBarComponent } from './public/side-bar/side-bar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DocReviewerContainerComponent } from './public/doc-reviewer-container/doc-reviewer-container.component';
+import { CodeContainerComponent } from './public/code-container/code-container.component';
+import { FooterContainerComponent } from './public/footer-container/footer-container.component';
+import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
+import { ThemeComponent } from './public/theme/theme.component';
+import { PageContainerComponent } from './public/page-container/page-container.component';
+import { NavigationButtonContainerComponent } from './public/navigation-button-container/navigation-button-container.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +44,21 @@ import { SideBarComponent } from './public/side-bar/side-bar.component';
     DeprecationsComponent,
     BreakingChangesComponent,
     MigrationsComponent,
-    SideBarComponent
+    CodeContainerComponent,
+    DocReviewerContainerComponent,
+    FooterContainerComponent,
+    SideBarContainerComponent,
+    ThemeComponent,
+    PageContainerComponent,
+    NavigationButtonContainerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     PortalModule,
     HighlightModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [
     {

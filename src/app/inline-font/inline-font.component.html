@@ -1,8 +1,10 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
-
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
   <app-section-container>
-    <div class="title">Description</div>
+    <div class="title" id="introduction" title>Introduction</div>
     <div class="description-container">
       <div class="item">
         There are a few improvement of stylishment in Angular 13.
@@ -17,13 +19,10 @@
               </a>.
             </div>
             <div class="item">
-              <pre>
-                <code
-                  [highlight]="steps"
-                  [languages]="['typescript']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+              <app-code-container
+                [code]="steps"
+                [languages]="['typescript']">
+              </app-code-container>
             </div>
           </li>
           <li>CSS Variables:
@@ -31,13 +30,10 @@
               We are able to use CSS Variables after removing IE11 supports.
             </div>
             <div class="item">
-              <pre>
-                <code
-                  [highlight]="cssVariable"
-                  [languages]="['html']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+              <app-code-container
+                [code]="cssVariable"
+                [languages]="['typescript']">
+              </app-code-container>
             </div>
             <div class="item">
               Angular team recommends customizing variables to override library's style instead of using ::ng-deep. 
@@ -50,7 +46,7 @@
 
   <!-- demo -->
   <app-section-container>
-    <div class="title">Demo: CSS Variables</div>
+    <div class="title" id="demo:cssvariables" title>Demo: CSS Variables</div>
     <div class="demo-container">
       <button class="css-variable-demo-btn">Demo</button>
     </div>
@@ -58,7 +54,7 @@
 
   <!-- reference -->
   <app-section-container>
-    <div class="title">Reference</div>
+    <div class="title" id="reference" title>Reference</div>
     <div class="reference-container">
       <ul>
         <li>
@@ -74,4 +70,4 @@
       </ul>
     </div>
   </app-section-container>
-</div>
+</app-page-container>

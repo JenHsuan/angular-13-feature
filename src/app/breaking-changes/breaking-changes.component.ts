@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
-import { escapeHtml } from '../public/utils/utils';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
 
 @Component({
   selector: 'app-breaking-changes',
@@ -9,7 +9,19 @@ import { escapeHtml } from '../public/utils/utils';
 })
 export class BreakingChangesComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.BREAKING_CHANGE);
-  escapeHtml = escapeHtml;
+  sectionTitles = [
+    "Introduction",
+    "Modules and Rendering",
+    "Reference"
+  ];
+  @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
+
+  constructor(private cd: ChangeDetectorRef){}
+
+  //Trigger change detection because we pass the viewChildren to app-page-container as parameters, which will cause the view change after ngAfterViewInit
+  ngAfterViewInit() {
+    this.cd.detectChanges();
+  }
 
   upgardeRx = `
   npm install rxjs@7.4

@@ -1,13 +1,58 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
+  <app-section-container>
+    <div class="title" id="introduction" title>Introduction</div>
+    <div class="description-container">
+      <div class="item">
+        This website is built based on Angular 13 for demostrating concepts efficiently and documenting from different sources. 
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              The purpose is to share the features, deprecations, and breaking changs of Angular 13.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              For the advanced studying, it's recommended to check other Angular versions or the time line from the 
+              <a href="/#/home">home</a> page.
+            </div>
+          </li>
+          <li>
+            <div class="tem">
+              Feel free to reach out to me if you have any questions or suggestions. 
+              <a [href]="authorUrl">(contact me)</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-section-container>
 
-  <div class="description-container">
-    <ul>
-      <li>
-        <a href="https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296">
-          Angular v13 is now Available
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+  <app-section-container>
+    <div class="title" id="officialdocument" title>Official Document</div>
+    <div class="description-container" id="document">
+      <div class="item">
+        This website is mainly inspired by the following materials.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <a href="https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296">
+              Angular v13 is now Available
+            </a>
+          </li>
+          <li>
+            <a href="https://v13.angular.io/docs">
+              Angular Doc v13
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-section-container>
+</app-page-container>

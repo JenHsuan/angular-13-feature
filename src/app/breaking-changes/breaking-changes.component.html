@@ -1,10 +1,14 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
-
-  <!-- title -->
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  ><!-- title -->
   <app-section-container>
-    <div class="title">Description</div>
+    <div class="title" id="introduction" title>Introduction</div>
     <div class="description-container">
+      <div class="item">
+        There are a few breaking changes in v13.
+      </div>
       <div class="item">
         <ol>
           <li>
@@ -20,47 +24,35 @@
             <div>
               <ul>
                 <li>Improvement of type guard
-                  <div>
-                    <pre>
-                      <code
-                        [highlight]="typeguard"
-                        [languages]="['typescript']"  
-                        [lineNumbers]="true"
-                      ></code>
-                    </pre>
+                  <div class="item">
+                    <app-code-container
+                      [code]="typeguard"
+                      [languages]="['typescript']">
+                    </app-code-container>
                   </div>
                 </li>
                 <li>Defaulting to the unknown Type in Catch Variables if we enable useUnknownInCatchVariables
-                  <div>
-                    <pre>
-                      <code
-                        [highlight]="tsUnknown"
-                        [languages]="['typescript']"  
-                        [lineNumbers]="true"
-                      ></code>
-                    </pre>
+                  <div class="item">
+                    <app-code-container
+                      [code]="typeguard"
+                      [languages]="['typescript']">
+                    </app-code-container>
                   </div>
                 </li>
                 <li>Symbol and template string pattern index signatures
-                  <div>
-                    <pre>
-                      <code
-                        [highlight]="tsSymbol"
-                        [languages]="['typescript']"  
-                        [lineNumbers]="true"
-                      ></code>
-                    </pre>
+                  <div class="item">
+                    <app-code-container
+                      [code]="tsSymbol"
+                      [languages]="['typescript']">
+                    </app-code-container>
                   </div>
                 </li>
                 <li>static Blocks in Classes
-                  <div>
-                    <pre>
-                      <code
-                        [highlight]="tsStaticBlock"
-                        [languages]="['typescript']"  
-                        [lineNumbers]="true"
-                      ></code>
-                    </pre>
+                  <div class="item">
+                    <app-code-container
+                      [code]="tsStaticBlock"
+                      [languages]="['typescript']">
+                    </app-code-container>
                   </div>
                 </li>
               </ul>
@@ -74,14 +66,11 @@
             <div>
               <ul>
                 <li>
-                  <div>
-                    <pre>
-                      <code
-                        [highlight]="upgardeRx"
-                        [languages]="['typescript']"  
-                        [lineNumbers]="true"
-                      ></code>
-                    </pre>
+                  <div class="item">
+                    <app-code-container
+                      [code]="upgardeRx"
+                      [languages]="['typescript']">
+                    </app-code-container>
                   </div>
                 </li>
               </ul>
@@ -114,14 +103,11 @@
                 <li>For the legacy browsers (e.g., IE 11), it can't support ES6 modules so we use nomodule</li>
               </ul>
             </div>
-            <div>
-              <pre>
-                <code
-                  [highlight]="distIndex"
-                  [languages]="['html']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+            <div class="item">
+              <app-code-container
+                [code]="distIndex"
+                [languages]="['html']">
+              </app-code-container>
             </div>
           </li>
         </ol>
@@ -131,7 +117,7 @@
 
   <!-- supplements -->
   <app-section-container>
-    <div class="title">Supplements: Modules and Rendering</div>
+    <div class="title" id="modulesandrendering" title>Modules and Rendering</div>
     <div class="description-container">
       <div class="item">
         The rendering will be blocked when the scrippt is downloaded or executed. (synchronous)
@@ -144,26 +130,20 @@
         <ul>
           <li>
             The script will be asynchronously downloaded when specifying the module attribute. The script will be executed after rendering completed.
-            <div>
-              <pre>
-                <code
-                  [highlight]="moduleSyntax"
-                  [languages]="['html']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+            <div class="item">
+              <app-code-container
+                [code]="moduleSyntax"
+                [languages]="['html']">
+              </app-code-container>
             </div>
           </li>
           <li>
             The script will be asynchronously downloaded when adding the async attribute. The script will be executed before rendering completed.
-            <div>
-              <pre>
-                <code
-                  [highlight]="moduleAsyncSyntax"
-                  [languages]="['html']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+             <div class="item">
+              <app-code-container
+                [code]="moduleAsyncSyntax"
+                [languages]="['html']">
+              </app-code-container>
             </div>
           </li>
         </ul>
@@ -176,7 +156,7 @@
 
   <!-- reference -->
   <app-section-container>
-    <div class="title">Reference</div>
+    <div class="title" id="reference" title>Reference</div>
     <div class="reference-container">
       <div class="item">
         <ul>
@@ -224,4 +204,4 @@
       </div>
     </div>
   </app-section-container>
-</div>
+</app-page-container>

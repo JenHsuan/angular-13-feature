@@ -1,8 +1,10 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
-
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
   <app-section-container>
-    <div class="title">Description</div>
+    <div class="title" id="introduction" title>Introduction</div>
     <div class="description-container">
       <div class="item">
         The path, environment, enable of Angular cache can be configured. There are two ways to manipulate cache object.
@@ -10,25 +12,19 @@
       <div class="item">
         <ul>
           <li>Update angular.json
-            <div>
-              <pre>
-                <code
-                  [highlight]="angularjson"
-                  [languages]="['typescript']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+            <div class="item">
+              <app-code-container
+                [code]="angularjson"
+                [languages]="['typescript']">
+              </app-code-container>
             </div>
           </li>
           <li>Use ng cli
-            <div>
-              <pre>
-                <code
-                  [highlight]="angularcli"
-                  [languages]="['typescript']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+            <div class="item">
+              <app-code-container
+                [code]="angularcli"
+                [languages]="['typescript']">
+              </app-code-container>
             </div>
           </li>
         </ul>
@@ -37,10 +33,7 @@
   </app-section-container>
 
   <app-section-container>
-  </app-section-container>
-
-  <app-section-container>
-    <div class="title">Demo</div>
+    <div class="title" id="demo" title>Demo</div>
     <div class="demo-container">
       <img src="../../assets/image/cache.png" alt="">    
     </div>
@@ -48,7 +41,7 @@
 
   <!-- reference -->
   <app-section-container>
-    <div class="title">Reference</div>
+    <div class="title" id="reference" title>Reference</div>
     <div class="description-container">
       <div class="item">
         <ul>
@@ -64,4 +57,4 @@
       </div>
     </div>
   </app-section-container>
-</div>
+</app-page-container>

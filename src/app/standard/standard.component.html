@@ -1,9 +1,12 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
 
   <!-- description -->
   <app-section-container>
-    <div class="title">Description</div>
+    <div class="title" id="introduction" title>Introduction</div>
     <div class="description-container">
       <div class="item">
         The Component API has been updated. The process for generating dynamic components was simplified.
@@ -14,25 +17,19 @@
       <div class="item">
         <ul>
           <li>Previous version:
-            <div>
-              <pre>
-                <code
-                  [highlight]="legacyCode"
-                  [languages]="['typescript']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+            <div class="item">
+              <app-code-container
+                [code]="legacyCode"
+                [languages]="['typescript']">
+              </app-code-container>
             </div>
           </li>
           <li>New API:
-            <div>
-              <pre>
-                <code
-                  [highlight]="newCode"
-                  [languages]="['typescript']"  
-                  [lineNumbers]="true"
-                ></code>
-              </pre>
+            <div class="item">
+              <app-code-container
+                [code]="newCode"
+                [languages]="['typescript']">
+              </app-code-container>
             </div>
           </li>
         </ul>
@@ -41,7 +38,7 @@
   </app-section-container>
 
   <app-section-container>
-    <div class="title">Demo</div>
+    <div class="title" id="demo" title>Demo</div>
     <div class="demo-container">
       <div class="item">
         The following component is created dynamically.
@@ -55,7 +52,7 @@
 
    <!-- reference -->
    <app-section-container>
-    <div class="title">Reference</div>
+    <div class="title" id="reference" title>Reference</div>
     <div class="content-container">
       <ul>
         <li>
@@ -66,4 +63,4 @@
       </ul>
     </div>
   </app-section-container>
-</div>
+</app-page-container>

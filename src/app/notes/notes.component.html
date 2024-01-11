@@ -1,7 +1,10 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
   <app-section-container>
-    <div class="title">Description</div>
+    <div class="title" id="overview" title>Overview</div>
     <div class="description-container">
       <ul>
         <li>
@@ -19,27 +22,21 @@
         </li>
         <li>
           Cancel routerLink by passing null or undefined
-          <div>
-            <pre>
-              <code
-                [highlight]="routeLinkCancel"
-                [languages]="['html']"  
-                [lineNumbers]="true"
-              ></code>
-            </pre>
+          <div class="item">
+            <app-code-container
+              [code]="routeLinkCancel"
+              [languages]="['typescript']">
+            </app-code-container>
           </div>
         </li>
         <li>
           Disable built-in validators by setting the value to null
           <a href="https://github.com/angular/angular/pull/42565">(pr)</a>
-          <div>
-            <pre>
-              <code
-                [highlight]="nullValidator"
-                [languages]="['html']"  
-                [lineNumbers]="true"
-              ></code>
-            </pre>
+          <div class="item">
+            <app-code-container
+              [code]="nullValidator"
+              [languages]="['typescript']">
+            </app-code-container>
           </div>
         </li>
         <li>Bugfix: even if the navigation is denied by canDeactivate, it still updates the browser history and it gets into a bad state.
@@ -50,13 +47,10 @@
              Will attempt to return to the same index in the session history that corresponds to the Angular route when the navigation gets cancelled. 
           </div>
           <div class="item">
-            <pre>
-              <code
-                [highlight]="cancelRoute"
-                [languages]="['typescript']"  
-                [lineNumbers]="true"
-              ></code>
-            </pre>
+            <app-code-container
+              [code]="cancelRoute"
+              [languages]="['typescript']">
+            </app-code-container>
           </div>
         </li>
       </ul>
@@ -65,7 +59,7 @@
   
   <!-- reference -->
   <app-section-container>
-    <div class="title">Reference</div>
+    <div class="title" id="reference" title>Reference</div>
     <div class="description-container">
       <ul>
         <li>
@@ -86,4 +80,4 @@
       </ul>
     </div>
   </app-section-container>
-</div>
+</app-page-container>

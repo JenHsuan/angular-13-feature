@@ -1,28 +1,29 @@
-<div class="base-container">
-  <div class="page-title">{{ title }}</div>
-
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
   <app-section-container>
-    <div class="title">Description</div>
+    <div class="title" id="introduction" title>Introduction</div>
     <div class="description-container">
       <div class="item">
         The test modules can be teared down after each test.
       </div>
       <div class="item">
-        <pre>
-          <code
-            [highlight]="testComponent"
-            [languages]="['typescript']"  
-            [lineNumbers]="true"
-          ></code>
-        </pre>
+        <app-code-container
+          [code]="testComponent"
+          [languages]="['typescript']">
+        </app-code-container>
       </div>
     </div>
   </app-section-container>
 
   <app-section-container>
-    <div class="title">Demo</div>
-    <div class="demo-container">
-      <img src="../../assets/image/testing.png" alt="">    
+    <div class="title" id="demo" title>Demo</div>
+    <div class="description-container">
+      <div class="item image-container">
+        <img src="../../assets/image/testing.png" alt="">    
+      </div>
     </div>
   </app-section-container>
-</div>
+</app-page-container>

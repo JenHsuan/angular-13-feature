@@ -1,0 +1,71 @@
+.sider-bar {
+  width: 16em;
+  background: var(--background-default);
+
+  .tabs {
+    width: 16em;
+    margin: 0 1em 0 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-default);
+    border: 1px solid var(--background-gray);
+    height: 100%;
+    .title-container {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--foreground-default);
+      font-size: 1.1em;
+      margin-left: 1em;
+      img {
+        width: 1.5em;
+        height: 1.5em;
+        padding: 1em .5em;
+      }
+      .title {
+        font-size: 1.1em;
+        font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        text-align: left;
+        font-style: normal;
+        font-weight: 400;
+        background-color: var(--background-default);
+        margin: 1em 0;
+        line-height: 1.2em;
+        width: 100%;
+      }
+    }
+
+    .theme-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2em;
+      cursor: pointer;
+    }
+  }
+      
+  .tab-item {
+    width: 17.5em;
+    font-size: .9em;
+    margin: 0 0.1em 0.7em 0.1em;
+    padding: .3em;
+    border-radius: .1em;
+    background-color: var(--background-default);
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    border: none;
+    color: var(--foreground-light);
+    &.current {
+      color: var(--background-default);
+      background-color: var(--foreground-quaternary);
+      &:hover {
+        color: var(--background-default);
+      }
+    }
+    &:hover {
+      color: var(--foreground-default);
+      font-weight: 500;
+    }
+  }
+}

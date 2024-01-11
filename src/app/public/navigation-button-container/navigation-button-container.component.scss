@@ -1,0 +1,31 @@
+
+.button-container {
+  margin-left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 2.5em;
+    height: 2.5em;
+    margin-left: .3em;
+    font-size: .5em;
+    border-radius: .3em;
+    background-color: var(--background-default);
+    border: 1px solid var(--background-gray);
+    color: var(--background-gray);
+    cursor: pointer;
+  }
+  .active {
+    border: 1px solid var(--foreground-active);
+    color: var(--foreground-default);
+    font-weight: 500;
+    -webkit-transition: background 1s; /* For Safari 3.0 to 6.0 */
+    transition: background 1s; /* For modern browsers */
+    &:hover {
+      font-weight: 700;
+      color: var(--background-gray);
+      opacity: .9;
+      background-color: var(--foreground-active);
+    }
+  }
+}
