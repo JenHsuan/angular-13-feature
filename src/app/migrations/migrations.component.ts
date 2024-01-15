@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { version } from '../public/config/constants';
 
 @Component({
   selector: 'app-migrations',
@@ -9,6 +10,7 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class MigrationsComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.MIGRATIONS);
+  version = version;
   sectionTitles = [
     "Introduction",
     "Official Migration Guide",
@@ -25,10 +27,10 @@ export class MigrationsComponent {
   }
 
   instruction = `
-  npx @angular/cli@13 new Angular12Project
+  npx @angular/cli@${version} new Angular@${version}Project
   `;
 
   updateInstruction = `
-  npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+  npx @angular/cli@${version} update @angular/core@${version} @angular/cli@${version}
   `;
 }
