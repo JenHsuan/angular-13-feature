@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ROUTE_TYPE, ROUTE_MAP, TYPE_TITLE_MAP, sideBarList } from '../route/route.domain';
 import { ThemeType } from '../theme/domain/theme.damin';
 import { ThemeService } from '../theme/service/theme.service';
+import { version } from '../config/constants';
+import { RouteService } from '../route/service/route.service';
 
 @Component({
   selector: 'app-side-bar-container',
@@ -11,7 +13,8 @@ import { ThemeService } from '../theme/service/theme.service';
   styleUrls: ['./side-bar-container.component.scss']
 })
 export class SideBarContainerComponent {
-  title = 'Notes of Angular v13';
+  version = version;
+  title = `Notes of Angular v${version}`;
   selectedRoute = ROUTE_TYPE.HOME;
   
   sideBarList = sideBarList;
@@ -25,7 +28,8 @@ export class SideBarContainerComponent {
   constructor(
     private location: Location, 
     private router: Router,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private routeService: RouteService
   ) {
     router.events.subscribe(_ => {
       if(location.path() != ''){
@@ -48,13 +52,10 @@ export class SideBarContainerComponent {
   }
 
   changeRoute(type: ROUTE_TYPE) {
-    const path  = [...ROUTE_MAP.keys()].find(key => type === ROUTE_MAP.get(key));
-    if (path) {
-      this.router.navigate([path]);
-    } 
+    this.routeService.changeRoute(type);
   }
-
+  
   getRouteTitle(type: ROUTE_TYPE) {
-    return TYPE_TITLE_MAP.get(type) ? TYPE_TITLE_MAP.get(type) : '';
+    return this.routeService.getRouteTitle(type);
   }
 }

@@ -6,7 +6,7 @@
 
   <!-- description -->
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         The Component API has been updated. The process for generating dynamic components was simplified.
@@ -38,7 +38,7 @@
   </app-section-container>
 
   <app-section-container>
-    <div class="title" id="demo" title>Demo</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="demo-container">
       <div class="item">
         The following component is created dynamically.
@@ -52,15 +52,12 @@
 
    <!-- reference -->
    <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
-    <div class="content-container">
-      <ul>
-        <li>
-          <a href="https://ithelp.ithome.com.tw/m/articles/10206734">
-            [Angular 大師之路] Day 15 - 動態載入元件 (複雜版)
-          </a>
-        </li>
-      </ul>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="reference-container">
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
+      </div>
     </div>
   </app-section-container>
 </app-page-container>

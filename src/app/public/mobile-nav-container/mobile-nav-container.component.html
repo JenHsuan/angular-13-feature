@@ -1,0 +1,15 @@
+<div class="mobile-nav-container">
+  <div class="topnav">
+    <a class="icon" (click)="toggleNavigation($event)">
+      <fa-icon [icon]="icon"></fa-icon>
+    </a>
+  </div>
+  <div class="links" #links>
+    <div *ngFor="let item of sideBarList"
+      class="item"
+      (click)="changeRoute(item)"
+      mat-button>
+      {{getRouteTitle(item)}}
+  </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import { EsmService } from './service/esm.service';
 import { combineLatest } from 'rxjs';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
 
 const PAGES = ['/'];
 
@@ -13,11 +14,17 @@ const PAGES = ['/'];
 })
 export class EsmComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.ESM);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
     "Demo",
     "Reference"
   ];
+  
+  referencesMap = new Map<string, string>([
+    ["Optimizing Apps with Resource Inlining", "https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=184s"],
+    ["The [New] State of CSS in Angular", "https://blog.angular.io/the-new-state-of-css-in-angular-bec011715ee6"]
+  ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
   constructor(

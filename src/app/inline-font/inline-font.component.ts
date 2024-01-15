@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
 
 @Component({
   selector: 'app-inline-font',
@@ -9,11 +10,16 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class InlineFontComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.FONT);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
     "Demo: CSS Variables",
     "Reference"
   ];
+  
+  referencesMap = new Map<string, string>([
+    ["[Node] CommonJS Modules and ES Modules", "https://pjchender.dev/nodejs/node-module-system/"]
+  ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
   constructor(

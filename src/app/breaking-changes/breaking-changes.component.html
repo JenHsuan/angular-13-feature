@@ -2,9 +2,10 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
-  ><!-- title -->
+  >
+  <!-- title -->
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         There are a few breaking changes in v13.
@@ -117,7 +118,7 @@
 
   <!-- supplements -->
   <app-section-container>
-    <div class="title" id="modulesandrendering" title>Modules and Rendering</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
         The rendering will be blocked when the scrippt is downloaded or executed. (synchronous)
@@ -159,48 +160,8 @@
     <div class="title" id="reference" title>Reference</div>
     <div class="reference-container">
       <div class="item">
-        <ul>
-          <li>
-            <a href="https://auth0.com/blog/angular-8-differential-loading/">
-              A Guide to Angular 8's Differential Loading
-            </a>
-          </li>
-          <li>
-            <a href="https://openhome.cc/zh-tw/javascript/script/module/">
-              SCRIPT 標籤與模組
-            </a>
-          </li>
-          <li>
-            <a href="https://yucj.gitbooks.io/ecmascript-6/content/docs/module-loader.html">
-              Module 的載入實現
-            </a>
-          </li>
-          <li>
-            <a href="https://juejin.cn/s/ie11%E6%94%AF%E6%8C%81es6%E5%90%97">
-              ie11支持es6吗
-            </a>
-          </li>
-          <li>
-            <a href="https://chupai.github.io/posts/2104/es6module/">
-              ES6 Module
-            </a>
-          </li>
-          <li>
-            <a href="https://medium.com/volosoft/whats-new-in-rxjs-7-a11cc564c6c0">
-              Whats New in RxJS 7
-            </a>
-          </li>
-          <li>
-            <a href="https://pjchender.dev/typescript/typescript-tips/">
-              [掘竅] TypeScript
-            </a>
-          </li>
-          <li>
-            <a href="https://zhuanlan.zhihu.com/p/297923315">
-              TypeScript学习笔记04——Symbol类型详细总结
-            </a>
-          </li>
-        </ul>
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
       </div>
     </div>
   </app-section-container>

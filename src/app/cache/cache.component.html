@@ -4,7 +4,7 @@
   [sectionTitles]="sectionTitles"
   >
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         The path, environment, enable of Angular cache can be configured. There are two ways to manipulate cache object.
@@ -33,7 +33,7 @@
   </app-section-container>
 
   <app-section-container>
-    <div class="title" id="demo" title>Demo</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="demo-container">
       <img src="../../assets/image/cache.png" alt="">    
     </div>
@@ -42,18 +42,10 @@
   <!-- reference -->
   <app-section-container>
     <div class="title" id="reference" title>Reference</div>
-    <div class="description-container">
+    <div class="reference-container">
       <div class="item">
-        <ul>
-          <li>
-            <a href="https://angular.io/cli/cache">
-              ng cache
-            </a>
-          </li>
-          <li>
-            <a href="https://blog.ninja-squad.com/2021/11/03/angular-cli-13.0/">What's new in Angular CLI 13.0?</a>
-          </li>  
-        </ul>
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
       </div>
     </div>
   </app-section-container>

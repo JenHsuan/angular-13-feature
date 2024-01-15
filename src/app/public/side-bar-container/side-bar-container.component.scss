@@ -1,5 +1,5 @@
 .sider-bar {
-  width: 16em;
+  width: 20em;
   background: var(--background-default);
 
   .tabs {
@@ -67,5 +67,12 @@
       color: var(--foreground-default);
       font-weight: 500;
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sider-bar {
+    visibility: hidden;
+    display: none;
   }
 }

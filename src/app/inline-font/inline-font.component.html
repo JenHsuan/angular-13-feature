@@ -4,7 +4,7 @@
   [sectionTitles]="sectionTitles"
   >
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         There are a few improvement of stylishment in Angular 13.
@@ -46,7 +46,7 @@
 
   <!-- demo -->
   <app-section-container>
-    <div class="title" id="demo:cssvariables" title>Demo: CSS Variables</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="demo-container">
       <button class="css-variable-demo-btn">Demo</button>
     </div>
@@ -54,20 +54,12 @@
 
   <!-- reference -->
   <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="reference-container">
-      <ul>
-        <li>
-          <a href="https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=184s">
-            Optimizing Apps with Resource Inlining 
-          </a>
-        </li>
-        <li>
-          <a href="https://blog.angular.io/the-new-state-of-css-in-angular-bec011715ee6">
-            The [New] State of CSS in Angular
-          </a>
-        </li>
-      </ul>
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
+      </div>
     </div>
   </app-section-container>
 </app-page-container>

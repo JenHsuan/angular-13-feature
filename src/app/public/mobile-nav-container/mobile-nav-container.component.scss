@@ -1,0 +1,51 @@
+.mobile-nav-container {
+  visibility: hidden;
+  display: none;
+  width: 100%;
+  font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .links {
+    display: none;
+    .item {
+      display: block;
+      background-color: var(--foreground-quaternary);
+      color: var(--background-default);
+      height: 2em;
+      line-height: 2em;
+      overflow: hidden;
+      padding-left: 1em;
+    }
+    &.active {
+      display: block;
+    }
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: var(--background-gray);
+    color: var(--background-default);
+    position: relative;
+    height: 3em;
+    .icon {
+      background: var(--foreground-default);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 3em;
+      cursor: pointer;
+      &:hover {
+        background: var(--foreground-light);
+        color: var(--foreground-default);
+      }
+    }
+  }  
+}
+
+@media screen and (max-width: 700px) {
+  .mobile-nav-container {
+    visibility: visible;
+    display: block;
+  }
+}

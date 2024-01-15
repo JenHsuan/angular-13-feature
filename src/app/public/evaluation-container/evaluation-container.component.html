@@ -1,0 +1,35 @@
+<div class="description-container">
+  <div class="item">
+    It's the personal opinion from the author.
+  </div>
+  <div class="item">
+    <b>Pros</b>
+  </div>
+  <div class="item">
+    <ol>
+      <li *ngFor="let item of pros">
+        <div class="item">
+          {{ item }}
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="item" *ngIf="pros.length === 0">
+    None
+  </div>
+  <div class="item">
+    <b>Cons</b>
+  </div>
+  <div class="item">
+    <ol>
+      <li *ngFor="let item of cons">
+        <div class="item">
+          {{ item }}
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="item" *ngIf="cons.length === 0">
+    None
+  </div>
+</div>

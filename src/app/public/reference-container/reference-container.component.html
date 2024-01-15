@@ -1,0 +1,9 @@
+<ng-container>
+  <ul>
+    <li *ngFor="let item of references | keyvalue">
+      <a [href]="item.value">
+        {{ item.key }}
+      </a>
+    </li>  
+  </ul>
+</ng-container>

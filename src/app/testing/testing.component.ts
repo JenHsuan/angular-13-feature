@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
 
 @Component({
   selector: 'app-testing',
@@ -9,10 +10,15 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class TestingComponent  {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.TESTING);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Demo"
+    "Demo",
+    "Reference"
   ];
+
+  referencesMap = new Map<string, string>([
+  ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
   constructor(

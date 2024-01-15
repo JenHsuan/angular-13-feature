@@ -18,7 +18,9 @@
       <div class="histories">
         <ul>
           <li *ngFor="let item of urlMap | keyvalue">
-            <a [href]="item.value">{{ item.key }}</a>
+            <a [href]="item.value">
+              {{ item.key }}
+            </a>
           </li>
         </ul>
       </div>

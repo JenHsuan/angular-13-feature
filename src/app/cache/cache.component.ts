@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
 
 @Component({
   selector: 'app-cache',
@@ -9,11 +10,18 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class CacheComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.CACHE);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
     "Demo",
     "Reference"
   ];
+
+  referencesMap = new Map<string, string>([
+    ["ng cache", "https://angular.io/cli/cache"],
+    ["What's new in Angular CLI 13.0?", "https://blog.ninja-squad.com/2021/11/03/angular-cli-13.0/"]
+  ]);
+
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
   constructor(private cd: ChangeDetectorRef){}

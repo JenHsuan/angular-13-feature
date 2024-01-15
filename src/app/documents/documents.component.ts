@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildr
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { authorUrl } from '../public/config/url';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
+import { version } from '../public/config/constants';
 
 @Component({
   selector: 'app-documents',
@@ -10,11 +12,18 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class DocumentsComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.DOCUMENTS);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
     "Official Document"
   ];
   authorUrl = authorUrl;
+  version = version;
+
+  officialDocumentsMap = new Map<string, string>([
+    ["Angular v13 is now Available (Angular blog)", "https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296"],
+    ["Angular Doc v13", "https://v13.angular.io/docs"],
+  ]);
 
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

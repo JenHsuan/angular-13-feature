@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
 
 @Component({
   selector: 'app-deprecations',
@@ -9,10 +10,20 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class DeprecationsComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.DEPRECATIONS);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
     "Reference"
   ];
+
+  referencesMap = new Map<string, string>([
+    ["ngcc", "https://v13.angular.io/guide/glossary#ngcc"],
+    ["From View Engine to Ivy: Rendering in Angular", "https://browserperson.medium.com/from-view-engine-to-ivy-rendering-in-angular-a81d9eb8199b"],
+    ["Angular框架解读--Ivy编译器之增量DOM", "https://godbasin.github.io/2021/12/05/angular-design-ivy-5-incremental-dom/"],
+    ["Understanding Angular Ivy: Incremental DOM and Virtual DOM", "https://blog.nrwl.io/understanding-angular-ivy-incremental-dom-and-virtual-dom-243be844bf36"],
+    ["What is ngcc in Angular Ivy and why is it important?", "https://iq.js.org/questions/angular/what-is-ngcc"],
+    ["Angular5 服务器渲染(SSR)", "https://www.cnblogs.com/huiguo/p/10809264.html"]
+  ]);
   items: number[] = [];
   cnt = 0;
 

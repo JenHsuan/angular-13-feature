@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactory, Componen
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { getIdFromTitle } from '../public/utils/utils';
 
 @Component({
   selector: 'app-standard',
@@ -10,11 +11,17 @@ import { SectionContainerComponent } from '../public/section-container/section-c
 })
 export class StandardComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.DYNAMIC_COMPONENT);
+  getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
     "Demo",
     "Reference"
   ];
+
+  referencesMap = new Map<string, string>([
+    ["[Angular 大師之路] Day 15 - 動態載入元件 (複雜版)", "https://ithelp.ithome.com.tw/m/articles/10206734"]
+  ]);
+
   @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

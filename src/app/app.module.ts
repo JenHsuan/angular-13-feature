@@ -27,6 +27,8 @@ import { SideBarContainerComponent } from './public/side-bar-container/side-bar-
 import { ThemeComponent } from './public/theme/theme.component';
 import { PageContainerComponent } from './public/page-container/page-container.component';
 import { NavigationButtonContainerComponent } from './public/navigation-button-container/navigation-button-container.component';
+import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
+import { MobileNavContainerComponent } from './public/mobile-nav-container/mobile-nav-container.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { NavigationButtonContainerComponent } from './public/navigation-button-c
     SideBarContainerComponent,
     ThemeComponent,
     PageContainerComponent,
-    NavigationButtonContainerComponent
+    NavigationButtonContainerComponent,
+    ReferenceContainerComponent,
+    MobileNavContainerComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,9 @@
   font-weight: 400;
   color: var(--foreground-default);
   border-bottom: 1px solid var(--foreground-secondary);
+  width: calc(100% - 3.2em);
+  overflow-x: hidden;
+  padding-left: 3.2em;
   .item {
     margin: .4em 0;
   }
@@ -23,7 +26,7 @@
     display: flex;
     justify-content: center;
     img {
-      max-width: calc(100vw - 20em);
+      max-width: 100%;
     }
   }
 }

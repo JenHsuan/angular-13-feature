@@ -4,7 +4,7 @@
   [sectionTitles]="sectionTitles"
   >
   <app-section-container>
-    <div class="title" id="overview" title>Overview</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <ul>
         <li>
@@ -59,25 +59,12 @@
   
   <!-- reference -->
   <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
-    <div class="description-container">
-      <ul>
-        <li>
-          <a href="https://stackoverflow.com/questions/35431188/how-can-i-conditionally-disable-the-routerlink-attribute">
-            How can I conditionally disable the routerLink attribute?
-          </a>
-        </li>
-        <li>
-          <a href="https://angular.io/api/forms/MaxLengthValidator">
-            MaxLengthValidator
-          </a>
-        </li>
-        <li>
-          <a href="https://stackoverflow.com/questions/72496798/how-to-make-the-location-back-trigger-candeactivate-in-angular-13">
-            How to Make the location.back() trigger CanDeactivate? ( in Angular 13)
-          </a>
-        </li>
-      </ul>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="reference-container">
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
+      </div>
     </div>
   </app-section-container>
 </app-page-container>

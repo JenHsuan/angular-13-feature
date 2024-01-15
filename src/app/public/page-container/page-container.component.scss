@@ -4,14 +4,15 @@
   flex-direction: column;
   margin: .5em;
   padding: .5em;
-  max-width: calc(100% - 20em);
+  max-width: calc(100% - 19em);
   min-height: calc(100vh - 6.25em);
   .page-title {
     font-size: 2em;
     font-weight: 500;
     padding: 1.2em;
     font-style: normal;
-    width: 100%;
+    width: calc(100% - 2.5em);
+    overflow-x: hidden;
     color: var(--foreground-default);
     border-bottom: 1px solid var(--foreground-secondary);
     border-top: 2px solid var(--foreground-secondary);

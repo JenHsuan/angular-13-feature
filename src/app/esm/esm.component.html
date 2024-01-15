@@ -5,7 +5,7 @@
   >
 
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         The proxy configuration support ESM (ES6 modules) now.
@@ -20,7 +20,7 @@
   </app-section-container>
 
   <app-section-container>
-    <div class="title" id="demo" title>Demo</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
         <div class="button-container">
@@ -39,16 +39,11 @@
 
   <!-- reference -->
   <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
-    <div class="description-container">
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="reference-container">
       <div class="item">
-        <ul>
-          <li>
-            <a href="https://pjchender.dev/nodejs/node-module-system/">
-              [Node] CommonJS Modules and ES Modules
-            </a>
-          </li>
-        </ul>
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
       </div>
     </div>
   </app-section-container>

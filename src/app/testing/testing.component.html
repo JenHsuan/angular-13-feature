@@ -4,7 +4,7 @@
   [sectionTitles]="sectionTitles"
   >
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         The test modules can be teared down after each test.
@@ -19,10 +19,21 @@
   </app-section-container>
 
   <app-section-container>
-    <div class="title" id="demo" title>Demo</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item image-container">
         <img src="../../assets/image/testing.png" alt="">    
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="reference-container">
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
       </div>
     </div>
   </app-section-container>

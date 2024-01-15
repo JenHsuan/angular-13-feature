@@ -4,7 +4,7 @@
   [sectionTitles]="sectionTitles"
   >
   <app-section-container>
-    <div class="title" id="introduction" title>Introduction</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
         There are a few deprecations in v13.
@@ -65,39 +65,11 @@
   <!-- reference -->
   <app-section-container>
     <div class="title" id="reference" title>Reference</div>
-    <div class="description-container">
-      <ul>
-        <li>
-          <a href="https://v13.angular.io/guide/glossary#ngcc">
-            ngcc
-          </a>
-        </li>
-        <li>
-          <a href="https://browserperson.medium.com/from-view-engine-to-ivy-rendering-in-angular-a81d9eb8199b">
-            From View Engine to Ivy: Rendering in Angular
-          </a>
-        </li>
-        <li>
-          <a href="https://godbasin.github.io/2021/12/05/angular-design-ivy-5-incremental-dom/">
-            Angular框架解读--Ivy编译器之增量DOM
-          </a>
-        </li>
-        <li>
-          <a href="https://blog.nrwl.io/understanding-angular-ivy-incremental-dom-and-virtual-dom-243be844bf36">
-            Understanding Angular Ivy: Incremental DOM and Virtual DOM
-          </a>
-        </li>
-        <li>
-          <a href="https://iq.js.org/questions/angular/what-is-ngcc">
-            What is ngcc in Angular Ivy and why is it important?
-          </a>
-        </li>
-        <li>
-          <a href="https://www.cnblogs.com/huiguo/p/10809264.html">
-            Angular5 服务器渲染(SSR)
-          </a>
-        </li>
-      </ul>
+    <div class="reference-container">
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
+      </div>
     </div>
   </app-section-container>
 </app-page-container>
