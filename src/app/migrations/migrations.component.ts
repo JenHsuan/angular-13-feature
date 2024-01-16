@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildr
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { version } from '../public/config/constants';
+import { getIdFromTitle } from '../public/utils/utils';
 
 @Component({
   selector: 'app-migrations',
@@ -10,6 +11,7 @@ import { version } from '../public/config/constants';
 })
 export class MigrationsComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.MIGRATIONS);
+  getIdFromTitle = getIdFromTitle;
   version = version;
   sectionTitles = [
     "Introduction",

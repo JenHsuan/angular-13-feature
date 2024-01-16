@@ -1,0 +1,44 @@
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
+  >
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
+    <div class="description-container">
+      <div class="item">
+        Even if the navigation is denied by canDeactivate, it still updates the browser history and it gets into a bad state.
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="description-container">
+      <div class="item">
+        <a href="https://v13.angular.io/api/router/ExtraOptions#canceledNavigationResolution">
+          canceledNavigationResolution
+        </a>
+         will attempt to return to the same index in the session history that corresponds to the Angular route when the navigation gets cancelled. 
+      </div>
+      <div class="item">
+        <app-code-container
+          [code]="cancelRoute"
+          [languages]="['typescript']">
+        </app-code-container>
+      </div>
+    </div>
+  </app-section-container>
+  
+  <!-- reference -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="reference-container">
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
+      </div>
+    </div>
+  </app-section-container>
+</app-page-container>

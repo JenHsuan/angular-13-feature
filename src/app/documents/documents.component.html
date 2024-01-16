@@ -2,18 +2,19 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        This document is built based on Angular {{ version }} to demostrate concepts and documentation for different sources. 
+        This document is built based on Angular {{ version }}. 
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              The purpose is to introduce the features, deprecations, and breaking changes of Angular {{ version }}.
+              The purpose is to introduce the features, deprecations, and breaking changes.
             </div>
           </li>
           <li>

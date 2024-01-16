@@ -2,55 +2,32 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
+      <div class="item">
+        There are a few minor features in Angular 13.
+      </div>
       <ul>
         <li>
-          Angular Package Format changes
-          <div>
+          <div class="item">
+            Angular Package Format changes
+          </div>
+          <div class="item">
             <ul>
               <li>
-                Support Node Package Exports
+                <div class="item">
+                  Support Node Package Exports
+                </div>
               </li>
               <li>
-                Standardized on more modern JS formats such as ES2020
+                <div class="item">
+                  Standardized on more modern JS formats such as ES2020
+                </div>
               </li>
             </ul>
-          </div>
-        </li>
-        <li>
-          Cancel routerLink by passing null or undefined
-          <div class="item">
-            <app-code-container
-              [code]="routeLinkCancel"
-              [languages]="['typescript']">
-            </app-code-container>
-          </div>
-        </li>
-        <li>
-          Disable built-in validators by setting the value to null
-          <a href="https://github.com/angular/angular/pull/42565">(pr)</a>
-          <div class="item">
-            <app-code-container
-              [code]="nullValidator"
-              [languages]="['typescript']">
-            </app-code-container>
-          </div>
-        </li>
-        <li>Bugfix: even if the navigation is denied by canDeactivate, it still updates the browser history and it gets into a bad state.
-          <div class="item">
-            <a href="https://v13.angular.io/api/router/ExtraOptions#canceledNavigationResolution">
-              canceledNavigationResolution
-            </a>
-             Will attempt to return to the same index in the session history that corresponds to the Angular route when the navigation gets cancelled. 
-          </div>
-          <div class="item">
-            <app-code-container
-              [code]="cancelRoute"
-              [languages]="['typescript']">
-            </app-code-container>
           </div>
         </li>
       </ul>

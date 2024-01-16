@@ -2,6 +2,7 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" id="introduction" title>Introduction</div>
@@ -34,13 +35,19 @@
           <li>
             <div class="item">
               Check the 
-              <a href="/#/breaking-changes">Breaking Changes</a> topic.
+              <a routerLink="/breaking-changes">Breaking Changes</a> topic.
             </div>
           </li>
           <li>
             <div class="item">
               Check the 
-              <a href="/#/deprecations">Deprecations</a> topic.
+              <a routerLink="/minor-changes">Minor Changes</a> topic.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Check the 
+              <a routerLink="/deprecations">Deprecations</a> topic.
             </div>
           </li>
         </ol>

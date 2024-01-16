@@ -2,18 +2,55 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        The test modules can be teared down after each test.
+        The test modules can be teared down after each test. When we eanable destroyAfterEach, it will solve the following issues.
+        <a href="https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh">
+          (references)
+        </a>
       </div>
       <div class="item">
-        <app-code-container
-          [code]="testComponent"
-          [languages]="['typescript']">
-        </app-code-container>
+        <ul>
+          <li>
+            <div class="item">
+              The host element is not removed from the DOM until another component fixture is created
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Component styles are never removed from the DOM
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Application-wide services are never destroyed
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Feature-level services using the any provider scope are never destroyed
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Angular modules are never destroyed
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Components are destroyed 1 time less than the number of tests
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Component-level services are destroyed 1 time less than the number of tests
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </app-section-container>
@@ -21,8 +58,37 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
-      <div class="item image-container">
-        <img src="../../assets/image/testing.png" alt="">    
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Previously, we're not able to tear down the environment and the module.
+            </div>
+            <app-code-container
+              [code]="testComponentBefore"
+              [languages]="['typescript']">
+            </app-code-container>
+          </li>
+          <li>
+            <div class="item">
+              Now we're able to tear down the environment and the module.
+            </div>
+            <app-code-container
+              [code]="testComponent"
+              [languages]="['typescript']">
+            </app-code-container>
+          </li>
+          <li>
+            <div class="item">
+              The followig result demostrates that the test module is teared down after each test. 
+            </div>
+            <div class="item">
+              <div class="image-container">
+                <img src="../../assets/image/testing.png" alt=""> 
+              </div>   
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </app-section-container>

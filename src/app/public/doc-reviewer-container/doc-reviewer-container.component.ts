@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
   selector: 'app-doc-reviewer-container',
   templateUrl: './doc-reviewer-container.component.html',
@@ -10,6 +9,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 export class DocReviewerContainerComponent {
   @Input() titles: string[];
   @Input() sections: QueryList<ElementRef> | undefined;
+  @Input() getIdFromTitle: Function; 
   @ViewChildren("menu") menu: QueryList<ElementRef> | undefined;
   showBackTop = false;
   currentIndex = -1;
@@ -45,7 +45,7 @@ export class DocReviewerContainerComponent {
   }
 
   getHash(title: string) {
-    return `#${title.replace(/\s/g, '').toLowerCase()}`;
+    return `#${this.getIdFromTitle(title)}`;
   }
   
   moveTop() {

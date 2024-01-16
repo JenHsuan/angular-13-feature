@@ -2,6 +2,7 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
@@ -11,32 +12,19 @@
       </div>
       <div class="item">
         <ol>
-          <li>Inline Resource (Adobe font):
+          <li>
             <div class="item">
-              The inline-resorce extends Adobe font now. Inline font is one of factors for the 
-              <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint?hl=zh-tw">
-                first contentful paint (FCP)
-              </a>.
-            </div>
-            <div class="item">
-              <app-code-container
-                [code]="steps"
-                [languages]="['typescript']">
-              </app-code-container>
+              Support inline resource (Adobe font)
             </div>
           </li>
-          <li>CSS Variables:
+          <li>
             <div class="item">
-              We are able to use CSS Variables after removing IE11 supports.
+              Support CSS Variables
             </div>
+          </li>
+          <li>
             <div class="item">
-              <app-code-container
-                [code]="cssVariable"
-                [languages]="['typescript']">
-              </app-code-container>
-            </div>
-            <div class="item">
-              Angular team recommends customizing variables to override library's style instead of using ::ng-deep. 
+              Support Web Animations API
             </div>
           </li>
         </ol>
@@ -44,17 +32,95 @@
     </div>
   </app-section-container>
 
-  <!-- demo -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <div class="demo-container">
-      <button class="css-variable-demo-btn">Demo</button>
+    <div class="description-container">
+      <div class="item">
+        The inline-resorce extends Adobe font now. Inline font is one of factors for the 
+        <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint?hl=zh-tw">
+          first contentful paint (FCP)
+        </a>.
+      </div>
+      <div class="item">
+        <app-code-container
+          [code]="steps"
+          [languages]="['typescript']">
+        </app-code-container>
+      </div>
     </div>
+  </app-section-container>
+
+  <!-- evaluation -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <app-evaluation-container
+      [pros]="prosForInlineFont"
+      [cons]="consForInlineFont">
+    </app-evaluation-container>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
+    <div class="description-container">
+      <div class="item">
+        We are able to use CSS Variables after removing IE11 supports.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Angular team recommends customizing variables to override library's style instead of using ::ng-deep. 
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              However, it seems that we could use CSS variables in Angular 12. (global theming)
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <app-code-container
+          [code]="cssVariable"
+          [languages]="['typescript']">
+        </app-code-container>
+      </div>
+      <div class="item">
+        The following result demostrate the CSS variable works. 
+      </div>
+      <div class="item">
+        <button class="css-variable-demo-btn">Demo</button>
+      </div>
+    </div>
+  </app-section-container>
+  
+  <!-- evaluation -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[4])" title>{{ sectionTitles[4] }}</div>
+    <app-evaluation-container
+      [pros]="prosForCSSVariables"
+      [cons]="consForCSSVariables">
+    </app-evaluation-container>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[5])" title>{{ sectionTitles[5] }}</div>
+    <div class="description-container">
+    </div>
+  </app-section-container>
+
+  <!-- evaluation -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[6])" title>{{ sectionTitles[6] }}</div>
+    <app-evaluation-container
+      [pros]="prosForWebAnimationsAPI"
+      [cons]="consForWebAnimationsAPI">
+    </app-evaluation-container>
   </app-section-container>
 
   <!-- reference -->
   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[7])" title>{{ sectionTitles[7] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

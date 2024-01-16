@@ -11,6 +11,9 @@ import { EsmComponent } from './esm/esm.component';
 import { InlineFontComponent } from './inline-font/inline-font.component';
 import { MigrationsComponent } from './migrations/migrations.component';
 import { TestingComponent } from './testing/testing.component';
+import { TodoComponent } from './todo/todo.component';
+import { BugfixNavigationComponent } from './bugfix-navigation/bugfix-navigation.component';
+import { MinorChangesComponent } from './minor-changes/minor-changes.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -57,6 +60,18 @@ export const routes: Routes = [
   {
     path: 'documents',
     component: DocumentsComponent
+  },
+  {
+    path: 'todo',
+    component: TodoComponent
+  },
+  {
+    path: 'bugfix-navigation',
+    component: BugfixNavigationComponent
+  },
+  {
+    path: 'minor-changes',
+    component: MinorChangesComponent
   }
 ];
 

@@ -2,16 +2,23 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        The path, environment, enable of Angular cache can be configured. There are two ways to manipulate cache object.
+        The purpose of ng cache is to configure persistent disk cache and retrieve cache statistics.
+      </div>
+      <div class="item">
+        There are two ways to manipulate cache object.
       </div>
       <div class="item">
         <ul>
-          <li>Update angular.json
+          <li>
+            <div class="item">
+              Manipulate the cache manually by updating angular.json
+            </div>
             <div class="item">
               <app-code-container
                 [code]="angularjson"
@@ -19,7 +26,10 @@
               </app-code-container>
             </div>
           </li>
-          <li>Use ng cli
+          <li>
+            <div class="item">
+              Manipulate the cache using ng cli
+            </div>
             <div class="item">
               <app-code-container
                 [code]="angularcli"
@@ -29,19 +39,86 @@
           </li>
         </ul>
       </div>
+      <div class="item">
+        The path, environment, enable of Angular cache can be configured. 
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Enable
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    true or false.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Path
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    .angular/cache is the default base directory to store cache results.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Environment
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    all: allows disk cache on all machines.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    local: allows disk cache only on development machines.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    ci: allows disk cache only on continuous integration (CI) systems.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div> 
+      <div class="item">
+        In the following screenshot, the path of cache is set to .angular-cache and the environment is set to all.
+      </div>
+      <div class="item">
+        <img src="../../assets/image/cache.png" alt=""> 
+      </div>   
     </div>
   </app-section-container>
 
+  <!-- evaluation -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <div class="demo-container">
-      <img src="../../assets/image/cache.png" alt="">    
-    </div>
+    <app-evaluation-container
+      [pros]="pros"
+      [cons]="cons">
+    </app-evaluation-container>
   </app-section-container>
 
   <!-- reference -->
   <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

@@ -13,9 +13,14 @@ export class CacheComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Demo",
+    "Evaluation",
     "Reference"
   ];
+
+  pros = [
+    "With the feature, we are able to update the cache configuration in the efficient way.",
+  ];
+  cons = [];
 
   referencesMap = new Map<string, string>([
     ["ng cache", "https://angular.io/cli/cache"],

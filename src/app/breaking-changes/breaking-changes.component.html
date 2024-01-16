@@ -2,6 +2,7 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <!-- title -->
   <app-section-container>
@@ -13,101 +14,196 @@
       <div class="item">
         <ol>
           <li>
-            Angular v13 requires node.js version v12.20.0 
-            <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+            <div class="item">
+              v13 requires node.js version v12.20.0 
+              <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+            </div>
           </li>
           <li>
-            Angular v13 requires 
-            <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-4.html">
-              TypeScript version 4.4
-            </a> or later
-            <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
-            <div>
+            <div class="item">
+              v13 requires 
+              <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-4.html">
+                TypeScript version 4.4
+              </a> or later
+              <a href="https://angular.io/guide/versions">(Version Compatibility)</a>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              v13 uses 
+              <a href="https://rxjs.dev/6-to-7-change-summary">
+                RxJS 7.4
+              </a>
+            </div>
+            <div class="item">
+              <app-code-container
+                [code]="upgardeRx"
+                [languages]="['typescript']">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Stop supporting IE11 
+              <a href="https://github.com/angular/angular/issues/41840">
+                (Pull request)
+              </a>
+            </div>
+            <div class="item">
               <ul>
-                <li>Improvement of type guard
+                <li>
                   <div class="item">
-                    <app-code-container
-                      [code]="typeguard"
-                      [languages]="['typescript']">
-                    </app-code-container>
-                  </div>
+                    The IE-specific polyfills were dropped
+                  </div> 
                 </li>
-                <li>Defaulting to the unknown Type in Catch Variables if we enable useUnknownInCatchVariables
+                <li>
                   <div class="item">
-                    <app-code-container
-                      [code]="typeguard"
-                      [languages]="['typescript']">
-                    </app-code-container>
-                  </div>
+                    Be able to remove special JS and CSS code paths, polyfills, build passes, and dev infrastructure that exists
+                  </div>  
                 </li>
-                <li>Symbol and template string pattern index signatures
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <b>Ivy everywhere</b>:
+            remove View engine, ngcc and fully use Ivy
+            </div>
+            <div class="item">
+              <ul>
+                <li>
                   <div class="item">
-                    <app-code-container
-                      [code]="tsSymbol"
-                      [languages]="['typescript']">
-                    </app-code-container>
-                  </div>
-                </li>
-                <li>static Blocks in Classes
-                  <div class="item">
-                    <app-code-container
-                      [code]="tsStaticBlock"
-                      [languages]="['typescript']">
-                    </app-code-container>
+                    Please feel free to check the <a href="https://eloquent-macaron-9ce67b.netlify.app/#/deprecations"> note of Angular 12</a> for nmore details about the view engine, ngcc, and Ivy.
                   </div>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            Angular v13 uses 
-            <a href="https://rxjs.dev/6-to-7-change-summary">
-              RxJS 7.4
-            </a>
-            <div>
+            <div class="item">
+              Remove <b>differential loading</b>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="description-container">
+      <div class="item">
+        There are a few new features in TypeScript 4.4. I pick up some useful topics in this section.
+      </div>
+      <div class="item">
+        <ol>
+          <li>
+            <div class="item">
+              <b>
+                Improvement of type guard
+              </b>
+            </div>
+            <div class="item">
               <ul>
                 <li>
                   <div class="item">
-                    <app-code-container
-                      [code]="upgardeRx"
-                      [languages]="['typescript']">
-                    </app-code-container>
+                    Previously, TypeScript simply lost that information when a variable was assigned the value of a type guard.
                   </div>
                 </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            Stop supporting IE11 
-            <a href="https://github.com/angular/angular/issues/41840">
-              (Pull request)
-            </a>
-            <div>
-              <ul>
                 <li>
-                  The IE-specific polyfills were dropped 
+                  <div class="item">
+                    Now it works with no errors.
+                  </div>
                 </li>
-                <li>
-                  Be able to remove special JS and CSS code paths, polyfills, build passes, and dev infrastructure that exists
-                </li>
-                <li>
-                  Be able to use CSS Variables, Intersection Observers, CSS Grid after removing IE11 supports
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            Remove differential loading: support different browsers with different bundles
-            <div>
-              <ul>
-                <li>When we want to import ES6 modules, we can use type="module" to let the browser knows</li>
-                <li>For the legacy browsers (e.g., IE 11), it can't support ES6 modules so we use nomodule</li>
               </ul>
             </div>
             <div class="item">
               <app-code-container
-                [code]="distIndex"
-                [languages]="['html']">
+                [code]="typeguard"
+                [languages]="['typescript']">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <b>
+                New tsconfig option: --useUnknownInCatchVariables
+              </b>
+            </div>
+            <div class="item">
+              Defaulting to the unknown Type in Catch Variables if we enable useUnknownInCatchVariables
+            </div>
+            <div class="item">
+              <app-code-container
+                [code]="typeguard"
+                [languages]="['typescript']">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <b>
+                Symbol and template string pattern index signatures:
+                <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#symbol-template-signatures">
+                  (reference)
+                </a>
+              </b>
+            </div>
+            <div class="item">
+              Now we are allowed to use index signatures for symbols and template string patterns.
+            </div>
+            <ul>
+              <li>
+                <div class="item">
+                  Index signatures
+                </div>
+                <div class="item">
+                  <app-code-container
+                    [code]="tsSymbol"
+                    [languages]="['typescript']">
+                  </app-code-container>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  Template string patterns
+                </div>
+                <div class="item">
+                  <app-code-container
+                    [code]="tsTemplateString"
+                    [languages]="['typescript']">
+                  </app-code-container>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="item">
+              <b>
+                Static Blocks in Classes:
+                <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#static-blocks">
+                  (reference)
+                </a>
+              </b>
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    In the static block, we are allowed to write a sequence of statements with their own scope that can access fields within the containing class.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    It means that we can write initialization code with all the capabilities of writing statements, no leakage of variables, and full access to our class’s internals.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <app-code-container
+                [code]="tsStaticBlock"
+                [languages]="['typescript']">
               </app-code-container>
             </div>
           </li>
@@ -118,7 +214,7 @@
 
   <!-- supplements -->
   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
         The rendering will be blocked when the scrippt is downloaded or executed. (synchronous)
@@ -155,9 +251,38 @@
     </div>
   </app-section-container>
 
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
+    <div class="description-container">
+      <div class="item">
+        The ability of differential loading is to upport different browsers with different bundles.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              When we want to import ES6 modules, we can use type="module" to let the browser knows
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              For the legacy browsers (e.g., IE 11), it can't support ES6 modules so we use type="nomodule"
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <app-code-container
+          [code]="distIndex"
+          [languages]="['html']">
+        </app-code-container>
+      </div>
+    </div>
+  </app-section-container>
+
   <!-- reference -->
   <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[4])" title>{{ sectionTitles[4] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

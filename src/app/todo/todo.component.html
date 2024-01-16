@@ -1,0 +1,63 @@
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
+  >
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
+    <div class="reference-container">
+      <div class="item">
+        <ul>
+          <li>
+            <a href="https://update.angular.io/?locale=en-US&l=3&v=12.0-13.0">
+              Migaration guide
+            </a>
+          </li>
+          <li>
+            <div class="item">
+              SSR (server-side rendering)
+            </div>
+            <ul>
+              <li>
+                <div class="item">
+                  <a href="https://www.cnblogs.com/huiguo/p/10809264.html">
+                    Angular5 服务器渲染(SSR)
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="item">
+              ESM
+            </div>
+            <ul>
+              <li>
+                <div class="item">
+                  <a href="https://chentsulin.medium.com/%E5%9C%A8-2021-%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-esmodule-%E4%BA%86%E5%97%8E-c05c3408e69">在 2021 可以使用 ESModule 了嗎？</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="item">
+              Animation Web API
+            </div>
+            <ul>
+              <li>
+                <div class="item">
+                  <a href="https://kusakawazeusu.medium.com/%E8%AE%93%E4%BA%BA%E5%9E%82%E6%B6%8E%E4%B8%89%E5%B0%BA%E7%9A%84-web-animations-api-92dc85f670bb">
+                    讓人垂涎三尺的 Web Animations API
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-section-container>
+</app-page-container>

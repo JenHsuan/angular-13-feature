@@ -4,56 +4,57 @@
   [sectionTitles]="sectionTitles"
   [getIdFromTitle]="getIdFromTitle"
   >
-
-  <!-- description -->
+  <!-- title -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        The Component API has been updated. The process for generating dynamic components was simplified.
+        There are a few minor changes in v13.
       </div>
       <div class="item">
-        Ivy creates the opportunity to instantiate the component with ViewContainerRef.createComponent without creating an associated factory.
-      </div>
-      <div class="item">
-        <ul>
-          <li>Previous version:
+        <ol>
+          <li>
+            <div class="item">
+              Cancel routerLink by passing null or undefined
+            </div>
             <div class="item">
               <app-code-container
-                [code]="legacyCode"
+                [code]="routeLinkCancel"
                 [languages]="['typescript']">
               </app-code-container>
             </div>
           </li>
-          <li>New API:
+          <li>
+            <div class="item">
+              Disable built-in validators by setting the value to null
+              <a href="https://github.com/angular/angular/pull/42565">(pull request)</a>
+            </div>
             <div class="item">
               <app-code-container
-                [code]="newCode"
+                [code]="nullValidator"
                 [languages]="['typescript']">
               </app-code-container>
             </div>
           </li>
-        </ul>
+          <li>
+            <div class="item">
+              The URL serializer respects question marks in the query parameters.
+            </div>
+            <div class="item">
+              <app-code-container
+                [code]="urlSerializer"
+                [languages]="['typescript']">
+              </app-code-container>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </app-section-container>
 
+  <!-- reference -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <div class="demo-container">
-      <div class="item">
-        The following component is created dynamically.
-      </div>
-      <div class="item">
-        <ng-container #container>
-        </ng-container>    
-      </div>
-    </div>
-  </app-section-container>
-
-   <!-- reference -->
-   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

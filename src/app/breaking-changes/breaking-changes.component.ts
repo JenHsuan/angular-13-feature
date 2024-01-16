@@ -13,7 +13,9 @@ export class BreakingChangesComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
+    "New Feature of TypeScript 4.4",
     "Modules and Rendering",
+    "Differential Loading",
     "Reference"
   ];
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
@@ -27,7 +29,8 @@ export class BreakingChangesComponent {
     ["ES6 Module", "https://chupai.github.io/posts/2104/es6module/"],
     ["Whats New in RxJS 7", "https://medium.com/volosoft/whats-new-in-rxjs-7-a11cc564c6c0"],
     ["[掘竅] TypeScript", "https://pjchender.dev/typescript/typescript-tips/"],
-    ["TypeScript学习笔记04——Symbol类型详细总结", "https://zhuanlan.zhihu.com/p/297923315"]
+    ["TypeScript学习笔记04——Symbol类型详细总结", "https://zhuanlan.zhihu.com/p/297923315"],
+    ["Announcing TypeScript 4.4", "https://devblogs.microsoft.com/typescript/announcing-typescript-4-4"]
   ]);
 
   constructor(private cd: ChangeDetectorRef){}
@@ -38,6 +41,8 @@ export class BreakingChangesComponent {
   }
 
   upgardeRx = `
+  //We can upgrade rxjs with the following command
+
   npm install rxjs@7.4
   `;
 
@@ -59,8 +64,10 @@ export class BreakingChangesComponent {
     <app-root></app-root>
   <script src="runtime.53d27497dc947bab.js" type="module"></script><script src="polyfills.79ba09efd856cfcd.js" type="module"></script><script src="main.047cf091c9c37ea8.js" type="module"></script>
   
-  <!-- <script src="fancyModernBundle.js" type="module"></script>
-  <script src="legacyBundle.js" nomodule></script> -->
+  <!-- 
+  <script src="fancyModernBundle.js" type="module"></script>
+  <script src="legacyBundle.js" nomodule></script> 
+  -->
 
   </body></html>
   `;
@@ -117,6 +124,23 @@ export class BreakingChangesComponent {
   let redVal = colors[red];
   `;
 
+  tsTemplateString = `
+  interface OptionsWithDataProps extends Options {
+    // Permit any property starting with 'data-'.
+    [optName: \`data-\${string}\`]: unknown;
+  }
+
+  let b: OptionsWithDataProps = {
+    width: 100,
+    height: 100,
+    // Works!
+    "data-blah": true,       
+
+    // Error! 'unknown-property' wasn't declared in 'OptionsWithDataProps'.
+    "unknown-property": true,  
+  };
+  `;
+
   tsStaticBlock = `
   //without static block
   class Foo {
@@ -135,10 +159,16 @@ export class BreakingChangesComponent {
     static bytes: Uint8Array = [];
 
     static {
-      bytes.set(pseudoRandomBytes(bytes.length));
+      Foo.bytes.set(pseudoRandomBytes(Foo.bytes.length));
     }
 
     static fileBody = new FileBody(Foo.bytes);
+  }
+
+  function createRandomBytes(length: number) {
+    const bytes = new Uint8Array(length);
+    bytes.set(pseudoRandomBytes(bytes.length));
+    return bytes;
   }
   `;
 

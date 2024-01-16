@@ -13,10 +13,27 @@ export class InlineFontComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Demo: CSS Variables",
+    "Inline Resource (Adobe font)",
+    "Evaluation for Inline Resource",
+    "CSS Variables",
+    "Evaluation for CSS Variables",
+    "Web Animations API",
+    "Evaluation for Web Animations API",
     "Reference"
   ];
   
+  prosForInlineFont = [
+  ];
+  consForInlineFont = [];
+
+  prosForCSSVariables = [
+  ];
+  consForCSSVariables = [];
+
+  prosForWebAnimationsAPI = [
+  ];
+  consForWebAnimationsAPI = [];
+
   referencesMap = new Map<string, string>([
     ["[Node] CommonJS Modules and ES Modules", "https://pjchender.dev/nodejs/node-module-system/"]
   ]);

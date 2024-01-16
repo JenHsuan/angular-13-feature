@@ -13,11 +13,12 @@ export class TestingComponent  {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Demo",
+    "Implementaion",
     "Reference"
   ];
 
   referencesMap = new Map<string, string>([
+    ["Improving Angular tests by enabling Angular testing module teardown", "https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
@@ -30,17 +31,17 @@ export class TestingComponent  {
     this.cd.detectChanges();
   }
 
-  testComponent = `
-  //legacy code:
-
+  testComponentBefore = `
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ TestingComponent ]
     })
     .compileComponents();
   });
+  `;
 
-  //use TestBed.initTestEnvironment 
+  testComponent = `
+  //Tear down the environment with the TestBed.initTestEnvironment 
   beforeEach(async () => {
     TestBed.resetTestEnvironment();
     TestBed.initTestEnvironment(
@@ -52,7 +53,7 @@ export class TestingComponent  {
     );
   });
 
-  //Update TestBed.configureTestingModule
+  //Tear down the module with the TestBed.configureTestingModule
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ TestingComponent ],

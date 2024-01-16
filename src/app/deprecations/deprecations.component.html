@@ -2,6 +2,7 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle"
   >
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
@@ -11,50 +12,23 @@
       </div>
       <div class="item">
         <ol>
-          <li>SSR: renderModuleFactory was replaced to 
-            <a href="https://angular.io/api/platform-server/renderModule">
-              renderModule
-            </a> (@angular/platform-server package)
+          <li>
+            <div class="item">
+             No longer specify lazy-loaded routes by setting a string value to loadChildren. Instead, we move to dynamic ESM import statements
+            </div>
             <div class="item">
               <app-code-container
-                [code]="renderModule"
+                [code]="loadChildren"
                 [languages]="['typescript']">
               </app-code-container>
             </div>
-            <div class="item">
-              In v16, we only have to set 
-              <a href="https://marvelous-gnome-0802fa.netlify.app/#/hydration">
-                @nguniversal/express-engine
-              </a>. In v17, we only have to set up 
-              <a href="https://chimerical-cocada-121bf6.netlify.app/#/hydration">
-                @angular/ssr
-              </a>
-            </div>
           </li>
           <li>
-            Remove View engine and fully use Ivy (don't need ngcc)
             <div class="item">
-              In Angular 9, Ivy was introduced as an optimized next-generation compiliation and rendering pipe-line. 
-              It as set as the default compilier. ngcc is a transformer between the legacy view enginee and the Ivy.
-            </div>
-            <div class="item">Source: ngConf-2018 keynote</div>
-            <div class="item">
-              <div class="image-container">
-                <img src="../../assets/image/ivy.png" alt="">
-              </div>
-            </div>
-            <div class="item">
-              There are two major advantages of Ivy.
-            </div>
-            <div class="item">
-              <ol>
-                <li>
-                  Ivy (rendering engine) itself tree shakable but the view enginee is not.
-                </li>
-                <li>
-                  The Incremental DOM from IVY is tree shakable because components won't be interpreted into the templates. Instead, the cmponents refre to instructions, they will not be used if they are not rferred by any instructions.
-                </li>
-              </ol>
+              SSR: renderModuleFactory was replaced to 
+              <a href="https://angular.io/api/platform-server/renderModule">
+                renderModule
+              </a> (@angular/platform-server package)
             </div>
           </li>
         </ol>
@@ -62,9 +36,34 @@
     </div>
   </app-section-container>
 
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="description-container">
+      
+      <div class="item">
+        <app-code-container
+          [code]="renderModule"
+          [languages]="['typescript']">
+        </app-code-container>
+      </div>
+      <div class="item">
+        In v16, we only have to set 
+        <a href="https://marvelous-gnome-0802fa.netlify.app/#/hydration">
+          @nguniversal/express-engine
+        </a>.
+      </div>
+      <div class="item">
+        In v17, we only have to set up 
+        <a href="https://chimerical-cocada-121bf6.netlify.app/#/hydration">
+          @angular/ssr
+        </a>
+      </div>
+    </div>
+  </app-section-container>
+
   <!-- reference -->
   <app-section-container>
-    <div class="title" id="reference" title>Reference</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">
