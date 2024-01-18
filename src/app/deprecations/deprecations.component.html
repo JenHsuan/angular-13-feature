@@ -37,10 +37,90 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
-      
       <div class="item">
-        <app-code-container key="renderModule">
-        </app-code-container>
+        There are a few steps to set up the server-side rendering in v13.
+      </div>
+      <div class="item">
+        <ol>
+          <li>
+            <div class="item">
+              Install required packages.
+            </div>
+            <div class="item">
+              <app-code-container key="installSSRpackages">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Generate required files.
+            </div>
+            <div class="item">
+              <app-code-container key="installUniversal">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Create server.ts under the root folder.
+            </div>
+            <div class="item">
+              <app-code-container key="renderModule">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Build files without hashing.
+            </div>
+            <div class="item">
+              <app-code-container key="ngBuildNoHash">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Create the webpack.server.config.js under the root folder.
+            </div>
+            <div class="item">
+              <app-code-container key="webpackConfigSSR">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Compile the server.ts.
+            </div>
+            <div class="item">
+              <app-code-container key="compileServerTs">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Replace all <b>self</b> with <b>this</b>from the dist/server.ts.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Execute the dist/server.ts.
+            </div>
+            <div class="item">
+              <app-code-container key="executeServerTs">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Open the browser and navigate to http://localhost:4201/index.html.
+            </div>
+            <div class="item">
+              <div class="image-container">
+                <img src="../../assets/image/ssr_app.png" alt="">
+              </div>
+            </div>
+          </li>
+        </ol>
       </div>
       <div class="item">
         In v16, we only have to set 
@@ -57,6 +137,15 @@
     </div>
   </app-section-container>
 
+  <!-- evaluation -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <app-evaluation-container
+      [pros]="pros"
+      [cons]="cons">
+    </app-evaluation-container>
+  </app-section-container>
+  
   <!-- reference -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>

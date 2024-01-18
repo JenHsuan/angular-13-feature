@@ -191,44 +191,97 @@ export class DeprecationsContentChildrenComponent {
 { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.productsModule) }
       `,
     languages:[CodeLanguageType.typescript]
+  }], ["installSSRpackages", {
+    code: `
+npm install express @angular/platform-server@^13 ts-loader@@^4.4.2
+      `,
+    languages:[CodeLanguageType.html]
+  }], ["installUniversal", {
+    code: `
+ng generate universal
+      `,
+    languages:[CodeLanguageType.html]
+  }], ["ngBuildNoHash", {
+    code: `
+ng build --prod --output-hashing "none"
+      `,
+    languages:[CodeLanguageType.html]
+  }], ["webpackConfigSSR", {
+    code: `
+const path = require('path');
+const webpack = require('webpack');
+ 
+module.exports = {
+    entry: { server: './server.ts' },
+    resolve: { extensions: ['.ts', '.js'] },
+    target: 'node',
+    // this makes sure we include node_modules and other 3rd party libraries
+    externals: [/(node_modules|main\..*\.js)/],
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: '[name].js'
+    },
+    module: {
+        rules: [
+            { test: /\.ts$/, loader: 'ts-loader' }
+        ]
+    }
+};
+      `,
+    languages:[CodeLanguageType.typescript]
+  }], ["compileServerTs", {
+    code: `
+webpack --config webpack.server.config.js
+      `,
+    languages:[CodeLanguageType.html]
+  }], ["executeServerTs", {
+    code: `
+node dist/server.js 
+      `,
+    languages:[CodeLanguageType.html]
   }], ["renderModule", {
     code: `
+// These are important and needed before anything else
+//import 'zone.js';
 import 'reflect-metadata';
-import 'zone.js/dist/zone-node';
-import { renderModuleFactory } from '@angular/platform-server'
-import { enableProdMode } from '@angular/core'
+
+import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
 enableProdMode();
 
-const PORT = process.env.PORT || 4200;
-const DIST_FOLDER = join(process.cwd(), 'dist');
-
+// Express server
 const app = express();
-
-const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
-const { AppServerModuleNgFactory } = require('main.server');
+const PORT = 4201;
+const DIST_FOLDER = join(process.cwd(), 'dist', 'Angular13ProjectSSR', 'browser');
+const template = readFileSync(join(DIST_FOLDER, 'index.html')).toString();
+const { AppServerModule, renderModule } = require('./dist/Angular13ProjectSSR/browser/main');
 
 app.engine('html', (_, options, callback) => {
-const opts = { document: template, url: options.req.url };
-
-renderModuleFactory(AppServerModuleNgFactory, opts)
-  .then(html => callback(null, html));
+  renderModule(AppServerModule, {
+    document: template,
+    url: (options as any).req.url,
+    }).then((html: any) => {
+    callback(null, html);
+  });
 });
 
 app.set('view engine', 'html');
-app.set('views', 'src')
+app.set('views', DIST_FOLDER);
 
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
+// Server static files from dist folder
+app.get('*.*', express.static(DIST_FOLDER));
 
+// All regular routes use the Universal engine
 app.get('*', (req, res) => {
   res.render('index', { req });
 });
 
+// Start up the Node server
 app.listen(PORT, () => {
-  console.log('listening on PORT!');
+  console.log(\`Node server listening on http://localhost:\${PORT}\`);
 });
       `,
     languages:[CodeLanguageType.typescript]
