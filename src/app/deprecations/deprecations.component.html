@@ -23,10 +23,27 @@
           </li>
           <li>
             <div class="item">
-              SSR: renderModuleFactory was replaced to 
-              <a href="https://angular.io/api/platform-server/renderModule">
-                renderModule
-              </a> (@angular/platform-server package)
+              server-side rendering (SSR)
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    renderModuleFactory was replaced to 
+                    <a href="https://angular.io/api/platform-server/renderModule">
+                      renderModule
+                    </a> (@angular/platform-server package)
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <a href="https://angular.io/api/platform-server/renderModule">
+                      renderModule
+                    </a>:
+                    bootstraps an application using provided NgModule and serializes the page content to string.
+                  </div>
+                </li>
+              </ul>
             </div>
           </li>
         </ol>
@@ -37,6 +54,15 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="description-container">
+      <div class="item">
+        For achieving SSR, we have to transform the angular modules to string on the server. It means that we have to run JavaScript on the server. So we need Node.js.
+      </div>
       <div class="item">
         There are a few steps to set up the server-side rendering in v13.
       </div>
@@ -139,7 +165,7 @@
 
   <!-- evaluation -->
   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
     <app-evaluation-container
       [pros]="pros"
       [cons]="cons">
@@ -148,7 +174,7 @@
   
   <!-- reference -->
   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[4])" title>{{ sectionTitles[4] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

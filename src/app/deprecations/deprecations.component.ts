@@ -13,7 +13,8 @@ export class DeprecationsComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "SSR (server-side rendering) with ng universal",
+    "Intrdocuction to the server-side rendering (SSR)",
+    "SSR with ng universal",
     "Evaluation for ng universal",
     "Reference"
   ];
@@ -28,7 +29,8 @@ export class DeprecationsComponent {
   referencesMap = new Map<string, string>([
     ["Arrow function Vs String path in LoadChildren Route in Angular", "https://stackoverflow.com/questions/57346350/arrow-function-vs-string-path-in-loadchildren-route-in-angular"],
     ["Angular5 服务器渲染(SSR)", "https://www.cnblogs.com/huiguo/p/10809264.html"],
-    ["How to build an Angular App with Server-Side Rendering", "https://medium.com/upstate-interactive/how-to-build-an-angular-app-with-server-side-rendering-f7f415b851c8"]
+    ["How to build an Angular App with Server-Side Rendering", "https://medium.com/upstate-interactive/how-to-build-an-angular-app-with-server-side-rendering-f7f415b851c8"],
+    ["React 初学 - 用 renderToString 在服务器上渲染 React - 个人笔记54", "https://blog.csdn.net/Amnesiac666/article/details/119611948"]
   ]);
   items: number[] = [];
   cnt = 0;
