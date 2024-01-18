@@ -35,29 +35,4 @@ export class CacheComponent {
   ngAfterViewInit() {
     this.cd.detectChanges();
   }
-  
-  angularjson = `
-  //angular.json
-
-  {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "cli": {
-      "analytics": "a7da08fe-30d4-42ce-a659-5296089127b8",
-      "cache": {
-        "enabled": true,
-        "environment": "all",
-        "path": ".angular-cache"
-      }
-      ...
-  }
-  `;
-
-  angularcli = `
-  //angular-cli
-  
-  ng config cli.cache.enabled false/true
-  ng config cli.cache.environment all/ci/local
-  ng config cli.cache.path ".angular-cache"
-  `;
-
 }

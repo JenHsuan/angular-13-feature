@@ -31,36 +31,4 @@ export class TestingComponent  {
     this.cd.detectChanges();
   }
 
-  testComponentBefore = `
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ TestingComponent ]
-    })
-    .compileComponents();
-  });
-  `;
-
-  testComponent = `
-  //Tear down the environment with the TestBed.initTestEnvironment 
-  beforeEach(async () => {
-    TestBed.resetTestEnvironment();
-    TestBed.initTestEnvironment(
-        BrowserDynamicTestingModule,
-        platformBrowserDynamicTesting(),
-        {
-            teardown: { destroyAfterEach: true }
-        }
-    );
-  });
-
-  //Tear down the module with the TestBed.configureTestingModule
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ TestingComponent ],
-      teardown: { destroyAfterEach: true }
-    })
-    .compileComponents();
-  });
-  `;
-
 }

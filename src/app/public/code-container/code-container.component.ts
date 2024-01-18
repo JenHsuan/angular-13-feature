@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { getCodeFromMap } from '../utils/utils';
+import { Code } from './service/code.domain';
+import { codeMap } from '../config/code-map';
 
 @Component({
   selector: 'app-code-container',
@@ -6,6 +9,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./code-container.component.scss']
 })
 export class CodeContainerComponent {
-  @Input() code = '';
-  @Input() languages: string[];
+  @Input() key: string;
+
+  codeFromMap: Code;
+  
+  ngOnInit() {
+    this.codeFromMap = getCodeFromMap(this.key, codeMap);
+  }
+
+  get code(): string {
+    return this.codeFromMap.code;
+  }
+
+  get languages(): string[] {
+    return this.codeFromMap.languages;
+  }
 }

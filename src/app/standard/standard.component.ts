@@ -33,7 +33,7 @@ export class StandardComponent {
     this.cd.detectChanges();
   }
   
-  legacyCode = `
+  legacyCodelegacyCode = `
   import { DynamicComponent } from './dynamic/dynamic.component';
 
   export class StandardComponent {

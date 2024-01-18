@@ -48,7 +48,7 @@ export class InlineFontComponent {
     this.cd.detectChanges();
   }
 
-  steps = `
+  stepsStyle = `
   //1. Update angular.json (build -> configuration -> production)
 
   "optimization": {

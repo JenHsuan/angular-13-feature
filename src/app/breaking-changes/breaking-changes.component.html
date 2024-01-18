@@ -36,9 +36,7 @@
               </a>
             </div>
             <div class="item">
-              <app-code-container
-                [code]="upgardeRx"
-                [languages]="['typescript']">
+              <app-code-container key="upgardeRx">
               </app-code-container>
             </div>
           </li>
@@ -118,9 +116,7 @@
               </ul>
             </div>
             <div class="item">
-              <app-code-container
-                [code]="typeguard"
-                [languages]="['typescript']">
+              <app-code-container key="typeguard">
               </app-code-container>
             </div>
           </li>
@@ -134,9 +130,7 @@
               Defaulting to the unknown Type in Catch Variables if we enable useUnknownInCatchVariables
             </div>
             <div class="item">
-              <app-code-container
-                [code]="typeguard"
-                [languages]="['typescript']">
+              <app-code-container key="typeguard">
               </app-code-container>
             </div>
           </li>
@@ -158,9 +152,7 @@
                   Index signatures
                 </div>
                 <div class="item">
-                  <app-code-container
-                    [code]="tsSymbol"
-                    [languages]="['typescript']">
+                  <app-code-container key="tsSymbol">
                   </app-code-container>
                 </div>
               </li>
@@ -169,9 +161,7 @@
                   Template string patterns
                 </div>
                 <div class="item">
-                  <app-code-container
-                    [code]="tsTemplateString"
-                    [languages]="['typescript']">
+                  <app-code-container key="tsTemplateString">
                   </app-code-container>
                 </div>
               </li>
@@ -201,9 +191,7 @@
               </ul>
             </div>
             <div class="item">
-              <app-code-container
-                [code]="tsStaticBlock"
-                [languages]="['typescript']">
+              <app-code-container key="tsStaticBlock">
               </app-code-container>
             </div>
           </li>
@@ -217,7 +205,7 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        The rendering will be blocked when the scrippt is downloaded or executed. (synchronous)
+        The rendering will be blocked when the script is downloaded or executed. (synchronous)
       </div>
       <div class="item image-container">
         <img src="../../assets/image/critical_path.webp" alt="">    
@@ -228,18 +216,14 @@
           <li>
             The script will be asynchronously downloaded when specifying the module attribute. The script will be executed after rendering completed.
             <div class="item">
-              <app-code-container
-                [code]="moduleSyntax"
-                [languages]="['html']">
+              <app-code-container key="moduleSyntax">
               </app-code-container>
             </div>
           </li>
           <li>
             The script will be asynchronously downloaded when adding the async attribute. The script will be executed before rendering completed.
              <div class="item">
-              <app-code-container
-                [code]="moduleAsyncSyntax"
-                [languages]="['html']">
+              <app-code-container key="moduleAsyncSyntax">
               </app-code-container>
             </div>
           </li>
@@ -272,9 +256,7 @@
         </ul>
       </div>
       <div class="item">
-        <app-code-container
-          [code]="distIndex"
-          [languages]="['html']">
+        <app-code-container key="distIndex">
         </app-code-container>
       </div>
     </div>

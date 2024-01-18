@@ -19,17 +19,13 @@
         <ul>
           <li>Previous version:
             <div class="item">
-              <app-code-container
-                [code]="legacyCode"
-                [languages]="['typescript']">
+              <app-code-container key="legacyCodeDynamic">
               </app-code-container>
             </div>
           </li>
           <li>New API:
             <div class="item">
-              <app-code-container
-                [code]="newCode"
-                [languages]="['typescript']">
+              <app-code-container key="newCodeDynamic">
               </app-code-container>
             </div>
           </li>

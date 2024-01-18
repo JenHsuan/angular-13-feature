@@ -17,9 +17,7 @@
              No longer specify lazy-loaded routes by setting a string value to loadChildren. Instead, we move to dynamic ESM import statements
             </div>
             <div class="item">
-              <app-code-container
-                [code]="loadChildren"
-                [languages]="['typescript']">
+              <app-code-container key="loadChildren">
               </app-code-container>
             </div>
           </li>
@@ -41,9 +39,7 @@
     <div class="description-container">
       
       <div class="item">
-        <app-code-container
-          [code]="renderModule"
-          [languages]="['typescript']">
+        <app-code-container key="renderModule">
         </app-code-container>
       </div>
       <div class="item">

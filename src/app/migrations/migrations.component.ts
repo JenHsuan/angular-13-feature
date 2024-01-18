@@ -27,12 +27,4 @@ export class MigrationsComponent {
   ngAfterViewInit() {
     this.cd.detectChanges();
   }
-
-  instruction = `
-  npx @angular/cli@${version} new Angular@${version}Project
-  `;
-
-  updateInstruction = `
-  npx @angular/cli@${version} update @angular/core@${version} @angular/cli@${version}
-  `;
 }

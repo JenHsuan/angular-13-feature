@@ -1,3 +1,19 @@
+import { Routes } from "@angular/router";
+import { BreakingChangesComponent } from "src/app/breaking-changes/breaking-changes.component";
+import { BugfixNavigationComponent } from "src/app/bugfix-navigation/bugfix-navigation.component";
+import { CacheComponent } from "src/app/cache/cache.component";
+import { DeprecationsComponent } from "src/app/deprecations/deprecations.component";
+import { DocumentsComponent } from "src/app/documents/documents.component";
+import { EsmComponent } from "src/app/esm/esm.component";
+import { HomeComponent } from "src/app/home/home.component";
+import { InlineFontComponent } from "src/app/inline-font/inline-font.component";
+import { MigrationsComponent } from "src/app/migrations/migrations.component";
+import { MinorChangesComponent } from "src/app/minor-changes/minor-changes.component";
+import { NotesComponent } from "src/app/notes/notes.component";
+import { StandardComponent } from "src/app/standard/standard.component";
+import { TestingComponent } from "src/app/testing/testing.component";
+import { TodoComponent } from "src/app/todo/todo.component";
+
 export enum ROUTE_TYPE {
   DYNAMIC_COMPONENT = 'DYNAMIC_COMPONENT',
   CACHE = 'CACHE',
@@ -63,4 +79,64 @@ export const sideBarList = [
   ROUTE_TYPE.TESTING,
   ROUTE_TYPE.BUGFIX_NAVIGATION,
   ROUTE_TYPE.TODO,
+];
+
+export const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home'},
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'standard',
+    component: StandardComponent
+  },
+  {
+    path: 'notes',
+    component: NotesComponent
+  },
+  {
+    path: 'cache',
+    component: CacheComponent
+  },
+  {
+    path: 'esm',
+    component: EsmComponent
+  },
+  {
+    path: 'inline-font',
+    component: InlineFontComponent
+  },
+  {
+    path: 'migrations',
+    component: MigrationsComponent
+  },
+  {
+    path: 'testing',
+    component: TestingComponent
+  },
+  {
+    path: 'breaking-changes',
+    component: BreakingChangesComponent
+  },
+  {
+    path: 'deprecations',
+    component: DeprecationsComponent
+  },
+  {
+    path: 'documents',
+    component: DocumentsComponent
+  },
+  {
+    path: 'todo',
+    component: TodoComponent
+  },
+  {
+    path: 'bugfix-navigation',
+    component: BugfixNavigationComponent
+  },
+  {
+    path: 'minor-changes',
+    component: MinorChangesComponent
+  }
 ];

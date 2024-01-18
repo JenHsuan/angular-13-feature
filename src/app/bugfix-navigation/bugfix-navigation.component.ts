@@ -30,15 +30,4 @@ export class BugfixNavigationComponent {
   ngAfterViewInit() {
     this.cd.detectChanges();
   }
-
-
-  cancelRoute = `
-  @NgModule({
-    imports: [RouterModule.forRoot(
-      routes, 
-      { canceledNavigationResolution: 'computed' },
-    )],
-    exports: [RouterModule]
-  })
-  `;
 }

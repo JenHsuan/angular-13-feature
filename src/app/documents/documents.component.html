@@ -2,8 +2,7 @@
   [title]="title"
   [sections]="sections"
   [sectionTitles]="sectionTitles"
-  [getIdFromTitle]="getIdFromTitle"
-  >
+  [getIdFromTitle]="getIdFromTitle">
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
@@ -14,13 +13,13 @@
         <ul>
           <li>
             <div class="item">
-              The purpose is to introduce the features, deprecations, and breaking changes.
+              The purpose is to reproduce the features, deprecations, and breaking changes easily.
             </div>
           </li>
           <li>
             <div class="item">
-              For the advanced studying, it's recommended to check documents in later versions of Angular or the timeline from the 
-              <a href="/#/home">home</a> page.
+              For the advanced reading, it's recommended to check documents in later versions or the timeline from the 
+              <a routerLink="/home">home</a> page.
             </div>
           </li>
           <li>
