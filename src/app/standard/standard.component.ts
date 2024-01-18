@@ -32,31 +32,4 @@ export class StandardComponent {
     const componentRef = this.container.createComponent(DynamicComponent);
     this.cd.detectChanges();
   }
-  
-  legacyCodelegacyCode = `
-  import { DynamicComponent } from './dynamic/dynamic.component';
-
-  export class StandardComponent {
-    @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
-  
-    constructor(private cfr: ComponentFactoryResolver ) { }
-  
-    ngAfterViewInit(): void {
-      const factory: ComponentFactory<DynamicComponent> = this.cfr.resolveComponentFactory(DynamicComponent);
-      const componentRef = this.container.createComponent(factory);
-    }
-  }
-  `;
-
-  newCode = `
-  import { DynamicComponent } from './dynamic/dynamic.component';
-  
-  export class StandardComponent {
-    @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
-  
-    ngAfterViewInit(): void {
-       const componentRef = this.container.createComponent(DynamicComponent);
-    }
-  }
-  `;
 }

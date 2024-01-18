@@ -30,5 +30,4 @@ export class TestingComponent  {
   ngAfterViewInit() {
     this.cd.detectChanges();
   }
-
 }

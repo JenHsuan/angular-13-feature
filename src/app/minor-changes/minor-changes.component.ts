@@ -28,32 +28,4 @@ export class MinorChangesComponent {
   ngAfterViewInit() {
     this.cd.detectChanges();
   }
-
-  routeLinkCancel = `
-  <a [routerLink]="linkEnabled ? 'path' : null">Link</a>
-  `;
-
-  nullValidator = `
-  <input name="firstName" ngModel [maxlength]="null">
-  `;
-
-  urlSerializer = `
-  //v12
-  export class DeprecationsContentChildrenComponent {
-    constructor(private cd: ChangeDetectorRef){
-      let dus = new DefaultUrlSerializer();
-      //queryParams: q: "hello"
-      console.log(dus.parse('/path?q=hello?&q2=2'));
-    }
-  }
-
-  //v13
-  export class DeprecationsContentChildrenComponent {
-    constructor(private cd: ChangeDetectorRef){
-      let dus = new DefaultUrlSerializer();
-      //queryParams: q: "hello?", q2: "2"
-      console.log(dus.parse('/path?q=hello?&q2=2'));
-    }
-  }
-  `;
 }
