@@ -13,17 +13,18 @@ export class DeprecationsComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Intrdocuction to the server-side rendering (SSR)",
-    "SSR with ng universal",
+    "Introduction to the server-side rendering (SSR)",
+    "SSR in Angular 13 with ng universal",
     "Evaluation for ng universal",
     "Reference"
   ];
 
   pros = [
-    "SSR can provide less TTI.",
+    "SSR can optimize FCP, TBT.",
   ];
   cons = [
-    "According to the expirements, the paractices of SSR is not easy to implement in v13."
+    "According to the expirements, the paractices of SSR is not easy to implement in v13.",
+    "renderModule can be slow as it's synchronous and single-threaded."
   ];
 
   referencesMap = new Map<string, string>([

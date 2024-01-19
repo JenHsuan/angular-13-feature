@@ -1,0 +1,15 @@
+.image-container {
+  height: 25em;
+  .original-logo {
+    position: absolute;
+    height: 25em;
+    filter: grayscale(90%);
+  }
+  
+  .revert-logo {
+    position: absolute;
+    max-width: 0%;
+    left: 1em;
+    height: 25em;
+  }
+}

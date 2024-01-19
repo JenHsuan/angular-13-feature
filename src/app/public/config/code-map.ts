@@ -440,19 +440,94 @@ beforeEach(async () => {
   exports: [RouterModule]
 })    `,
     languages:[CodeLanguageType.typescript]
-  }], ["updateInstruction", {
+  }], ["webAnimationComponent", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+/*
+* Take 1% time to go from 0% to 10%
+* Take 99% time to go from 10% to 100%
+* If there is no specific offset, the comsued time will be equally distributed
+*/
+const createCircleAnimation = () => [
+  {
+    maxWidth: '100%',
+    clipPath: 'circle(0%)'
+  },
+  {
+    clipPath: 'circle(10%)',
+    offset: 0.01
+  },
+  {
+    clipPath: 'circle(100%)',
+    offset: 0.98
+  },
+  {
+    maxWidth: '100%',
+    clipPath: 'circle(0%)',
+  }
+];
+
+/*
+* Take 99% time to rotate 1800deg
+*/
+const rotatationAnimation = {
+  transform: [
+    'rotate(1800deg)',
+  ],
+  offset: [0.99],
+  easing: [ 'ease-in', 'ease-out' ],
+}
+
+@Component({
+  selector: 'app-inline-font-web-animation',
+  templateUrl: './inline-font-web-animation.component.html',
+  styleUrls: ['./inline-font-web-animation.component.scss']
+})
+export class InlineFontWebAnimationComponent {
+  @ViewChild("revertedLogo", {read: ElementRef}) revertedLogo: ElementRef | undefined; 
+
+  switchImage() {
+    //animation is asynchronous
+    this.revertedLogo?.nativeElement.animate(createCircleAnimation(), {
+      duration: 3000,
+      easing: 'ease-in-out',
+      delay: 100,
+    });
+    console.log('the animation is triggered');
+
+    this.revertedLogo?.nativeElement.animate(rotatationAnimation, {
+      duration: 500,
+      iterations: 1,
+      delay: 1000,
+    });
+  }
+}
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["webAnimationTemplate", {
+    code: `
+<div class="image-container">
+  <img src="../../../assets/image/angular-logo.png" (click)="switchImage()" class="original-logo" #originalLogo alt="">
+  <img src="../../../assets/image/angular-logo.png" class="reverted-logo" #revertedLogo alt="">
+</div>
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["webAnimationStyle", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
-    code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+.image-container {
+  height: 25em;
+  .original-logo {
+    position: absolute;
+    height: 25em;
+    filter: grayscale(90%);
+  }
+  
+  .revert-logo {
+    position: absolute;
+    max-width: 0%;
+    left: 1em;
+    height: 25em;
+  }
+}
     `,
     languages:[CodeLanguageType.html]
   }], ["updateInstruction", {

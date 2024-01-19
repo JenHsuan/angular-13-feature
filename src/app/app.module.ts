@@ -33,6 +33,7 @@ import { TodoComponent } from './todo/todo.component';
 import { BugfixNavigationComponent } from './bugfix-navigation/bugfix-navigation.component';
 import { MinorChangesComponent } from './minor-changes/minor-changes.component';
 import { EvaluationContainerComponent } from './public/evaluation-container/evaluation-container.component';
+import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-animation/inline-font-web-animation.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { EvaluationContainerComponent } from './public/evaluation-container/eval
     TodoComponent,
     BugfixNavigationComponent,
     MinorChangesComponent,
-    EvaluationContainerComponent
+    EvaluationContainerComponent,
+    InlineFontWebAnimationComponent
   ],
   imports: [
     BrowserModule,

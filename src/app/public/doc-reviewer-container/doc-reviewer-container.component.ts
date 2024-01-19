@@ -19,7 +19,6 @@ export class DocReviewerContainerComponent {
   ngAfterViewInit() {
     addEventListener("scroll", (event) => {
       if ((window.innerHeight + Math.round(document.documentElement.scrollTop)) >= document.body.scrollHeight) {
-        console.log("you're at the bottom of the page")
         this.showBackTop = true;
       } else {
         this.showBackTop = false;

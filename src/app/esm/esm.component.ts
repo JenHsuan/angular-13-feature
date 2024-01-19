@@ -28,8 +28,7 @@ export class EsmComponent {
   cons = [];
 
   referencesMap = new Map<string, string>([
-    ["Optimizing Apps with Resource Inlining", "https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=184s"],
-    ["The [New] State of CSS in Angular", "https://blog.angular.io/the-new-state-of-css-in-angular-bec011715ee6"],
+    ["[Node] CommonJS Modules and ES Modules", "https://pjchender.dev/nodejs/node-module-system/"],
     ["在 2021 可以使用 ESModule 了嗎？", "https://chentsulin.medium.com/%E5%9C%A8-2021-%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-esmodule-%E4%BA%86%E5%97%8E-c05c3408e69"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;

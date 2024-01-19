@@ -31,11 +31,17 @@ export class InlineFontComponent {
   consForCSSVariables = [];
 
   prosForWebAnimationsAPI = [
+    "We can only write the animation logic in the component, which is more convenient for us to maintain the code."
   ];
-  consForWebAnimationsAPI = [];
+  consForWebAnimationsAPI = [
+    "Even though the web animation API has supported most modern broswers, there are still a few unsupported broswers."
+  ];
 
   referencesMap = new Map<string, string>([
-    ["[Node] CommonJS Modules and ES Modules", "https://pjchender.dev/nodejs/node-module-system/"]
+    ["Optimizing Apps with Resource Inlining", "https://www.youtube.com/watch?v=yOpy9UMQG-Y&t=184s"],
+    ["The [New] State of CSS in Angular", "https://blog.angular.io/the-new-state-of-css-in-angular-bec011715ee6"],
+    ["clip-path", "https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path"],
+    ["讓人垂涎三尺的 Web Animations API", "https://kusakawazeusu.medium.com/%E8%AE%93%E4%BA%BA%E5%9E%82%E6%B6%8E%E4%B8%89%E5%B0%BA%E7%9A%84-web-animations-api-92dc85f670bb"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

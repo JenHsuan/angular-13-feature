@@ -54,6 +54,130 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
+      <div class="item">
+        <b>Client-side rendering</b> renders pages directly in the browser with JavaScript(e.g., ng serve, ng build). All logic, data fetching, templating and routing are handled on the client rather than the server. 
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Pros
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    Reduce the loading for the server.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Cons
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    Unfriendly to mobile devices.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Poor SEO
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Higher Total Blocking Time (TBT): the browser has to download JavaScript files and execute them before rendering the page.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Solutions
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    <a href="https://web.dev/articles/reduce-javascript-payloads-with-code-splitting">
+                      Code splitting with Webpack
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Lazy loading
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Server-side rendering
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <b>Server-side rendering</b> generates the full HTML for a page on the server in response to navigation.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Pros
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    Avoids additional round-trips for data fetching and templating on the client.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Fast First Contentful Paint (FCP): SSR avoids sending lots of JavaScript to the client.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Lower Total Blocking Time (TBT): SSR sending lots of JavaScript to the client. (download JavaScript files will block the main thread)
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Cons
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    Higher Time to First Byte (TTFB): generating pages on the server takes time.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/csr_ssr.png" alt="">
+        </div>
+      </div>
+      <div class="item">
+        (taken from <a href="https://web.dev/articles/rendering-on-the-web">this reference</a>)
+      </div>
     </div>
   </app-section-container>
 

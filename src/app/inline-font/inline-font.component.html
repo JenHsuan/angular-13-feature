@@ -102,6 +102,62 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[5])" title>{{ sectionTitles[5] }}</div>
     <div class="description-container">
+      <div class="item">
+        The purpose of web animation API is to deal with some problems of the traditional CSS animation.
+        The traditional CSS animation can be only triggered by CSS properties (e.g, hover) or manipulating the CSSDOM from JavaScript. 
+      </div>
+      <div class="item">
+        <b>Compatibility</b>
+      </div>
+      <div class="item">
+        The web animation API has supported most modern broswers.
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/web_animation_supports.png" alt="">
+        </div>
+      </div>
+      <div class="item">
+        <b>Example</b>
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Component
+            </div>
+            <div class="item">
+              <app-code-container key="webAnimationComponent">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Template
+            </div>
+            <div class="item">
+              <app-code-container key="webAnimationTemplate">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Style
+            </div>
+            <div class="item">
+              <app-code-container key="webAnimationStyle">
+              </app-code-container>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        The following result demostrate the web animation API works.
+      </div>
+      <div class="item" id="web-animation-demo">
+        <app-inline-font-web-animation>
+        </app-inline-font-web-animation>
+      </div>
     </div>
   </app-section-container>
 
