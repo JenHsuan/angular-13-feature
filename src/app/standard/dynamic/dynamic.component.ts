@@ -5,11 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dynamic.component.html',
   styleUrls: ['./dynamic.component.scss']
 })
-export class DynamicComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class DynamicComponent {
 }

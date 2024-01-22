@@ -29,11 +29,11 @@ import { PageContainerComponent } from './public/page-container/page-container.c
 import { NavigationButtonContainerComponent } from './public/navigation-button-container/navigation-button-container.component';
 import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
 import { MobileNavContainerComponent } from './public/mobile-nav-container/mobile-nav-container.component';
-import { TodoComponent } from './todo/todo.component';
 import { BugfixNavigationComponent } from './bugfix-navigation/bugfix-navigation.component';
 import { MinorChangesComponent } from './minor-changes/minor-changes.component';
 import { EvaluationContainerComponent } from './public/evaluation-container/evaluation-container.component';
 import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-animation/inline-font-web-animation.component';
+import { FormControlStatusComponent } from './form-control-status/form-control-status.component';
 
 @NgModule({
   declarations: [
@@ -60,11 +60,11 @@ import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-a
     NavigationButtonContainerComponent,
     ReferenceContainerComponent,
     MobileNavContainerComponent,
-    TodoComponent,
     BugfixNavigationComponent,
     MinorChangesComponent,
     EvaluationContainerComponent,
-    InlineFontWebAnimationComponent
+    InlineFontWebAnimationComponent,
+    FormControlStatusComponent
   ],
   imports: [
     BrowserModule,

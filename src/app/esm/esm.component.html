@@ -13,10 +13,43 @@
         We are able to create the proxy file in the .mjs file format directly.
       </div>
       <div class="item">
+        There are a few steps to set up the proxy.
       </div>
       <div class="item">
-        <app-code-container key="stepsESM">
-        </app-code-container>
+        <ol>
+          <li>
+            <div class="item">
+              Create a proxy.conf.mjs file.
+            </div>
+            <div class="item">
+              <app-code-container key="step1ESM">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Update the angular.json file.
+            </div>
+            <div class="item">
+              <app-code-container key="step2ESM">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Setup the backend locally (http://localhost:3000).
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Start the dev server.
+            </div>
+            <div class="item">
+              <app-code-container key="step4ESM">
+              </app-code-container>
+            </div>
+          </li>
+        </ol>
       </div>
       <div class="item">
         The following result demostrate the ESM proxy file works.
@@ -36,25 +69,9 @@
     </div>
   </app-section-container>
 
-  <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <div class="description-container">
-      
-    </div>  
-  </app-section-container>
-
-  <!-- evaluation -->
-  <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
-    <app-evaluation-container
-      [pros]="pros"
-      [cons]="cons">
-    </app-evaluation-container>
-  </app-section-container>
-
   <!-- reference -->
   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

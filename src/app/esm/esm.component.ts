@@ -17,15 +17,8 @@ export class EsmComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "ESM (ES6 Module)",
-    "Evaluation",
     "Reference"
   ];
-  
-  pros = [
-    "With the feature, we have a new choice of file format.",
-  ];
-  cons = [];
 
   referencesMap = new Map<string, string>([
     ["[Node] CommonJS Modules and ES Modules", "https://pjchender.dev/nodejs/node-module-system/"],

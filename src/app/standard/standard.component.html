@@ -13,32 +13,61 @@
         The Component API has been updated. The process for generating dynamic components was simplified.
       </div>
       <div class="item">
-        Ivy creates the opportunity to instantiate the component with ViewContainerRef.createComponent without creating an associated factory.
+        Ivy creates the opportunity to instantiate the component with 
+        <a href="https://angular.io/api/core/ViewContainerRef#createComponent">
+          ViewContainerRef.createComponent
+        </a> without creating an associated factory.
       </div>
       <div class="item">
         <ul>
-          <li>Previous version:
+          <li>
             <div class="item">
-              <app-code-container key="legacyCodeDynamic">
+              Child
+            </div>
+            <div class="item">
+              <app-code-container key="dynamicChildTemplate">
+              </app-code-container>
+            </div>
+            <div class="item">
+              <app-code-container key="dynamicChildComponent">
               </app-code-container>
             </div>
           </li>
-          <li>New API:
+          <li>
             <div class="item">
-              <app-code-container key="newCodeDynamic">
+              Parent
+            </div>
+            <div class="item">
+              <app-code-container key="dynamicParentTemplate">
               </app-code-container>
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    Component in the previous version
+                  </div>
+                  <div class="item">
+                    <app-code-container key="legacyCodeDynamic">
+                    </app-code-container>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Component with new API
+                  </div>
+                  <div class="item">
+                    <app-code-container key="newCodeDynamic">
+                    </app-code-container>
+                  </div>
+                </li>
+              </ul>
             </div>
           </li>
         </ul>
       </div>
-    </div>
-  </app-section-container>
-
-  <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <div class="demo-container">
       <div class="item">
-        The following component is created dynamically.
+        The following result demostrate the new component API works.
       </div>
       <div class="item">
         <ng-container #container>
@@ -49,7 +78,7 @@
 
    <!-- reference -->
    <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

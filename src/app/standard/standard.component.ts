@@ -14,7 +14,6 @@ export class StandardComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Demo",
     "Reference"
   ];
 

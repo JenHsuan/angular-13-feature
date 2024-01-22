@@ -310,18 +310,18 @@ ng config cli.cache.environment all/ci/local
 ng config cli.cache.path ".angular-cache"
       `,
     languages:[CodeLanguageType.html]
-  }], ["stepsESM", {
+  }], ["step1ESM", {
     code: `
-//1. Add proxy.conf.mjs
-  
 export default {
   "/pdf": {
     "target": "http://localhost:3000",
     "secure": false
   }
 }
-
-//2. Update the angular.json file
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["step2ESM", {
+    code: `
 "architect": {
   ...,
   "serve": {
@@ -329,8 +329,11 @@ export default {
     "options": {
       "proxyConfig": "proxy.conf.mjs"
     }
-
-//3. Setup the backend locally (http://localhost:3000)
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["step4ESM", {
+    code: `
+ng serve
     `,
     languages:[CodeLanguageType.typescript]
   }], ["stepsStyle", {
@@ -530,51 +533,93 @@ export class InlineFontWebAnimationComponent {
 }
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["moduleSyntax", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+<script src="fancyModernBundle.js" type="module">
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["moduleAsyncSyntax", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+<script src="fancyModernBundle.js" type="module" async>
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["installNgPackagr", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+// Upgrade ng-packagr
+
+npm install -D ng-packagr@^13
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["dynamicChildComponent", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+export class DynamicComponent {
+}
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["dynamicChildTemplate", {
+    code: `
+<div class="container">dynamic works!</div>
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["dynamicParentTemplate", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+<ng-container #container>
+</ng-container>
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["ngUpdate", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+ng update
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["formControlStatus12", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+export declare abstract class AbstractControl {
+  /**
+   * The validation status of the control. There are four possible
+   * validation status values:
+   *
+   * * **VALID**: This control has passed all validation checks.
+   * * **INVALID**: This control has failed at least one validation check.
+   * * **PENDING**: This control is in the midst of conducting a validation check.
+   * * **DISABLED**: This control is exempt from validation checks.
+   *
+   * These status values are mutually exclusive, so a control cannot be
+   * both valid AND invalid or invalid AND disabled.
+   */
+   readonly status: string;
+
+   ...
+}
+
+export declare class FormControl extends AbstractControl {
+  ...
+}
     `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+    languages:[CodeLanguageType.typescript]
+  }], ["formControlStatus13", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+export declare type FormControlStatus = 'VALID' | 'INVALID' | 'PENDING' | 'DISABLED';
+
+export declare abstract class AbstractControl {
+  /**
+   * The validation status of the control.
+   *
+   * @see \`FormControlStatus\`
+   *
+   * These status values are mutually exclusive, so a control cannot be
+   * both valid AND invalid or invalid AND disabled.
+   */
+  readonly status: FormControlStatus;
+
+   ...
+}
+
+export declare class FormControl extends AbstractControl {
+  ...
+}
     `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
-    code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.typescript]
   }], ["updateInstruction", {
     code: `
 npx @angular/cli@13 update @angular/core@13 @angular/cli@13

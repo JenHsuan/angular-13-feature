@@ -5,6 +5,7 @@ import { CacheComponent } from "src/app/cache/cache.component";
 import { DeprecationsComponent } from "src/app/deprecations/deprecations.component";
 import { DocumentsComponent } from "src/app/documents/documents.component";
 import { EsmComponent } from "src/app/esm/esm.component";
+import { FormControlStatusComponent } from "src/app/form-control-status/form-control-status.component";
 import { HomeComponent } from "src/app/home/home.component";
 import { InlineFontComponent } from "src/app/inline-font/inline-font.component";
 import { MigrationsComponent } from "src/app/migrations/migrations.component";
@@ -12,7 +13,6 @@ import { MinorChangesComponent } from "src/app/minor-changes/minor-changes.compo
 import { NotesComponent } from "src/app/notes/notes.component";
 import { StandardComponent } from "src/app/standard/standard.component";
 import { TestingComponent } from "src/app/testing/testing.component";
-import { TodoComponent } from "src/app/todo/todo.component";
 
 export enum ROUTE_TYPE {
   DYNAMIC_COMPONENT = 'DYNAMIC_COMPONENT',
@@ -27,8 +27,8 @@ export enum ROUTE_TYPE {
   HOME = 'HOME',
   MIGRATIONS = 'MIGRATIONS',
   BUGFIX_NAVIGATION = 'BUGFIX_NAVIGATION',
-  TODO = 'TODO',
-  MINOR_CHANGES = 'MINOR_CHANGES'
+  MINOR_CHANGES = 'MINOR_CHANGES',
+  FORMCONTROL_STATUS = 'FORMCONTROL_STATUS'
 }
 
 export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
@@ -45,7 +45,7 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/standard', ROUTE_TYPE.DYNAMIC_COMPONENT],
   ['/testing', ROUTE_TYPE.TESTING],
   ['/bugfix-navigation', ROUTE_TYPE.BUGFIX_NAVIGATION],
-  ['/todo', ROUTE_TYPE.TODO],
+  ['/form-control-status', ROUTE_TYPE.FORMCONTROL_STATUS],
 ]);
 
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
@@ -62,7 +62,7 @@ export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.MINOR_CHANGES, 'Minor Changes'],
   [ROUTE_TYPE.DEPRECATIONS, 'Deprecations'],
   [ROUTE_TYPE.BUGFIX_NAVIGATION, 'Bugfix - Navigation'],
-  [ROUTE_TYPE.TODO, 'Todo list'],
+  [ROUTE_TYPE.FORMCONTROL_STATUS, 'Improvement - Form Control Status'],
 ]);
 
 export const sideBarList = [
@@ -76,9 +76,9 @@ export const sideBarList = [
   ROUTE_TYPE.FONT,
   ROUTE_TYPE.NOTES,
   ROUTE_TYPE.DYNAMIC_COMPONENT,
+  ROUTE_TYPE.FORMCONTROL_STATUS,
   ROUTE_TYPE.TESTING,
   ROUTE_TYPE.BUGFIX_NAVIGATION,
-  ROUTE_TYPE.TODO,
 ];
 
 export const routes: Routes = [
@@ -128,15 +128,15 @@ export const routes: Routes = [
     component: DocumentsComponent
   },
   {
-    path: 'todo',
-    component: TodoComponent
-  },
-  {
     path: 'bugfix-navigation',
     component: BugfixNavigationComponent
   },
   {
     path: 'minor-changes',
     component: MinorChangesComponent
+  },
+  {
+    path: 'form-control-status',
+    component: FormControlStatusComponent
   }
 ];

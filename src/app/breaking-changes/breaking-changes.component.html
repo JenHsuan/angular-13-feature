@@ -48,7 +48,10 @@
               </a>
             </div>
             <div class="item">
-              <ul>
+              There are a few benefits.
+            </div>
+            <div class="item">
+              <ol>
                 <li>
                   <div class="item">
                     The IE-specific polyfills were dropped
@@ -59,27 +62,48 @@
                     Be able to remove special JS and CSS code paths, polyfills, build passes, and dev infrastructure that exists
                   </div>  
                 </li>
-              </ul>
+              </ol>
+            </div>
+            <div class="item">
+              <app-code-container key="ngUpdate">
+              </app-code-container>
             </div>
           </li>
           <li>
             <div class="item">
               <b>Ivy everywhere</b>:
-            remove View engine, ngcc and fully use Ivy
+            remove View engine and fully use Ivy (check the <a href="https://eloquent-macaron-9ce67b.netlify.app/#/deprecations"> note of Angular 12</a> for details)
             </div>
             <div class="item">
-              <ul>
+              There are a few benefits.
+            </div>
+            <div class="item">
+              <ol>
                 <li>
                   <div class="item">
-                    Please feel free to check the <a href="https://eloquent-macaron-9ce67b.netlify.app/#/deprecations"> note of Angular 12</a> for nmore details about the view engine, ngcc, and Ivy.
+                    Librarie built with Angular Package Format (APF) in v13 no longer need to be compiled with ngcc.
+                  </div>
+                  <div class="item">
+                    <app-code-container key="installNgPackagr">
+                    </app-code-container>
                   </div>
                 </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Remove <b>differential loading</b>
+                <li>
+                  <div class="item">
+                    <a routerLink="/standard">The component API for creating dynamic components has been improved.</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <a routerLink="/inline-font">The CSS variables and native web animation API has been enabled.</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Remove <b>differential loading</b>
+                  </div>
+                </li>
+              </ol>
             </div>
           </li>
         </ol>

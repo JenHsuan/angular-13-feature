@@ -4,51 +4,40 @@
   [sectionTitles]="sectionTitles"
   [getIdFromTitle]="getIdFromTitle"
   >
-  <!-- title -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        There are a few minor changes in v13.
+        In v13, Angular introduces a new type called "FormControlStatus" for better checking the form controls.
       </div>
       <div class="item">
-        <ol>
+        This property is turned from string type to enum type.
+      </div>
+      <div class="item">
+        <ul>
           <li>
             <div class="item">
-              Cancel routerLink by passing null or undefined
-              <a href="https://github.com/angular/angular/pull/38884">
-                (pull request)
-              </a>
+              Previous FormControlStatus
             </div>
             <div class="item">
-              <app-code-container key="routeLinkCancel">
+              <app-code-container key="formControlStatus12">
               </app-code-container>
             </div>
           </li>
           <li>
             <div class="item">
-              Disable built-in validators by setting the value to null
-              <a href="https://github.com/angular/angular/pull/42565">(pull request)</a>
+              FormControlStatus in v13
             </div>
             <div class="item">
-              <app-code-container key="nullValidator">
+              <app-code-container key="formControlStatus13">
               </app-code-container>
             </div>
           </li>
-          <li>
-            <div class="item">
-              The URL serializer respects question marks in the query parameters.
-            </div>
-            <div class="item">
-              <app-code-container key="urlSerializer">
-              </app-code-container>
-            </div>
-          </li>
-        </ol>
+        </ul>
       </div>
     </div>
   </app-section-container>
-
+  
   <!-- reference -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>

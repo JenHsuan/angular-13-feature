@@ -17,12 +17,13 @@ export class InlineFontComponent {
     "Evaluation for Inline Resource",
     "CSS Variables",
     "Evaluation for CSS Variables",
-    "Web Animations API",
+    "Web Animations via Native Web API",
     "Evaluation for Web Animations API",
     "Reference"
   ];
   
   prosForInlineFont = [
+    "Inline font could help to improve the FCP."
   ];
   consForInlineFont = [];
 
