@@ -10,33 +10,114 @@
       <div class="item">
         There are a few minor features in Angular 13.
       </div>
-      <ul>
-        <li>
-          <div class="item">
-            Angular Package Format changes
-          </div>
-          <div class="item">
-            <ul>
-              <li>
-                <div class="item">
-                  Support Node Package Exports
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  Standardized on more modern JS formats such as ES2020
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+      <div class="item">
+        <ol>
+          <li>
+            <div class="item">
+              Angular Package Format changes
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    Support Node Package Exports
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Standardized on more modern JS formats such as ES2020
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ol>  
+      </div>
     </div>
   </app-section-container>
   
-  <!-- reference -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="description-container">
+      <div class="item">
+        APF enables a package to work seamlessly under most common scenarios that use Angular. 
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Typings: .d.ts files are used by TypeScript
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              esm2020: unflattened ES2022 format
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              es2020: ES2022 format (flattened)
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              es2015: ES2015 (ES6) format (flattened)
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              node: common.js format
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              default
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <b>Implementation of Angular Package Format (APF)</b>
+      </div>
+      <div class="item">
+        Let's take a look at the package.json of @angular/core 13.3.0. 
+      </div>
+      <div class="item">
+        It has the same file structure as the exported Angular libraries with the ng-packager 13. 
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/angular_core.png" alt="">
+        </div>
+      </div>
+      <div class="item">
+        <b>esm vs fesm</b>
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              esm: modules are separted in different files individually
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              fesm: flatten all module into a single file
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/esm_fesm.png" alt="">
+        </div>
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

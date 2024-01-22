@@ -20,30 +20,58 @@ npm install rxjs@7.4
     languages:[CodeLanguageType.html]
   }], ["distIndex", {
     code: `
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8">
-<title>Angular 13</title>
-<base href="/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<meta property="og:title" content="New features in Angular 13">
-<meta property="og:url" content="https://profound-kangaroo-9db0c6.netlify.app/">
-<meta property="og:image" content="https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/demo/screenshot.png">
-<meta property="og:description" content="Learn and test new features in Angular 13">
-<meta name="keywords" content="angular,javascript,feature,dynamic component,testing,cache">
-<meta name="author" content="Jen-Hsuan Hsieh (Sean Hsieh)">
-<style>body{margin:0}</style><link rel="stylesheet" href="styles.3164f3600d2890e4.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.3164f3600d2890e4.css"></noscript></head>
-<body>
-  <app-root></app-root>
-  <script src="runtime.53d27497dc947bab.js" type="module"></script><script src="polyfills.79ba09efd856cfcd.js" type="module"></script><script src="main.047cf091c9c37ea8.js" type="module"></script>
-  
-  <!-- 
-  <script src="fancyModernBundle.js" type="module"></script>
-  <script src="legacyBundle.js" nomodule></script> 
-  -->
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular 13</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:title" content="New features in Angular 13">
+    <meta property="og:url" content="https://profound-kangaroo-9db0c6.netlify.app/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/demo/screenshot.png">
+    <meta property="og:description" content="Learn and test new features in Angular 13">
+    <meta name="keywords" content="angular,javascript,feature,dynamic component,testing,cache">
+    <meta name="author" content="Jen-Hsuan Hsieh (Sean Hsieh)">
+    <style>body{margin:0}</style>
+    <link rel="stylesheet" href="styles.3164f3600d2890e4.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.3164f3600d2890e4.css"></noscript>
+  </head>
+  <body>
+    <app-root></app-root>
+    <script src="runtime.53d27497dc947bab.js" type="module"></script>
+    <script src="polyfills.79ba09efd856cfcd.js" type="module"></script>
+    <script src="main.047cf091c9c37ea8.js" type="module"></script>
   </body>
 </html>
+    `,
+    languages:[CodeLanguageType.html]
+  }], ["distIndexNg8", {
+    code: `
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Angular8Project</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body>
+    <app-root></app-root>
+    <script src="runtime-es2015.js" type="module"></script>
+    <script src="runtime-es5.js" nomodule defer></script>
+    <script src="polyfills-es5.js" nomodule defer></script>
+    <script src="polyfills-es2015.js" type="module"></script>
+    <script src="styles-es2015.js" type="module"></script>
+    <script src="styles-es5.js" nomodule defer></script>
+    <script src="vendor-es2015.js" type="module"></script>
+    <script src="vendor-es5.js" nomodule defer></script>
+    <script src="main-es2015.js" type="module"></script>
+    <script src="main-es5.js" nomodule defer></script>
+  </body>
+</html>    
     `,
     languages:[CodeLanguageType.html]
   }], ["typeguard", {
@@ -74,13 +102,6 @@ try {
   if (err instanceof Error) {
     console.error(err.message);
   }
-}
-
-//solution
-try {
-  executeSomeThirdPartyCode();
-} catch (err: any) {
-  console.error(err.message); // Works again!
 }    
 `,
     languages:[CodeLanguageType.typescript]
@@ -121,19 +142,6 @@ let b: OptionsWithDataProps = {
     languages:[CodeLanguageType.typescript]
   }], ["tsStaticBlock", {
     code: `
-//without static block
-class Foo {
-  static bytes = createRandomBytes(4 * 1024);
-  static fileBody = new FileBody(Foo.bytes);
-}
-
-function createRandomBytes(length: number) {
-  const bytes = new Uint8Array(length);
-  bytes.set(pseudoRandomBytes(bytes.length));
-  return bytes;
-}
-
-//with static block
 class Foo {
   static bytes: Uint8Array = [];
 
@@ -620,16 +628,35 @@ export declare class FormControl extends AbstractControl {
 }
     `,
     languages:[CodeLanguageType.typescript]
-  }], ["updateInstruction", {
+  }], ["tsUnknownSolution", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+try {
+  executeSomeThirdPartyCode();
+} catch (err: any) {
+  console.error(err.message); // Works again!
+}    
+`,
+    languages:[CodeLanguageType.typescript]
+  }], ["withoutTsStaticBlock", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
+class Foo {
+  static bytes = createRandomBytes(4 * 1024);
+  static fileBody = new FileBody(Foo.bytes);
+}
+
+function createRandomBytes(length: number) {
+  const bytes = new Uint8Array(length);
+  bytes.set(pseudoRandomBytes(bytes.length));
+  return bytes;
+}
+
+function createRandomBytes(length: number) {
+  const bytes = new Uint8Array(length);
+  bytes.set(pseudoRandomBytes(bytes.length));
+  return bytes;
+}    
+`,
+    languages:[CodeLanguageType.typescript]
   }], ["updateInstruction", {
     code: `
 npx @angular/cli@13 update @angular/core@13 @angular/cli@13

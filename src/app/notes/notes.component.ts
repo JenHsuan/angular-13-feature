@@ -13,10 +13,16 @@ export class NotesComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Overview",
+    "Angular Package Format (APF) 13",
     "Reference"
   ];
 
   referencesMap = new Map<string, string>([
+    ["[Angular] 使用AngularCli搭配ng-packagr建立元件", "https://jiaming0708.github.io/2018/06/13/angular-cli-packagr/"],
+    ["Create an angular library and publish it on Npm", "https://medium.com/@zeeshankhan8838/create-an-angular-library-and-publish-it-on-npm-9352345a088"],
+    ["kagr打包+npm publish流程", "https://blog.csdn.net/ztnhnr/article/details/88293600"],
+    ["Angular 包格式", "https://angular.cn/guide/angular-package-format"],
+    ["Angular Package Format 简介", "https://blog.poi.cat/post/introduce-angular-package-format"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

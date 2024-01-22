@@ -151,11 +151,29 @@
               </b>
             </div>
             <div class="item">
-              Defaulting to the unknown Type in Catch Variables if we enable useUnknownInCatchVariables
+              The error variable in Catch is default to the <b>unknown</b> type if we enable useUnknownInCatchVariables
             </div>
             <div class="item">
-              <app-code-container key="typeguard">
-              </app-code-container>
+              <ul>
+                <li>
+                  <div class="item">
+                    Currently
+                  </div>
+                  <div class="item">
+                    <app-code-container key="tsUnknown">
+                    </app-code-container>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                   Solution
+                  </div>
+                  <div class="item">
+                    <app-code-container key="tsUnknownSolution">
+                    </app-code-container>
+                  </div>
+                </li>
+              </ul>
             </div>
           </li>
           <li>
@@ -173,7 +191,7 @@
             <ul>
               <li>
                 <div class="item">
-                  Index signatures
+                  Define properties with <b>index signatures</b>
                 </div>
                 <div class="item">
                   <app-code-container key="tsSymbol">
@@ -182,7 +200,7 @@
               </li>
               <li>
                 <div class="item">
-                  Template string patterns
+                  Define properties with <b>template string patterns</b>
                 </div>
                 <div class="item">
                   <app-code-container key="tsTemplateString">
@@ -204,19 +222,26 @@
               <ul>
                 <li>
                   <div class="item">
-                    In the static block, we are allowed to write a sequence of statements with their own scope that can access fields within the containing class.
+                    Previously, we ususlly have to assign value to the static variable when declaring it.
+                  </div>
+                  <div class="item">
+                    <app-code-container key="withoutTsStaticBlock">
+                    </app-code-container>
                   </div>
                 </li>
                 <li>
                   <div class="item">
+                    In the static block, we are allowed to write a sequence of statements with their own scope that can access fields within the containing class.
+                  </div>
+                  <div class="item">
                     It means that we can write initialization code with all the capabilities of writing statements, no leakage of variables, and full access to our class’s internals.
+                  </div>
+                  <div class="item">
+                    <app-code-container key="tsStaticBlock">
+                    </app-code-container>
                   </div>
                 </li>
               </ul>
-            </div>
-            <div class="item">
-              <app-code-container key="tsStaticBlock">
-              </app-code-container>
             </div>
           </li>
         </ol>
@@ -229,10 +254,32 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        The rendering will be blocked when the script is downloaded or executed. (synchronous)
+        The rendering will be blocked in the following situations. The rendering process and them are synchronous to each other.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              The JavaScript file is downloaded.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              The CSS file is downloaded.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              The JavaScript file is executed. 
+            </div>
+          </li>
+        </ul>
       </div>
       <div class="item image-container">
         <img src="../../assets/image/critical_path.webp" alt="">    
+      </div>
+      <div class="item">
+        (taken from <a href="https://medium.com/a-layman/how-browser-works-when-rendering-a-web-page-f49c09bec475">this reference</a>)
       </div>
       <div class="item">
         There are a few methods to avoid render blocking
@@ -269,19 +316,37 @@
         <ul>
           <li>
             <div class="item">
-              When we want to import ES6 modules, we can use type="module" to let the browser knows
+              Previously, we have to use polyfills to support legacy browsers. (e.g., Angular 8)
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    For the legacy browsers (e.g., IE 8), it can't support ES6 modules so we can only use <b>type="nomodule"</b>.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    For the modern browsers, we can use <b>type="module"</b> to represent these modules are ES6 modules.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <app-code-container key="distIndexNg8">
+              </app-code-container>
             </div>
           </li>
           <li>
             <div class="item">
-              For the legacy browsers (e.g., IE 11), it can't support ES6 modules so we use type="nomodule"
+              Now, we only use <b>type="module"</b> in the index.html because the Angullar 13 stops supporting IE 11.
+            </div>
+            <div class="item">
+              <app-code-container key="distIndex">
+              </app-code-container>
             </div>
           </li>
         </ul>
-      </div>
-      <div class="item">
-        <app-code-container key="distIndex">
-        </app-code-container>
       </div>
     </div>
   </app-section-container>
