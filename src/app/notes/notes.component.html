@@ -40,13 +40,24 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        APF enables a package to work seamlessly under most common scenarios that use Angular. 
+        <b>
+          What is APF?
+        </b>
+      </div>
+      <div class="item">
+        APF can enable a package to work seamlessly under most common scenarios that use Angular. 
+      </div>
+      <div class="item">
+        Because the @angular/core (13.3.0) exports API as APF, we can learn what the APF is by discovering the export section of package.json. 
+      </div>
+      <div class="item">
+        There are a few module types.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              Typings: .d.ts files are used by TypeScript
+              types: .d.ts files are used by TypeScript
             </div>
           </li>
           <li>
@@ -56,34 +67,25 @@
           </li>
           <li>
             <div class="item">
-              es2020: ES2022 format (flattened)
+              es2020: flattened ES2022 format
             </div>
           </li>
           <li>
             <div class="item">
-              es2015: ES2015 (ES6) format (flattened)
+              es2015: flattened ES2015 format 
             </div>
           </li>
           <li>
             <div class="item">
-              node: common.js format
+              node: flattened ES2015 format  (Node.js 12+ supports ESM)
             </div>
           </li>
           <li>
             <div class="item">
-              default
+              default: flattened ES2022 format
             </div>
           </li>
         </ul>
-      </div>
-      <div class="item">
-        <b>Implementation of Angular Package Format (APF)</b>
-      </div>
-      <div class="item">
-        Let's take a look at the package.json of @angular/core 13.3.0. 
-      </div>
-      <div class="item">
-        It has the same file structure as the exported Angular libraries with the ng-packager 13. 
       </div>
       <div class="item">
         <div class="image-container">
@@ -91,7 +93,7 @@
         </div>
       </div>
       <div class="item">
-        <b>esm vs fesm</b>
+        <b>ESM vs FESM</b>
       </div>
       <div class="item">
         <ul>

@@ -22,7 +22,8 @@ export class NotesComponent {
     ["Create an angular library and publish it on Npm", "https://medium.com/@zeeshankhan8838/create-an-angular-library-and-publish-it-on-npm-9352345a088"],
     ["kagr打包+npm publish流程", "https://blog.csdn.net/ztnhnr/article/details/88293600"],
     ["Angular 包格式", "https://angular.cn/guide/angular-package-format"],
-    ["Angular Package Format 简介", "https://blog.poi.cat/post/introduce-angular-package-format"]
+    ["Angular Package Format 简介", "https://blog.poi.cat/post/introduce-angular-package-format"],
+    ["How to use ESM on the web and in Node.js", "https://byteofdev.com/posts/how-to-use-esm/"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
