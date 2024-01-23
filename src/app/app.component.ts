@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, QueryList, ViewChildren } from '@angular/core';
-import { ROUTE_MAP, ROUTE_TYPE, TYPE_TITLE_MAP } from './public/route/route.domain';
+import { ROUTE_MAP, RouteType, TYPE_TITLE_MAP } from './public/route/route.domain';
 import { ThemeService } from './public/theme/service/theme.service';
 
 @Component({

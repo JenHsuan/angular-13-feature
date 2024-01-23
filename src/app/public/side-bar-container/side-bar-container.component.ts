@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { ROUTE_TYPE, ROUTE_MAP, TYPE_TITLE_MAP, sideBarList } from '../route/route.domain';
+import { RouteType, ROUTE_MAP, TYPE_TITLE_MAP } from '../route/route.domain';
 import { ThemeType } from '../theme/domain/theme.damin';
 import { ThemeService } from '../theme/service/theme.service';
 import { version } from '../config/constants';
 import { RouteService } from '../route/service/route.service';
+import { sideBarList } from './service/side-bar.domain';
+import { SideBarService } from './service/side-bar.service';
 
 @Component({
   selector: 'app-side-bar-container',
@@ -15,7 +17,7 @@ import { RouteService } from '../route/service/route.service';
 export class SideBarContainerComponent {
   version = version;
   title = `Notes of Angular v${version}`;
-  selectedRoute = ROUTE_TYPE.HOME;
+  selectedRoute = RouteType.HOME;
   
   sideBarList = sideBarList;
 
@@ -29,13 +31,13 @@ export class SideBarContainerComponent {
     private location: Location, 
     private router: Router,
     private themeService: ThemeService,
-    private routeService: RouteService
+    private sideBarService: SideBarService
   ) {
     router.events.subscribe(_ => {
       if(location.path() != ''){
         const slices = location.path().split('/');
         let route = `/${slices[1]}`;
-        this.selectedRoute = ROUTE_MAP.get(route) || ROUTE_TYPE.HOME;
+        this.selectedRoute = ROUTE_MAP.get(route) || RouteType.HOME;
       }
     });
 
@@ -47,15 +49,15 @@ export class SideBarContainerComponent {
     });
   }
 
-  getRouteStyle(type: ROUTE_TYPE) {
+  getRouteStyle(type: RouteType) {
     return this.selectedRoute === type ? 'tab-item current' : 'tab-item';
   }
 
-  changeRoute(type: ROUTE_TYPE) {
-    this.routeService.changeRoute(type);
+  changeRoute(type: RouteType) {
+    this.sideBarService.changeRoute(type);
   }
   
-  getRouteTitle(type: ROUTE_TYPE) {
-    return this.routeService.getRouteTitle(type);
+  getRouteTitle(type: RouteType) {
+    return this.sideBarService.getRouteTitle(type);
   }
 }

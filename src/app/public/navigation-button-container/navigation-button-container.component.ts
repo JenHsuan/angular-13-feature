@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
-import { ROUTE_MAP, ROUTE_TYPE, sideBarList } from '../route/route.domain';
+import { ROUTE_MAP, RouteType } from '../route/route.domain';
 import { Router } from '@angular/router';
+import { sideBarList } from '../side-bar-container/service/side-bar.domain';
 
 @Component({
   selector: 'app-navigation-button-container',

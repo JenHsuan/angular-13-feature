@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { ROUTE_MAP, ROUTE_TYPE, TYPE_TITLE_MAP, sideBarList } from '../route/route.domain';
+import { ROUTE_MAP, RouteType, TYPE_TITLE_MAP } from '../route/route.domain';
 import { RouteService } from '../route/service/route.service';
+import { sideBarList } from '../side-bar-container/service/side-bar.domain';
 
 @Component({
   selector: 'app-mobile-nav-container',
@@ -18,12 +19,12 @@ export class MobileNavContainerComponent {
   ) {
   }
 
-  changeRoute(type: ROUTE_TYPE) {
+  changeRoute(type: RouteType) {
     this.routeService.changeRoute(type);
     this.links?.nativeElement.classList.remove("active");
   }
   
-  getRouteTitle(type: ROUTE_TYPE) {
+  getRouteTitle(type: RouteType) {
     return this.routeService.getRouteTitle(type);
   }
 

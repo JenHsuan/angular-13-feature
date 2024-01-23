@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { getIdFromTitle } from 'documentation-UI';
 
@@ -9,7 +9,7 @@ import { getIdFromTitle } from 'documentation-UI';
   styleUrls: ['./bugfix-navigation.component.scss']
 })
 export class BugfixNavigationComponent {
-  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.BUGFIX_NAVIGATION);
+  title = TYPE_TITLE_MAP.get(RouteType.BUGFIX_NAVIGATION);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Issue",

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { getIdFromTitle } from 'documentation-UI';
 
@@ -9,7 +9,7 @@ import { getIdFromTitle } from 'documentation-UI';
   styleUrls: ['./inline-font.component.scss']
 })
 export class InlineFontComponent {
-  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.FONT);
+  title = TYPE_TITLE_MAP.get(RouteType.FONT);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",

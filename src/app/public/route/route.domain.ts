@@ -14,7 +14,7 @@ import { NotesComponent } from "src/app/notes/notes.component";
 import { StandardComponent } from "src/app/standard/standard.component";
 import { TestingComponent } from "src/app/testing/testing.component";
 
-export enum ROUTE_TYPE {
+export enum RouteType {
   DYNAMIC_COMPONENT = 'DYNAMIC_COMPONENT',
   CACHE = 'CACHE',
   TESTING = 'TESTING',
@@ -31,55 +31,39 @@ export enum ROUTE_TYPE {
   FORMCONTROL_STATUS = 'FORMCONTROL_STATUS'
 }
 
-export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
-  ['/home', ROUTE_TYPE.HOME],
-  ['/documents', ROUTE_TYPE.DOCUMENTS],
-  ['/migrations', ROUTE_TYPE.MIGRATIONS],
-  ['/breaking-changes', ROUTE_TYPE.BREAKING_CHANGE],
-  ['/minor-changes', ROUTE_TYPE.MINOR_CHANGES],
-  ['/deprecations', ROUTE_TYPE.DEPRECATIONS],
-  ['/notes', ROUTE_TYPE.NOTES],
-  ['/inline-font', ROUTE_TYPE.FONT],
-  ['/cache', ROUTE_TYPE.CACHE],
-  ['/esm', ROUTE_TYPE.ESM],
-  ['/standard', ROUTE_TYPE.DYNAMIC_COMPONENT],
-  ['/testing', ROUTE_TYPE.TESTING],
-  ['/bugfix-navigation', ROUTE_TYPE.BUGFIX_NAVIGATION],
-  ['/form-control-status', ROUTE_TYPE.FORMCONTROL_STATUS],
+export const ROUTE_MAP = new Map<string, RouteType>([
+  ['/home', RouteType.HOME],
+  ['/documents', RouteType.DOCUMENTS],
+  ['/migrations', RouteType.MIGRATIONS],
+  ['/breaking-changes', RouteType.BREAKING_CHANGE],
+  ['/minor-changes', RouteType.MINOR_CHANGES],
+  ['/deprecations', RouteType.DEPRECATIONS],
+  ['/notes', RouteType.NOTES],
+  ['/inline-font', RouteType.FONT],
+  ['/cache', RouteType.CACHE],
+  ['/esm', RouteType.ESM],
+  ['/standard', RouteType.DYNAMIC_COMPONENT],
+  ['/testing', RouteType.TESTING],
+  ['/bugfix-navigation', RouteType.BUGFIX_NAVIGATION],
+  ['/form-control-status', RouteType.FORMCONTROL_STATUS],
 ]);
 
-export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
-  [ROUTE_TYPE.HOME, 'Notes of Angular v13'],
-  [ROUTE_TYPE.DOCUMENTS, 'About This Website'],
-  [ROUTE_TYPE.MIGRATIONS, 'Upgrade to Angular 13'],
-  [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes'],
-  [ROUTE_TYPE.MINOR_CHANGES, 'Minor Changes'],
-  [ROUTE_TYPE.DEPRECATIONS, 'Deprecations'],
-  [ROUTE_TYPE.NOTES, 'Features - Angular Package Format (APF) 13'],
-  [ROUTE_TYPE.FONT, 'Feature - Stylish Improvements'],
-  [ROUTE_TYPE.ESM, 'Feature - ESM supported on the ng serve'],
-  [ROUTE_TYPE.CACHE, 'Feature - Cache Management'],
-  [ROUTE_TYPE.DYNAMIC_COMPONENT, 'Improvements - Simplified Dynamic Component'],
-  [ROUTE_TYPE.FORMCONTROL_STATUS, 'Improvement - Form Control Status'],
-  [ROUTE_TYPE.TESTING, 'Improvements - Optimized Angular Testing'],
-  [ROUTE_TYPE.BUGFIX_NAVIGATION, 'Bugfix - Navigation'],
+export const TYPE_TITLE_MAP = new Map<RouteType, string>([
+  [RouteType.HOME, 'Notes of Angular v13'],
+  [RouteType.DOCUMENTS, 'About This Website'],
+  [RouteType.MIGRATIONS, 'Upgrade to Angular 13'],
+  [RouteType.BREAKING_CHANGE, 'Breaking Changes'],
+  [RouteType.MINOR_CHANGES, 'Minor Changes'],
+  [RouteType.DEPRECATIONS, 'Deprecations'],
+  [RouteType.NOTES, 'Features - Angular Package Format (APF) 13'],
+  [RouteType.FONT, 'Feature - Stylish Improvements'],
+  [RouteType.ESM, 'Feature - ESM supported on the ng serve'],
+  [RouteType.CACHE, 'Feature - Cache Management'],
+  [RouteType.DYNAMIC_COMPONENT, 'Improvements - Simplified Dynamic Component'],
+  [RouteType.FORMCONTROL_STATUS, 'Improvement - Form Control Status'],
+  [RouteType.TESTING, 'Improvements - Optimized Angular Testing'],
+  [RouteType.BUGFIX_NAVIGATION, 'Bugfix - Navigation'],
 ]);
-
-export const sideBarList = [
-  ROUTE_TYPE.DOCUMENTS,
-  ROUTE_TYPE.MIGRATIONS,
-  ROUTE_TYPE.BREAKING_CHANGE,
-  ROUTE_TYPE.MINOR_CHANGES,
-  ROUTE_TYPE.DEPRECATIONS,
-  ROUTE_TYPE.NOTES,
-  ROUTE_TYPE.FONT,
-  ROUTE_TYPE.CACHE,
-  ROUTE_TYPE.ESM,
-  ROUTE_TYPE.DYNAMIC_COMPONENT,
-  ROUTE_TYPE.FORMCONTROL_STATUS,
-  ROUTE_TYPE.TESTING,
-  ROUTE_TYPE.BUGFIX_NAVIGATION,
-];
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
