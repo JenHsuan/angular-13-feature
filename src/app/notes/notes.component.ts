@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from '../public/utils/utils';
+import { getIdFromTitle } from 'documentation-UI';
 
 @Component({
   selector: 'app-notes',
@@ -14,7 +14,7 @@ export class NotesComponent {
   sectionTitles = [
     "Overview",
     "Angular Package Format (APF) 13",
-    "Create, Pack, and Install an Angular Library Manually",
+    "Create, Pack, and Install an Angular Library Manually and Publish it on NPM",
     "Reference"
   ];
 
@@ -24,7 +24,8 @@ export class NotesComponent {
     ["kagr打包+npm publish流程", "https://blog.csdn.net/ztnhnr/article/details/88293600"],
     ["Angular 包格式", "https://angular.cn/guide/angular-package-format"],
     ["Angular Package Format 简介", "https://blog.poi.cat/post/introduce-angular-package-format"],
-    ["How to use ESM on the web and in Node.js", "https://byteofdev.com/posts/how-to-use-esm/"]
+    ["How to use ESM on the web and in Node.js", "https://byteofdev.com/posts/how-to-use-esm/"],
+    ["This class is visible to consumers via SomeModule -> SomeComponent, but is not exported from the top-level library entrypoint", "https://stackoverflow.com/questions/60121962/this-class-is-visible-to-consumers-via-somemodule-somecomponent-but-is-not-e"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

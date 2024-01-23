@@ -2,8 +2,8 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildr
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { authorUrl } from '../public/config/url';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from '../public/utils/utils';
 import { version } from '../public/config/constants';
+import { getIdFromTitle } from 'documentation-UI';
 
 @Component({
   selector: 'app-documents',

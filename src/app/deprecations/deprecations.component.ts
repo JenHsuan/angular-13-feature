@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from '../public/utils/utils';
+import { getIdFromTitle } from 'documentation-UI';
 
 @Component({
   selector: 'app-deprecations',

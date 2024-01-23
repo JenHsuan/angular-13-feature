@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from '../public/utils/utils';
+import { getIdFromTitle } from 'documentation-UI';
 
 @Component({
   selector: 'app-testing',
@@ -13,12 +13,13 @@ export class TestingComponent  {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Implementaion",
+    "New APIs and teardown parameter",
     "Reference"
   ];
 
   referencesMap = new Map<string, string>([
-    ["Improving Angular tests by enabling Angular testing module teardown", "https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh"]
+    ["Improving Angular tests by enabling Angular testing module teardown", "https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh"],
+    ["BeforeAll vs. BeforeEach. When to use them?", "https://stackoverflow.com/questions/54517032/beforeall-vs-beforeeach-when-to-use-them"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

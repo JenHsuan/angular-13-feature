@@ -103,18 +103,9 @@
     </div>
   </app-section-container>
 
-  <!-- evaluation -->
-  <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <app-evaluation-container
-      [pros]="pros"
-      [cons]="cons">
-    </app-evaluation-container>
-  </app-section-container>
-
   <!-- reference -->
   <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

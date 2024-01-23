@@ -3,7 +3,7 @@ import { EsmService } from './service/esm.service';
 import { combineLatest } from 'rxjs';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from '../public/utils/utils';
+import { getIdFromTitle } from 'documentation-UI';
 
 const PAGES = ['/'];
 

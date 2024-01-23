@@ -171,7 +171,7 @@ function createRandomBytes(length: number) {
     languages:[CodeLanguageType.html]
   }], ["urlSerializer", {
     code: `
-//v12
+//v12: unable to recognize query pamaters started with ? 
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();
@@ -180,7 +180,7 @@ export class DeprecationsContentChildrenComponent {
   }
 }
 
-//v13
+//v13: able to recognize query pamaters started with ? 
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();
@@ -420,8 +420,9 @@ beforeEach(async () => {
     languages:[CodeLanguageType.typescript]
   }], ["testComponent", {
     code: `
-//Tear down the environment with the TestBed.initTestEnvironment 
-beforeEach(async () => {
+beforeAll(() => {
+  //beforeAll only run once
+  //Tear down the environment with the TestBed.initTestEnvironment 
   TestBed.resetTestEnvironment();
   TestBed.initTestEnvironment(
     BrowserDynamicTestingModule,
@@ -431,15 +432,21 @@ beforeEach(async () => {
     }
   );
 });
-
-//Tear down the module with the TestBed.configureTestingModule
+`,
+    languages:[CodeLanguageType.typescript]
+  }], ["testComponent2", {
+    code: `
+//set up the test module
 beforeEach(async () => {
+  //beforEach run before every test
+  //Tear down the module with the TestBed.configureTestingModule
   await TestBed.configureTestingModule({
     declarations: [ TestingComponent ],
     teardown: { destroyAfterEach: true }
   })
   .compileComponents();
-});    `,
+});
+`,
     languages:[CodeLanguageType.typescript]
   }], ["cancelRoute", {
     code: `
@@ -737,28 +744,72 @@ export class AppModule { }
   [titles]="sectionTitles"
   [getIdFromTitle]="getIdFromTitle">
 </app-doc-reviewer-container>
+
+<div #section>
+</div>
+
+<div #section>
+</div>
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["apfStep8-2", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+import { getIdFromTitle } from 'documentation-UI';
+
+export class MyComponent {
+  getIdFromTitle = getIdFromTitle;
+  
+  sectionTitles = [
+    "Introduction",
+    "Differences between View Engine and Ivy",
+    ...
+  ];
+  
+  @ViewChildren("section", {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
+}
     `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+    languages:[CodeLanguageType.typescript]
+  }], ["apfStep9", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+npm login
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["apfStep10", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+npm publish dist/documentation-ui/documentation-ui-0.0.1.tgz --access public
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["testingComponent", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { BreakingChangesComponent } from './breaking-changes.component';
+
+describe('BreakingChangesComponent', () => {
+  let component: BreakingChangesComponent;
+  let fixture: ComponentFixture<BreakingChangesComponent>;
+
+  //set up the test module
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ BreakingChangesComponent ]
+    })
+    .compileComponents();
+  });
+
+  //initialize the test component and the change detection
+  beforeEach(() => {
+    fixture = TestBed.createComponent(BreakingChangesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.typescript]
   }], ["updateInstruction", {
     code: `
 npx @angular/cli@13 update @angular/core@13 @angular/cli@13

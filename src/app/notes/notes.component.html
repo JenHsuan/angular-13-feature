@@ -8,30 +8,21 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        There are a few minor features in Angular 13.
+        There are a few chages on APF 13.
       </div>
       <div class="item">
-        <ol>
+        <ul>
           <li>
             <div class="item">
-              Angular Package Format changes
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    Support Node Package Exports
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Standardized on more modern JS formats such as ES2020
-                  </div>
-                </li>
-              </ul>
+              Support Node Package Exports
             </div>
           </li>
-        </ol>  
+          <li>
+            <div class="item">
+              Standardized on more modern JS formats such as ES2020
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </app-section-container>
@@ -93,28 +84,25 @@
         </div>
       </div>
       <div class="item">
-        <b>What is ESM (ES2015, ES2020 Module)?</b>
+        <b>ESM vs FESM</b>
       </div>
       <div class="item">
-        The purpose of ESM is to provide a native way to load JavaScript modules into a browser. 
+        The purpose of ESM (ES2015, ES2020 Module) is to provide a native way to load JavaScript modules into a browser. 
         Before ESM, I have to use third-party library to import JavaScript modules to browsers like require.js (UMD implementation). 
       </div>
       <div class="item">
         In Node.js, we usually import and export JavaScript modules with the common.js format. After Node.js 12, it began to support ESM.
       </div>
       <div class="item">
-        <b>ESM vs FESM</b>
-      </div>
-      <div class="item">
         <ul>
           <li>
             <div class="item">
-              esm: modules are separted in different files individually
+              ESM: modules are separted in different files individually
             </div>
           </li>
           <li>
             <div class="item">
-              fesm: flatten all module into a single file
+              FESM: flatten all module into a single file
             </div>
           </li>
         </ul>
@@ -192,11 +180,19 @@
           </li>
           <li>
             <div class="item">
-              Build, pack, and install the library.
+              Build, pack, and install the library. It will generate the documentation-ui-0.0.1.tgz under the dist/documentation-ui.
             </div>
             <div class="item">
               <app-code-container key="apfStep6">
               </app-code-container>
+            </div>
+            <div class="item">
+              We can also discover the file structure of the generated package.
+            </div>
+            <div class="item">
+              <div class="image-container">
+                <img src="../../assets/image/apf2.png" alt="">
+              </div>
             </div>
           </li>
           <li>
@@ -215,6 +211,41 @@
             <div class="item">
               <app-code-container key="apfStep8">
               </app-code-container>
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep8-2">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Login npm.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep9">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Publish the generated package on npm.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep10">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Navagate to the 
+              <a href="https://www.npmjs.com/package/angular-documentation-ui?activeTab=readme">
+                package's page
+              </a>, you will see the content of the readme.md of this package.
+            </div>
+            <div class="item">
+              <div class="image-container">
+                <img src="../../assets/image/npm.png" alt="">
+              </div>
             </div>
           </li>
         </ol>

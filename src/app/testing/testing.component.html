@@ -8,11 +8,69 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        The test modules can be teared down after each test. When we eanable destroyAfterEach, it will solve the following issues.
+        The test modules can be teared down after each test. The current test component looks like the following code.
+      </div>
+      <div class="item">
+        <app-code-container key="testingComponent">
+        </app-code-container>
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="description-container">
+      <div class="item">
+        There are two ways to tear down the environment and the module.
+      </div>
+      <div class="item">
+        <ol>
+          <li>
+            <div class="item">
+              Before run every tests (safer way)
+            </div>
+            <div class="item">
+              <app-code-container key="testComponent2">
+              </app-code-container>  
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Before run all tests
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    <a href="https://angular.io/api/core/testing/TestBed#resetTestEnvironment">
+                      TestBed.resetTestEnvironment
+                    </a>: reset the providers for the test injector.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <a href="https://angular.io/api/core/testing/TestBed#initTestEnvironment">
+                      TestBed.initTestEnvironment
+                    </a>: initialize the environment for testing with a compiler factory, a PlatformRef, and an angular module.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <app-code-container key="testComponent">
+              </app-code-container>  
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="item">
+        <b>destroyAfterEach</b>
+      </div>
+      <div class="item">
+        When we enable destroyAfterEach, the following issues will be solved.
         <a href="https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh">
           (references)
-        </a>
-      </div>
+        </a></div>
       <div class="item">
         <ul>
           <li>
@@ -52,39 +110,13 @@
           </li>
         </ul>
       </div>
-    </div>
-  </app-section-container>
-
-  <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
-    <div class="description-container">
       <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              Previously, we're not able to tear down the environment and the module.
-            </div>
-            <app-code-container key="testComponentBefore">
-            </app-code-container>
-          </li>
-          <li>
-            <div class="item">
-              Now we're able to tear down the environment and the module.
-            </div>
-            <app-code-container key="testComponent">
-            </app-code-container>
-          </li>
-          <li>
-            <div class="item">
-              The followig result demostrates that the test module is teared down after each test. 
-            </div>
-            <div class="item">
-              <div class="image-container">
-                <img src="../../assets/image/testing.png" alt=""> 
-              </div>   
-            </div>
-          </li>
-        </ul>
+        The followig result demostrates that the test module is teared down after each test. 
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/testing.png" alt=""> 
+        </div>   
       </div>
     </div>
   </app-section-container>
