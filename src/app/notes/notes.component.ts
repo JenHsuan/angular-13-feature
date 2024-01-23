@@ -12,7 +12,7 @@ export class NotesComponent {
   title = TYPE_TITLE_MAP.get(ROUTE_TYPE.NOTES);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
-    "Overview",
+    "Introduction",
     "Angular Package Format (APF) 13",
     "Create, Pack, and Install an Angular Library Manually and Publish it on NPM",
     "Reference"
