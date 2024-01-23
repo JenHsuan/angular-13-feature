@@ -127,9 +127,104 @@
     </div>
   </app-section-container>
 
-  <!-- reference -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="description-container">
+      <div class="item">
+        In the following steps, we will try to create a simple Angular library with <b>app-doc-reviewer-container</b> in APF.
+      </div>
+      <div class="item">
+        <ol>
+          <li>
+            <div class="item">
+              Execute the following command to create a new Angular library in the existing working-space.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep1">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Update the package.json.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep2">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Create a new module for the library.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep3">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Move the existing component into the module.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Update the documentation-ui.module.ts.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep4">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Update the public-api.ts.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep5">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Go back to the root folder.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Build, pack, and install the library.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep6">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Update the app.module.ts.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep7">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Now we are able to use exported component in the project.
+            </div>
+            <div class="item">
+              <app-code-container key="apfStep8">
+              </app-code-container>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

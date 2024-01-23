@@ -657,44 +657,86 @@ function createRandomBytes(length: number) {
 }    
 `,
     languages:[CodeLanguageType.typescript]
-  }], ["updateInstruction", {
+  }], ["apfStep1", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+ng generate library documentation-ui
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["apfStep2", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+scripts": {
+    ...,
+    "build-library": "ng build \"documentation-UI\"",
+    "pack-library": "cd dist/documentation-UI && npm pack",
+    "install-library": "npm install ./dist/documentation-ui/documentation-ui-0.0.1.tgz",
+    ...
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["apfStep3", {
+    code: `
+cd projects/documentation-ui.src/lib
+ng g m documentation-ui
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["apfStep4", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+@NgModule({
+  declarations: [
+    DocReviewerContainerComponent
+  ],
+  imports: [
+    CommonModule,
+    FontAwesomeModule
+  ],
+  exports: [
+    DocReviewerContainerComponent
+  ]
+})
+export class DocumentationUiModule { }
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["apfStep5", {
+    code: `
+export * from './lib/documentation-ui/documentation-ui.module';
+export * from './lib/documentation-ui/doc-reviewer-container/doc-reviewer-container.component';
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["apfStep6", {
+    code: `
+npm run build-library
+npm run pack-library
+npm run install-library
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["apfStep7", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+import { DocumentationUiModule } from 'documentation-UI';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ...
+  ],
+  imports: [
+    ...,
+    DocumentationUiModule
+  ],
+  providers: [
+    ...
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
     `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+    languages:[CodeLanguageType.typescript]
+  }], ["apfStep8", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
-    code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
-    code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
-    code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+<app-doc-reviewer-container
+  [sections]="sections"
+  [titles]="sectionTitles"
+  [getIdFromTitle]="getIdFromTitle">
+</app-doc-reviewer-container>
     `,
     languages:[CodeLanguageType.html]
   }], ["updateInstruction", {

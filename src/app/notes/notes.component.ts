@@ -14,6 +14,7 @@ export class NotesComponent {
   sectionTitles = [
     "Overview",
     "Angular Package Format (APF) 13",
+    "Create, Pack, and Install an Angular Library Manually",
     "Reference"
   ];
 

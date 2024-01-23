@@ -20,7 +20,6 @@ import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highli
 import { MigrationsComponent } from './migrations/migrations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DocReviewerContainerComponent } from './public/doc-reviewer-container/doc-reviewer-container.component';
 import { CodeContainerComponent } from './public/code-container/code-container.component';
 import { FooterContainerComponent } from './public/footer-container/footer-container.component';
 import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
@@ -34,6 +33,7 @@ import { MinorChangesComponent } from './minor-changes/minor-changes.component';
 import { EvaluationContainerComponent } from './public/evaluation-container/evaluation-container.component';
 import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-animation/inline-font-web-animation.component';
 import { FormControlStatusComponent } from './form-control-status/form-control-status.component';
+import { DocumentationUiModule } from 'documentation-UI';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,6 @@ import { FormControlStatusComponent } from './form-control-status/form-control-s
     BreakingChangesComponent,
     MigrationsComponent,
     CodeContainerComponent,
-    DocReviewerContainerComponent,
     FooterContainerComponent,
     SideBarContainerComponent,
     ThemeComponent,
@@ -72,7 +71,8 @@ import { FormControlStatusComponent } from './form-control-status/form-control-s
     PortalModule,
     HighlightModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    DocumentationUiModule
   ],
   providers: [
     {
