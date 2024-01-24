@@ -24,7 +24,9 @@ export class NotesComponent {
     ["Angular 包格式", "https://angular.cn/guide/angular-package-format"],
     ["Angular Package Format 简介", "https://blog.poi.cat/post/introduce-angular-package-format"],
     ["How to use ESM on the web and in Node.js", "https://byteofdev.com/posts/how-to-use-esm/"],
-    ["This class is visible to consumers via SomeModule -> SomeComponent, but is not exported from the top-level library entrypoint", "https://stackoverflow.com/questions/60121962/this-class-is-visible-to-consumers-via-somemodule-somecomponent-but-is-not-e"]
+    ["This class is visible to consumers via SomeModule -> SomeComponent, but is not exported from the top-level library entrypoint", "https://stackoverflow.com/questions/60121962/this-class-is-visible-to-consumers-via-somemodule-somecomponent-but-is-not-e"],
+    ["npm依赖管理peerDependencies", "https://juejin.cn/post/7081801514208985124"],
+    ["Building a Library in Angular 11 with Dependencies", "https://medium.com/@yamini.hrishikesh/building-a-library-in-angular-11-with-dependencies-2d34db752220"],
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 
