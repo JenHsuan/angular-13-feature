@@ -8,21 +8,21 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        There are a few chages on APF 13.
+        There are a few changes.
       </div>
       <div class="item">
-        <ul>
+        <ol>
           <li>
             <div class="item">
-              Support Node Package Exports
+              In APF 13, it supports the Node Package Exports.
             </div>
           </li>
           <li>
             <div class="item">
-              Standardized on more modern JS formats such as ES2020
+              In APF 13, it standardizes on more modern JavavScript formats such as EcmaScript 2020 (ES2020).
             </div>
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   </app-section-container>
@@ -31,18 +31,49 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
+        <b>EcmaScript Module (ESM) vs Flattened EcmaScript Module (FESM)</b>
+      </div>
+      <div class="item">
+       For the browser environment, we have to use third-party libraries to import JavaScript modules to browsers like require.js (UMD implementation). 
+      </div>
+      <div class="item">
+        For Node.js, we usually import and export JavaScript modules in the common.js format. After Node.js 12, it began to support ESM.
+      </div>
+      <div class="item">
+        The purpose of ESM (ES2015, ES2020 Module) is to provide a native way to load JavaScript modules into a browser. 
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              ESM: modules are separted in different files individually.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              FESM: flatten all module into a single file.
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/esm_fesm.png" alt="">
+        </div>
+      </div>
+      <div class="item">
         <b>
-          What is APF?
+          What is Angular Package Format (APF)?
         </b>
       </div>
       <div class="item">
-        APF can enable a package to work seamlessly under most common scenarios that use Angular. 
+        APF enables a package to work seamlessly under most common scenarios. The APF can be compatible to Common.js, ESM, and the requre.js. 
       </div>
       <div class="item">
-        Because the @angular/core (13.3.0) exports API in APF, we can learn what APF is by discovering the <b>export</b> section of package.json. 
+        The @angular/core (13.3.0) exports API in APF so we can learn the APF by discovering the <b>export</b> section of package.json. 
       </div>
       <div class="item">
-        There are a few module formats under the <b>export</b> section.
+        Under the <b>export</b> section, there are a few module formats.
       </div>
       <div class="item">
         <ul>
@@ -53,27 +84,27 @@
           </li>
           <li>
             <div class="item">
-              esm2020: unflattened ES2022 
+              esm2020: unflattened ES2022 module
             </div>
           </li>
           <li>
             <div class="item">
-              es2020: flattened ES2022 
+              es2020: flattened ES2022 module
             </div>
           </li>
           <li>
             <div class="item">
-              es2015: flattened ES2015 
+              es2015: flattened ES2015 module
             </div>
           </li>
           <li>
             <div class="item">
-              node: flattened ES2015 (Node.js 12+ supports ESM)
+              node: flattened ES2015 module (Node.js 12+ supports ESM)
             </div>
           </li>
           <li>
             <div class="item">
-              default: flattened ES2022 
+              default: flattened ES2022 module
             </div>
           </li>
         </ul>
@@ -83,35 +114,6 @@
           <img src="../../assets/image/angular_core.png" alt="">
         </div>
       </div>
-      <div class="item">
-        <b>ESM vs FESM</b>
-      </div>
-      <div class="item">
-        The purpose of ESM (ES2015, ES2020 Module) is to provide a native way to load JavaScript modules into a browser. 
-        Before ESM, I have to use third-party library to import JavaScript modules to browsers like require.js (UMD implementation). 
-      </div>
-      <div class="item">
-        In Node.js, we usually import and export JavaScript modules with the common.js format. After Node.js 12, it began to support ESM.
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              ESM: modules are separted in different files individually
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              FESM: flatten all module into a single file
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="image-container">
-          <img src="../../assets/image/esm_fesm.png" alt="">
-        </div>
-      </div>
     </div>
   </app-section-container>
 
@@ -119,7 +121,10 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        In the following steps, we will try to create a simple Angular library with <b>app-doc-reviewer-container</b> in APF.
+        We can also learn the APF by creating ouw own libraries.
+      </div>
+      <div class="item">
+        In the following steps, we will try to create a simple Angular library in APF.
       </div>
       <div class="item">
         <ol>
@@ -152,12 +157,12 @@
           </li>
           <li>
             <div class="item">
-              Move the existing component into the module.
+              Move the existing component into the module. (e.g., DocReviewerContainerComponent)
             </div>
           </li>
           <li>
             <div class="item">
-              Update the documentation-ui.module.ts.
+              Update the documentation-ui.module.ts and expose the component.
             </div>
             <div class="item">
               <app-code-container key="apfStep4">
@@ -187,7 +192,7 @@
               </app-code-container>
             </div>
             <div class="item">
-              We can also discover the file structure of the generated package.
+              Now, we can discover the file structure of the generated package in APF.
             </div>
             <div class="item">
               <div class="image-container">
@@ -197,7 +202,7 @@
           </li>
           <li>
             <div class="item">
-              Update the app.module.ts.
+              Update the app.module.ts to import the built package.
             </div>
             <div class="item">
               <app-code-container key="apfStep7">

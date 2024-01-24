@@ -465,6 +465,8 @@ beforeEach(async () => {
   }], ["webAnimationComponent", {
     code: `
 /*
+* Keyframe format 1: an array of objects (keyframes) consisting of properties and values to iterate over
+*
 * Take 1% time to go from 0% to 10%
 * Take 99% time to go from 10% to 100%
 * If there is no specific offset, the comsued time will be equally distributed
@@ -489,6 +491,8 @@ const createCircleAnimation = () => [
 ];
 
 /*
+* Keyframe format 2: an object containing key-value pairs consisting of the property to animate and an array of values to iterate over
+*
 * Take 99% time to rotate 1800deg
 */
 const rotatationAnimation = {
@@ -671,8 +675,8 @@ ng generate library documentation-ui
     code: `
 scripts": {
     ...,
-    "build-library": "ng build \"documentation-UI\"",
-    "pack-library": "cd dist/documentation-UI && npm pack",
+    "build-library": "ng build \"documentation-ui\"",
+    "pack-library": "cd dist/documentation-ui && npm pack",
     "install-library": "npm install ./dist/documentation-ui/documentation-ui-0.0.1.tgz",
     ...
     `,
