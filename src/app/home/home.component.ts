@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteMap, RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { authorUrl, timelineUrl, v12Url, v14Url, v15Url, v16Url, v17Url } from '../public/config/url';
-import { ThemeType } from '../public/theme/domain/theme.damin';
 import { Router } from '@angular/router';
-import { ThemeService } from '../public/theme/service/theme.service';
+import { ThemeService, ThemeType } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-home',

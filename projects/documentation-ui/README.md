@@ -102,3 +102,41 @@ This component allows us to fold and unfold the content.
 </app-section-container>
 
 ``` 
+
+## 3. app-theme and theme service
+This component allows us to switch the theme for the UI component from this library.
+
+* The following screnshot shows the demo of this component.
+  * light
+    * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/theme_light.png)
+  * dark
+    * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/theme_dark.png)
+
+
+### Usage
+
+1. Inject the Thene service to the App component
+```
+import { ThemeService } from 'angular-documentation-ui';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  constructor(private themeService: ThemeService) {
+    let themeType = this.themeService.getCurrentThemeType();
+    this.themeService.setThemeByThemeType(themeType);
+  }
+}
+
+``` 
+
+2. Add the theme switcher to the template
+
+```
+<div class="theme-container">
+  <app-theme></app-theme>
+</div>
+```

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './service/theme.service';
 import { IconDefinition, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { ThemeType } from './domain/theme.damin';
+import { ThemeType } from './domain/theme.domain';
 
 @Component({
   selector: 'app-theme',

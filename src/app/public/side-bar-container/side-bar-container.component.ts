@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { RouteType, RouteMap, TYPE_TITLE_MAP } from '../route/route.domain';
-import { ThemeType } from '../theme/domain/theme.damin';
-import { ThemeService } from '../theme/service/theme.service';
 import { version } from '../config/constants';
 import { RouteService } from '../route/service/route.service';
 import { sideBarList } from './service/side-bar.domain';
 import { SideBarService } from './service/side-bar.service';
+import { ThemeService, ThemeType } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-side-bar-container',

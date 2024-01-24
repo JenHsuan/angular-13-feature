@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Theme, ThemeType, dark, light } from '../domain/theme.damin';
+import { Theme, ThemeType, dark, light } from '../domain/theme.domain';
 import { BehaviorSubject } from 'rxjs';
 
 const THEME_KEY = "theme";

@@ -1,6 +1,5 @@
-import { ChangeDetectorRef, Component, QueryList, ViewChildren } from '@angular/core';
-import { RouteMap, RouteType, TYPE_TITLE_MAP } from './public/route/route.domain';
-import { ThemeService } from './public/theme/service/theme.service';
+import { Component } from '@angular/core';
+import { ThemeService } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-root',

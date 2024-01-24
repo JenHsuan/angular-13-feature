@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DocReviewerContainerComponent } from './doc-reviewer-container/doc-reviewer-container.component';
 import { SectionContainerComponent } from './section-container/section-container.component';
+import { ThemeComponent } from './theme/theme.component';
 
 
 
 @NgModule({
   declarations: [
     DocReviewerContainerComponent,
-    SectionContainerComponent
+    SectionContainerComponent,
+    ThemeComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { SectionContainerComponent } from './section-container/section-container
   ],
   exports: [
     DocReviewerContainerComponent,
-    SectionContainerComponent
+    SectionContainerComponent,
+    ThemeComponent
   ]
 })
 export class DocumentationUiModule { }

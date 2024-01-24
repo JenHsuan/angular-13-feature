@@ -22,7 +22,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CodeContainerComponent } from './public/code-container/code-container.component';
 import { FooterContainerComponent } from './public/footer-container/footer-container.component';
 import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
-import { ThemeComponent } from './public/theme/theme.component';
 import { PageContainerComponent } from './public/page-container/page-container.component';
 import { NavigationButtonContainerComponent } from './public/navigation-button-container/navigation-button-container.component';
 import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
@@ -52,7 +51,6 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     CodeContainerComponent,
     FooterContainerComponent,
     SideBarContainerComponent,
-    ThemeComponent,
     PageContainerComponent,
     NavigationButtonContainerComponent,
     ReferenceContainerComponent,
