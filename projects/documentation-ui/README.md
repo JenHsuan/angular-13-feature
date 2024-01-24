@@ -88,6 +88,9 @@ export class MyComponent {
 ## 2. app-section-container
 This component allows us to fold and unfold the content.
 
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/section_demo.png)
+
 ### Usage
 
 1. Retrieve section elements and define section titles in your component
