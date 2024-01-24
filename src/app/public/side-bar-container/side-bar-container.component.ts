@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { RouteType, ROUTE_MAP, TYPE_TITLE_MAP } from '../route/route.domain';
+import { RouteType, RouteMap, TYPE_TITLE_MAP } from '../route/route.domain';
 import { ThemeType } from '../theme/domain/theme.damin';
 import { ThemeService } from '../theme/service/theme.service';
 import { version } from '../config/constants';
@@ -37,7 +37,7 @@ export class SideBarContainerComponent {
       if(location.path() != ''){
         const slices = location.path().split('/');
         let route = `/${slices[1]}`;
-        this.selectedRoute = ROUTE_MAP.get(route) || RouteType.HOME;
+        this.selectedRoute = RouteMap.get(route) || RouteType.HOME;
       }
     });
 

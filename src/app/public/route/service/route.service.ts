@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ROUTE_MAP, RouteType, TYPE_TITLE_MAP } from '../route.domain';
+import { RouteMap, RouteType, TYPE_TITLE_MAP } from '../route.domain';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class RouteService {
   }
   
   changeRoute(type: RouteType) {
-    const path  = [...ROUTE_MAP.keys()].find(key => type === ROUTE_MAP.get(key));
+    const path  = [...RouteMap.keys()].find(key => type === RouteMap.get(key));
     if (path) {
       this.router.navigate([path]);
     } 

@@ -8,7 +8,10 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        The test modules can be teared down after each test. The current test component looks like the following code.
+       The original .component.spec.ts looks like the following code.
+      </div>
+      <div class="item">
+        The problem is that test modules can't be teared down after each test. 
       </div>
       <div class="item">
         <app-code-container key="testingComponent">
@@ -21,13 +24,13 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        There are two ways to tear down the environment and the module.
+        In v13, there are two ways to tear down the environment and the module.
       </div>
       <div class="item">
         <ol>
           <li>
             <div class="item">
-              Before run every tests (safer way)
+              Before run every tests (safer way): add the teardown parameter from the TestBed.configureTestingModuleto enable destroyAfterEach.
             </div>
             <div class="item">
               <app-code-container key="testComponent2">

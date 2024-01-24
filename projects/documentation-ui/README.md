@@ -33,7 +33,16 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
 export class AppModule { }
 ```
 
-3. Retrieve section elements and define section titles in your component
+3. Import the scss file to src/styles.scss
+```
+@import "../node_modules/angular-documentation-ui/styles/theme/index"
+
+//or
+
+@use "../node_modules/angular-documentation-ui/styles/theme/index"
+```
+
+4. Retrieve section elements and define section titles in your component
 ```
 import { getIdFromTitle } from 'angular-documentation-ui';
 
@@ -51,7 +60,7 @@ export class MyComponent {
 
 ``` 
 
-4. Update your template
+5. Update your template
 ```
 <app-doc-reviewer-container
   [sections]="sections"

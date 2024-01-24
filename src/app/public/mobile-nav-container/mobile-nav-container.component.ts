@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { ROUTE_MAP, RouteType, TYPE_TITLE_MAP } from '../route/route.domain';
+import { RouteMap, RouteType, TYPE_TITLE_MAP } from '../route/route.domain';
 import { RouteService } from '../route/service/route.service';
 import { sideBarList } from '../side-bar-container/service/side-bar.domain';
 

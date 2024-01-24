@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
-import { ROUTE_MAP, RouteType } from '../route/route.domain';
+import { Location } from '@angular/common';
+import { RouteMap } from '../route/route.domain';
 import { Router } from '@angular/router';
 import { sideBarList } from '../side-bar-container/service/side-bar.domain';
 
@@ -29,7 +29,7 @@ export class NavigationButtonContainerComponent {
   }
 
   ngAfterViewInit() {
-    const list = [...ROUTE_MAP.keys()];
+    const list = [...RouteMap.keys()];
     const index = list.findIndex(path => path === this.currentRoute);
     if (index - 1 >= 0) {
       this.previous?.nativeElement.classList.add("active");
@@ -45,7 +45,7 @@ export class NavigationButtonContainerComponent {
   }
 
   previousPage() {
-    const list = [...ROUTE_MAP.keys()];
+    const list = [...RouteMap.keys()];
     const index = list.findIndex(path => path === this.currentRoute);
     if (index - 1 >= 0) {
       const nextPage = list[index - 1];
@@ -54,7 +54,7 @@ export class NavigationButtonContainerComponent {
   }
 
   nextPage() {
-    const list = [...ROUTE_MAP.keys()];
+    const list = [...RouteMap.keys()];
     const index = list.findIndex(path => path === this.currentRoute);
     if (index + 1 < list.length) {
       const nextPage = list[index + 1];

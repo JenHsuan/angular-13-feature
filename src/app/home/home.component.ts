@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTE_MAP, RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteMap, RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { authorUrl, timelineUrl, v12Url, v14Url, v15Url, v16Url, v17Url } from '../public/config/url';
 import { ThemeType } from '../public/theme/domain/theme.damin';
 import { Router } from '@angular/router';
@@ -41,7 +41,7 @@ export class HomeComponent{
   }
 
   firstPage() {
-    const list = [...ROUTE_MAP.keys()];
+    const list = [...RouteMap.keys()];
     const nextPage = list[1];
     this.router.navigate([nextPage]);
   }

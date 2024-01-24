@@ -31,7 +31,7 @@ export enum RouteType {
   FORMCONTROL_STATUS = 'FORMCONTROL_STATUS'
 }
 
-export const ROUTE_MAP = new Map<string, RouteType>([
+export const RouteMap = new Map<string, RouteType>([
   ['/home', RouteType.HOME],
   ['/documents', RouteType.DOCUMENTS],
   ['/migrations', RouteType.MIGRATIONS],
@@ -57,7 +57,7 @@ export const TYPE_TITLE_MAP = new Map<RouteType, string>([
   [RouteType.DEPRECATIONS, 'Deprecations'],
   [RouteType.NOTES, 'Features - Angular Package Format (APF) 13'],
   [RouteType.FONT, 'Feature - Stylish Improvements'],
-  [RouteType.ESM, 'Feature - ESM supported on the ng serve'],
+  [RouteType.ESM, 'Feature - ESM Supported on the ng serve'],
   [RouteType.CACHE, 'Feature - Cache Management'],
   [RouteType.DYNAMIC_COMPONENT, 'Improvements - Simplified Dynamic Component'],
   [RouteType.FORMCONTROL_STATUS, 'Improvement - Form Control Status'],
