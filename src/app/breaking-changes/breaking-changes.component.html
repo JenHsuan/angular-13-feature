@@ -54,14 +54,15 @@
               <ol>
                 <li>
                   <div class="item">
-                    Angular can remove IE-specific JS and CSS code paths, polyfills, build passes, and dev infrastructure.
+                    Angular can remove the IE-specific code paths (JavaScript and CSS), polyfills, build passes, and infrastructure.
                   </div>  
                 </li>
                 <li>
                   <div class="item">
+                    The 
                     <a [href]="getHash(sectionTitles[3])">
-                      The <b>differential loading</b>
-                    </a> has been removed.
+                      <b>differential loading</b>
+                    </a> feature has been removed.
                   </div>
                 </li>
               </ol>
@@ -74,7 +75,7 @@
           <li>
             <div class="item">
               <b>Ivy everywhere</b>:
-            remove View engine and fully use Ivy (check the <a href="https://eloquent-macaron-9ce67b.netlify.app/#/deprecations"> note of Angular 12</a> for details)
+            View engine is removed and Ivy is fully used (also check the <a href="https://eloquent-macaron-9ce67b.netlify.app/#/deprecations"> note of Angular 12</a>)
             </div>
             <div class="item">
               There are a few benefits.
@@ -83,17 +84,24 @@
               <ol>
                 <li>
                   <div class="item">
-                    <a href="/notes">Libraries built with APF 13 no longer needs to be compiled with ngcc.</a>
+                    In v13, we no longer needs to be compile
+                    <a href="/notes"> libraries built with APF 13</a> 
+                    with ngcc.
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    <a routerLink="/standard">The component API for creating dynamic components has been improved.</a>
+                    In v13, developers can create dynamic components easier by using the
+                    <a routerLink="/standard"> new component APIs</a>
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    <a routerLink="/inline-font">The animation from native API has been enabled.</a> (clarification: CSS variables is already enabled in Angular 12)
+                    In v13, developers are allowed create animations via
+                    <a routerLink="/inline-font">native API</a>.
+                  </div>
+                  <div class="item">
+                    (clarification: CSS variables is already enabled in Angular 12)
                   </div>
                 </li>
               </ol>
@@ -108,7 +116,7 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        There are a few new features in 
+        There are a few notable items in 
         <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/">
           TypeScript 4.4
         </a>. We pick up some useful topics in this section.
@@ -182,7 +190,7 @@
               </b>
             </div>
             <div class="item">
-              Now we are allowed to use <b>index signature</b> for <b>symbols</b> and <b>template string patterns</b> to declare properties.
+              Now we are allowed to use <b>index signature</b> for <b>symbols</b> and <b>template string patterns</b> to define properties.
             </div>
             <ul>
               <li>
@@ -218,7 +226,10 @@
               <ul>
                 <li>
                   <div class="item">
-                    Previously, we usually assign value to the static variable when declaring it. We are not allowed to access fields within the containing class.
+                    Previously, we usually assign value to the static variable when initializing. 
+                  </div>
+                  <div class="item">
+                    We are not allowed to access fields within the containing class.
                   </div>
                   <div class="item">
                     <app-code-container key="withoutTsStaticBlock">
@@ -228,7 +239,9 @@
                 <li>
                   <div class="item">
                     Now we are allowed to write a sequence of statements in the static block. 
-                    We can write initialization code with all the capabilities of <b>writing statements</b> and <b>full access</b> to our class’s internals.
+                  </div>
+                  <div class="item">
+                    We can initialize the static variable with <b>writing statements</b> and <b>full access</b> capabilities to our class’s internals.
                   </div>
                   <div class="item">
                     <app-code-container key="tsStaticBlock">
@@ -247,24 +260,24 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        The ability of differential loading is to include different bundles according to different browsers. It depend on the browser's compatibility.
+        Differential loading is to include different bundles according to the compatibility of browsers.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              Previously, we have to include polyfills to support legacy browsers. (e.g., Angular 8)
+              Previously, we have to include polyfills to support legacy browsers.
             </div>
             <div class="item">
               <ul>
                 <li>
                   <div class="item">
-                    For the legacy browsers (e.g., IE 8), we can use <b>type="nomodule"</b> because it can't support EcmaScript modules (ESM).
+                    For the legacy browsers (e.g., IE 8), Angular uses <b>type="nomodule"</b> attribute to address this bundle can't support EcmaScript modules (ESM).
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    For the modern browsers, we can use <b>type="module"</b> to address it's ESM.
+                    For the modern browsers, Angular uses <b>type="module"</b> attribute to address this bundle can support EcmaScript modules (ESM).
                   </div>
                 </li>
               </ul>
@@ -276,7 +289,7 @@
           </li>
           <li>
             <div class="item">
-              Now, we can only use <b>type="module"</b> in the index.html because the Angullar 13 stops supporting IE 11.
+              Now, Angular only use <b>type="module"</b> attribute because the Angullar 13 stops supporting IE 11.
             </div>
             <div class="item">
               <app-code-container key="distIndex">
@@ -286,7 +299,7 @@
         </ul>
       </div>
       <div class="item">
-        So, what is <b>type="module"</b>?
+        So, what is <b>type="module"</b> under the hood?
       </div>
     </div>
   </app-section-container>
@@ -296,27 +309,33 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
     <div class="description-container">
       <div class="item">
-        The folloing diagram shows the workflow between <b>the browser ask the web page</b> and <b>the browser display the recived we page</b>. 
+        The following diagram shows the workflow of
+        <b>asking server for the web page</b> from the browser. 
         The rendering will be blocked by the <b>critical paths</b>.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              Download JavaScript files.
+              Process of downloading JavaScript files.
             </div>
           </li>
           <li>
             <div class="item">
-              Download CSS files.
+              Process of downloading CSS files.
             </div>
           </li>
           <li>
             <div class="item">
-              Execute JavaScript files.
+              Process of executing JavaScript files.
               <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/createElement">
                 (e.g., Document.createElement API)
               </a>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Process of creating CSSDOM
             </div>
           </li>
         </ul>
@@ -329,10 +348,15 @@
       </div>
       <div class="item">
         There are a few methods to avoid render blocking during the JavaScript downloading and executing.
-        <ul>
+      </div>
+      <div class="item image-container">
+        <img src="../../assets/image/script.png" alt="">    
+      </div>
+      <div class="item">
+        <ol>
           <li>
             <div class="item">
-              With adding <b>type="module"</b> attribute, JavaScript files will be downloaded asynchronously and be executed after the rendering is completed.
+              After adding <b>type="module"</b> attribute, JavaScript files will be downloaded asynchronously and be executed after the rendering is completed.
             </div>
             <div class="item">
               In Angular, it's also used for being recognized if the bundle could support the modren browsers.
@@ -344,17 +368,14 @@
           </li>
           <li>
             <div class="item">
-              With adding the <b>async</b> attribute, JavaScript files will be downloaded asynchronously and be executed before rendering completed.
+              After adding the <b>async</b> attribute, JavaScript files will be downloaded asynchronously and be executed before rendering completed.
             </div>
              <div class="item">
               <app-code-container key="moduleAsyncSyntax">
               </app-code-container>
             </div>
           </li>
-        </ul>
-      </div>
-      <div class="item image-container">
-        <img src="../../assets/image/script.png" alt="">    
+        </ol>
       </div>
     </div>
   </app-section-container>

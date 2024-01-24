@@ -20,6 +20,7 @@ npm install rxjs@7.4
     languages:[CodeLanguageType.html]
   }], ["distIndex", {
     code: `
+<!-- /dist/angular13-project/index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,6 +50,7 @@ npm install rxjs@7.4
     languages:[CodeLanguageType.html]
   }], ["distIndexNg8", {
     code: `
+<!-- /dist/angular8-project/index.html -->
 <!doctype html>
 <html lang="en">
   <head>
