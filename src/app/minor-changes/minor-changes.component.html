@@ -34,14 +34,36 @@
               <app-code-container key="nullValidator">
               </app-code-container>
             </div>
+            <div class="item">
+              <app-code-container key="nullValidatorComponent">
+              </app-code-container>
+            </div>
           </li>
           <li>
             <div class="item">
               The URL serializer can recognize query pamaters started with question marks correctly.
             </div>
             <div class="item">
-              <app-code-container key="urlSerializer">
-              </app-code-container>
+              <ul>
+                <li>
+                  <div class="item">
+                    Previously, the URL serializer is unable to recognize query pamaters started with ?.
+                  </div>
+                  <div class="item">
+                    <app-code-container key="urlSerializer">
+                    </app-code-container>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    Now the URL serializer is able to recognize query pamaters started with ?.
+                  </div>
+                  <div class="item">
+                    <app-code-container key="urlSerializerV13">
+                    </app-code-container>
+                  </div>
+                </li>
+              </ul>
             </div>
           </li>
         </ol>

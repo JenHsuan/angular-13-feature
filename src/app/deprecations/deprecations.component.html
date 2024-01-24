@@ -14,7 +14,7 @@
         <ol>
           <li>
             <div class="item">
-              In routing modules, we should move the string value to dynamic ESM import statements for lazy-loaded routes.
+              For the lazy-loaded routes, we should use dynamic ESM import statements instead of the string value.
             </div>
             <div class="item">
               <app-code-container key="loadChildren">
@@ -23,7 +23,7 @@
           </li>
           <li>
             <div class="item">
-              For the server-side rendering, renderModuleFactory API was replaced to 
+              For the server-side rendering, the renderModuleFactory API was replaced with the
               <a href="https://angular.io/api/platform-server/renderModule">
                 renderModule API
               </a>.
@@ -38,7 +38,7 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        <b>Client-side rendering</b> renders pages directly in the browser with JavaScript (e.g., ng serve, ng build).
+        <b>Client-side rendering</b> renders partial pages in the browser at the initial phase (e.g., ng serve, ng build).
       </div>
       <div class="item">
         All logic, data fetching, templating and routing are handled on the client rather than the server. 
@@ -58,7 +58,7 @@
               <ul>
                 <li>
                   <div class="item">
-                    Reduce the loading for the server.
+                    Reduce the loading of the server.
                   </div>
                 </li>
               </ul>
@@ -77,15 +77,12 @@
                 </li>
                 <li>
                   <div class="item">
-                    Poor SEO
+                    Poor Search Engine Optimization (SEO).
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    Need additional round-trips for data fetching and it will cause higher
-                    <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint">
-                     Total Blocking Time (TBT)
-                    </a>.
+                    Need additional round-trips for data fetching.
                   </div>
                 </li>
               </ul>
@@ -142,15 +139,7 @@
                 </li>
                 <li>
                   <div class="item">
-                    Fast 
-                    <a href="https://web.dev/articles/fcp">
-                      First Contentful Paint (FCP)
-                    </a>: SSR avoids sending lots of JavaScript to the client.
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Lower TBT: SSR won't send lots of JavaScript to the client. (download JavaScript files will block the main thread)
+                    Won't send lots of JavaScript files to the client. (download JavaScript files will block the main thread)
                   </div>
                 </li>
               </ul>

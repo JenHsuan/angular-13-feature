@@ -168,12 +168,19 @@ function createRandomBytes(length: number) {
     languages:[CodeLanguageType.html]
   }], ["nullValidator", {
     code: `
-<input name="firstName" ngModel [maxlength]="null">
+<input name="firstName" ngModel [maxlength]="shouldCancelMaxLengthValidator ? null : maxLength">
       `,
     languages:[CodeLanguageType.html]
+  }], ["nullValidatorComponent", {
+    code: `
+export class MinorChangesComponent {
+  maxLength = 10;
+  shouldCancelMaxLengthValidator: boolean = false;
+}
+      `,
+    languages:[CodeLanguageType.typescript]
   }], ["urlSerializer", {
     code: `
-//v12: unable to recognize query pamaters started with ? 
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();
@@ -182,8 +189,10 @@ export class DeprecationsContentChildrenComponent {
     console.log(dus.parse('/path?q=hello?&q2=2'));
   }
 }
-
-//v13: able to recognize query pamaters started with ? 
+   `,
+    languages:[CodeLanguageType.typescript]
+  }], ["urlSerializerV13", {
+    code: `
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();

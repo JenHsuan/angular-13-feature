@@ -84,20 +84,20 @@
               <ol>
                 <li>
                   <div class="item">
-                    In v13, we no longer needs to be compile
-                    <a href="/notes"> libraries built with APF 13</a> 
+                    We no longer needs to be compile
+                    <a href="/notes"> libraries (built with APF 13)</a> 
                     with ngcc.
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    In v13, developers can create dynamic components easier by using the
+                    Developers can create dynamic components easier by using the
                     <a routerLink="/standard"> new component APIs</a>
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    In v13, developers are allowed create animations via
+                    Developers are allowed to create animations through the
                     <a routerLink="/inline-font">native API</a>.
                   </div>
                   <div class="item">
@@ -126,7 +126,7 @@
           <li>
             <div class="item">
               <b>
-                Bugfix: improvement of type guard
+                Bugfix of type guard
               </b>
             </div>
             <div class="item">
@@ -260,27 +260,18 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        Differential loading is to include different bundles according to the compatibility of browsers.
+        With the differential loading, Angular can separate JavaScript code to different bundles and include them according to the browser's compatibility.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              Previously, we have to include polyfills to support legacy browsers.
+              For the legacy browsers (e.g., IE 8), Angular uses <b>type="nomodule"</b> attribute to address this bundle can't support EcmaScript modules (ESM).
             </div>
+          </li>
+          <li>
             <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    For the legacy browsers (e.g., IE 8), Angular uses <b>type="nomodule"</b> attribute to address this bundle can't support EcmaScript modules (ESM).
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    For the modern browsers, Angular uses <b>type="module"</b> attribute to address this bundle can support EcmaScript modules (ESM).
-                  </div>
-                </li>
-              </ul>
+              For the modern browsers, Angular uses <b>type="module"</b> attribute to address this bundle can support EcmaScript modules (ESM).
             </div>
             <div class="item">
               <app-code-container key="distIndexNg8">

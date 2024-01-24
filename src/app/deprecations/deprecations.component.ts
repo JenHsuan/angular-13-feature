@@ -19,7 +19,7 @@ export class DeprecationsComponent {
   ];
 
   pros = [
-    "SSR can optimize FCP and TBT.",
+    "SSR can avoid additional round-trips on the client so that it can optimize the performance.",
   ];
   cons = [
     "According to the expirements, the paractices of SSR is not easy to implement in v13.",
