@@ -6,8 +6,8 @@
     "outDir": "./dist/out-tsc",
     "paths": {
       "documentation-UI": [
-        "dist/documentation-ui/documentation-ui",
-        "dist/documentation-ui"
+        "dist/documentation-ui",
+        "dist/documentation-ui/utils"
       ]
     },
     "forceConsistentCasingInFileNames": true,

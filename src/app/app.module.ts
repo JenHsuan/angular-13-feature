@@ -33,7 +33,7 @@ import { MinorChangesComponent } from './minor-changes/minor-changes.component';
 import { EvaluationContainerComponent } from './public/evaluation-container/evaluation-container.component';
 import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-animation/inline-font-web-animation.component';
 import { FormControlStatusComponent } from './form-control-status/form-control-status.component';
-import { DocumentationUiModule } from 'documentation-UI';
+import { DocumentationUiModule } from 'angular-documentation-ui';
 
 @NgModule({
   declarations: [

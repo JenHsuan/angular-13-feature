@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { getHash } from '../../../utils/utils';
 
 @Component({
   selector: 'app-doc-reviewer-container',
@@ -11,6 +12,7 @@ export class DocReviewerContainerComponent {
   @Input() sections: QueryList<ElementRef> | undefined;
   @Input() getIdFromTitle: Function; 
   @ViewChildren("menu") menu: QueryList<ElementRef> | undefined;
+  getHash = getHash;
   showBackTop = false;
   currentIndex = -1;
 
@@ -41,10 +43,6 @@ export class DocReviewerContainerComponent {
   isInViewport (elem: ElementRef) {
     const bounding = elem.nativeElement.getBoundingClientRect();
     return (bounding.top < 0);
-  }
-
-  getHash(title: string) {
-    return `#${this.getIdFromTitle(title)}`;
   }
   
   moveTop() {

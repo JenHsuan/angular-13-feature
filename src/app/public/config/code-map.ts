@@ -180,7 +180,7 @@ export class DeprecationsContentChildrenComponent {
   }
 }
 
-//v13: able to recognize query pamaters started with ? 
+//v13: unable to recognize query pamaters started with ? 
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();

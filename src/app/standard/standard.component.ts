@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactory, Componen
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from 'documentation-UI';
+import { getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-standard',
