@@ -14,10 +14,7 @@
         <ol>
           <li>
             <div class="item">
-             We can't specify lazy-loaded routes by setting a string value to loadChildren any more.
-            </div>
-            <div class="item">
-              Instead, we move to dynamic ESM import statements.
+              In routing modules, we should move the string value to dynamic ESM import statements for lazy-loaded routes.
             </div>
             <div class="item">
               <app-code-container key="loadChildren">
@@ -26,10 +23,10 @@
           </li>
           <li>
             <div class="item">
-              Deprecation of the server-side rendering (SSR) API: renderModuleFactory API was replaced to 
+              For the server-side rendering, renderModuleFactory API was replaced to 
               <a href="https://angular.io/api/platform-server/renderModule">
                 renderModule API
-              </a> (@angular/platform-server package).
+              </a>.
             </div>
           </li>
         </ol>
@@ -41,7 +38,7 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        <b>Client-side rendering</b> renders pages directly in the browser with JavaScript(e.g., ng serve, ng build).
+        <b>Client-side rendering</b> renders pages directly in the browser with JavaScript (e.g., ng serve, ng build).
       </div>
       <div class="item">
         All logic, data fetching, templating and routing are handled on the client rather than the server. 
@@ -85,9 +82,10 @@
                 </li>
                 <li>
                   <div class="item">
+                    Need additional round-trips for data fetching and it will cause higher
                     <a href="https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint">
-                      Higher Total Blocking Time (TBT)
-                    </a>: the browser has to download JavaScript files and execute them before rendering the page.
+                     Total Blocking Time (TBT)
+                    </a>.
                   </div>
                 </li>
               </ul>
@@ -95,10 +93,10 @@
           </li>
           <li>
             <div class="item">
-              Solutions
+              Possible solutions to optimize performance
             </div>
             <div class="item">
-              <ul>
+              <ol>
                 <li>
                   <div class="item">
                     <a href="https://web.dev/articles/reduce-javascript-payloads-with-code-splitting">
@@ -116,7 +114,7 @@
                     Server-side rendering
                   </div>
                 </li>
-              </ul>
+              </ol>
             </div>
           </li>
         </ul>
@@ -144,12 +142,15 @@
                 </li>
                 <li>
                   <div class="item">
-                    Fast First Contentful Paint (FCP): SSR avoids sending lots of JavaScript to the client.
+                    Fast 
+                    <a href="https://web.dev/articles/fcp">
+                      First Contentful Paint (FCP)
+                    </a>: SSR avoids sending lots of JavaScript to the client.
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    Lower Total Blocking Time (TBT): SSR sending lots of JavaScript to the client. (download JavaScript files will block the main thread)
+                    Lower TBT: SSR won't send lots of JavaScript to the client. (download JavaScript files will block the main thread)
                   </div>
                 </li>
               </ul>
@@ -163,7 +164,7 @@
               <ul>
                 <li>
                   <div class="item">
-                    Higher Time to First Byte (TTFB): generating pages on the server takes time.
+                    Generating pages on the server takes time.
                   </div>
                 </li>
               </ul>
@@ -181,27 +182,27 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        For achieving SSR, we have to transform the angular modules to string on the server. 
+        The concept of SSR is to transform the angular modules to string on the server. It means that we have to run JavaScript on the server. 
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              It means that we have to run JavaScript on the server. So we need Node.js to be the server in the SSR mode.
+              In v13, we need to write Node.js code as a server manually.
             </div>
           </li>
           <li>
             <div class="item">
               <a href="https://marvelous-gnome-0802fa.netlify.app/#/hydration">
                 In v16
-              </a>, we only have to set @nguniversal/express-engine.
+              </a>, the @nguniversal/express-engine package improves the development experiences.
             </div>
           </li>
           <li>
             <div class="item">
               <a href="https://chimerical-cocada-121bf6.netlify.app/#/hydration">
               In v17
-              </a>, we only have to set up @angular/ssr
+              </a>, the @angular/ssr package improves the development experiences
             </div>
           </li>
         </ul>
@@ -253,8 +254,8 @@
                   <div class="item">
                     <a href="https://angular.io/api/platform-server/renderModule">
                       renderModule
-                    </a> 
-                    will bootstraps an application using provided NgModule and serializes the page content to string.
+                    </a> API 
+                    will bootstrap an application with provided NgModule and <b>serializes the page content to string</b>.
                   </div>
                 </li>
               </ul>
@@ -275,7 +276,7 @@
           </li>
           <li>
             <div class="item">
-              Compile the server.ts.
+              Compile the webpack.server.config.js.
             </div>
             <div class="item">
               <app-code-container key="compileServerTs">
@@ -284,7 +285,7 @@
           </li>
           <li>
             <div class="item">
-              Replace all <b>self</b> with <b>this</b> from the dist/server.ts.
+              Replace all <b>self</b> with <b>this</b> from the dist/server.ts. (workaround)
             </div>
           </li>
           <li>

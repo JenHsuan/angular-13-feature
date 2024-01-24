@@ -13,14 +13,14 @@ export class DeprecationsComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Introduction to the server-side rendering (SSR)",
-    "SSR in Angular 13 with ng universal",
-    "Evaluation for ng universal",
+    "Introduction to the Server-side Rendering (SSR)",
+    "SSR in Angular 13 with ng-universal",
+    "Evaluation for ng-universal",
     "Reference"
   ];
 
   pros = [
-    "SSR can optimize FCP, TBT.",
+    "SSR can optimize FCP and TBT.",
   ];
   cons = [
     "According to the expirements, the paractices of SSR is not easy to implement in v13.",

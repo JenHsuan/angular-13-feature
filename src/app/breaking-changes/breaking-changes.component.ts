@@ -15,8 +15,8 @@ export class BreakingChangesComponent {
   sectionTitles = [
     "Introduction",
     "New Features of TypeScript 4.4",
-    "Modules and Rendering",
     "Differential Loading",
+    "Rendering and Critical Path",
     "Reference"
   ];
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;

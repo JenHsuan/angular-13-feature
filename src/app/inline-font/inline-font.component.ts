@@ -15,7 +15,6 @@ export class InlineFontComponent {
     "Introduction",
     "Web Animations via Native Web API",
     "Evaluation for Web Animations API",
-    "CSS Variables",
     "Inline Resource (Adobe font)",
     "Reference"
   ];

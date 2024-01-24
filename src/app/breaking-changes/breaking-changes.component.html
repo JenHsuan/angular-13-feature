@@ -54,13 +54,15 @@
               <ol>
                 <li>
                   <div class="item">
-                    The IE-specific polyfills were dropped
-                  </div> 
+                    Angular can remove IE-specific JS and CSS code paths, polyfills, build passes, and dev infrastructure.
+                  </div>  
                 </li>
                 <li>
                   <div class="item">
-                    Be able to remove special JS and CSS code paths, polyfills, build passes, and dev infrastructure that exists
-                  </div>  
+                    <a [href]="getHash(sectionTitles[3])">
+                      The <b>differential loading</b>
+                    </a> has been removed.
+                  </div>
                 </li>
               </ol>
             </div>
@@ -91,12 +93,7 @@
                 </li>
                 <li>
                   <div class="item">
-                    <a routerLink="/inline-font">The CSS variables and native web animation API has been enabled.</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    The <b>differential loading</b> has been removed because the Angular 13 stops supporting IE 11.
+                    <a routerLink="/inline-font">The animation from native API has been enabled.</a> (clarification: CSS variables is already enabled in Angular 12)
                   </div>
                 </li>
               </ol>
@@ -111,21 +108,24 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        There are a few new features in TypeScript 4.4. I pick up some useful topics in this section.
+        There are a few new features in 
+        <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/">
+          TypeScript 4.4
+        </a>. We pick up some useful topics in this section.
       </div>
       <div class="item">
         <ol>
           <li>
             <div class="item">
               <b>
-                Improvement of type guard
+                Bugfix: improvement of type guard
               </b>
             </div>
             <div class="item">
               <ul>
                 <li>
                   <div class="item">
-                    Previously, TypeScript simply lost that information when a variable was assigned the value of a type guard.
+                    Previously, the information of the type guard will lost when it's assigned to a variable.
                   </div>
                 </li>
                 <li>
@@ -147,7 +147,7 @@
               </b>
             </div>
             <div class="item">
-              The error variable in Catch is default to the <b>unknown</b> type if we enable useUnknownInCatchVariables
+              If we enable useUnknownInCatchVariables, the error variable in the catch block is default to the <b>unknown</b> type.
             </div>
             <div class="item">
               <ul>
@@ -162,7 +162,7 @@
                 </li>
                 <li>
                   <div class="item">
-                   Solution
+                   Th solution is to specify the type of the error variable in the catch block. 
                   </div>
                   <div class="item">
                     <app-code-container key="tsUnknownSolution">
@@ -182,12 +182,12 @@
               </b>
             </div>
             <div class="item">
-              Now we are allowed to use index signatures for symbols and template string patterns.
+              Now we are allowed to use <b>index signature</b> for <b>symbols</b> and <b>template string patterns</b> to declare properties.
             </div>
             <ul>
               <li>
                 <div class="item">
-                  Define properties with <b>index signatures</b>
+                  Example of defining properties with <b>index signatures</b> for <b>symbols</b>
                 </div>
                 <div class="item">
                   <app-code-container key="tsSymbol">
@@ -196,7 +196,7 @@
               </li>
               <li>
                 <div class="item">
-                  Define properties with <b>template string patterns</b>
+                  Example of defining properties with <b>template string patterns</b> for <b>symbols</b>
                 </div>
                 <div class="item">
                   <app-code-container key="tsTemplateString">
@@ -218,7 +218,7 @@
               <ul>
                 <li>
                   <div class="item">
-                    Previously, we ususlly have to assign value to the static variable when declaring it.
+                    Previously, we usually assign value to the static variable when declaring it. We are not allowed to access fields within the containing class.
                   </div>
                   <div class="item">
                     <app-code-container key="withoutTsStaticBlock">
@@ -227,10 +227,8 @@
                 </li>
                 <li>
                   <div class="item">
-                    In the static block, we are allowed to write a sequence of statements with their own scope that can access fields within the containing class.
-                  </div>
-                  <div class="item">
-                    It means that we can write initialization code with all the capabilities of writing statements, no leakage of variables, and full access to our class’s internals.
+                    Now we are allowed to write a sequence of statements in the static block. 
+                    We can write initialization code with all the capabilities of <b>writing statements</b> and <b>full access</b> to our class’s internals.
                   </div>
                   <div class="item">
                     <app-code-container key="tsStaticBlock">
@@ -245,85 +243,28 @@
     </div>
   </app-section-container>
 
-  <!-- supplements -->
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        The rendering will be blocked in the following situations. The rendering process and them are synchronous to each other.
+        The ability of differential loading is to include different bundles according to different browsers. It depend on the browser's compatibility.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              The JavaScript file is downloaded.
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              The CSS file is downloaded.
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              The JavaScript file is executed. 
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item image-container">
-        <img src="../../assets/image/critical_path.webp" alt="">    
-      </div>
-      <div class="item">
-        (taken from <a href="https://medium.com/a-layman/how-browser-works-when-rendering-a-web-page-f49c09bec475">this reference</a>)
-      </div>
-      <div class="item">
-        There are a few methods to avoid render blocking
-        <ul>
-          <li>
-            The script will be asynchronously downloaded when specifying the module attribute. The script will be executed after rendering completed.
-            <div class="item">
-              <app-code-container key="moduleSyntax">
-              </app-code-container>
-            </div>
-          </li>
-          <li>
-            The script will be asynchronously downloaded when adding the async attribute. The script will be executed before rendering completed.
-             <div class="item">
-              <app-code-container key="moduleAsyncSyntax">
-              </app-code-container>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item image-container">
-        <img src="../../assets/image/script.png" alt="">    
-      </div>
-    </div>
-  </app-section-container>
-
-  <app-section-container>
-    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
-    <div class="description-container">
-      <div class="item">
-        The ability of differential loading is to upport different browsers with different bundles.
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              Previously, we have to use polyfills to support legacy browsers. (e.g., Angular 8)
+              Previously, we have to include polyfills to support legacy browsers. (e.g., Angular 8)
             </div>
             <div class="item">
               <ul>
                 <li>
                   <div class="item">
-                    For the legacy browsers (e.g., IE 8), it can't support ES6 modules so we can only use <b>type="nomodule"</b>.
+                    For the legacy browsers (e.g., IE 8), we can use <b>type="nomodule"</b> because it can't support EcmaScript modules (ESM).
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    For the modern browsers, we can use <b>type="module"</b> to represent these modules are ES6 modules.
+                    For the modern browsers, we can use <b>type="module"</b> to address it's ESM.
                   </div>
                 </li>
               </ul>
@@ -335,7 +276,7 @@
           </li>
           <li>
             <div class="item">
-              Now, we only use <b>type="module"</b> in the index.html because the Angullar 13 stops supporting IE 11.
+              Now, we can only use <b>type="module"</b> in the index.html because the Angullar 13 stops supporting IE 11.
             </div>
             <div class="item">
               <app-code-container key="distIndex">
@@ -343,6 +284,77 @@
             </div>
           </li>
         </ul>
+      </div>
+      <div class="item">
+        So, what is <b>type="module"</b>?
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- supplements -->
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
+    <div class="description-container">
+      <div class="item">
+        The folloing diagram shows the workflow between <b>the browser ask the web page</b> and <b>the browser display the recived we page</b>. 
+        The rendering will be blocked by the <b>critical paths</b>.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Download JavaScript files.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Download CSS files.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Execute JavaScript files.
+              <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/createElement">
+                (e.g., Document.createElement API)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item image-container">
+        <img src="../../assets/image/critical_path.webp" alt="">    
+      </div>
+      <div class="item">
+        (taken from <a href="https://medium.com/a-layman/how-browser-works-when-rendering-a-web-page-f49c09bec475">this reference</a>)
+      </div>
+      <div class="item">
+        There are a few methods to avoid render blocking during the JavaScript downloading and executing.
+        <ul>
+          <li>
+            <div class="item">
+              With adding <b>type="module"</b> attribute, JavaScript files will be downloaded asynchronously and be executed after the rendering is completed.
+            </div>
+            <div class="item">
+              In Angular, it's also used for being recognized if the bundle could support the modren browsers.
+            </div>
+            <div class="item">
+              <app-code-container key="moduleSyntax">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              With adding the <b>async</b> attribute, JavaScript files will be downloaded asynchronously and be executed before rendering completed.
+            </div>
+             <div class="item">
+              <app-code-container key="moduleAsyncSyntax">
+              </app-code-container>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item image-container">
+        <img src="../../assets/image/script.png" alt="">    
       </div>
     </div>
   </app-section-container>

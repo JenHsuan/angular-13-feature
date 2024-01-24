@@ -175,15 +175,17 @@ function createRandomBytes(length: number) {
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();
+    //It will print the following messages 
     //queryParams: q: "hello"
     console.log(dus.parse('/path?q=hello?&q2=2'));
   }
 }
 
-//v13: unable to recognize query pamaters started with ? 
+//v13: able to recognize query pamaters started with ? 
 export class DeprecationsContentChildrenComponent {
   constructor(private cd: ChangeDetectorRef){
     let dus = new DefaultUrlSerializer();
+    //It will print the following messages 
     //queryParams: q: "hello?", q2: "2"
     console.log(dus.parse('/path?q=hello?&q2=2'));
   }
@@ -649,12 +651,6 @@ try {
 class Foo {
   static bytes = createRandomBytes(4 * 1024);
   static fileBody = new FileBody(Foo.bytes);
-}
-
-function createRandomBytes(length: number) {
-  const bytes = new Uint8Array(length);
-  bytes.set(pseudoRandomBytes(bytes.length));
-  return bytes;
 }
 
 function createRandomBytes(length: number) {
