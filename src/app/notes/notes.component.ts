@@ -12,7 +12,7 @@ export class NotesComponent {
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
-    "Angular Package Format (APF) 13",
+    "Introduction to Angular Package Format (APF)",
     "Create, Pack, and Install an Angular Library Manually and Publish it on NPM",
     "Reference"
   ];
@@ -27,6 +27,7 @@ export class NotesComponent {
     ["This class is visible to consumers via SomeModule -> SomeComponent, but is not exported from the top-level library entrypoint", "https://stackoverflow.com/questions/60121962/this-class-is-visible-to-consumers-via-somemodule-somecomponent-but-is-not-e"],
     ["npm依赖管理peerDependencies", "https://juejin.cn/post/7081801514208985124"],
     ["Building a Library in Angular 11 with Dependencies", "https://medium.com/@yamini.hrishikesh/building-a-library-in-angular-11-with-dependencies-2d34db752220"],
+    ["前端模块化（AMD、CommonJS、UMD）总结", "https://zhuanlan.zhihu.com/p/75980415"]
   ]);
   @ViewChildren(SectionContainerComponent, {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
 

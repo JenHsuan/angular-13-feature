@@ -8,18 +8,18 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        There are a few changes.
+        There are a few improvements.
       </div>
       <div class="item">
         <ol>
           <li>
             <div class="item">
-              In APF 13, it supports the Node Package Exports.
+              Support the Node Package Exports.
             </div>
           </li>
           <li>
             <div class="item">
-              In APF 13, it standardizes on more modern JavavScript formats such as EcmaScript 2020 (ES2020).
+              Standardize on more modern JavavScript formats such as EcmaScript 2020 (ES2020).
             </div>
           </li>
         </ol>
@@ -34,10 +34,26 @@
         <b>EcmaScript Module (ESM) vs Flattened EcmaScript Module (FESM)</b>
       </div>
       <div class="item">
-       For the browser environment, we have to use third-party libraries to import JavaScript modules to browsers like require.js (UMD implementation). 
+        Let's review the history of JavaScript modules.
       </div>
       <div class="item">
-        For Node.js, we usually import and export JavaScript modules in the common.js format. After Node.js 12, it began to support ESM.
+        <ul>
+          <li>
+            <div class="item">
+             For the browser environment, we have to use third-party libraries to import JavaScript modules to browsers like require.js (implementation of AMD). 
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              For Node.js environment, we usually import and export JavaScript modules in the CommonJS format (CJS). After Node.js 12, it began to support ESM.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              UMD (Universal Module Definition) is a module format for adopting CommonJS and AMD. It can provide the compatibility for both Node.js and browser environments.
+            </div>
+          </li>
+        </ul>
       </div>
       <div class="item">
         The purpose of ESM (ES2015, ES2020 Module) is to provide a native way to load JavaScript modules into a browser. 

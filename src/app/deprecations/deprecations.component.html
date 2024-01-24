@@ -38,10 +38,24 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
       <div class="item">
-        <b>Client-side rendering</b> renders partial pages in the browser at the initial phase (e.g., ng serve, ng build).
+        <b>Client-side rendering (CSR)</b>
       </div>
       <div class="item">
-        All logic, data fetching, templating and routing are handled on the client rather than the server. 
+        The core concept of CSR is all logic, data fetching, templating and routing are handled on the client rather than the server. (e.g., ng serve, ng build)
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              At the initial phase, CSR only renders partial pages without contents and UI componets to the browser.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              After the JavaScript files are downloaded and executed, the full page is rendered.
+            </div>
+          </li>
+        </ul>
       </div>
       <div class="item">
         <div class="image-container">
@@ -49,75 +63,82 @@
         </div>
       </div>
       <div class="item">
+        Pros
+      </div>
+      <div class="item">
         <ul>
           <li>
             <div class="item">
-              Pros
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    Reduce the loading of the server.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Cons
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    Unfriendly to mobile devices.
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Poor Search Engine Optimization (SEO).
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Need additional round-trips for data fetching.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Possible solutions to optimize performance
-            </div>
-            <div class="item">
-              <ol>
-                <li>
-                  <div class="item">
-                    <a href="https://web.dev/articles/reduce-javascript-payloads-with-code-splitting">
-                      Code splitting with Webpack
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Lazy loading
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Server-side rendering
-                  </div>
-                </li>
-              </ol>
+              Reduce the loading of the server.
             </div>
           </li>
         </ul>
       </div>
       <div class="item">
-        <b>Server-side rendering</b> generates the full HTML for a page on the server in response to navigation.
+        Cons
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Unfriendly to mobile devices.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Poor Search Engine Optimization (SEO).
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Need additional round-trips for data fetching.
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        Possible solutions to optimize performance
+      </div>
+      <div class="item">
+        <ol>
+          <li>
+            <div class="item">
+              <a href="https://web.dev/articles/reduce-javascript-payloads-with-code-splitting">
+                Code splitting with Webpack
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Lazy loading
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Server-side rendering
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="item">
+        <b>Server-side rendering (SSR)</b>
+      </div>
+      <div class="item">
+        The core concept of SSR is to generate the full HTML for a page on the server in response to navigation.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              At the initial phase, SSR will compiles and renders full pages with contents and UI componets to the browser on demands.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              For third-party libraries, the browser still need to download and execute them.
+            </div>
+          </li>
+        </ul>
       </div>
       <div class="item">
         <div class="image-container">
@@ -125,38 +146,30 @@
         </div>
       </div>
       <div class="item">
+        Pros
+      </div>
+      <div class="item">
         <ul>
           <li>
             <div class="item">
-              Pros
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    Avoids additional round-trips for data fetching and templating on the client.
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Won't send lots of JavaScript files to the client. (download JavaScript files will block the main thread)
-                  </div>
-                </li>
-              </ul>
+              Avoids additional round-trips for data fetching and templating on the client.
             </div>
           </li>
           <li>
             <div class="item">
-              Cons
+              Won't send lots of JavaScript files to the client. (download JavaScript files will block the main thread)
             </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        Cons
+      </div>
+      <div class="item">
+        <ul>
+          <li>
             <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    Generating pages on the server takes time.
-                  </div>
-                </li>
-              </ul>
+              Generating pages on the server takes time.
             </div>
           </li>
         </ul>
@@ -171,7 +184,7 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        The concept of SSR is to transform the angular modules to string on the server. It means that we have to run JavaScript on the server. 
+        The concept for implementing SSR is to transform the angular modules to string on the server. It means that we have to run JavaScript on the server. 
       </div>
       <div class="item">
         <ul>

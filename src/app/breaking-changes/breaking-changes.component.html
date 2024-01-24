@@ -42,7 +42,7 @@
           </li>
           <li>
             <div class="item">
-              Stop supporting IE11 
+              Stop supporting IE 11 
               <a href="https://github.com/angular/angular/issues/41840">
                 (Pull request)
               </a>
@@ -260,18 +260,24 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
     <div class="description-container">
       <div class="item">
-        With the differential loading, Angular can separate JavaScript code to different bundles and include them according to the browser's compatibility.
+        With the differential loading, Angular can separate JavaScript code to different bundles and include them.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              For the legacy browsers (e.g., IE 8), Angular uses <b>type="nomodule"</b> attribute to address this bundle can't support EcmaScript modules (ESM).
+              The <b>type="nomodule"</b> attribute addresses this bundle does not belong to EcmaScript module (ESM).
+            </div>
+            <div class="item">
+              For the legacy browsers (e.g., IE 8), they can only recognize <b>type="nomodule"</b> attribute.
             </div>
           </li>
           <li>
             <div class="item">
-              For the modern browsers, Angular uses <b>type="module"</b> attribute to address this bundle can support EcmaScript modules (ESM).
+              The <b>type="module"</b> attribute addresses this bundle belongs to EcmaScript module (ESM).
+            </div>
+            <div class="item">
+              For the modern browsers, they can recognize <b>type="module"</b> attribute.
             </div>
             <div class="item">
               <app-code-container key="distIndexNg8">
@@ -280,7 +286,7 @@
           </li>
           <li>
             <div class="item">
-              Now, Angular only use <b>type="module"</b> attribute because the Angullar 13 stops supporting IE 11.
+              Now, Angular only use <b>type="module"</b> attribute because it has stopped supporting IE 11.
             </div>
             <div class="item">
               <app-code-container key="distIndex">
@@ -290,7 +296,7 @@
         </ul>
       </div>
       <div class="item">
-        So, what is <b>type="module"</b> under the hood?
+        So, what is real purpose of the <b>type="module"</b> attribute?
       </div>
     </div>
   </app-section-container>
@@ -350,7 +356,7 @@
               After adding <b>type="module"</b> attribute, JavaScript files will be downloaded asynchronously and be executed after the rendering is completed.
             </div>
             <div class="item">
-              In Angular, it's also used for being recognized if the bundle could support the modren browsers.
+              In Angular, it's also used for being recognized if the bundle could support the modern browsers.
             </div>
             <div class="item">
               <app-code-container key="moduleSyntax">
