@@ -1,12 +1,9 @@
 This library provides a few UI components to help you to create a ddocumentation website. (based on Angular 13)
 
-## 1. app-doc-reviewer-container
-This component allows us to create the timeline to indicate the current section with the highlighted color.
+# Demo site
+* [Note of Angular 13](https://profound-kangaroo-9db0c6.netlify.app/#/home)
 
-* The following screnshot shows the demo of this component.
-  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/doc-reviewer-demo.png)
-
-### Usage
+# Setting up
 1. Install this package
 ```
 npm i angular-documentation-ui
@@ -42,7 +39,16 @@ export class AppModule { }
 @use "../node_modules/angular-documentation-ui/styles/theme/index"
 ```
 
-4. Retrieve section elements and define section titles in your component
+# UI components
+## 1. app-doc-reviewer-container
+This component allows us to create the timeline to indicate the current section with the highlighted color.
+
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/doc-reviewer-demo.png)
+
+### Usage
+
+1. Retrieve section elements and define section titles in your component
 ```
 import { getIdFromTitle } from 'angular-documentation-ui';
 
@@ -60,7 +66,7 @@ export class MyComponent {
 
 ``` 
 
-5. Update your template
+2. Update your template
 ```
 <app-doc-reviewer-container
   [sections]="sections"
@@ -69,8 +75,27 @@ export class MyComponent {
 </app-doc-reviewer-container>
 
 <div #section>
+  <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}
+  </div>  
 </div>
 
 <div #section>
+  <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}
+  </div>
 </div>
 ```
+
+## 2. app-section-container
+This component allows us to fold and unfold the content.
+
+### Usage
+
+1. Retrieve section elements and define section titles in your component
+```
+<app-section-container>
+  <div>
+    {{ your contents }}
+  </div>
+</app-section-container>
+
+``` 

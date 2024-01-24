@@ -1,9 +1,8 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { authorUrl } from '../public/config/url';
-import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { version } from '../public/config/constants';
-import { getIdFromTitle } from 'angular-documentation-ui';
+import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-documents',

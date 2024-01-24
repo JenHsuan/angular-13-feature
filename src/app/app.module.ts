@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotesComponent } from './notes/notes.component';
 import { InlineFontComponent } from './inline-font/inline-font.component';
 import { HomeComponent } from './home/home.component';
-import { SectionContainerComponent } from './public/section-container/section-container.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { DeprecationsComponent } from './deprecations/deprecations.component';
 import { BreakingChangesComponent } from './breaking-changes/breaking-changes.component';
@@ -46,7 +45,6 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     NotesComponent,
     InlineFontComponent,
     HomeComponent,
-    SectionContainerComponent,
     DocumentsComponent,
     DeprecationsComponent,
     BreakingChangesComponent,

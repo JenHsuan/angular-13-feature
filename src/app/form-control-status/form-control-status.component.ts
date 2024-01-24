@@ -1,8 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
-import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { FormControl } from '@angular/forms';
-import { getIdFromTitle } from 'angular-documentation-ui';
+import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-form-control-status',

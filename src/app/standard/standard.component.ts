@@ -1,8 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactory, ComponentFactoryResolver, ElementRef, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
-import { SectionContainerComponent } from '../public/section-container/section-container.component';
-import { getIdFromTitle } from 'angular-documentation-ui';
+import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-standard',
