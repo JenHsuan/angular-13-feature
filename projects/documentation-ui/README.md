@@ -6,7 +6,7 @@ This library provides a few UI components to help you to create a ddocumentation
 # Setting up
 1. Install this package
 ```
-npm i angular-documentation-ui
+npm i angular-documentation-ui@latest
 ```
 
 2. Import this module
@@ -32,11 +32,8 @@ export class AppModule { }
 
 3. Import the scss file to src/styles.scss
 ```
-@import "../node_modules/angular-documentation-ui/styles/theme/index"
-
-//or
-
-@use "../node_modules/angular-documentation-ui/styles/theme/index"
+@import "../node_modules/angular-documentation-ui/styles/theme/index";
+@import "../node_modules/angular-documentation-ui/styles/pages/index";
 ```
 
 # UI components
@@ -56,9 +53,8 @@ export class MyComponent {
   getIdFromTitle = getIdFromTitle;
   
   sectionTitles = [
-    "Introduction",
-    "Differences between View Engine and Ivy",
-    ...
+    "1",
+    "2"
   ];
   
   @ViewChildren("section", {read: ElementRef}) sections: QueryList<ElementRef> | undefined;
@@ -92,12 +88,24 @@ This component allows us to fold and unfold the content.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/section_demo.png)
 
 ### Usage
+1. Update in your component
+```
+import { getIdFromTitle } from 'angular-documentation-ui';
 
-1. Retrieve section elements and define section titles in your component
+export class MyComponent {
+  getIdFromTitle = getIdFromTitle;
+}
+
+``` 
+
+2. Update your template
 ```
 <app-section-container>
-  <div>
-    {{ your contents }}
+  <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
+  <div class="description-container">
+    <div class="item">
+      content
+    </div>
   </div>
 </app-section-container>
 
@@ -139,4 +147,11 @@ export class AppComponent {
 <div class="theme-container">
   <app-theme></app-theme>
 </div>
+```
+
+3. Update the src/styles.cscc
+```
+body {
+  background: var(--background-default);
+}
 ```

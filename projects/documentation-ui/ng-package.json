@@ -1,10 +1,19 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/documentation-ui",
+  "allowedNonPeerDependencies": [
+    "tslib",
+    "@angular/common",
+    "@angular/core",
+    "@fortawesome/angular-fontawesome",
+    "@fortawesome/fontawesome-svg-core",
+    "@fortawesome/free-solid-svg-icons"
+  ],
   "lib": {
     "entryFile": "src/public-api.ts"
   },
   "assets": [
-    "./styles/theme/_index.scss"
+    "./styles/theme/_index.scss",
+    "./styles/pages/_index.scss"
   ]
 }
