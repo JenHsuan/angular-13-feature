@@ -13,7 +13,7 @@ export class BreakingChangesComponent {
   getHash = getHash;
   sectionTitles = [
     "Introduction",
-    "New Features of TypeScript 4.4",
+    "Notable Items of TypeScript 4.4",
     "Differential Loading",
     "Rendering and Critical Path",
     "Reference"
