@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DocReviewerContainerComponent } from './doc-reviewer-container/doc-reviewer-container.component';
 import { SectionContainerComponent } from './section-container/section-container.component';
 import { ThemeComponent } from './theme/theme.component';
+import { NavigationButtonContainerComponent } from './navigation-button-container/navigation-button-container.component';
 
 
 
@@ -11,7 +12,8 @@ import { ThemeComponent } from './theme/theme.component';
   declarations: [
     DocReviewerContainerComponent,
     SectionContainerComponent,
-    ThemeComponent
+    ThemeComponent,
+    NavigationButtonContainerComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { ThemeComponent } from './theme/theme.component';
   exports: [
     DocReviewerContainerComponent,
     SectionContainerComponent,
-    ThemeComponent
+    ThemeComponent,
+    NavigationButtonContainerComponent
   ]
 })
 export class DocumentationUiModule { }

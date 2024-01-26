@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { getCodeFromMap } from '../utils/utils';
+import { getCodeFromMap } from './utils/utils';
 import { Code } from './service/code.domain';
 import { codeMap } from '../config/code-map';
 

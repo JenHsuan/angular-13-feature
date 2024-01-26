@@ -23,7 +23,6 @@ import { CodeContainerComponent } from './public/code-container/code-container.c
 import { FooterContainerComponent } from './public/footer-container/footer-container.component';
 import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
 import { PageContainerComponent } from './public/page-container/page-container.component';
-import { NavigationButtonContainerComponent } from './public/navigation-button-container/navigation-button-container.component';
 import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
 import { MobileNavContainerComponent } from './public/mobile-nav-container/mobile-nav-container.component';
 import { BugfixNavigationComponent } from './bugfix-navigation/bugfix-navigation.component';
@@ -52,7 +51,6 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     FooterContainerComponent,
     SideBarContainerComponent,
     PageContainerComponent,
-    NavigationButtonContainerComponent,
     ReferenceContainerComponent,
     MobileNavContainerComponent,
     BugfixNavigationComponent,

@@ -1,8 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { RouteMap } from '../route/route.domain';
+//import { RouteMap } from '../route/route.domain';
 import { Router } from '@angular/router';
-import { sideBarList } from '../side-bar-container/service/side-bar.domain';
+//import { sideBarList } from '../side-bar-container/service/side-bar.domain';
 
 @Component({
   selector: 'app-navigation-button-container',
@@ -10,9 +10,11 @@ import { sideBarList } from '../side-bar-container/service/side-bar.domain';
   styleUrls: ['./navigation-button-container.component.scss']
 })
 export class NavigationButtonContainerComponent {
-  sideBarList = sideBarList;
+  //sideBarList = sideBarList;
   currentRoute = '/home';
-
+  @Input() routeMap: Map<string, string>
+  @Input() sideBarList: string[];
+  
   @ViewChild("previous", {read: ElementRef}) previous: ElementRef | undefined;
   @ViewChild("next", {read: ElementRef}) next: ElementRef | undefined; 
 
@@ -29,7 +31,7 @@ export class NavigationButtonContainerComponent {
   }
 
   ngAfterViewInit() {
-    const list = [...RouteMap.keys()];
+    const list = [...this.routeMap.keys()];
     const index = list.findIndex(path => path === this.currentRoute);
     if (index - 1 >= 0) {
       this.previous?.nativeElement.classList.add("active");
@@ -45,7 +47,7 @@ export class NavigationButtonContainerComponent {
   }
 
   previousPage() {
-    const list = [...RouteMap.keys()];
+    const list = [...this.routeMap.keys()];
     const index = list.findIndex(path => path === this.currentRoute);
     if (index - 1 >= 0) {
       const nextPage = list[index - 1];
@@ -54,7 +56,7 @@ export class NavigationButtonContainerComponent {
   }
 
   nextPage() {
-    const list = [...RouteMap.keys()];
+    const list = [...this.routeMap.keys()];
     const index = list.findIndex(path => path === this.currentRoute);
     if (index + 1 < list.length) {
       const nextPage = list[index + 1];

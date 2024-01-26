@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { authorUrl } from '../config/url';
+import { RouteMap } from '../route/route.domain';
 
 @Component({
   selector: 'app-footer-container',
@@ -8,4 +9,8 @@ import { authorUrl } from '../config/url';
 })
 export class FooterContainerComponent {
   authorUrl = authorUrl;
+
+  //routeMap = RouteMap;
+  @Input() routeMap: Map<string, string>
+  @Input() sideBarList: string[];
 }

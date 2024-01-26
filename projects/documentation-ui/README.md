@@ -155,3 +155,53 @@ body {
   background: var(--background-default);
 }
 ```
+
+## 4. app-navigation-button-container
+This component allows us to navigate to the next page or the last page of the self-defined orders.
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/button_demo.png)
+
+### Usage
+
+1. Define routeMap and sideBarList in your component
+```
+import { ThemeService } from 'angular-documentation-ui';
+
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+export const RouteMap = new Map<string, RouteType>([
+  ['/documents', RouteType.DOCUMENTS],
+  ['/migrations', RouteType.MIGRATIONS],
+  ['/breaking-changes', RouteType.BREAKING_CHANGE],
+]);
+
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  sideBarList = sideBarList;
+  routeMap = RouteMap;
+}
+
+``` 
+
+2. Add the theme switcher to the template
+
+```
+<app-navigation-button-container 
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList">
+</app-navigation-button-container>
+```

@@ -3,7 +3,9 @@
     <div class="content">
       {{ title }}
     </div>
-    <app-navigation-button-container>
+    <app-navigation-button-container 
+      [routeMap]="routeMap"
+      [sideBarList]="sideBarList">
     </app-navigation-button-container>
   </div>
 
@@ -16,5 +18,7 @@
   </app-doc-reviewer-container>
 </div>
 
-<app-footer-container>
+<app-footer-container 
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList">
 </app-footer-container>
