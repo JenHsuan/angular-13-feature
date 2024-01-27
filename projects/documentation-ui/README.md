@@ -25,12 +25,12 @@ npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 
 |  angular-documentation-ui   | Angular  | @fortawesome/angular-fontawesome  |
 |  ----  | ----  | ----  |
-| 0.0.25  | 12.x | 0.9.x |
-| 0.0.25  | 13.x | 0.9.x |
-| 0.0.25  | 14.x | 0.9.x |
-| 0.0.25  | 15.x | 0.9.x |
-| 0.0.25  | 16.x | 0.11.x |
-| 0.0.25  | 17.x | 0.11.x |
+| 0.0.26  | 12.x | 0.9.x |
+| 0.0.26  | 13.x | 0.9.x |
+| 0.0.26  | 14.x | 0.9.x |
+| 0.0.26  | 15.x | 0.9.x |
+| 0.0.26  | 16.x | 0.11.x |
+| 0.0.26  | 17.x | 0.11.x |
 
 # Usage
 To get up and running using Angular documentation UI with Angular follow the below steps:
