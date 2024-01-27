@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
@@ -8,7 +8,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./bugfix-navigation.component.scss']
 })
 export class BugfixNavigationComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.BUGFIX_NAVIGATION);
+  title = TypeTitleMap.get(RouteType.BUGFIX_NAVIGATION);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Issue",

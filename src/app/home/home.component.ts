@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteMap, RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteMap, RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { authorUrl, timelineUrl, v12Url, v14Url, v15Url, v16Url, v17Url } from '../public/config/url';
 import { Router } from '@angular/router';
 import { ThemeService, ThemeType } from 'angular-documentation-ui';
@@ -10,7 +10,7 @@ import { ThemeService, ThemeType } from 'angular-documentation-ui';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent{
-  title = TYPE_TITLE_MAP.get(RouteType.HOME);
+  title = TypeTitleMap.get(RouteType.HOME);
   timelineUrl = timelineUrl;
   currentImage: string = "";
   authorUrl = authorUrl;

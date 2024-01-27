@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { RouteType, RouteMap, TYPE_TITLE_MAP } from '../route/route.domain';
+import { RouteType, RouteMap, TypeTitleMap, sideBarList } from '../route/route.domain';
 import { version } from '../config/constants';
-import { RouteService } from '../route/service/route.service';
-import { sideBarList } from './service/side-bar.domain';
-import { SideBarService } from './service/side-bar.service';
 import { ThemeService, ThemeType } from 'angular-documentation-ui';
 
 @Component({
@@ -29,8 +26,7 @@ export class SideBarContainerComponent {
   constructor(
     private location: Location, 
     private router: Router,
-    private themeService: ThemeService,
-    private sideBarService: SideBarService
+    private themeService: ThemeService
   ) {
     router.events.subscribe(_ => {
       if(location.path() != ''){
@@ -53,10 +49,13 @@ export class SideBarContainerComponent {
   }
 
   changeRoute(type: RouteType) {
-    this.sideBarService.changeRoute(type);
+    const path  = [...RouteMap.keys()].find(key => type === RouteMap.get(key));
+    if (path) {
+      this.router.navigate([path]);
+    } 
   }
-  
+
   getRouteTitle(type: RouteType) {
-    return this.sideBarService.getRouteTitle(type);
+    return TypeTitleMap.get(type) ? TypeTitleMap.get(type) : '';
   }
 }

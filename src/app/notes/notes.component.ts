@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
@@ -8,7 +8,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.NOTES);
+  title = TypeTitleMap.get(RouteType.NOTES);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",

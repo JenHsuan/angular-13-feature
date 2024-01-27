@@ -25,12 +25,12 @@ npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 
 |  angular-documentation-ui   | Angular  | @fortawesome/angular-fontawesome  |
 |  ----  | ----  | ----  |
-| 0.0.26  | 12.x | 0.9.x |
-| 0.0.26  | 13.x | 0.9.x |
-| 0.0.26  | 14.x | 0.9.x |
-| 0.0.26  | 15.x | 0.9.x |
-| 0.0.26  | 16.x | 0.11.x |
-| 0.0.26  | 17.x | 0.11.x |
+| 0.0.28  | 12.x | 0.9.x |
+| 0.0.28  | 13.x | 0.9.x |
+| 0.0.28  | 14.x | 0.9.x |
+| 0.0.28  | 15.x | 0.9.x |
+| 0.0.28  | 16.x | 0.11.x |
+| 0.0.28  | 17.x | 0.11.x |
 
 # Usage
 To get up and running using Angular documentation UI with Angular follow the below steps:
@@ -75,6 +75,7 @@ body {
 * app-theme and theme service
 * app-navigation-button-container
 * app-footer-container
+* app-mobile-nav-container
 
 ## 1. app-doc-reviewer-container
 This component allows us to create the timeline to indicate the current section with the highlighted color.
@@ -237,6 +238,7 @@ export class AppComponent {
 ```
 
 ## 5. app-footer-container
+
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/footer_demo.png)
 
@@ -282,4 +284,58 @@ export class AppComponent {
   [sideBarList]="sideBarList">
   Curated by Jen-hsuan Hsieh (Sean) © 2024 - 2034
 </app-footer-container>
+```
+
+## 6. app-mobile-nav-container
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/mobile_demo.png)
+
+### Usage
+
+1. Define routeMap typeTitleMap, and sideBarList in your component
+```
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+export const RouteMap = new Map<string, RouteType>([
+  ['/documents', RouteType.DOCUMENTS],
+  ['/migrations', RouteType.MIGRATIONS],
+  ['/breaking-changes', RouteType.BREAKING_CHANGE],
+]);
+
+export const TypeTitleMap = new Map<RouteType, string>([
+  [RouteType.DOCUMENTS, 'About This Website'],
+  [RouteType.MIGRATIONS, 'Upgrade to Angular 13'],
+  [RouteType.BREAKING_CHANGE, 'Breaking Changes'],
+  ]);
+
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  sideBarList = sideBarList;
+  routeMap = RouteMap;
+}
+
+``` 
+
+2. Add the nav-container to the template
+
+```
+<app-mobile-nav-container
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList"
+  [typeTitleMap]="typeTitleMap">
+</app-mobile-nav-container>
 ```

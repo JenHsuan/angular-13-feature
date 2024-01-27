@@ -6,6 +6,7 @@ import { SectionContainerComponent } from './section-container/section-container
 import { ThemeComponent } from './theme/theme.component';
 import { NavigationButtonContainerComponent } from './navigation-button-container/navigation-button-container.component';
 import { FooterContainerComponent } from './footer-container/footer-container.component';
+import { MobileNavContainerComponent } from './mobile-nav-container/mobile-nav-container.component';
 
 
 
@@ -15,7 +16,8 @@ import { FooterContainerComponent } from './footer-container/footer-container.co
     SectionContainerComponent,
     ThemeComponent,
     NavigationButtonContainerComponent,
-    FooterContainerComponent
+    FooterContainerComponent,
+    MobileNavContainerComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { FooterContainerComponent } from './footer-container/footer-container.co
     SectionContainerComponent,
     ThemeComponent,
     NavigationButtonContainerComponent,
-    FooterContainerComponent
+    FooterContainerComponent,
+    MobileNavContainerComponent
   ]
 })
 export class DocumentationUiModule { }

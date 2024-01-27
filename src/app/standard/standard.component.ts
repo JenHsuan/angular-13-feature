@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactory, ComponentFactoryResolver, ElementRef, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { DynamicComponent } from './dynamic/dynamic.component';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
@@ -9,7 +9,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./standard.component.scss']
 })
 export class StandardComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.DYNAMIC_COMPONENT);
+  title = TypeTitleMap.get(RouteType.DYNAMIC_COMPONENT);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",

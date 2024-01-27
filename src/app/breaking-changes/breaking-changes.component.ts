@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getHash, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
@@ -8,7 +8,7 @@ import { SectionContainerComponent, getHash, getIdFromTitle } from 'angular-docu
   styleUrls: ['./breaking-changes.component.scss']
 })
 export class BreakingChangesComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.BREAKING_CHANGE);
+  title = TypeTitleMap.get(RouteType.BREAKING_CHANGE);
   getIdFromTitle = getIdFromTitle;
   getHash = getHash;
   sectionTitles = [

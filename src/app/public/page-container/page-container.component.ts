@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, OnInit, QueryList } from '@angular/core';
-import { RouteMap } from '../route/route.domain';
-import { sideBarList } from '../side-bar-container/service/side-bar.domain';
+import { RouteMap, sideBarList } from '../route/route.domain';
 import { authorUrl } from '../config/url';
 
 @Component({

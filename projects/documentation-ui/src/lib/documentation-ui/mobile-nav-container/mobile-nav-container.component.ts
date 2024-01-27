@@ -1,8 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { RouteMap, RouteType, TYPE_TITLE_MAP } from '../route/route.domain';
-import { RouteService } from '../route/service/route.service';
-import { sideBarList } from '../side-bar-container/service/side-bar.domain';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobile-nav-container',
@@ -11,21 +9,26 @@ import { sideBarList } from '../side-bar-container/service/side-bar.domain';
 })
 export class MobileNavContainerComponent {
   icon = faBars;
-  sideBarList = sideBarList;
+  @Input() routeMap: Map<string, string>;
+  @Input() sideBarList: string[];
+  @Input() typeTitleMap: Map<string, string>;
   @ViewChild("links", {read: ElementRef}) links: ElementRef | undefined; 
 
   constructor(
-    private routeService: RouteService
+    private router: Router,
   ) {
   }
 
-  changeRoute(type: RouteType) {
-    this.routeService.changeRoute(type);
+  changeRoute(type: string) {
+    const path  = [...this.routeMap.keys()].find(key => type === this.routeMap.get(key));
+    if (path) {
+      this.router.navigate([path]);
+    } 
     this.links?.nativeElement.classList.remove("active");
   }
-  
-  getRouteTitle(type: RouteType) {
-    return this.routeService.getRouteTitle(type);
+
+  getRouteTitle(type: string) {
+    return this.typeTitleMap.get(type) ? this.typeTitleMap.get(type) : '';
   }
 
   toggleNavigation($event: Event) {

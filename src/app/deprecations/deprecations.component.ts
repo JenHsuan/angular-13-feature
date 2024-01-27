@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 @Component({
@@ -8,7 +8,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./deprecations.component.scss']
 })
 export class DeprecationsComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.DEPRECATIONS);
+  title = TypeTitleMap.get(RouteType.DEPRECATIONS);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",

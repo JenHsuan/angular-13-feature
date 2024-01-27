@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { FormControl } from '@angular/forms';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
@@ -9,7 +9,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./form-control-status.component.scss']
 })
 export class FormControlStatusComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.FORMCONTROL_STATUS);
+  title = TypeTitleMap.get(RouteType.FORMCONTROL_STATUS);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",

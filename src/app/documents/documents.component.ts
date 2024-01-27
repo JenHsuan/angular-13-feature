@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { authorUrl } from '../public/config/url';
 import { version } from '../public/config/constants';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
@@ -10,7 +10,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./documents.component.scss']
 })
 export class DocumentsComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.DOCUMENTS);
+  title = TypeTitleMap.get(RouteType.DOCUMENTS);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",

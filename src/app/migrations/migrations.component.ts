@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { version } from '../public/config/constants';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
@@ -9,7 +9,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
   styleUrls: ['./migrations.component.scss']
 })
 export class MigrationsComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.MIGRATIONS);
+  title = TypeTitleMap.get(RouteType.MIGRATIONS);
   getIdFromTitle = getIdFromTitle;
   version = version;
   sectionTitles = [

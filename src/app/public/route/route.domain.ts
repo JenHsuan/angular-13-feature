@@ -48,7 +48,7 @@ export const RouteMap = new Map<string, RouteType>([
   ['/form-control-status', RouteType.FORMCONTROL_STATUS],
 ]);
 
-export const TYPE_TITLE_MAP = new Map<RouteType, string>([
+export const TypeTitleMap = new Map<RouteType, string>([
   [RouteType.HOME, 'Notes of Angular v13'],
   [RouteType.DOCUMENTS, 'About This Website'],
   [RouteType.MIGRATIONS, 'Upgrade to Angular 13'],
@@ -64,6 +64,22 @@ export const TYPE_TITLE_MAP = new Map<RouteType, string>([
   [RouteType.TESTING, 'Improvements - Optimized Angular Testing'],
   [RouteType.BUGFIX_NAVIGATION, 'Bugfix - Navigation'],
 ]);
+
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+  RouteType.MINOR_CHANGES,
+  RouteType.DEPRECATIONS,
+  RouteType.NOTES,
+  RouteType.FONT,
+  RouteType.CACHE,
+  RouteType.ESM,
+  RouteType.DYNAMIC_COMPONENT,
+  RouteType.FORMCONTROL_STATUS,
+  RouteType.TESTING,
+  RouteType.BUGFIX_NAVIGATION,
+];
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},

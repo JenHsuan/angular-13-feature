@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { EsmService } from './service/esm.service';
 import { combineLatest } from 'rxjs';
-import { RouteType, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
 
 const PAGES = ['/'];
@@ -12,7 +12,7 @@ const PAGES = ['/'];
   styleUrls: ['./esm.component.scss']
 })
 export class EsmComponent {
-  title = TYPE_TITLE_MAP.get(RouteType.ESM);
+  title = TypeTitleMap.get(RouteType.ESM);
   getIdFromTitle = getIdFromTitle;
   sectionTitles = [
     "Introduction",
