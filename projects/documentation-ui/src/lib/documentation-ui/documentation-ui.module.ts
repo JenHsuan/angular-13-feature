@@ -5,6 +5,7 @@ import { DocReviewerContainerComponent } from './doc-reviewer-container/doc-revi
 import { SectionContainerComponent } from './section-container/section-container.component';
 import { ThemeComponent } from './theme/theme.component';
 import { NavigationButtonContainerComponent } from './navigation-button-container/navigation-button-container.component';
+import { FooterContainerComponent } from './footer-container/footer-container.component';
 
 
 
@@ -13,7 +14,8 @@ import { NavigationButtonContainerComponent } from './navigation-button-containe
     DocReviewerContainerComponent,
     SectionContainerComponent,
     ThemeComponent,
-    NavigationButtonContainerComponent
+    NavigationButtonContainerComponent,
+    FooterContainerComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { NavigationButtonContainerComponent } from './navigation-button-containe
     DocReviewerContainerComponent,
     SectionContainerComponent,
     ThemeComponent,
-    NavigationButtonContainerComponent
+    NavigationButtonContainerComponent,
+    FooterContainerComponent
   ]
 })
 export class DocumentationUiModule { }

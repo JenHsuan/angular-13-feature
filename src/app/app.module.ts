@@ -20,7 +20,6 @@ import { MigrationsComponent } from './migrations/migrations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CodeContainerComponent } from './public/code-container/code-container.component';
-import { FooterContainerComponent } from './public/footer-container/footer-container.component';
 import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
 import { PageContainerComponent } from './public/page-container/page-container.component';
 import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
@@ -48,7 +47,6 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     BreakingChangesComponent,
     MigrationsComponent,
     CodeContainerComponent,
-    FooterContainerComponent,
     SideBarContainerComponent,
     PageContainerComponent,
     ReferenceContainerComponent,

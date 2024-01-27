@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, QueryList } from '@angular/core';
 import { RouteMap } from '../route/route.domain';
 import { sideBarList } from '../side-bar-container/service/side-bar.domain';
+import { authorUrl } from '../config/url';
 
 @Component({
   selector: 'app-page-container',
@@ -14,6 +15,7 @@ export class PageContainerComponent implements OnInit {
   @Input() getIdFromTitle: Function; 
   sideBarList = sideBarList;
   routeMap = RouteMap;
+  authorUrl = authorUrl;
   
   ngOnInit(): void {
     window.scrollTo(0, 0);
