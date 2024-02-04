@@ -3,6 +3,7 @@ import { EsmService } from './service/esm.service';
 import { combineLatest } from 'rxjs';
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 const PAGES = ['/'];
 
@@ -14,6 +15,7 @@ const PAGES = ['/'];
 export class EsmComponent {
   title = TypeTitleMap.get(RouteType.ESM);
   getIdFromTitle = getIdFromTitle;
+  codeMap = codeMap;
   sectionTitles = [
     "Introduction",
     "Reference"

@@ -12,3 +12,5 @@ export * from './lib/documentation-ui/mobile-nav-container/mobile-nav-container.
 export * from './lib/documentation-ui/theme/theme.component';
 export * from './lib/documentation-ui/theme/domain/theme.domain';
 export * from './lib/documentation-ui/theme/service/theme.service';
+export * from './lib/documentation-ui/code-container/service/code.domain';
+export * from './lib/documentation-ui/code-container/code-container.component';

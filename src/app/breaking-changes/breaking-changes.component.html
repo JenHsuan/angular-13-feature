@@ -36,7 +36,7 @@
               </a>
             </div>
             <div class="item">
-              <app-code-container key="upgardeRx">
+              <app-code-container key="upgardeRx" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -140,7 +140,7 @@
               </ul>
             </div>
             <div class="item">
-              <app-code-container key="typeguard">
+              <app-code-container key="typeguard" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -160,7 +160,7 @@
                     Currently
                   </div>
                   <div class="item">
-                    <app-code-container key="tsUnknown">
+                    <app-code-container key="tsUnknown" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -169,7 +169,7 @@
                    Th solution is to specify the type of the error variable in the catch block. 
                   </div>
                   <div class="item">
-                    <app-code-container key="tsUnknownSolution">
+                    <app-code-container key="tsUnknownSolution" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -194,7 +194,7 @@
                   Example of defining properties with <b>index signatures</b> for <b>symbols</b>
                 </div>
                 <div class="item">
-                  <app-code-container key="tsSymbol">
+                  <app-code-container key="tsSymbol" [codeMap]="codeMap">
                   </app-code-container>
                 </div>
               </li>
@@ -203,7 +203,7 @@
                   Example of defining properties with <b>template string patterns</b> for <b>symbols</b>
                 </div>
                 <div class="item">
-                  <app-code-container key="tsTemplateString">
+                  <app-code-container key="tsTemplateString" [codeMap]="codeMap">
                   </app-code-container>
                 </div>
               </li>
@@ -228,7 +228,7 @@
                     We are not allowed to access fields within the containing class.
                   </div>
                   <div class="item">
-                    <app-code-container key="withoutTsStaticBlock">
+                    <app-code-container key="withoutTsStaticBlock" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -240,7 +240,7 @@
                     We can initialize the static variable with <b>writing statements</b> and <b>full access</b> capabilities to our class’s internals.
                   </div>
                   <div class="item">
-                    <app-code-container key="tsStaticBlock">
+                    <app-code-container key="tsStaticBlock" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -276,7 +276,7 @@
               For the modern browsers, they can recognize <b>type="module"</b> attribute.
             </div>
             <div class="item">
-              <app-code-container key="distIndexNg8">
+              <app-code-container key="distIndexNg8" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -285,7 +285,7 @@
               Now, Angular only use <b>type="module"</b> attribute because it has stopped supporting IE 11.
             </div>
             <div class="item">
-              <app-code-container key="distIndex">
+              <app-code-container key="distIndex" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -355,7 +355,7 @@
               In Angular, it's also used for being recognized if the bundle could support the modern browsers.
             </div>
             <div class="item">
-              <app-code-container key="moduleSyntax">
+              <app-code-container key="moduleSyntax" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -364,7 +364,7 @@
               After adding the <b>async</b> attribute, JavaScript files will be downloaded asynchronously and be executed before rendering completed.
             </div>
              <div class="item">
-              <app-code-container key="moduleAsyncSyntax">
+              <app-code-container key="moduleAsyncSyntax" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>

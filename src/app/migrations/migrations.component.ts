@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildr
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { version } from '../public/config/constants';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 @Component({
   selector: 'app-migrations',
@@ -11,6 +12,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
 export class MigrationsComponent {
   title = TypeTitleMap.get(RouteType.MIGRATIONS);
   getIdFromTitle = getIdFromTitle;
+  codeMap = codeMap;
   version = version;
   sectionTitles = [
     "Introduction",

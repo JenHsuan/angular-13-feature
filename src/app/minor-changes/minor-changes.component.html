@@ -21,7 +21,7 @@
               </a>
             </div>
             <div class="item">
-              <app-code-container key="routeLinkCancel">
+              <app-code-container key="routeLinkCancel" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -31,11 +31,11 @@
               <a href="https://github.com/angular/angular/pull/42565">(pull request)</a>
             </div>
             <div class="item">
-              <app-code-container key="nullValidator">
+              <app-code-container key="nullValidator" [codeMap]="codeMap">
               </app-code-container>
             </div>
             <div class="item">
-              <app-code-container key="nullValidatorComponent">
+              <app-code-container key="nullValidatorComponent" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -50,7 +50,7 @@
                     Previously, the URL serializer is unable to recognize query pamaters started with ?.
                   </div>
                   <div class="item">
-                    <app-code-container key="urlSerializer">
+                    <app-code-container key="urlSerializer" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -59,7 +59,7 @@
                     Now the URL serializer is able to recognize query pamaters started with ?.
                   </div>
                   <div class="item">
-                    <app-code-container key="urlSerializerV13">
+                    <app-code-container key="urlSerializerV13" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>

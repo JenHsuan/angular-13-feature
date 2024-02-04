@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildr
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { FormControl } from '@angular/forms';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 @Component({
   selector: 'app-form-control-status',
@@ -11,6 +12,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
 export class FormControlStatusComponent {
   title = TypeTitleMap.get(RouteType.FORMCONTROL_STATUS);
   getIdFromTitle = getIdFromTitle;
+  codeMap = codeMap;
   sectionTitles = [
     "Introduction",
     "Reference"

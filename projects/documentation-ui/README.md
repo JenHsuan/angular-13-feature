@@ -8,29 +8,19 @@ This library provides a few UI components to help you to create a documentation 
 npm i angular-documentation-ui@latest
 ```
 
-2. Install the @fortawesome/angular-fontawesome
+2. Install the @fortawesome/angular-fontawesome, ngx-highlightjs
 ```
 //For npm 7+, you need to add --legacy-peer-deps
 
-//For Angular 16+ applications
-npm install @fortawesome/angular-fontawesome@0.11.0
-npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
-
-//For Angular 13 ~ 15 applications
-npm install @fortawesome/angular-fontawesome@0.9.0
-npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
+npm install @fortawesome/angular-fontawesome@0.9.0 @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons ngx-highlightjs@^6.1.3
 ```
 
 ### Compatibility table
 
-|  angular-documentation-ui   | Angular  | @fortawesome/angular-fontawesome  |
-|  ----  | ----  | ----  |
-| 0.0.28  | 12.x | 0.9.x |
-| 0.0.28  | 13.x | 0.9.x |
-| 0.0.28  | 14.x | 0.9.x |
-| 0.0.28  | 15.x | 0.9.x |
-| 0.0.28  | 16.x | 0.11.x |
-| 0.0.28  | 17.x | 0.11.x |
+|  angular-documentation-ui   | Angular  | @fortawesome/angular-fontawesome  | ngx-highlightjs |
+|  ----  | ----  | ----  | ---- |
+| 0.0.28  | 12.x | 0.9.x | ^6.1.3 |
+| 0.0.28  | 13.x | 0.9.x | ^6.1.3 |
 
 # Usage
 To get up and running using Angular documentation UI with Angular follow the below steps:
@@ -60,6 +50,7 @@ export class AppModule { }
 ```
 @import "../node_modules/angular-documentation-ui/styles/theme/index";
 @import "../node_modules/angular-documentation-ui/styles/pages/index";
+@import "../node_modules/angular-documentation-ui/styles/code/index";
 
 body {
   background: var(--background-default);
@@ -76,6 +67,7 @@ body {
 * app-navigation-button-container
 * app-footer-container
 * app-mobile-nav-container
+* app-code-container
 
 ## 1. app-doc-reviewer-container
 This component allows us to create the timeline to indicate the current section with the highlighted color.
@@ -287,6 +279,7 @@ export class AppComponent {
 ```
 
 ## 6. app-mobile-nav-container
+
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/mobile_demo.png)
 
@@ -338,4 +331,34 @@ export class AppComponent {
   [sideBarList]="sideBarList"
   [typeTitleMap]="typeTitleMap">
 </app-mobile-nav-container>
+```
+
+## 7. app-code-container
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/code_demo.png)
+
+### Usage
+1. Define the codeMap in your component
+```
+import { getIdFromTitle } from 'angular-documentation-ui';
+import { Code, CodeLanguageType } from "angular-documentation-ui";
+
+export class MyComponent {
+  codeMap = new Map<string, Code>([
+    ["instruction", {
+      code: `
+npx @angular/cli@13 new Angular13Project
+      `,
+      languages:[CodeLanguageType.html]
+    }]
+  ])
+}
+
+``` 
+
+2. Add the app-code-container to the template
+
+```
+<app-code-container key="instruction" [codeMap]="codeMap">
+</app-code-container>
 ```

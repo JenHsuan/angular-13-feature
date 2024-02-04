@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getHash, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 @Component({
   selector: 'app-breaking-changes',
@@ -11,6 +12,7 @@ export class BreakingChangesComponent {
   title = TypeTitleMap.get(RouteType.BREAKING_CHANGE);
   getIdFromTitle = getIdFromTitle;
   getHash = getHash;
+  codeMap = codeMap;
   sectionTitles = [
     "Introduction",
     "Notable Items of TypeScript 4.4",

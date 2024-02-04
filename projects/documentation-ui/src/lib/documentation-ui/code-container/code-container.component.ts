@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { getCodeFromMap } from './utils/utils';
 import { Code } from './service/code.domain';
-import { codeMap } from '../config/code-map';
+//import { codeMap } from '../config/code-map';
 
 @Component({
   selector: 'app-code-container',
@@ -10,11 +10,12 @@ import { codeMap } from '../config/code-map';
 })
 export class CodeContainerComponent {
   @Input() key: string;
+  @Input() codeMap: Map<string, Code>;
 
   codeFromMap: Code;
   
   ngOnInit() {
-    this.codeFromMap = getCodeFromMap(this.key, codeMap);
+    this.codeFromMap = getCodeFromMap(this.key, this.codeMap);
   }
 
   get code(): string {

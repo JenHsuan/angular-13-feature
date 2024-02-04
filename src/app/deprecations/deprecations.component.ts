@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 @Component({
   selector: 'app-deprecations',
@@ -10,6 +11,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
 export class DeprecationsComponent {
   title = TypeTitleMap.get(RouteType.DEPRECATIONS);
   getIdFromTitle = getIdFromTitle;
+  codeMap = codeMap;
   sectionTitles = [
     "Introduction",
     "Introduction to the Server-side Rendering (SSR)",

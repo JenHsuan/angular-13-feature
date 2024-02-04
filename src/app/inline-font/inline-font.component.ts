@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 @Component({
   selector: 'app-inline-font',
@@ -10,6 +11,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
 export class InlineFontComponent {
   title = TypeTitleMap.get(RouteType.FONT);
   getIdFromTitle = getIdFromTitle;
+  codeMap = codeMap;
   sectionTitles = [
     "Introduction",
     "Web Animations via Native Web API",

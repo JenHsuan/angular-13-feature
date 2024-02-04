@@ -25,11 +25,11 @@
               Child
             </div>
             <div class="item">
-              <app-code-container key="dynamicChildTemplate">
+              <app-code-container key="dynamicChildTemplate" [codeMap]="codeMap">
               </app-code-container>
             </div>
             <div class="item">
-              <app-code-container key="dynamicChildComponent">
+              <app-code-container key="dynamicChildComponent" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -44,7 +44,7 @@
                     Template
                   </div>
                   <div class="item">
-                    <app-code-container key="dynamicParentTemplate">
+                    <app-code-container key="dynamicParentTemplate" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -53,7 +53,7 @@
                     Component in the previous version
                   </div>
                   <div class="item">
-                    <app-code-container key="legacyCodeDynamic">
+                    <app-code-container key="legacyCodeDynamic" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>
@@ -62,7 +62,7 @@
                     Component with new API
                   </div>
                   <div class="item">
-                    <app-code-container key="newCodeDynamic">
+                    <app-code-container key="newCodeDynamic" [codeMap]="codeMap">
                     </app-code-container>
                   </div>
                 </li>

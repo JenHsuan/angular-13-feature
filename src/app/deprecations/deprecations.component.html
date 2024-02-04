@@ -17,7 +17,7 @@
               For the lazy-loaded routes, we should use dynamic ESM import statements instead of the string value.
             </div>
             <div class="item">
-              <app-code-container key="loadChildren">
+              <app-code-container key="loadChildren" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -219,7 +219,7 @@
               Install required packages.
             </div>
             <div class="item">
-              <app-code-container key="installSSRpackages">
+              <app-code-container key="installSSRpackages" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -228,7 +228,7 @@
               Generate some required files automatically with the following command.
             </div>
             <div class="item">
-              <app-code-container key="installUniversal">
+              <app-code-container key="installUniversal" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -237,7 +237,7 @@
               Build files without hashing.
             </div>
             <div class="item">
-              <app-code-container key="ngBuildNoHash">
+              <app-code-container key="ngBuildNoHash" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -263,7 +263,7 @@
               </ul>
             </div>
             <div class="item">
-              <app-code-container key="renderModule">
+              <app-code-container key="renderModule" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -272,7 +272,7 @@
               Create the webpack.server.config.js under the root folder.
             </div>
             <div class="item">
-              <app-code-container key="webpackConfigSSR">
+              <app-code-container key="webpackConfigSSR" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -281,7 +281,7 @@
               Compile the webpack.server.config.js.
             </div>
             <div class="item">
-              <app-code-container key="compileServerTs">
+              <app-code-container key="compileServerTs" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>
@@ -295,7 +295,7 @@
               Execute the dist/server.ts.
             </div>
             <div class="item">
-              <app-code-container key="executeServerTs">
+              <app-code-container key="executeServerTs" [codeMap]="codeMap">
               </app-code-container>
             </div>
           </li>

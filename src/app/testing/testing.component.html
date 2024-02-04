@@ -14,7 +14,7 @@
         The problem is that test modules can't be teared down after each test. 
       </div>
       <div class="item">
-        <app-code-container key="testingComponent">
+        <app-code-container key="testingComponent" [codeMap]="codeMap">
         </app-code-container>
       </div>
     </div>
@@ -33,7 +33,7 @@
               Before run every tests (safer way): add the teardown parameter from the TestBed.configureTestingModuleto enable destroyAfterEach.
             </div>
             <div class="item">
-              <app-code-container key="testComponent2">
+              <app-code-container key="testComponent2" [codeMap]="codeMap">
               </app-code-container>  
             </div>
           </li>
@@ -60,7 +60,7 @@
               </ul>
             </div>
             <div class="item">
-              <app-code-container key="testComponent">
+              <app-code-container key="testComponent" [codeMap]="codeMap">
               </app-code-container>  
             </div>
           </li>

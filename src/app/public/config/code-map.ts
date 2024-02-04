@@ -1,4 +1,4 @@
-import { Code, CodeLanguageType } from "../code-container/service/code.domain";
+import { Code, CodeLanguageType } from "angular-documentation-ui";
 
 export const codeMap = new Map<string, Code>([
   ["instruction", {

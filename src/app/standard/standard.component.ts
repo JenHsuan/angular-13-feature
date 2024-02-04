@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactory, Componen
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { RouteType, TypeTitleMap } from '../public/route/route.domain';
 import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation-ui';
+import { codeMap } from '../public/config/code-map';
 
 @Component({
   selector: 'app-standard',
@@ -11,6 +12,7 @@ import { SectionContainerComponent, getIdFromTitle } from 'angular-documentation
 export class StandardComponent {
   title = TypeTitleMap.get(RouteType.DYNAMIC_COMPONENT);
   getIdFromTitle = getIdFromTitle;
+  codeMap = codeMap;
   sectionTitles = [
     "Introduction",
     "Reference"

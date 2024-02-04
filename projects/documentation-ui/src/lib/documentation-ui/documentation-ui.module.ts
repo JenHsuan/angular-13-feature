@@ -7,6 +7,8 @@ import { ThemeComponent } from './theme/theme.component';
 import { NavigationButtonContainerComponent } from './navigation-button-container/navigation-button-container.component';
 import { FooterContainerComponent } from './footer-container/footer-container.component';
 import { MobileNavContainerComponent } from './mobile-nav-container/mobile-nav-container.component';
+import { CodeContainerComponent } from './code-container/code-container.component';
+import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 
 
 
@@ -17,11 +19,13 @@ import { MobileNavContainerComponent } from './mobile-nav-container/mobile-nav-c
     ThemeComponent,
     NavigationButtonContainerComponent,
     FooterContainerComponent,
-    MobileNavContainerComponent
+    MobileNavContainerComponent,
+    CodeContainerComponent
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HighlightModule
   ],
   exports: [
     DocReviewerContainerComponent,
@@ -29,7 +33,16 @@ import { MobileNavContainerComponent } from './mobile-nav-container/mobile-nav-c
     ThemeComponent,
     NavigationButtonContainerComponent,
     FooterContainerComponent,
-    MobileNavContainerComponent
-  ]
+    MobileNavContainerComponent,
+    CodeContainerComponent
+  ],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        fullLibraryLoader: () => import('highlight.js'),
+      }
+    }
+  ],
 })
 export class DocumentationUiModule { }
