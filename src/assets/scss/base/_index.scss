@@ -1,4 +1,5 @@
-@import "page";
+@use "../../../../node_modules/angular-documentation-ui/styles/base/index";
+@use "../../../../node_modules/angular-documentation-ui/styles/pages/index" as page;
 
 :root {
   --blue: #1e90ff;
