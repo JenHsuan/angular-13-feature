@@ -15,10 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { DeprecationsComponent } from './deprecations/deprecations.component';
 import { BreakingChangesComponent } from './breaking-changes/breaking-changes.component';
-import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
 import { MigrationsComponent } from './migrations/migrations.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
 import { PageContainerComponent } from './public/page-container/page-container.component';
 import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
@@ -59,7 +57,7 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     PortalModule,
     //HighlightModule,
     AppRoutingModule,
-    FontAwesomeModule,
+    //FontAwesomeModule,
     DocumentationUiModule
   ],
   // providers: [
