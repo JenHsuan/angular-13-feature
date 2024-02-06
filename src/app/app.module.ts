@@ -17,7 +17,6 @@ import { DeprecationsComponent } from './deprecations/deprecations.component';
 import { BreakingChangesComponent } from './breaking-changes/breaking-changes.component';
 import { MigrationsComponent } from './migrations/migrations.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SideBarContainerComponent } from './public/side-bar-container/side-bar-container.component';
 import { PageContainerComponent } from './public/page-container/page-container.component';
 import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
 import { BugfixNavigationComponent } from './bugfix-navigation/bugfix-navigation.component';
@@ -42,7 +41,6 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     DeprecationsComponent,
     BreakingChangesComponent,
     MigrationsComponent,
-    SideBarContainerComponent,
     PageContainerComponent,
     ReferenceContainerComponent,
     BugfixNavigationComponent,

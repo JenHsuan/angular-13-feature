@@ -21,6 +21,7 @@ npm install @fortawesome/angular-fontawesome@0.9.0 @fortawesome/fontawesome-svg-
 |  ----  | ----  | ----  | ---- |
 | 0.0.28  | 12.x | 0.9.x | ^6.1.3 |
 | 0.0.28  | 13.x | 0.9.x | ^6.1.3 |
+| 0.0.28  | 14.x | 0.10.x | ^7.0.1 |
 
 # Usage
 To get up and running using Angular documentation UI with Angular follow the below steps:
@@ -68,6 +69,7 @@ body {
 * app-footer-container
 * app-mobile-nav-container
 * app-code-container
+* app-side-bar-container
 
 ## 1. app-doc-reviewer-container
 This component allows us to create the timeline to indicate the current section with the highlighted color.
@@ -361,4 +363,60 @@ npx @angular/cli@13 new Angular13Project
 ```
 <app-code-container key="instruction" [codeMap]="codeMap">
 </app-code-container>
+```
+
+### 8.app-side-bar-container
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/sidebar_demo_demo.png)
+
+### Usage
+
+1. Define routeMap, TypeTitleMapand sideBarList in your component
+```
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+export const RouteMap = new Map<string, RouteType>([
+  ['/documents', RouteType.DOCUMENTS],
+  ['/migrations', RouteType.MIGRATIONS],
+  ['/breaking-changes', RouteType.BREAKING_CHANGE],
+]);
+
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+export const TypeTitleMap = new Map<RouteType, string>([
+  [RouteType.DOCUMENTS, 'About This Website'],
+  [RouteType.MIGRATIONS, 'Upgrade to Angular 13'],
+  [RouteType.BREAKING_CHANGE, 'Breaking Changes'],
+  ]);
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  sideBarList = sideBarList;
+  routeMap = RouteMap;
+  typeTitleMap = TypeTitleMap;
+}
+
+``` 
+
+2. Add the app-side-bar-container to the template
+
+```
+<app-side-bar-container
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList"
+  [typeTitleMap]="typeTitleMap">
+  {{ customized content}}
+</app-side-bar-container>
 ```

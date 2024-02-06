@@ -9,6 +9,7 @@ import { FooterContainerComponent } from './footer-container/footer-container.co
 import { MobileNavContainerComponent } from './mobile-nav-container/mobile-nav-container.component';
 import { CodeContainerComponent } from './code-container/code-container.component';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
+import { SideBarContainerComponent } from './side-bar-container/side-bar-container.component';
 
 
 
@@ -20,7 +21,8 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
     NavigationButtonContainerComponent,
     FooterContainerComponent,
     MobileNavContainerComponent,
-    CodeContainerComponent
+    CodeContainerComponent,
+    SideBarContainerComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
     NavigationButtonContainerComponent,
     FooterContainerComponent,
     MobileNavContainerComponent,
-    CodeContainerComponent
+    CodeContainerComponent,
+    SideBarContainerComponent
   ],
   providers: [
     {

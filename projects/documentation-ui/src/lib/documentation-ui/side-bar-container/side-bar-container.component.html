@@ -1,11 +1,12 @@
 <div class="sider-bar">
   <div class="tabs">
-    <a class="title-container" routerLink="/home">
+    <!-- <a class="title-container" routerLink="/home">
       <img [src]="currentImage" alt="">
       <div class="title">
         {{title}}
       </div>
-    </a>
+    </a> -->
+    <ng-content></ng-content>
     <button *ngFor="let item of sideBarList"
       [ngClass]="getRouteStyle(item)"
       (click)="changeRoute(item)"

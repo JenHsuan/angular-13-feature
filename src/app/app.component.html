@@ -1,10 +1,21 @@
 <app-mobile-nav-container
   [routeMap]="routeMap"
   [sideBarList]="sideBarList"
-  [typeTitleMap]="typeTitleMap">
+  [typeTitleMap]="typeTitleMap"
+  selectedRoute="HOME">
 </app-mobile-nav-container>
 <div class="app-container">
-  <app-side-bar-container></app-side-bar-container>
+  <app-side-bar-container
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList"
+  [typeTitleMap]="typeTitleMap">
+  <a class="title-container" routerLink="/home">
+    <img [src]="currentImage" alt="">
+    <div class="title">
+      {{title}}
+    </div>
+  </a>
+  </app-side-bar-container>
   <div class="app-content">
     <div class="portal-container">
       <div class="tab-content">
