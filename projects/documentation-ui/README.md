@@ -70,6 +70,7 @@ body {
 * app-mobile-nav-container
 * app-code-container
 * app-side-bar-container
+* lib-doc-nav-container
 
 ## 1. app-doc-reviewer-container
 This component allows us to create the timeline to indicate the current section with the highlighted color.
@@ -289,11 +290,11 @@ export class AppComponent {
 
 1. Define routeMap typeTitleMap, and sideBarList in your component
 ```
-export const sideBarList = [
-  RouteType.DOCUMENTS,
-  RouteType.MIGRATIONS,
-  RouteType.BREAKING_CHANGE,
-];
+export enum RouteType {
+  BREAKING_CHANGE = 'BREAKING_CHANGE',
+  DOCUMENTS = 'DOCUMENTS',
+  MIGRATIONS = 'MIGRATIONS',
+}
 
 export const RouteMap = new Map<string, RouteType>([
   ['/documents', RouteType.DOCUMENTS],
@@ -337,7 +338,7 @@ export class AppComponent {
 
 ## 7. app-code-container
 * The following screnshot shows the demo of this component.
-  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/code_demo.png)
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/code-demo.png)
 
 ### Usage
 1. Define the codeMap in your component
@@ -367,17 +368,17 @@ npx @angular/cli@13 new Angular13Project
 
 ### 8.app-side-bar-container
 * The following screnshot shows the demo of this component.
-  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/sidebar_demo_demo.png)
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/sidebar_demo.png)
 
 ### Usage
 
 1. Define routeMap, TypeTitleMapand sideBarList in your component
 ```
-export const sideBarList = [
-  RouteType.DOCUMENTS,
-  RouteType.MIGRATIONS,
-  RouteType.BREAKING_CHANGE,
-];
+export enum RouteType {
+  BREAKING_CHANGE = 'BREAKING_CHANGE',
+  DOCUMENTS = 'DOCUMENTS',
+  MIGRATIONS = 'MIGRATIONS',
+}
 
 export const RouteMap = new Map<string, RouteType>([
   ['/documents', RouteType.DOCUMENTS],
@@ -416,7 +417,65 @@ export class AppComponent {
 <app-side-bar-container
   [routeMap]="routeMap"
   [sideBarList]="sideBarList"
-  [typeTitleMap]="typeTitleMap">
+  [typeTitleMap]="typeTitleMap"
+  selectedRoute="DOCUMENTS">
   {{ customized content}}
 </app-side-bar-container>
+```
+
+### 9. lib-doc-nav-container
+* It's the componnt combined app-side-bar-container and the app-mobile-nav-container
+
+
+### Usage
+
+1. Define routeMap, TypeTitleMapand sideBarList in your component
+```
+export enum RouteType {
+  BREAKING_CHANGE = 'BREAKING_CHANGE',
+  DOCUMENTS = 'DOCUMENTS',
+  MIGRATIONS = 'MIGRATIONS',
+}
+
+export const RouteMap = new Map<string, RouteType>([
+  ['/documents', RouteType.DOCUMENTS],
+  ['/migrations', RouteType.MIGRATIONS],
+  ['/breaking-changes', RouteType.BREAKING_CHANGE],
+]);
+
+export const sideBarList = [
+  RouteType.DOCUMENTS,
+  RouteType.MIGRATIONS,
+  RouteType.BREAKING_CHANGE,
+];
+
+export const TypeTitleMap = new Map<RouteType, string>([
+  [RouteType.DOCUMENTS, 'About This Website'],
+  [RouteType.MIGRATIONS, 'Upgrade to Angular 13'],
+  [RouteType.BREAKING_CHANGE, 'Breaking Changes'],
+  ]);
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  sideBarList = sideBarList;
+  routeMap = RouteMap;
+  typeTitleMap = TypeTitleMap;
+}
+
+``` 
+
+2. Add the app-side-bar-container to the template
+
+```
+<lib-doc-nav-container
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList"
+  [typeTitleMap]="typeTitleMap"
+  selectedRoute="DOCUMENTS">
+  {{ customized content}}
+</lib-doc-nav-container>
 ```

@@ -1,0 +1,12 @@
+<app-mobile-nav-container
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList"
+  [typeTitleMap]="typeTitleMap">
+</app-mobile-nav-container>
+  <app-side-bar-container
+  [routeMap]="routeMap"
+  [sideBarList]="sideBarList"
+  [typeTitleMap]="typeTitleMap"
+  [selectedRoute]="selectedRoute">
+  <ng-content></ng-content>
+</app-side-bar-container>

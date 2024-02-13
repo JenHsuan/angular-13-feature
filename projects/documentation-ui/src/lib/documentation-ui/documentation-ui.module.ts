@@ -10,6 +10,7 @@ import { MobileNavContainerComponent } from './mobile-nav-container/mobile-nav-c
 import { CodeContainerComponent } from './code-container/code-container.component';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { SideBarContainerComponent } from './side-bar-container/side-bar-container.component';
+import { DocNavContainerComponent } from './doc-nav-container/doc-nav-container.component';
 
 
 
@@ -22,7 +23,8 @@ import { SideBarContainerComponent } from './side-bar-container/side-bar-contain
     FooterContainerComponent,
     MobileNavContainerComponent,
     CodeContainerComponent,
-    SideBarContainerComponent
+    SideBarContainerComponent,
+    DocNavContainerComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { SideBarContainerComponent } from './side-bar-container/side-bar-contain
   ],
   exports: [
     DocReviewerContainerComponent,
+    DocNavContainerComponent,
     SectionContainerComponent,
     ThemeComponent,
     NavigationButtonContainerComponent,

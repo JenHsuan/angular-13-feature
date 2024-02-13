@@ -1,4 +1,6 @@
 .mobile-nav-container {
+  position: absolute;
+  z-index: 1000;
   visibility: hidden;
   display: none;
   width: 100%;

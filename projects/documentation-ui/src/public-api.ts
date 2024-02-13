@@ -5,6 +5,7 @@
 export * from './utils/utils';
 export * from './lib/documentation-ui/documentation-ui.module';
 export * from './lib/documentation-ui/doc-reviewer-container/doc-reviewer-container.component';
+export * from './lib/documentation-ui/doc-nav-container/doc-nav-container.component';
 export * from './lib/documentation-ui/section-container/section-container.component';
 export * from './lib/documentation-ui/navigation-button-container/navigation-button-container.component';
 export * from './lib/documentation-ui/footer-container/footer-container.component';
