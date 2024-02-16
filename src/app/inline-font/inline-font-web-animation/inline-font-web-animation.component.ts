@@ -42,9 +42,6 @@ const rotatationAnimation = {
 })
 export class InlineFontWebAnimationComponent {
   @ViewChild("revertedLogo", {read: ElementRef}) revertedLogo: ElementRef | undefined; 
-  @Input() a: number;
-  @Output() aChange = new EventEmitter<number>();
-
   switchImage() {
     //animation is asynchronous
     this.revertedLogo?.nativeElement.animate(createCircleAnimation(), {

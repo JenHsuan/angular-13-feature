@@ -19,7 +19,7 @@
           </li>
           <li>
             <div class="item">
-              These patterns may  often leads to bugs.
+              These patterns may often leads to bugs so it'll show warning messages by <b>ng serve</b>, <b>bg build</b>, or <b>Angluar Service</b>.
             </div>
           </li>
         </ul>   
@@ -119,6 +119,19 @@
 
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
+    <div class="description-container">
+      <div class="item">
+        We are allowed to control the message level of diagnostics by update the tsConfig.ts. The level could be <b>supress</b>, <b>warning</b>, or <b>error</b>.
+      </div>
+      <div class="item">
+        <app-code-container key="tsConfigDiagnostics" [codeMap]="codeMap">
+        </app-code-container>
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[4])" title>{{ sectionTitles[4] }}</div>
     <div class="reference-container">
       <div class="item">
         <app-reference-container [references]="referencesMap">

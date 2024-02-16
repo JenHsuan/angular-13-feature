@@ -866,11 +866,26 @@ therefore the '??' operator can be safely removed.ngtsc(-998102)
 </div>
     `,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }], ["tsConfigDiagnostics", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+{
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      // The categories to use for specific diagnostics.
+      "checks": {
+        // Maps check name to its category.
+        "invalidBananaInBox": "error"
+        "nullishCoalescingNotNullable": "warning"
+      },
+      // The category to use for any diagnostics not listed in \`checks\` above.
+      "defaultCategory": "suppress"
+    },
+    ...
+  },
+  ...
+}
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.typescript]
   }], ["updateInstruction", {
     code: `
 npx @angular/cli@13 update @angular/core@13 @angular/cli@13

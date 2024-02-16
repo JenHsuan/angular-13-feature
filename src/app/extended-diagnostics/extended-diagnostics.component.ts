@@ -16,6 +16,7 @@ export class ExtendedDignosticsComponent {
     "Introduction",
     "NG8101 - invalidBananaInBox",
     "NG8102 - nullishCoalescingNotNullable",
+    "Customization",
     "Reference"
   ];
 
