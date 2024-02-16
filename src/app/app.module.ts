@@ -18,10 +18,8 @@ import { BreakingChangesComponent } from './breaking-changes/breaking-changes.co
 import { MigrationsComponent } from './migrations/migrations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageContainerComponent } from './public/page-container/page-container.component';
-import { ReferenceContainerComponent } from './public/reference-container/reference-container.component';
 import { BugfixNavigationComponent } from './bugfix-navigation/bugfix-navigation.component';
 import { MinorChangesComponent } from './minor-changes/minor-changes.component';
-import { EvaluationContainerComponent } from './public/evaluation-container/evaluation-container.component';
 import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-animation/inline-font-web-animation.component';
 import { FormControlStatusComponent } from './form-control-status/form-control-status.component';
 import { DocumentationUiModule } from 'angular-documentation-ui';
@@ -42,10 +40,8 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     BreakingChangesComponent,
     MigrationsComponent,
     PageContainerComponent,
-    ReferenceContainerComponent,
     BugfixNavigationComponent,
     MinorChangesComponent,
-    EvaluationContainerComponent,
     InlineFontWebAnimationComponent,
     FormControlStatusComponent
   ],

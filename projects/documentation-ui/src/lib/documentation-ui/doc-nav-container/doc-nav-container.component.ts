@@ -5,16 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './doc-nav-container.component.html',
   styleUrls: ['./doc-nav-container.component.css']
 })
-export class DocNavContainerComponent implements OnInit {
+export class DocNavContainerComponent{
   @Input() routeMap: Map<string, string>;
   @Input() sideBarList: string[];
   @Input() typeTitleMap: Map<string, string>;
   @Input() selectedRoute: string;
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
