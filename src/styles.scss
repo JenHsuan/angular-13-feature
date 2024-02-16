@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "assets/scss/main.scss";
+@use "../node_modules/angular-documentation-ui/styles/base/index";
+@use "../node_modules/angular-documentation-ui/styles/pages/index" as page;
+@use "../node_modules/angular-documentation-ui/styles/code/index" as code;
+@use "../node_modules/angular-documentation-ui/styles/theme/index" as theme;
+
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff; 
+}
 
 body {
   margin: 0;
