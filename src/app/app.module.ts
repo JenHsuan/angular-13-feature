@@ -23,6 +23,7 @@ import { MinorChangesComponent } from './minor-changes/minor-changes.component';
 import { InlineFontWebAnimationComponent } from './inline-font/inline-font-web-animation/inline-font-web-animation.component';
 import { FormControlStatusComponent } from './form-control-status/form-control-status.component';
 import { DocumentationUiModule } from 'angular-documentation-ui';
+import { ExtendedDignosticsComponent } from './extended-diagnostics/extended-diagnostics.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
     BugfixNavigationComponent,
     MinorChangesComponent,
     InlineFontWebAnimationComponent,
-    FormControlStatusComponent
+    FormControlStatusComponent,
+    ExtendedDignosticsComponent
   ],
   imports: [
     BrowserModule,

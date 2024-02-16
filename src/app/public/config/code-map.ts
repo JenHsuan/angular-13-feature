@@ -821,14 +821,49 @@ describe('BreakingChangesComponent', () => {
 });
     `,
     languages:[CodeLanguageType.typescript]
-  }], ["updateInstruction", {
+  }],
+  ["bananaChildComponent", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
-    `,
+export class InlineFontWebAnimationComponent {
+  @ViewChild("revertedLogo", {read: ElementRef}) revertedLogo: ElementRef | undefined; 
+  @Input() a: number;
+}  
+`,
+    languages:[CodeLanguageType.typescript]
+  }],
+  ["bananaParentComponent", {
+    code: `
+export class InlineFontComponent {
+  a = 1
+}  
+`,
+    languages:[CodeLanguageType.typescript]
+  }],
+  ["bananaParentTemplateIncorrect", {
+    code: `
+<app-inline-font-web-animation ([a])="a">
+<!--                           ~~~~~~~~~~~
+In the two-way binding syntax the parentheses should be inside the brackets, ex. '[(a)]="a"'.
+Find more at https://angular.io/guide/two-way-bindingngtsc(-998101)
+-->
+</app-inline-font-web-animation>
+`,
     languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+  }],["bananaParentTemplateCorrect", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+<app-inline-font-web-animation [(a)]="a">
+</app-inline-font-web-animation>
+`,
+    languages:[CodeLanguageType.html]
+  }], ["nullishWarning", {
+    code: `
+<div class="item">
+  {{a ?? 1}}
+<!-- ~~~~~~~~~~~
+The left side of this nullish coalescing operation does not include 'null' or 'undefined' in its type,
+therefore the '??' operator can be safely removed.ngtsc(-998102)
+-->
+</div>
     `,
     languages:[CodeLanguageType.html]
   }], ["updateInstruction", {

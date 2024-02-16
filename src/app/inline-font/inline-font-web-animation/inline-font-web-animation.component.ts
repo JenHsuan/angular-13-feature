@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 /*
 * Take 1% time to go from 0% to 10%
@@ -42,6 +42,8 @@ const rotatationAnimation = {
 })
 export class InlineFontWebAnimationComponent {
   @ViewChild("revertedLogo", {read: ElementRef}) revertedLogo: ElementRef | undefined; 
+  @Input() a: number;
+  @Output() aChange = new EventEmitter<number>();
 
   switchImage() {
     //animation is asynchronous

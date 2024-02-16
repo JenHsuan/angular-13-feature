@@ -5,6 +5,7 @@ import { CacheComponent } from "src/app/cache/cache.component";
 import { DeprecationsComponent } from "src/app/deprecations/deprecations.component";
 import { DocumentsComponent } from "src/app/documents/documents.component";
 import { EsmComponent } from "src/app/esm/esm.component";
+import { ExtendedDignosticsComponent } from "src/app/extended-diagnostics/extended-diagnostics.component";
 import { FormControlStatusComponent } from "src/app/form-control-status/form-control-status.component";
 import { HomeComponent } from "src/app/home/home.component";
 import { InlineFontComponent } from "src/app/inline-font/inline-font.component";
@@ -19,6 +20,7 @@ export enum RouteType {
   CACHE = 'CACHE',
   TESTING = 'TESTING',
   ESM = 'ESM',
+  EXTENDED_DIGNOSTICS = 'EXTENDED_DIGNOSTICS',
   NOTES = 'NOTES',
   FONT = 'FONT',
   BREAKING_CHANGE = 'BREAKING_CHANGE',
@@ -42,6 +44,7 @@ export const RouteMap = new Map<string, RouteType>([
   ['/inline-font', RouteType.FONT],
   ['/cache', RouteType.CACHE],
   ['/esm', RouteType.ESM],
+  ['/extended-diagnostics', RouteType.EXTENDED_DIGNOSTICS],
   ['/standard', RouteType.DYNAMIC_COMPONENT],
   ['/testing', RouteType.TESTING],
   ['/bugfix-navigation', RouteType.BUGFIX_NAVIGATION],
@@ -58,6 +61,7 @@ export const TypeTitleMap = new Map<RouteType, string>([
   [RouteType.NOTES, 'Features - Angular Package Format (APF) 13'],
   [RouteType.FONT, 'Feature - Stylish Improvements'],
   [RouteType.ESM, 'Feature - ESM Supported on the ng serve'],
+  [RouteType.EXTENDED_DIGNOSTICS, 'Feature - Extended Diagnostics'],
   [RouteType.CACHE, 'Feature - Cache Management'],
   [RouteType.DYNAMIC_COMPONENT, 'Improvements - Simplified Dynamic Component'],
   [RouteType.FORMCONTROL_STATUS, 'Improvement - Form Control Status'],
@@ -75,6 +79,7 @@ export const sideBarList = [
   RouteType.FONT,
   RouteType.CACHE,
   RouteType.ESM,
+  RouteType.EXTENDED_DIGNOSTICS,
   RouteType.DYNAMIC_COMPONENT,
   RouteType.FORMCONTROL_STATUS,
   RouteType.TESTING,
@@ -102,6 +107,10 @@ export const routes: Routes = [
   {
     path: 'esm',
     component: EsmComponent
+  },
+  {
+    path: 'extended-diagnostics',
+    component: ExtendedDignosticsComponent
   },
   {
     path: 'inline-font',

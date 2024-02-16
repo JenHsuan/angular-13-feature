@@ -1,0 +1,129 @@
+<app-page-container
+  [title]="title"
+  [sections]="sections"
+  [sectionTitles]="sectionTitles"
+  >
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
+    <div class="description-container">
+      <div class="item">
+        In 13.2 the Angular team raise some pattrens as 
+        <a href="https://angular.io/extended-diagnostics">extened diagnostics</a>.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              It means some coding patterns that are technically valid to the compiler or runtime, but which may have complex nuances or caveats.
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              These patterns may  often leads to bugs.
+            </div>
+          </li>
+        </ul>   
+      </div>
+      <div class="item">
+        We pick up some notable items in this topic.
+      </div>
+      <div class="item">
+        <div class="image-container">
+          <img src="../../assets/image/diagnostics.png" alt="">
+        </div>
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
+    <div class="description-container">
+      <div class="item">
+        For two-way bindings, the banana (parenthesis) is supposed to go inside the box (square bracket).
+      </div>
+      <div class="item">
+        The following example shows the incorrect way to use two-way bindings.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Child component
+            </div>
+            <div class="item">
+              <app-code-container key="bananaChildComponent" [codeMap]="codeMap">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Parent component
+            </div>
+            <div class="item">
+              <app-code-container key="bananaParentComponent" [codeMap]="codeMap">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Parent template
+            </div>
+            <div class="item">
+              <app-code-container key="bananaParentTemplateIncorrect" [codeMap]="codeMap">
+              </app-code-container>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        Even though it's a technically valid syntax, the CLI can recognize it. Let's update the parent's template to the correct syntax.
+      </div>
+      <div class="item">
+        <app-code-container key="bananaParentTemplateCorrect" [codeMap]="codeMap">
+        </app-code-container>
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[2])" title>{{ sectionTitles[2] }}</div>
+    <div class="description-container">
+      <div class="item">
+        For the <a href="https://eloquent-macaron-9ce67b.netlify.app/#/nullish-coalescing">Nullish Coalescing</a>, 
+        the left side of this nullish coalescing operation should include 'null' or 'undefined' in its type.
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <div class="item">
+              Component
+            </div>
+            <div class="item">
+              <app-code-container key="bananaParentComponent" [codeMap]="codeMap">
+              </app-code-container>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Template
+            </div>
+            <div class="item">
+              <app-code-container key="nullishWarning" [codeMap]="codeMap">
+              </app-code-container>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-section-container>
+
+  <app-section-container>
+    <div class="title" [id]="getIdFromTitle(sectionTitles[3])" title>{{ sectionTitles[3] }}</div>
+    <div class="reference-container">
+      <div class="item">
+        <app-reference-container [references]="referencesMap">
+        </app-reference-container>
+      </div>
+    </div>
+  </app-section-container>
+</app-page-container>
