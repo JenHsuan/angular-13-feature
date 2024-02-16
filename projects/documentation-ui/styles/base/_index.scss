@@ -71,6 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-right: 3em;
     padding-left: .2em;
     width: 6em;
@@ -82,6 +83,9 @@
       position: absolute;
       right: 6.2em;
       border-bottom: 1px solid var(--foreground-default);
+    }
+    &:first-child:before {
+      content: none;
     }
   }
 }
