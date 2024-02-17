@@ -825,8 +825,8 @@ describe('BreakingChangesComponent', () => {
   ["bananaChildComponent", {
     code: `
 export class InlineFontWebAnimationComponent {
-  @ViewChild("revertedLogo", {read: ElementRef}) revertedLogo: ElementRef | undefined; 
-  @Input() a: number;
+  @Input() a: number
+  @Output() aChange = new EventEmitter<number>();
 }  
 `,
     languages:[CodeLanguageType.typescript]
