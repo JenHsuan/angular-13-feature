@@ -11,6 +11,8 @@ export * from './lib/documentation-ui/reference-container/reference-container.co
 export * from './lib/documentation-ui/section-container/section-container.component';
 export * from './lib/documentation-ui/navigation-button-container/navigation-button-container.component';
 export * from './lib/documentation-ui/footer-container/footer-container.component';
+export * from './lib/documentation-ui/loading/loading-indicator/loading-indicator.component';
+export * from './lib/documentation-ui/loading/loading.service';
 export * from './lib/documentation-ui/mobile-nav-container/mobile-nav-container.component';
 export * from './lib/documentation-ui/side-bar-container/side-bar-container.component';
 export * from './lib/documentation-ui/theme/theme.component';

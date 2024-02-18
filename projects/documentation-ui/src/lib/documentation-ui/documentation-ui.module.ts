@@ -13,6 +13,7 @@ import { SideBarContainerComponent } from './side-bar-container/side-bar-contain
 import { DocNavContainerComponent } from './doc-nav-container/doc-nav-container.component';
 import { ReferenceContainerComponent } from './reference-container/reference-container.component';
 import { EvaluationContainerComponent } from './evaluation-container/evaluation-container.component';
+import { LoadingIndicatorComponent } from './loading/loading-indicator/loading-indicator.component';
 
 
 
@@ -28,7 +29,8 @@ import { EvaluationContainerComponent } from './evaluation-container/evaluation-
     SideBarContainerComponent,
     DocNavContainerComponent,
     ReferenceContainerComponent,
-    EvaluationContainerComponent
+    EvaluationContainerComponent,
+    LoadingIndicatorComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import { EvaluationContainerComponent } from './evaluation-container/evaluation-
     CodeContainerComponent,
     SideBarContainerComponent,
     ReferenceContainerComponent,
-    EvaluationContainerComponent
+    EvaluationContainerComponent,
+    LoadingIndicatorComponent
   ],
   providers: [
     {

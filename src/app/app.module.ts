@@ -45,7 +45,7 @@ import { ExtendedDignosticsComponent } from './extended-diagnostics/extended-dia
     MinorChangesComponent,
     InlineFontWebAnimationComponent,
     FormControlStatusComponent,
-    ExtendedDignosticsComponent
+    ExtendedDignosticsComponent,
   ],
   imports: [
     BrowserModule,

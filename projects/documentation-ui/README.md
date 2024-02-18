@@ -71,6 +71,7 @@ body {
 * app-code-container
 * app-side-bar-container
 * lib-doc-nav-container
+* app-loading-indicator
 
 ## 1. app-doc-reviewer-container
 This component allows us to create the timeline to indicate the current section with the highlighted color.
@@ -478,4 +479,18 @@ export class AppComponent {
   selectedRoute="DOCUMENTS">
   {{ customized content}}
 </lib-doc-nav-container>
+```
+
+### 10. app-loading-indicator
+* The following screnshot shows the demo of this component.
+  * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/spinner.png)
+
+### Usage
+* Update the template
+
+```
+
+<router-outlet></router-outlet>
+<app-loading-indicator [detectNavigation]="true"></app-loading-indicator>
+
 ```
