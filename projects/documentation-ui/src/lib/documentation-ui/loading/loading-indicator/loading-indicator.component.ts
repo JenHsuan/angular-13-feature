@@ -1,7 +1,7 @@
 import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { LoadingService } from '../loading.service';
-import { NavigationEnd, NavigationStart, RouteConfigLoadEnd, RouteConfigLoadStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationError, NavigationStart, RouteConfigLoadEnd, RouteConfigLoadStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-loading-indicator',
@@ -30,7 +30,7 @@ export class LoadingIndicatorComponent implements OnInit {
           tap((event) => {
             if (event instanceof NavigationStart) {
               this.loadingService.loadingOn();
-            } else if (event instanceof NavigationEnd) {
+            } else if (event instanceof NavigationEnd || event instanceof NavigationError) {
               this.loadingService.loadingOff();
             }
           })

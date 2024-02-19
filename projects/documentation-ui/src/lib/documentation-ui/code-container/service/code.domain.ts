@@ -5,5 +5,6 @@ export class Code {
 
 export enum CodeLanguageType {
   html = 'html',
-  typescript = 'typescript'
+  typescript = 'typescript',
+  python = 'python'
 }

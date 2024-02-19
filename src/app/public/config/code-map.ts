@@ -886,21 +886,57 @@ therefore the '??' operator can be safely removed.ngtsc(-998102)
 }
     `,
     languages:[CodeLanguageType.typescript]
-  }], ["updateInstruction", {
+  }], ["appServerModule", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+import { NgModule } from '@angular/core';
+import { ServerModule } from '@angular/platform-server';
+
+import { AppModule } from './app.module';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  imports: [
+    AppModule,
+    ServerModule,
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppServerModule {}
     `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+    languages:[CodeLanguageType.typescript]
+  }], ["mainServer", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+import '@angular/platform-server/init';
+
+import { enableProdMode } from '@angular/core';
+
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+export { AppServerModule } from './app/app.server.module';
+export { renderModule } from '@angular/platform-server';
     `,
-    languages:[CodeLanguageType.html]
-  }], ["updateInstruction", {
+    languages:[CodeLanguageType.typescript]
+  }], ["appModuleSSR", {
     code: `
-npx @angular/cli@13 update @angular/core@13 @angular/cli@13
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.typescript]
   }], ["updateInstruction", {
     code: `
 npx @angular/cli@13 update @angular/core@13 @angular/cli@13

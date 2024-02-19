@@ -231,6 +231,40 @@
               <app-code-container key="installUniversal" [codeMap]="codeMap">
               </app-code-container>
             </div>
+            <div class="item">
+              It will generate the following files.
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    app.server.module.ts
+                  </div>
+                  <div class="item">
+                    <app-code-container key="appServerModule" [codeMap]="codeMap">
+                    </app-code-container>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    main.server.ts
+                  </div>
+                  <div class="item">
+                    <app-code-container key="mainServer" [codeMap]="codeMap">
+                    </app-code-container>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              Update app.module.ts.
+            </div>
+            <div class="item">
+              <app-code-container key="appModuleSSR" [codeMap]="codeMap">
+              </app-code-container>
+            </div>
           </li>
           <li>
             <div class="item">
@@ -306,6 +340,30 @@
             <div class="item">
               <div class="image-container">
                 <img src="../../assets/image/ssr_app.png" alt="">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              If the component asked the server for resources, the server will be hit two times.
+            </div>
+            <div class="item">
+              <ul>
+                <li>
+                  <div class="item">
+                    The first time is compiling the root module on the server-side.
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    The second time is rendering the root module on the client-side.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="image-container">
+                <img src="../../assets/image/ssr.drawio.png" alt="">
               </div>
             </div>
           </li>
