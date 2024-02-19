@@ -1,7 +1,7 @@
 import { Code, CodeLanguageType } from "angular-documentation-ui";
 
 export const codeMap = new Map<string, Code>([
-  ["instruction", {
+  ["createInstruction", {
     code: `
 npx @angular/cli@13 new Angular13Project
     `,
