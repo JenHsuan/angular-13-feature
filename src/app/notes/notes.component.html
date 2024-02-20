@@ -30,104 +30,108 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[1])" title>{{ sectionTitles[1] }}</div>
     <div class="description-container">
-      <div class="item">
-        <b>EcmaScript Module (ESM) vs Flattened EcmaScript Module (FESM)</b>
-      </div>
-      <div class="item">
-        Let's review the history of JavaScript modules.
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-             For the browser environment, we have to use third-party libraries to import JavaScript modules to browsers like require.js (implementation of AMD). 
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              For Node.js environment, we usually import and export JavaScript modules in the CommonJS format (CJS). After Node.js 12, it began to support ESM.
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              UMD (Universal Module Definition) is a module format for adopting CommonJS and AMD. It can provide the compatibility for both Node.js and browser environments.
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item">
-        The purpose of ESM (ES2015, ES2020 Module) is to provide a native way to load JavaScript modules into a browser. 
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              ESM: modules are separted in different files individually.
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              FESM: flatten all module into a single file.
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="image-container">
-          <img src="../../assets/image/esm_fesm.png" alt="">
+      <div class="page-section">
+        <div class="item">
+          <b>EcmaScript Module (ESM) vs Flattened EcmaScript Module (FESM)</b>
+        </div>
+        <div class="item">
+          Let's review the history of JavaScript modules.
+        </div>
+        <div class="item">
+          <ul>
+            <li>
+              <div class="item">
+               For the browser environment, we have to use third-party libraries to import JavaScript modules to browsers like require.js (implementation of AMD). 
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                For Node.js environment, we usually import and export JavaScript modules in the CommonJS format (CJS). After Node.js 12, it began to support ESM.
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                UMD (Universal Module Definition) is a module format for adopting CommonJS and AMD. It can provide the compatibility for both Node.js and browser environments.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          The purpose of ESM (ES2015, ES2020 Module) is to provide a native way to load JavaScript modules into a browser. 
+        </div>
+        <div class="item">
+          <ul>
+            <li>
+              <div class="item">
+                ESM: modules are separted in different files individually.
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                FESM: flatten all module into a single file.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="image-container">
+            <img src="../../assets/image/esm_fesm.png" alt="">
+          </div>
         </div>
       </div>
-      <div class="item">
-        <b>
-          What is Angular Package Format (APF)?
-        </b>
-      </div>
-      <div class="item">
-        APF enables a package to work seamlessly under most common scenarios. The APF can be compatible to Common.js, ESM, and the requre.js. 
-      </div>
-      <div class="item">
-        The @angular/core (13.3.0) exports API in APF so we can learn the APF by discovering the <b>export</b> section of package.json. 
-      </div>
-      <div class="item">
-        Under the <b>export</b> section, there are a few module formats.
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              types: .d.ts files are used by TypeScript
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              esm2020: unflattened ES2022 module
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              es2020: flattened ES2022 module
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              es2015: flattened ES2015 module
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              node: flattened ES2015 module (Node.js 12+ supports ESM)
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              default: flattened ES2022 module
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="image-container">
-          <img src="../../assets/image/angular_core.png" alt="">
+      <div class="page-section">
+        <div class="item">
+          <b>
+            What is Angular Package Format (APF)?
+          </b>
+        </div>
+        <div class="item">
+          APF enables a package to work seamlessly under most common scenarios. The APF can be compatible to Common.js, ESM, and the requre.js. 
+        </div>
+        <div class="item">
+          The @angular/core (13.3.0) exports API in APF so we can learn the APF by discovering the <b>export</b> section of package.json. 
+        </div>
+        <div class="item">
+          Under the <b>export</b> section, there are a few module formats.
+        </div>
+        <div class="item">
+          <ul>
+            <li>
+              <div class="item">
+                types: .d.ts files are used by TypeScript
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                esm2020: unflattened ES2022 module
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                es2020: flattened ES2022 module
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                es2015: flattened ES2015 module
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                node: flattened ES2015 module (Node.js 12+ supports ESM)
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                default: flattened ES2022 module
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="image-container">
+            <img src="../../assets/image/angular_core.png" alt="">
+          </div>
         </div>
       </div>
     </div>

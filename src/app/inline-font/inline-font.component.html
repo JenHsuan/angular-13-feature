@@ -34,75 +34,79 @@
         The purpose of web animation API is to deal with some problems of the traditional CSS animation.
         The traditional CSS animation can be only triggered by CSS properties (e.g, hover) or manipulating the CSSDOM from JavaScript. 
       </div>
-      <div class="item">
-        <b>Compatibility</b>
-      </div>
-      <div class="item">
-        The web animation API has supported most modern broswers.
-      </div>
-      <div class="item">
-        <div class="image-container">
-          <img src="../../assets/image/web_animation_supports.png" alt="">
+      <div class="page-section">
+        <div class="item">
+          <b>Compatibility</b>
+        </div>
+        <div class="item">
+          The web animation API has supported most modern broswers.
+        </div>
+        <div class="item">
+          <div class="image-container">
+            <img src="../../assets/image/web_animation_supports.png" alt="">
+          </div>
         </div>
       </div>
-      <div class="item">
-        <b>Example</b>
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              Component
-            </div>
-            <div class="item">
-              <ol>
-                <li>
-                  <div class="item">
-                    Define objects in the keyframes format.
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    Use 
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/animate">
-                      Element.animate()
-                    </a> 
-                    to generate the animation.
-                  </div>
-                </li>
-              </ol>
-            </div>
-            <div class="item">
-              <app-code-container key="webAnimationComponent" [codeMap]="codeMap">
-              </app-code-container>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Template
-            </div>
-            <div class="item">
-              <app-code-container key="webAnimationTemplate" [codeMap]="codeMap">
-              </app-code-container>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Style
-            </div>
-            <div class="item">
-              <app-code-container key="webAnimationStyle" [codeMap]="codeMap">
-              </app-code-container>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="item">
-        The following result demostrate the web animation API works.
-      </div>
-      <div class="item" id="web-animation-demo">
-        <app-inline-font-web-animation>
-        </app-inline-font-web-animation>
+      <div class="page-section">
+        <div class="item">
+          <b>Example</b>
+        </div>
+        <div class="item">
+          <ul>
+            <li>
+              <div class="item">
+                Component
+              </div>
+              <div class="item">
+                <ol>
+                  <li>
+                    <div class="item">
+                      Define objects in the keyframes format.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      Use 
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/animate">
+                        Element.animate()
+                      </a> 
+                      to generate the animation.
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="item">
+                <app-code-container key="webAnimationComponent" [codeMap]="codeMap">
+                </app-code-container>
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                Template
+              </div>
+              <div class="item">
+                <app-code-container key="webAnimationTemplate" [codeMap]="codeMap">
+                </app-code-container>
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                Style
+              </div>
+              <div class="item">
+                <app-code-container key="webAnimationStyle" [codeMap]="codeMap">
+                </app-code-container>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          The following result demostrate the web animation API works.
+        </div>
+        <div class="item" id="web-animation-demo">
+          <app-inline-font-web-animation>
+          </app-inline-font-web-animation>
+        </div>
       </div>
     </div>
   </app-section-container>

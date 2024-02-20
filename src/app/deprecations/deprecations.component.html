@@ -345,18 +345,25 @@
           </li>
           <li>
             <div class="item">
-              If the component asked the server for resources, the server will be hit two times.
+              The following sequence diagram shows interactions between client and server in the SSR mode.
+            </div>
+            <div class="item">
+              If the component asked the server for resources, the server will be hit twice. 
+              This issue will be solved in 
+              <a href="https://glistening-cupcake-ead467.netlify.app/#/breaking-changes">
+                v14
+              </a>.
             </div>
             <div class="item">
               <ul>
                 <li>
                   <div class="item">
-                    The first time is compiling the root module on the server-side.
+                    The first time is when compiling the root module on the server-side.
                   </div>
                 </li>
                 <li>
                   <div class="item">
-                    The second time is rendering the root module on the client-side.
+                    The second time is when rendering the root module on the client-side.
                   </div>
                 </li>
               </ul>

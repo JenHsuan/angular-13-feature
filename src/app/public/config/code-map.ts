@@ -282,10 +282,10 @@ const { AppServerModule, renderModule } = require('./dist/Angular13ProjectSSR/br
 
 app.engine('html', (_, options, callback) => {
   renderModule(AppServerModule, {
-    document: template,
-    url: (options as any).req.url,
+      document: template,
+      url: (options as any).req.url,
     }).then((html: any) => {
-    callback(null, html);
+      callback(null, html);
   });
 });
 
