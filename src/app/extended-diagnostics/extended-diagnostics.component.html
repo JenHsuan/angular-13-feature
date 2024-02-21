@@ -7,19 +7,19 @@
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
       <div class="item">
-        In 13.2 the Angular team raise some pattrens as 
+        In v13.2, the Angular team raises some pattrens as 
         <a href="https://angular.io/extended-diagnostics">extended diagnostics</a>.
       </div>
       <div class="item">
         <ul>
           <li>
             <div class="item">
-              Some coding patterns that are technically valid to the compiler or runtime, but which may have complex nuances or caveats.
+              Some coding patterns that are technically valid to the compiler or runtime.
             </div>
           </li>
           <li>
             <div class="item">
-              These patterns may often leads to bugs so it'll show warning messages by ng serve, ng build, or 
+              However, these patterns may often leads to bugs. So it'll show warning messages from ng serve, ng build, or 
               <a href="https://eloquent-macaron-9ce67b.netlify.app/#/language-service">
                 Angluar Language Service
               </a>.
@@ -28,12 +28,12 @@
         </ul>   
       </div>
       <div class="item">
+        Extended diagnostics give compile-time warnings before run-time. We pick up some notable items in this topic.
+      </div>
+      <div class="item">
         <div class="image-container">
           <img src="../../assets/image/diagnostics.png" alt="">
         </div>
-      </div>
-      <div class="item">
-        Extended diagnostics give compile-time warnings before run-time. We pick up some notable items in this topic.
       </div>
     </div>
   </app-section-container>

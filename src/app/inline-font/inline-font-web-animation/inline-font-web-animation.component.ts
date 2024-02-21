@@ -7,20 +7,16 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
 */
 const createCircleAnimation = () => [
   {
-    maxWidth: '100%',
-    clipPath: `circle(0%)`
-  },
-  {
-    clipPath: `circle(10%)`,
-    offset: 0.01
+    clipPath: `circle(1%)`,
+    offset: 0.05
   },
   {
     clipPath: `circle(100%)`,
-    offset: 0.98
+    offset: 0.5
   },
   {
-    maxWidth: '100%',
-    clipPath: `circle(0%)`,
+    clipPath: `circle(10%)`,
+    offset: 0.98
   }
 ];
 
@@ -30,9 +26,16 @@ const createCircleAnimation = () => [
 const rotatationAnimation = {
   transform: [
     'rotate(1800deg)',
+    'rotate(0)',
   ],
-  offset: [0.99],
-  easing: [ 'ease-in', 'ease-out' ],
+  offset: [
+    0.99,
+    1
+  ],
+  easing: [
+    'ease-in',
+    'ease-out' 
+  ],
 }
 
 @Component({

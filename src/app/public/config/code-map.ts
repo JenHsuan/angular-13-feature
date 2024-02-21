@@ -471,47 +471,64 @@ beforeEach(async () => {
   exports: [RouterModule]
 })    `,
     languages:[CodeLanguageType.typescript]
-  }], ["webAnimationComponent", {
+  }], ["webAnimationComponent1", {
     code: `
 /*
 * Keyframe format 1: an array of objects (keyframes) consisting of properties and values to iterate over
 *
-* Take 1% time to go from 0% to 10%
-* Take 99% time to go from 10% to 100%
+* 1. Show the unclipped image in 100% size during 0% ~ 5% time
+* 2. Increase the clipped circle from 0% radius to 1% during 5% ~ 50% time
+* 3. Increase the clipped circle from 1% radius to 100% during 50% ~ 98% time
+* 4. Decrease the clipped circle from 100% radius to 10% during 98% ~ 100% time
+*
 * If there is no specific offset, the comsued time will be equally distributed
 */
 const createCircleAnimation = () => [
+  //from
   {
-    maxWidth: '100%',
-    clipPath: 'circle(0%)'
+    clipPath: \`circle(1%)\`,
+    offset: 0.05
+  },
+  //to
+  {
+    clipPath: \`circle(100%)\`,
+    offset: 0.5
   },
   {
-    clipPath: 'circle(10%)',
-    offset: 0.01
-  },
-  {
-    clipPath: 'circle(100%)',
+    clipPath: \`circle(10%)\`,
     offset: 0.98
-  },
-  {
-    maxWidth: '100%',
-    clipPath: 'circle(0%)',
   }
 ];
 
 /*
 * Keyframe format 2: an object containing key-value pairs consisting of the property to animate and an array of values to iterate over
 *
-* Take 99% time to rotate 1800deg
+* 1. Rotate from 1800 degrees to 0 during 99% ~ 100% time
 */
 const rotatationAnimation = {
   transform: [
+    //from
     'rotate(1800deg)',
+    //to
+    'rotate(0)',
   ],
-  offset: [0.99],
-  easing: [ 'ease-in', 'ease-out' ],
+  offset: [
+    //from
+    0.99,
+    //to
+    1
+  ],
+  easing: [
+    //from
+    'ease-in',
+    //to
+    'ease-out' 
+  ],
 }
-
+    `,
+    languages:[CodeLanguageType.typescript]
+  }], ["webAnimationComponent2", {
+    code: `
 @Component({
   selector: 'app-inline-font-web-animation',
   templateUrl: './inline-font-web-animation.component.html',
@@ -522,6 +539,8 @@ export class InlineFontWebAnimationComponent {
 
   switchImage() {
     //animation is asynchronous
+
+    //the clipped circle takes 100 miliseconds
     this.revertedLogo?.nativeElement.animate(createCircleAnimation(), {
       duration: 3000,
       easing: 'ease-in-out',
@@ -529,6 +548,7 @@ export class InlineFontWebAnimationComponent {
     });
     console.log('the animation is triggered');
 
+    //the rotation takes 1000 miliseconds
     this.revertedLogo?.nativeElement.animate(rotatationAnimation, {
       duration: 500,
       iterations: 1,

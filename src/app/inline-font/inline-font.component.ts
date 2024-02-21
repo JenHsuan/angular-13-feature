@@ -14,8 +14,8 @@ export class InlineFontComponent {
   codeMap = codeMap;
   sectionTitles = [
     "Introduction",
-    "Web Animations via Native Web API",
-    "Evaluation for Web Animations API",
+    "Native Web Animation API",
+    "Evaluation",
     "Inline Resource (Adobe font)",
     "Reference"
   ];
