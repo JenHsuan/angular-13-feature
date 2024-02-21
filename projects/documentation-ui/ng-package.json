@@ -11,6 +11,7 @@
     "./styles/theme/_index.scss",
     "./styles/pages/_index.scss",
     "./styles/code/_index.scss",
-    "./styles/base/_index.scss"
+    "./styles/base/_index.scss",
+    "./styles/app/_index.scss"
   ]
 }

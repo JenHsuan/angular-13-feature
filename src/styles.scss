@@ -3,6 +3,7 @@
 @use "../node_modules/angular-documentation-ui/styles/pages/index" as page;
 @use "../node_modules/angular-documentation-ui/styles/code/index" as code;
 @use "../node_modules/angular-documentation-ui/styles/theme/index" as theme;
+@use "../node_modules/angular-documentation-ui/styles/app/index" as app;
 
 :root {
   --blue: #1e90ff;
