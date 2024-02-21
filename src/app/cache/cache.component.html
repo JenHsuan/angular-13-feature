@@ -7,93 +7,108 @@
   <app-section-container>
     <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
     <div class="description-container">
-      <div class="item">
-        The purpose of ng cache is to configure persistent disk cache and retrieve cache statistics.
+      <div class="page-section">
+        <div class="item">
+          <b>Angular cache</b>
+        </div>
+        <div class="item">
+          The purpose of Angular cache is to configure persistent disk cache and retrieve cache statistics.
+        </div>
       </div>
-      <div class="item">
-        In v13, there are two ways to manipulate the cache object.
+      <div class="page-section">
+        <div class="item">
+          <b>Configuration</b>
+        </div>
+        <div class="item">
+          In v13, there are two ways to manipulate the cache object.
+        </div>
+        <div class="item">
+          <ol>
+            <li>
+              <div class="item">
+                Manipulate the cache manually by updating angular.json
+              </div>
+              <div class="item">
+                <app-code-container key="angularjsonCache" [codeMap]="codeMap">
+                </app-code-container>
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                Manipulate the cache using ng cli
+              </div>
+              <div class="item">
+                <app-code-container key="angularcli" [codeMap]="codeMap">
+                </app-code-container>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
-      <div class="item">
-        <ol>
-          <li>
-            <div class="item">
-              Manipulate the cache manually by updating angular.json
-            </div>
-            <div class="item">
-              <app-code-container key="angularjsonCache" [codeMap]="codeMap">
-              </app-code-container>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Manipulate the cache using ng cli
-            </div>
-            <div class="item">
-              <app-code-container key="angularcli" [codeMap]="codeMap">
-              </app-code-container>
-            </div>
-          </li>
-        </ol>
+      <div class="page-section">
+        <div class="item">
+          <b>Parameters</b>
+        </div>
+        <div class="item">
+          The path, environment, and enable flag of Angular cache can be configured. 
+        </div>
+        <div class="item">
+          <ul>
+            <li>
+              <div class="item">
+                Enable
+              </div>
+              <div class="item">
+                <ul>
+                  <li>
+                    <div class="item">
+                      true or false.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                Path
+              </div>
+              <div class="item">
+                <ul>
+                  <li>
+                    <div class="item">
+                      .angular/cache is the default base directory to store cache results.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="item">
+                Environment
+              </div>
+              <div class="item">
+                <ul>
+                  <li>
+                    <div class="item">
+                      all: allows disk cache on all machines.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      local: allows disk cache only on development machines.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      ci: allows disk cache only on continuous integration (CI) systems.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div> 
       </div>
-      <div class="item">
-        The path, environment, and enable flag of Angular cache can be configured. 
-      </div>
-      <div class="item">
-        <ul>
-          <li>
-            <div class="item">
-              Enable
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    true or false.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Path
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    .angular/cache is the default base directory to store cache results.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              Environment
-            </div>
-            <div class="item">
-              <ul>
-                <li>
-                  <div class="item">
-                    all: allows disk cache on all machines.
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    local: allows disk cache only on development machines.
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    ci: allows disk cache only on continuous integration (CI) systems.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div> 
       <div class="item">
         In the following screenshot, the path of cache is set to .angular-cache and the environment is set to all.
       </div>

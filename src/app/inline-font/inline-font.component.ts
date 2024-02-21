@@ -33,7 +33,7 @@ export class InlineFontComponent {
     "We can only write the animation logic in the component, which is more convenient for us to maintain the code."
   ];
   consForWebAnimationsAPI = [
-    "Even though the web animation API has supported most modern broswers, there are still a few unsupported broswers."
+    "Even though the web animation API has supported most modern browsers, there are still a few unsupported browsers."
   ];
 
   referencesMap = new Map<string, string>([

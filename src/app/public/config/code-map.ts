@@ -5,19 +5,19 @@ export const codeMap = new Map<string, Code>([
     code: `
 npx @angular/cli@13 new Angular13Project
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["updateInstruction", {
     code: `
 npx @angular/cli@13 update @angular/core@13 @angular/cli@13
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["upgardeRx", {
     code: `
-//We can upgrade rxjs with the following command
+#We can upgrade rxjs with the following command
 
 npm install rxjs@7.4
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["distIndex", {
     code: `
 <!-- /dist/angular13-project/index.html -->
@@ -216,17 +216,17 @@ export class DeprecationsContentChildrenComponent {
     code: `
 npm install express @angular/platform-server@^13 ts-loader@@^4.4.2
       `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["installUniversal", {
     code: `
 ng generate universal
       `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["ngBuildNoHash", {
     code: `
 ng build --prod --output-hashing "none"
       `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["webpackConfigSSR", {
     code: `
 const path = require('path');
@@ -254,12 +254,12 @@ module.exports = {
     code: `
 webpack --config webpack.server.config.js
       `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["executeServerTs", {
     code: `
 node dist/server.js 
       `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["renderModule", {
     code: `
 // These are important and needed before anything else
@@ -324,13 +324,11 @@ app.listen(PORT, () => {
     languages:[CodeLanguageType.typescript]
   }], ["angularcli", {
     code: `
-//angular-cli
-  
 ng config cli.cache.enabled false/true
 ng config cli.cache.environment all/ci/local
 ng config cli.cache.path ".angular-cache"
       `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["step1ESM", {
     code: `
 export default {
@@ -356,7 +354,7 @@ export default {
     code: `
 ng serve
     `,
-    languages:[CodeLanguageType.typescript]
+    languages:[CodeLanguageType.bash]
   }], ["stepsStyle", {
     code: `
 //1. Update angular.json (build -> configuration -> production)
@@ -476,10 +474,10 @@ beforeEach(async () => {
 /*
 * Keyframe format 1: an array of objects (keyframes) consisting of properties and values to iterate over
 *
-* 1. Show the unclipped image in 100% size during 0% ~ 5% time
-* 2. Increase the clipped circle from 0% radius to 1% during 5% ~ 50% time
-* 3. Increase the clipped circle from 1% radius to 100% during 50% ~ 98% time
-* 4. Decrease the clipped circle from 100% radius to 10% during 98% ~ 100% time
+* 1. Show the unclipped image with 100% width
+* 2. Increase the radius of clipped circle from 1% to 100% during 5% ~ 50% time
+* 3. Decrease the radius of clipped circle from 100% to 10% during 50% ~ 98% time
+* 4. Show the unclipped image with 0% width (styled by scss)
 *
 * If there is no specific offset, the comsued time will be equally distributed
 */
@@ -538,7 +536,7 @@ export class InlineFontWebAnimationComponent {
   @ViewChild("revertedLogo", {read: ElementRef}) revertedLogo: ElementRef | undefined; 
 
   switchImage() {
-    //animation is asynchronous
+    //animations are asynchronous
 
     //the clipped circle takes 100 miliseconds
     this.revertedLogo?.nativeElement.animate(createCircleAnimation(), {
@@ -584,7 +582,7 @@ export class InlineFontWebAnimationComponent {
   }
 }
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.css]
   }], ["moduleSyntax", {
     code: `
 <script src="fancyModernBundle.js" type="module">
@@ -597,11 +595,11 @@ export class InlineFontWebAnimationComponent {
     languages:[CodeLanguageType.html]
   }], ["installNgPackagr", {
     code: `
-// Upgrade ng-packagr
+# Upgrade ng-packagr
 
 npm install -D ng-packagr@^13
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["dynamicChildComponent", {
     code: `
 export class DynamicComponent {
@@ -623,7 +621,7 @@ export class DynamicComponent {
     code: `
 ng update
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["formControlStatus12", {
     code: `
 export declare abstract class AbstractControl {
@@ -699,7 +697,7 @@ function createRandomBytes(length: number) {
     code: `
 ng generate library documentation-ui
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["apfStep2", {
     code: `
 scripts": {
@@ -715,7 +713,7 @@ scripts": {
 cd projects/documentation-ui.src/lib
 ng g m documentation-ui
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["apfStep4", {
     code: `
 @NgModule({
@@ -745,7 +743,7 @@ npm run build-library
 npm run pack-library
 npm run install-library
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["apfStep7", {
     code: `
 import { DocumentationUiModule } from 'documentation-UI';
@@ -804,12 +802,12 @@ export class MyComponent {
     code: `
 npm login
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["apfStep10", {
     code: `
 npm publish dist/documentation-ui/documentation-ui-0.0.1.tgz --access public
     `,
-    languages:[CodeLanguageType.html]
+    languages:[CodeLanguageType.bash]
   }], ["testingComponent", {
     code: `
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -854,7 +852,7 @@ export class InlineFontWebAnimationComponent {
   ["bananaParentComponent", {
     code: `
 export class InlineFontComponent {
-  a = 1
+  message = "It's test";
 }  
 `,
     languages:[CodeLanguageType.typescript]
@@ -878,8 +876,8 @@ Find more at https://angular.io/guide/two-way-bindingngtsc(-998101)
   }], ["nullishWarning", {
     code: `
 <div class="item">
-  {{a ?? 1}}
-<!-- ~~~~~~~~~~~
+  {{message ?? "another test"}}
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~
 The left side of this nullish coalescing operation does not include 'null' or 'undefined' in its type,
 therefore the '??' operator can be safely removed.ngtsc(-998102)
 -->

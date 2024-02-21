@@ -6,5 +6,7 @@ export class Code {
 export enum CodeLanguageType {
   html = 'html',
   typescript = 'typescript',
-  python = 'python'
+  python = 'python',
+  bash = 'bash',
+  css = 'css'
 }
