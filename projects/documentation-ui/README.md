@@ -46,7 +46,7 @@ npm install @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @
 # Usage
 To get up and running using Angular documentation UI with Angular follow the below steps:
 
-## For module-based applications
+### For module-based applications
 1. Import this module to add.module.ts
 ```
 import { DocumentationUiModule } from 'angular-documentation-ui';
@@ -79,7 +79,7 @@ body {
 }
 ```
 
-## For component-based applications
+### For component-based applications
 1. Import this module to main.ts
 ```
 import { DocumentationUiModule } from 'angular-documentation-ui';
@@ -107,16 +107,6 @@ body {
 * [Note of Angular 13](https://profound-kangaroo-9db0c6.netlify.app/#/home)
 
 # UI components
-* app-doc-reviewer-container
-* app-section-container
-* app-theme and theme service
-* app-navigation-button-container
-* app-footer-container
-* app-mobile-nav-container
-* app-code-container
-* app-side-bar-container
-* lib-doc-nav-container
-* app-loading-indicator
 
 ## 1. app-doc-reviewer-container
 This component allows us to create the timeline to indicate the current section with the highlighted color.
