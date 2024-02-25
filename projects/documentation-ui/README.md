@@ -20,15 +20,15 @@ This library provides a few UI components to help you to create a documentation 
 
 # Installation
 1. Install angular-documentation-ui@latest
-```
-//For npm 7+, you need to add --legacy-peer-deps
+```bash
+# For npm 7+, you need to add --legacy-peer-deps
 
 npm i angular-documentation-ui@latest
 ```
 
 2. Install the @fortawesome/angular-fontawesome, ngx-highlightjs according to the compatibility table
-```
-//For npm 7+, you need to add --legacy-peer-deps
+```bash
+# For npm 7+, you need to add --legacy-peer-deps
 
 npm install @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons ngx-highlightjs
 ```
@@ -48,7 +48,7 @@ To get up and running using Angular documentation UI with Angular follow the bel
 
 ### For module-based applications
 1. Import this module to add.module.ts
-```
+```typescript
 import { DocumentationUiModule } from 'angular-documentation-ui';
 
 @NgModule({
@@ -69,7 +69,7 @@ export class AppModule { }
 ```
 
 2. Import the scss file to src/styles.scss
-```
+```scss
 @import "../node_modules/angular-documentation-ui/styles/theme/index";
 @import "../node_modules/angular-documentation-ui/styles/pages/index";
 @import "../node_modules/angular-documentation-ui/styles/code/index";
@@ -81,7 +81,7 @@ body {
 
 ### For component-based applications
 1. Import this module to main.ts
-```
+```typescript
 import { DocumentationUiModule } from 'angular-documentation-ui';
 
 bootstrapApplication(AppComponent, {
@@ -93,7 +93,7 @@ bootstrapApplication(AppComponent, {
 ```
 
 2. Import the scss file to src/styles.scss
-```
+```scss
 @import "../node_modules/angular-documentation-ui/styles/theme/index";
 @import "../node_modules/angular-documentation-ui/styles/pages/index";
 @import "../node_modules/angular-documentation-ui/styles/code/index";
@@ -104,7 +104,10 @@ body {
 ```
 
 # Demo site
+* [Note of Angular 12](https://eloquent-macaron-9ce67b.netlify.app/#/home)
 * [Note of Angular 13](https://profound-kangaroo-9db0c6.netlify.app/#/home)
+* [Note of Angular 14](https://glistening-cupcake-ead467.netlify.app/#/home)
+* [Note of Angular 15](https://verdant-fenglisu-1b7a2d.netlify.app/#/home)
 
 # UI components
 
@@ -117,7 +120,7 @@ This component allows us to create the timeline to indicate the current section 
 ### Usage
 
 1. Retrieve section elements and define section titles in your component
-```
+```typescript
 import { getIdFromTitle } from 'angular-documentation-ui';
 
 export class MyComponent {
@@ -134,7 +137,7 @@ export class MyComponent {
 ``` 
 
 2. Update your template
-```
+```html
 <app-doc-reviewer-container
   [sections]="sections"
   [titles]="sectionTitles"
@@ -160,7 +163,7 @@ This component allows us to fold and unfold the content.
 
 ### Usage
 1. Update in your component
-```
+```typescript
 import { getIdFromTitle } from 'angular-documentation-ui';
 
 export class MyComponent {
@@ -170,7 +173,7 @@ export class MyComponent {
 ``` 
 
 2. Update your template
-```
+```html
 <app-section-container>
   <div class="title" [id]="getIdFromTitle(sectionTitles[0])" title>{{ sectionTitles[0] }}</div>
   <div class="description-container">
@@ -195,7 +198,7 @@ This component allows us to switch the theme for the UI component from this libr
 ### Usage
 
 1. Inject the Thene service to the App component
-```
+```typescript
 import { ThemeService } from 'angular-documentation-ui';
 
 @Component({
@@ -214,7 +217,7 @@ export class AppComponent {
 
 2. Add the theme switcher to the template
 
-```
+```html
 <div class="theme-container">
   <app-theme></app-theme>
 </div>
@@ -228,7 +231,7 @@ This component allows us to navigate to the next page or the last page of the se
 ### Usage
 
 1. Define routeMap and sideBarList in your component
-```
+```typescript
 export const sideBarList = [
   RouteType.DOCUMENTS,
   RouteType.MIGRATIONS,
@@ -261,7 +264,7 @@ export class AppComponent {
 
 2. Add the theme switcher to the template
 
-```
+```html
 <app-navigation-button-container 
   [routeMap]="routeMap"
   [sideBarList]="sideBarList">
@@ -276,7 +279,7 @@ export class AppComponent {
 ### Usage
 
 1. Define routeMap and sideBarList in your component
-```
+```typescript
 export const sideBarList = [
   RouteType.DOCUMENTS,
   RouteType.MIGRATIONS,
@@ -309,7 +312,7 @@ export class AppComponent {
 
 2. Add the footer to the template
 
-```
+```html
 <app-footer-container 
   [routeMap]="routeMap"
   [sideBarList]="sideBarList">
@@ -325,7 +328,7 @@ export class AppComponent {
 ### Usage
 
 1. Define routeMap typeTitleMap, and sideBarList in your component
-```
+```typescript
 export enum RouteType {
   BREAKING_CHANGE = 'BREAKING_CHANGE',
   DOCUMENTS = 'DOCUMENTS',
@@ -364,7 +367,7 @@ export class AppComponent {
 
 2. Add the nav-container to the template
 
-```
+```html
 <app-mobile-nav-container
   [routeMap]="routeMap"
   [sideBarList]="sideBarList"
@@ -378,7 +381,7 @@ export class AppComponent {
 
 ### Usage
 1. Define the codeMap in your component
-```
+```typescript
 import { getIdFromTitle } from 'angular-documentation-ui';
 import { Code, CodeLanguageType } from "angular-documentation-ui";
 
@@ -397,7 +400,7 @@ npx @angular/cli@13 new Angular13Project
 
 2. Add the app-code-container to the template
 
-```
+```html
 <app-code-container key="instruction" [codeMap]="codeMap">
 </app-code-container>
 ```
@@ -409,7 +412,7 @@ npx @angular/cli@13 new Angular13Project
 ### Usage
 
 1. Define routeMap, TypeTitleMapand sideBarList in your component
-```
+```typescript
 export enum RouteType {
   BREAKING_CHANGE = 'BREAKING_CHANGE',
   DOCUMENTS = 'DOCUMENTS',
@@ -449,7 +452,7 @@ export class AppComponent {
 
 2. Add the app-side-bar-container to the template
 
-```
+```html
 <app-side-bar-container
   [routeMap]="routeMap"
   [sideBarList]="sideBarList"
@@ -466,7 +469,7 @@ export class AppComponent {
 ### Usage
 
 1. Define routeMap, TypeTitleMapand sideBarList in your component
-```
+```typescript
 export enum RouteType {
   BREAKING_CHANGE = 'BREAKING_CHANGE',
   DOCUMENTS = 'DOCUMENTS',
@@ -506,7 +509,7 @@ export class AppComponent {
 
 2. Add the app-side-bar-container to the template
 
-```
+```html
 <lib-doc-nav-container
   [routeMap]="routeMap"
   [sideBarList]="sideBarList"
@@ -523,7 +526,7 @@ export class AppComponent {
 ### Usage
 * Update the template
 
-```
+```html
 
 <router-outlet></router-outlet>
 <app-loading-indicator [detectNavigation]="true"></app-loading-indicator>
