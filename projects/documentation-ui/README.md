@@ -1,4 +1,22 @@
-This library provides a few UI components to help you to create a documentation website. (based on Angular 13)
+![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/demo/screenshot.png)
+
+This library provides a few UI components to help you to create a documentation website.
+
+# Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Demo site](#demo-site)
+* [UI components](#ui-components)
+  * [app-doc-reviewer-container](#1-app-doc-reviewer-container)
+  * [app-section-container](#2-app-section-container)
+  * [app-theme and theme service](#3-app-theme-and-theme-service)
+  * [app-navigation-button-container](#4-app-navigation-button-container)
+  * [app-footer-container](#5-app-footer-container)
+  * [app-mobile-nav-container](#6-app-mobile-nav-container)
+  * [app-code-container](#7-app-code-container)
+  * [app-side-bar-container](#8-app-side-bar-container)
+  * [lib-doc-nav-container](#9-lib-doc-nav-container)
+  * [app-loading-indicator](#10-app-loading-indicator)
 
 # Installation
 1. Install angular-documentation-ui@latest
@@ -8,25 +26,28 @@ This library provides a few UI components to help you to create a documentation 
 npm i angular-documentation-ui@latest
 ```
 
-2. Install the @fortawesome/angular-fontawesome, ngx-highlightjs
+2. Install the @fortawesome/angular-fontawesome, ngx-highlightjs according to the compatibility table
 ```
 //For npm 7+, you need to add --legacy-peer-deps
 
-npm install @fortawesome/angular-fontawesome@0.9.0 @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons ngx-highlightjs@^6.1.3
+npm install @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons ngx-highlightjs
 ```
 
 ### Compatibility table
+* This library supports Angular 12.x, 13.x, 14.x, 15.x
 
-|  angular-documentation-ui   | Angular  | @fortawesome/angular-fontawesome  | ngx-highlightjs |
-|  ----  | ----  | ----  | ---- |
-| 0.0.28  | 12.x | 0.9.x | ^6.1.3 |
-| 0.0.28  | 13.x | 0.9.x | ^6.1.3 |
-| 0.0.28  | 14.x | 0.10.x | ^7.0.1 |
+|  Angular  | angular-documentation-ui   |  ngx-highlightjs | @fortawesome/angular-fontawesome  |@fortawesome/fontawesome-svg-core | @fortawesome/free-solid-svg-icons |
+|  ----  | ----  | ----  | ---- | ---- | ---- |
+| 12.x | 0.9.x  | ^6.1.3 | ^0.9.0  | ^1.2.35 | ^5.15.3 |
+| 13.x | 0.9.x  | ^6.1.3 | ^0.9.0  | ^1.2.35 | ^5.15.3 |
+| 14.x | 0.9.x  | ^7.0.1 | ^0.10.0 | ^1.2.36 | ^5.15.4 |
+| 15.x | 0.9.x  | ^7.0.1 | ^0.10.0 | ^1.2.36 | ^5.15.4 |
 
 # Usage
 To get up and running using Angular documentation UI with Angular follow the below steps:
 
-1. Import this module
+## For module-based applications
+1. Import this module to add.module.ts
 ```
 import { DocumentationUiModule } from 'angular-documentation-ui';
 
@@ -45,6 +66,30 @@ import { DocumentationUiModule } from 'angular-documentation-ui';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+```
+
+2. Import the scss file to src/styles.scss
+```
+@import "../node_modules/angular-documentation-ui/styles/theme/index";
+@import "../node_modules/angular-documentation-ui/styles/pages/index";
+@import "../node_modules/angular-documentation-ui/styles/code/index";
+
+body {
+  background: var(--background-default);
+}
+```
+
+## For component-based applications
+1. Import this module to main.ts
+```
+import { DocumentationUiModule } from 'angular-documentation-ui';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(DocumentationUiModule)
+    ],
+});
+
 ```
 
 2. Import the scss file to src/styles.scss

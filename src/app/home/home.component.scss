@@ -36,6 +36,7 @@
       cursor: pointer;
       -webkit-transition: background 1s; /* For Safari 3.0 to 6.0 */
       transition: background 1s; /* For modern browsers */
+      box-shadow: 3px 3px 6px -3px rgba(0, 0, 0);
       &:hover {
         color: var(--background-gray);
         opacity: .9;
