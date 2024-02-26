@@ -1,6 +1,6 @@
-![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/demo/screenshot.png)
-
 This library provides a few UI components to help you to create a documentation website.
+
+![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/demo/screenshot.png)
 
 # Table of Contents
 * [Installation](#installation)
