@@ -8,5 +8,6 @@ export enum CodeLanguageType {
   typescript = 'typescript',
   python = 'python',
   bash = 'bash',
-  css = 'css'
+  css = 'css',
+  scss = 'scss'
 }
