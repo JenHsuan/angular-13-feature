@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ThemeService, ThemeType } from 'angular-documentation-ui';
 import { RouteMap, TypeTitleMap, sideBarList } from './public/route/route.domain';
 import { version } from './public/config/constants';
+import { authorUrl } from './public/config/url';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
 
   version = version;
   title = `Notes of Angular v${version}`;
+  authorUrl = authorUrl;
   
   themeImageMap = new Map<ThemeType, string>([
     [ThemeType.light, "../assets/image/angular-logo.png"],

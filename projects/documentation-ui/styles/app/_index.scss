@@ -29,7 +29,8 @@
   .app-content {
     min-width: calc(100% - 20em);
     .portal-container {
-      height: calc(100vh - 100px);
+      height: calc(100vh - 4em);
+      overflow-y: scroll;
       margin-top: .3em;
       .tab-content {
         padding: 1em;
