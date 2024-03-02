@@ -10,4 +10,5 @@ export class DocNavContainerComponent{
   @Input() sideBarList: string[];
   @Input() typeTitleMap: Map<string, string>;
   @Input() selectedRoute: string;
+  @Input() showThemeButtonForSideBar = true;
 }

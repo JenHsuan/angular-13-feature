@@ -12,6 +12,7 @@ export class SideBarContainerComponent {
   @Input() sideBarList: string[];
   @Input() typeTitleMap: Map<string, string>;
   @Input() selectedRoute: string;
+  @Input() showThemeButton = true;
 
   constructor(
     private location: Location, 

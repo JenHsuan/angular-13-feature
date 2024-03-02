@@ -13,7 +13,7 @@
       mat-button>
       {{getRouteTitle(item)}}
     </button>
-    <div class="theme-container">
+    <div class="theme-container" *ngIf="showThemeButton">
       <app-theme></app-theme>
     </div>
   </div>
