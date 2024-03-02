@@ -3,6 +3,7 @@
     [routeMap]="routeMap"
     [sideBarList]="sideBarList"
     [typeTitleMap]="typeTitleMap"
+    [showThemeButtonForSideBar]="false"
     selectedRoute="HOME">
   <a class="title-container" routerLink="/home">
     <img [src]="currentImage" alt="">
@@ -22,9 +23,21 @@
     <div class="page-footer-container">
       <app-footer-container 
         [routeMap]="routeMap"
-        [sideBarList]="sideBarList">
-        Curated by <a [href]="authorUrl">Jen-hsuan Hsieh (Sean)</a>
-        © 2024 - 2034
+        [sideBarList]="sideBarList"
+        [showNavigationButton]="false">
+        <span class="learning-map">
+          <a [href]="timelineUrl">
+            Learning Map
+          </a>
+        </span>
+        <span class="author">
+          <a [href]="authorUrl">
+            Jen-hsuan Hsieh (Sean) © 2024 - 2034
+          </a>
+        </span>
+        <span class="theme-icon">
+          <app-theme></app-theme>
+        </span>
       </app-footer-container>
     </div>
   </div>

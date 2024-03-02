@@ -1,5 +1,5 @@
 <div class="footer-container">
-  <div class="item">
+  <div class="item" *ngIf="showNavigationButton">
     <app-navigation-button-container 
       [routeMap]="routeMap"
       [sideBarList]="sideBarList">

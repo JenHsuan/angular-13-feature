@@ -7,4 +7,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FooterContainerComponent {
   @Input() routeMap: Map<string, string>
   @Input() sideBarList: string[];
+  @Input() showNavigationButton = true;
 }
