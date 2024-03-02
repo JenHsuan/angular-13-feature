@@ -12,7 +12,7 @@ import { ThemeService, ThemeType } from 'angular-documentation-ui';
 export class HomeComponent{
   title = TypeTitleMap.get(RouteType.HOME);
   timelineUrl = timelineUrl;
-  currentImage: string = "";
+  currentImage = "../assets/image/favicon-194x194.png";
   authorUrl = authorUrl;
   urlMap = new Map<string, string>([
     ["Notes of Angular v12", v12Url],
@@ -22,21 +22,21 @@ export class HomeComponent{
     ["Notes of Angular v17", v17Url],
   ]);
 
-  private themeImageMap = new Map<ThemeType, string>([
-    [ThemeType.light, "../assets/image/angular-logo.png"],
-    [ThemeType.dark, "../assets/image/angular-logo-dark.png"]
-  ]);
+  // private themeImageMap = new Map<ThemeType, string>([
+  //   [ThemeType.light, "../assets/image/angular-logo.png"],
+  //   [ThemeType.dark, "../assets/image/angular-logo-dark.png"]
+  // ]);
 
   constructor(
     private router: Router,
-    private themeService: ThemeService
+    //private themeService: ThemeService
   ) {
-    this.themeService.theme$.subscribe(themeType => {
-      let url = this.themeImageMap.get(themeType);
-      if (url) {
-        this.currentImage = url;
-      }
-    });
+    // this.themeService.theme$.subscribe(themeType => {
+    //   let url = this.themeImageMap.get(themeType);
+    //   if (url) {
+    //     this.currentImage = url;
+    //   }
+    // });
   }
 
   firstPage() {
