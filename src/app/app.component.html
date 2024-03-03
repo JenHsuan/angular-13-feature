@@ -24,17 +24,8 @@
       <app-footer-container 
         [routeMap]="routeMap"
         [sideBarList]="sideBarList"
-        [showNavigationButton]="false">
-        <span class="learning-map">
-          <a [href]="timelineUrl">
-            Learning Map
-          </a>
-        </span>
-        <span class="author">
-          <a [href]="authorUrl">
-            Jen-hsuan Hsieh (Sean) © 2024 - 2034
-          </a>
-        </span>
+        [showNavigationButton]="false"
+        [externalLinkMap]="linkMap">
         <span class="theme-icon">
           <app-theme></app-theme>
         </span>

@@ -8,7 +8,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: var(--background-default);
+    background-color: var(--background-light);
     border: 1px solid var(--background-gray);
     height: 100%;
     .title-container {
@@ -30,7 +30,7 @@
         text-align: center;
         font-style: normal;
         font-weight: 400;
-        background-color: var(--background-default);
+        background-color: var(--background-light);
         margin: 1em 0;
         line-height: 1.2em;
         width: 100%;
@@ -51,7 +51,7 @@
     margin: 0 0 0.7em 0;
     padding: .3em;
     border-radius: .1em;
-    background-color: var(--background-default);
+    background-color: var(--background-light);
     cursor: pointer;
     font-style: normal;
     font-weight: 400;

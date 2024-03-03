@@ -18,10 +18,8 @@
   font-style: normal;
   font-weight: 400;
   color: var(--foreground-default);
-  border-bottom: 1px solid var(--foreground-secondary);
   width: calc(100% - 3.2em);
   overflow-x: hidden;
-  padding-left: 3.2em;
   .item {
     margin: .4em 0;
   }
@@ -34,5 +32,11 @@
   }
   .page-section {
     margin: 1em 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .description-container {
+    padding-left: 0;
   }
 }

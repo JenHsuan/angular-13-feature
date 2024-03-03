@@ -6,6 +6,13 @@
     </app-navigation-button-container>
   </div>
   <div class="item">
+    <ng-container *ngIf="externalLinkMap">
+      <span class="external-link" 
+          *ngFor="let link of externalLinkMap | keyvalue: originalOrder"
+          (click)="navigate(link.key)">
+        {{ link.key }}
+      </span>
+    </ng-container>
     <ng-content></ng-content>
   </div>
 </div>

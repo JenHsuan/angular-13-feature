@@ -12,7 +12,8 @@ export const light: Theme = {
     "--foreground-quaternary": "#2b2828",
     "--foreground-light": "#7c7676",
 
-    "--background-default": "#fff",
+    "--background-default": "#fbfafb",
+    "--background-light": "#fff",
 
     "--primary-default": "#8c8a8a",
 
@@ -29,7 +30,8 @@ export const dark: Theme = {
     "--foreground-quaternary": "#2b2828",
     "--foreground-light": "#fff",
 
-    "--background-default": "#000",
+    "--background-default": "#000000",
+    "--background-light": "#0a0a0a",
 
     "--primary-default": "#cecece",
     
