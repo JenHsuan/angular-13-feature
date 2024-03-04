@@ -1,6 +1,6 @@
 <ng-container>
   <ul>
-    <li *ngFor="let item of references | keyvalue">
+    <li *ngFor="let item of references | keyvalue: originalOrder">
       <a [href]="item.value">
         {{ item.key }}
       </a>

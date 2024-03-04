@@ -117,6 +117,14 @@ This component allows us to create the timeline to indicate the current section 
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/doc-reviewer-demo.png)
 
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [titles] | string[]  | Item names on the list | 
+| [sections] | QueryList<ElementRef> | Instances of sections | 
+| [getIdFromTitle] | function  | TThe function to create ID for title |
+
 ### Usage
 
 1. Retrieve section elements and define section titles in your component
@@ -161,6 +169,9 @@ This component allows us to fold and unfold the content.
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/section_demo.png)
 
+### Parameters
+None.
+
 ### Usage
 1. Update in your component
 ```typescript
@@ -194,6 +205,8 @@ This component allows us to switch the theme for the UI component from this libr
   * dark
     * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/theme_dark.png)
 
+### Parameters
+None.
 
 ### Usage
 
@@ -227,6 +240,13 @@ export class AppComponent {
 This component allows us to navigate to the next page or the last page of the self-defined orders.
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/button_demo.png)
+
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [routeMap] | map<string, string>  | The map to store pairs of URLs and string | 
+| [sideBarList] | string[] | Unique string for each route |
 
 ### Usage
 
@@ -276,6 +296,15 @@ export class AppComponent {
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/footer_demo.png)
 
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [routeMap] | map<string, string>  | The map to store pairs of URLs and string | 
+| [sideBarList] | string[] | Unique string for each route
+| [showNavigationButton] | boolean  | Show the navigation buttons or not | 
+| [externalLinkMap] | map<string, string>  | The map to store pairs of titles and URLs |
+
 ### Usage
 
 1. Define routeMap and sideBarList in your component
@@ -306,6 +335,10 @@ export const sideBarList = [
 export class AppComponent {
   sideBarList = sideBarList;
   routeMap = RouteMap;
+
+  linkMap = new Map<string, string>([
+    ["angular-doc-ui", "https://www.npmjs.com/package/angular-documentation-ui?activeTab=readme"]
+  ]);
 }
 
 ``` 
@@ -315,8 +348,9 @@ export class AppComponent {
 ```html
 <app-footer-container 
   [routeMap]="routeMap"
-  [sideBarList]="sideBarList">
-  Curated by Jen-hsuan Hsieh (Sean) © 2024 - 2034
+  [sideBarList]="sideBarList"
+  [showNavigationButton]="false"
+  [externalLinkMap]="linkMap">
 </app-footer-container>
 ```
 
@@ -324,6 +358,14 @@ export class AppComponent {
 
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/mobile_demo.png)
+
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [routeMap] | map<string, string>  | The map to store pairs of URLs and string | 
+| [sideBarList] | string[] | Unique string for each route
+| [typeTitleMap] | map<string, string>  | The map to store pairs of types and titles |
 
 ### Usage
 
@@ -379,6 +421,14 @@ export class AppComponent {
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/code-demo.png)
 
+
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [key] | string  | The key of the code snippet | 
+| [codeMap] | map<string, Code>  | The map to store pairs of keys and code snippets |
+
 ### Usage
 1. Define the codeMap in your component
 ```typescript
@@ -405,9 +455,20 @@ npx @angular/cli@13 new Angular13Project
 </app-code-container>
 ```
 
-### 8.app-side-bar-container
+## 8.app-side-bar-container
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/sidebar_demo.png)
+
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [routeMap] | map<string, string>  | The map to store pairs of URLs and string | 
+| [sideBarList] | string[] | Unique string for each route
+| [typeTitleMap] | map<string, string>  | The map to store pairs of types and titles |
+| [selectedRoute] | string  | The default selected route |
+| [showThemeButton] | boolean  | Show the theme buttons or not | 
+
 
 ### Usage
 
@@ -462,9 +523,18 @@ export class AppComponent {
 </app-side-bar-container>
 ```
 
-### 9. lib-doc-nav-container
+## 9. lib-doc-nav-container
 * It's the componnt combined app-side-bar-container and the app-mobile-nav-container
 
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [routeMap] | map<string, string>  | The map to store pairs of URLs and string | 
+| [sideBarList] | string[] | Unique string for each route
+| [typeTitleMap] | map<string, string>  | The map to store pairs of types and titles |
+| [selectedRoute] | string  | The default selected route |
+| [showThemeButtonForSideBar] | boolean  | Show the theme buttons or not | 
 
 ### Usage
 
@@ -519,9 +589,15 @@ export class AppComponent {
 </lib-doc-nav-container>
 ```
 
-### 10. app-loading-indicator
+## 10. app-loading-indicator
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/spinner.png)
+
+### Parameters
+
+|  Name  | Type   |  Description |
+|  ----  | ----  | ----  | 
+| [detectNavigation] | boolean  | Detect the changes of navigation or not | 
 
 ### Usage
 * Update the template
