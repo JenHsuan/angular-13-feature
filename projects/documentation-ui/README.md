@@ -7,16 +7,18 @@ This library provides a few UI components to help you to create a documentation 
 * [Usage](#usage)
 * [Demo site](#demo-site)
 * [UI components](#ui-components)
-  * [app-doc-reviewer-container](#1-app-doc-reviewer-container)
-  * [app-section-container](#2-app-section-container)
-  * [app-theme and theme service](#3-app-theme-and-theme-service)
-  * [app-navigation-button-container](#4-app-navigation-button-container)
-  * [app-footer-container](#5-app-footer-container)
-  * [app-mobile-nav-container](#6-app-mobile-nav-container)
-  * [app-code-container](#7-app-code-container)
-  * [app-side-bar-container](#8-app-side-bar-container)
-  * [lib-doc-nav-container](#9-lib-doc-nav-container)
-  * [app-loading-indicator](#10-app-loading-indicator)
+  * [Doc Reviewer](#1-doc-reviewer)
+  * [Section Container](#2-section-container)
+  * [Theme and Theme service](#3theme-and-theme-service)
+  * [Navigation Button](#4-navigation-button)
+  * [Footer](#5-footer)
+  * [Navigation Button for Mobile](#6-navigation-button-for-mobile)
+  * [Code Container](#7-code-container)
+  * [Side Bar](#8-side-bar)
+  * [Navigation Button for Universal](#9-navigation-button-for-nniversal)
+  * [Loading Indicator](#10-loading-indicator)
+* [Utilities](#utilities)
+  * [Google Analytics 4](#1-google-analytics-4)
 
 # Installation
 1. Install angular-documentation-ui@latest
@@ -111,7 +113,7 @@ body {
 
 # UI components
 
-## 1. app-doc-reviewer-container
+## 1. Doc Reviewer
 This component allows us to create the timeline to indicate the current section with the highlighted color.
 
 * The following screnshot shows the demo of this component.
@@ -163,7 +165,7 @@ export class MyComponent {
 </div>
 ```
 
-## 2. app-section-container
+## 2. Section Container
 This component allows us to fold and unfold the content.
 
 * The following screnshot shows the demo of this component.
@@ -196,7 +198,7 @@ export class MyComponent {
 
 ``` 
 
-## 3. app-theme and theme service
+## 3. Theme and Theme service
 This component allows us to switch the theme for the UI component from this library.
 
 * The following screnshot shows the demo of this component.
@@ -236,7 +238,7 @@ export class AppComponent {
 </div>
 ```
 
-## 4. app-navigation-button-container
+## 4. Navigation Button
 This component allows us to navigate to the next page or the last page of the self-defined orders.
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/button_demo.png)
@@ -291,7 +293,7 @@ export class AppComponent {
 </app-navigation-button-container>
 ```
 
-## 5. app-footer-container
+## 5. Footer
 
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/footer_demo.png)
@@ -354,7 +356,7 @@ export class AppComponent {
 </app-footer-container>
 ```
 
-## 6. app-mobile-nav-container
+## 6. Navigation Button for Mobile
 
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/mobile_demo.png)
@@ -417,7 +419,7 @@ export class AppComponent {
 </app-mobile-nav-container>
 ```
 
-## 7. app-code-container
+## 7. Code Container
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/code-demo.png)
 
@@ -455,7 +457,7 @@ npx @angular/cli@13 new Angular13Project
 </app-code-container>
 ```
 
-## 8.app-side-bar-container
+## 8. Side Bar
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/sidebar_demo.png)
 
@@ -523,7 +525,7 @@ export class AppComponent {
 </app-side-bar-container>
 ```
 
-## 9. lib-doc-nav-container
+## 9. Navigation Button for Universal
 * It's the componnt combined app-side-bar-container and the app-mobile-nav-container
 
 ### Parameters
@@ -589,7 +591,7 @@ export class AppComponent {
 </lib-doc-nav-container>
 ```
 
-## 10. app-loading-indicator
+## 10. Loading Indicator
 * The following screnshot shows the demo of this component.
   * ![demo](https://raw.githubusercontent.com/JenHsuan/angular-13-feature/main/src/assets/image/spinner.png)
 
@@ -607,4 +609,19 @@ export class AppComponent {
 <router-outlet></router-outlet>
 <app-loading-indicator [detectNavigation]="true"></app-loading-indicator>
 
+```
+
+# Utilities
+
+## 1. Google Analytics 4
+
+### Usage
+
+* Update the app.compnent.ts
+```typescript
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    updateGoogleAnalyticsId({{ your Google Analytics ID}});
+  }
+}
 ```
