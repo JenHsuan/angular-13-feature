@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { ThemeService, ThemeType } from 'angular-documentation-ui';
+import { Component, OnInit } from '@angular/core';
 import { RouteMap, TypeTitleMap, sideBarList } from './public/route/route.domain';
 import { version } from './public/config/constants';
 import { authorUrl, timelineUrl } from './public/config/url';
-import { KeyValue } from '@angular/common';
+import { environment } from 'src/environments/environment';
+import { updateGoogleAnalyticsId } from 'angular-documentation-ui';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   routeMap = RouteMap;
   sideBarList = sideBarList;
   typeTitleMap = TypeTitleMap;
@@ -27,4 +27,8 @@ export class AppComponent {
     ["Learning Map", timelineUrl],
     ["Jen-hsuan Hsieh (Sean) © 2024 - 2034", authorUrl]
   ]);
+
+  ngOnInit(): void {
+    updateGoogleAnalyticsId(environment.googleAnalyticsId);
+  }
 }
