@@ -30,5 +30,21 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     updateGoogleAnalyticsId(environment.googleAnalyticsId);
+    this.updateKeywords();
+  }
+
+  private updateKeywords() {
+    let titles = [...this.typeTitleMap.values()].map(val => {
+      let pieces = val.split(" - ");
+      if (pieces.length > 1) {
+        return pieces[1];
+      }
+      return val;
+    });
+
+    document.querySelector('meta[name="keywords"]')?.setAttribute(
+      "content",
+      titles.slice(6, titles.length).join(", ")
+    );
   }
 }
