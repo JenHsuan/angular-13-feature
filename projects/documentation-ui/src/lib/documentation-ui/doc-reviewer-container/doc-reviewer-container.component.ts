@@ -11,6 +11,8 @@ export class DocReviewerContainerComponent {
   @Input() titles: string[];
   @Input() sections: QueryList<ElementRef> | undefined;
   @Input() getIdFromTitle: Function; 
+  @Input() marginBottom = 100;
+
   @ViewChildren("menu") menu: QueryList<ElementRef> | undefined;
   getHash = getHash;
   showBackTop = false;
@@ -20,7 +22,7 @@ export class DocReviewerContainerComponent {
 
   ngAfterViewInit() {
     addEventListener("scroll", (event) => {
-      if ((window.innerHeight + Math.round(document.documentElement.scrollTop)) >= document.body.scrollHeight) {
+      if ((window.innerHeight + Math.round(document.documentElement.scrollTop)) + this.marginBottom >= document.body.scrollHeight) {
         this.showBackTop = true;
       } else {
         this.showBackTop = false;

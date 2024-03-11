@@ -125,7 +125,8 @@ This component allows us to create the timeline to indicate the current section 
 |  ----  | ----  | ----  | 
 | [titles] | string[]  | Item names on the list | 
 | [sections] | QueryList<ElementRef> | Instances of sections | 
-| [getIdFromTitle] | function  | TThe function to create ID for title |
+| [getIdFromTitle] | function  | The function to create ID for title |
+| [marginBotton] | number  | The margin of the bottom (optional) |
 
 ### Usage
 
